@@ -10,11 +10,23 @@
 		EC108B7919D8E2F000CBBC17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC108B7819D8E2F000CBBC17 /* main.m */; };
 		EC108B7C19D8E2F000CBBC17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC108B7B19D8E2F000CBBC17 /* AppDelegate.m */; };
 		EC108B7F19D8E2F000CBBC17 /* Se_Le_Tiene.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC108B7D19D8E2F000CBBC17 /* Se_Le_Tiene.xcdatamodeld */; };
-		EC108B8219D8E2F000CBBC17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC108B8119D8E2F000CBBC17 /* ViewController.m */; };
 		EC108B8519D8E2F000CBBC17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC108B8319D8E2F000CBBC17 /* Main.storyboard */; };
 		EC108B8719D8E2F000CBBC17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC108B8619D8E2F000CBBC17 /* Images.xcassets */; };
 		EC108B8A19D8E2F000CBBC17 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC108B8819D8E2F000CBBC17 /* LaunchScreen.xib */; };
 		EC108B9619D8E2F000CBBC17 /* Se_Le_TieneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC108B9519D8E2F000CBBC17 /* Se_Le_TieneTests.m */; };
+		EC108BFB19DA108B00CBBC17 /* btnBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BEF19DA108B00CBBC17 /* btnBlue.png */; };
+		EC108BFC19DA108B00CBBC17 /* btnBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF019DA108B00CBBC17 /* btnBlue@2x.png */; };
+		EC108BFD19DA108B00CBBC17 /* btnEmail.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF119DA108B00CBBC17 /* btnEmail.png */; };
+		EC108BFE19DA108B00CBBC17 /* btnEmail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF219DA108B00CBBC17 /* btnEmail@2x.png */; };
+		EC108BFF19DA108B00CBBC17 /* btnFacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF319DA108B00CBBC17 /* btnFacebook.png */; };
+		EC108C0019DA108B00CBBC17 /* btnFacebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF419DA108B00CBBC17 /* btnFacebook@2x.png */; };
+		EC108C0119DA108B00CBBC17 /* btnInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF519DA108B00CBBC17 /* btnInfo.png */; };
+		EC108C0219DA108B00CBBC17 /* btnInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF619DA108B00CBBC17 /* btnInfo@2x.png */; };
+		EC108C0319DA108B00CBBC17 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF719DA108B00CBBC17 /* logo.png */; };
+		EC108C0419DA108B00CBBC17 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC108BF819DA108B00CBBC17 /* logo@2x.png */; };
+		EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0519DA16A300CBBC17 /* bg.jpg */; };
+		EC108C0819DA16A300CBBC17 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0619DA16A300CBBC17 /* bg@2x.jpg */; };
+		EC1F86B419DBA41D0019CA9F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F86B319DBA41D0019CA9F /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +46,26 @@
 		EC108B7A19D8E2F000CBBC17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC108B7B19D8E2F000CBBC17 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EC108B7E19D8E2F000CBBC17 /* Se_Le_Tiene.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Se_Le_Tiene.xcdatamodel; sourceTree = "<group>"; };
-		EC108B8019D8E2F000CBBC17 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EC108B8119D8E2F000CBBC17 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC108B8419D8E2F000CBBC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC108B8619D8E2F000CBBC17 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC108B8919D8E2F000CBBC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC108B8F19D8E2F000CBBC17 /* Se Le TieneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Se Le TieneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC108B9419D8E2F000CBBC17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC108B9519D8E2F000CBBC17 /* Se_Le_TieneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Se_Le_TieneTests.m; sourceTree = "<group>"; };
+		EC108BEF19DA108B00CBBC17 /* btnBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnBlue.png; sourceTree = "<group>"; };
+		EC108BF019DA108B00CBBC17 /* btnBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnBlue@2x.png"; sourceTree = "<group>"; };
+		EC108BF119DA108B00CBBC17 /* btnEmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnEmail.png; sourceTree = "<group>"; };
+		EC108BF219DA108B00CBBC17 /* btnEmail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnEmail@2x.png"; sourceTree = "<group>"; };
+		EC108BF319DA108B00CBBC17 /* btnFacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnFacebook.png; sourceTree = "<group>"; };
+		EC108BF419DA108B00CBBC17 /* btnFacebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnFacebook@2x.png"; sourceTree = "<group>"; };
+		EC108BF519DA108B00CBBC17 /* btnInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnInfo.png; sourceTree = "<group>"; };
+		EC108BF619DA108B00CBBC17 /* btnInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnInfo@2x.png"; sourceTree = "<group>"; };
+		EC108BF719DA108B00CBBC17 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		EC108BF819DA108B00CBBC17 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		EC108C0519DA16A300CBBC17 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		EC108C0619DA16A300CBBC17 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		EC1F86B219DBA41D0019CA9F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Views/LoginViewController.h; sourceTree = "<group>"; };
+		EC1F86B319DBA41D0019CA9F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Views/LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +107,10 @@
 		EC108B7519D8E2F000CBBC17 /* Se Le Tiene */ = {
 			isa = PBXGroup;
 			children = (
+				EC1F86B519DBA4DE0019CA9F /* Views */,
+				EC108BEB19DA108B00CBBC17 /* Assets */,
 				EC108B7A19D8E2F000CBBC17 /* AppDelegate.h */,
 				EC108B7B19D8E2F000CBBC17 /* AppDelegate.m */,
-				EC108B8019D8E2F000CBBC17 /* ViewController.h */,
-				EC108B8119D8E2F000CBBC17 /* ViewController.m */,
 				EC108B8319D8E2F000CBBC17 /* Main.storyboard */,
 				EC108B8619D8E2F000CBBC17 /* Images.xcassets */,
 				EC108B8819D8E2F000CBBC17 /* LaunchScreen.xib */,
@@ -120,6 +144,42 @@
 				EC108B9419D8E2F000CBBC17 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC108BEB19DA108B00CBBC17 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EC108BEC19DA108B00CBBC17 /* UI */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EC108BEC19DA108B00CBBC17 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EC108C0519DA16A300CBBC17 /* bg.jpg */,
+				EC108C0619DA16A300CBBC17 /* bg@2x.jpg */,
+				EC108BEF19DA108B00CBBC17 /* btnBlue.png */,
+				EC108BF019DA108B00CBBC17 /* btnBlue@2x.png */,
+				EC108BF119DA108B00CBBC17 /* btnEmail.png */,
+				EC108BF219DA108B00CBBC17 /* btnEmail@2x.png */,
+				EC108BF319DA108B00CBBC17 /* btnFacebook.png */,
+				EC108BF419DA108B00CBBC17 /* btnFacebook@2x.png */,
+				EC108BF519DA108B00CBBC17 /* btnInfo.png */,
+				EC108BF619DA108B00CBBC17 /* btnInfo@2x.png */,
+				EC108BF719DA108B00CBBC17 /* logo.png */,
+				EC108BF819DA108B00CBBC17 /* logo@2x.png */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EC1F86B519DBA4DE0019CA9F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC1F86B219DBA41D0019CA9F /* LoginViewController.h */,
+				EC1F86B319DBA41D0019CA9F /* LoginViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +262,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC108BFF19DA108B00CBBC17 /* btnFacebook.png in Resources */,
+				EC108C0019DA108B00CBBC17 /* btnFacebook@2x.png in Resources */,
 				EC108B8519D8E2F000CBBC17 /* Main.storyboard in Resources */,
 				EC108B8A19D8E2F000CBBC17 /* LaunchScreen.xib in Resources */,
+				EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */,
+				EC108C0319DA108B00CBBC17 /* logo.png in Resources */,
+				EC108BFC19DA108B00CBBC17 /* btnBlue@2x.png in Resources */,
+				EC108BFD19DA108B00CBBC17 /* btnEmail.png in Resources */,
+				EC108C0119DA108B00CBBC17 /* btnInfo.png in Resources */,
+				EC108C0819DA16A300CBBC17 /* bg@2x.jpg in Resources */,
 				EC108B8719D8E2F000CBBC17 /* Images.xcassets in Resources */,
+				EC108C0419DA108B00CBBC17 /* logo@2x.png in Resources */,
+				EC108BFE19DA108B00CBBC17 /* btnEmail@2x.png in Resources */,
+				EC108C0219DA108B00CBBC17 /* btnInfo@2x.png in Resources */,
+				EC108BFB19DA108B00CBBC17 /* btnBlue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +296,8 @@
 			files = (
 				EC108B7F19D8E2F000CBBC17 /* Se_Le_Tiene.xcdatamodeld in Sources */,
 				EC108B7C19D8E2F000CBBC17 /* AppDelegate.m in Sources */,
-				EC108B8219D8E2F000CBBC17 /* ViewController.m in Sources */,
 				EC108B7919D8E2F000CBBC17 /* main.m in Sources */,
+				EC1F86B419DBA41D0019CA9F /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +421,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -360,10 +434,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -420,6 +496,7 @@
 				EC108B9B19D8E2F000CBBC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC108B9C19D8E2F000CBBC17 /* Build configuration list for PBXNativeTarget "Se Le TieneTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +505,7 @@
 				EC108B9E19D8E2F000CBBC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
