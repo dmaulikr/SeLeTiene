@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     self.btnOffer.titleLabel.numberOfLines = 2;
     self.btnOffer.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.btnOffer.titleLabel.textAlignment = NSTextAlignmentCenter;

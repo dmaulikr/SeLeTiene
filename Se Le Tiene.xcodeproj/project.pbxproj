@@ -27,6 +27,14 @@
 		EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0519DA16A300CBBC17 /* bg.jpg */; };
 		EC108C0819DA16A300CBBC17 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0619DA16A300CBBC17 /* bg@2x.jpg */; };
 		EC1F86B419DBA41D0019CA9F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F86B319DBA41D0019CA9F /* LoginViewController.m */; };
+		ECD6D99D19DCF7D800B2F48E /* ProductsContViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */; };
+		ECD6D9A319DCFC0800B2F48E /* btnGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D99F19DCFC0800B2F48E /* btnGrid.png */; };
+		ECD6D9A419DCFC0800B2F48E /* btnGrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D9A019DCFC0800B2F48E /* btnGrid@2x.png */; };
+		ECD6D9A519DCFC0800B2F48E /* btnList.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D9A119DCFC0800B2F48E /* btnList.png */; };
+		ECD6D9A619DCFC0800B2F48E /* btnList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D9A219DCFC0800B2F48E /* btnList@2x.png */; };
+		ECD6D9AA19DD0B3900B2F48E /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD6D9A919DD0B3900B2F48E /* ProductCollectionViewCell.m */; };
+		ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */; };
+		ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EF19DC60F2005B7E16 /* ProductsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +74,18 @@
 		EC108C0619DA16A300CBBC17 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
 		EC1F86B219DBA41D0019CA9F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Views/LoginViewController.h; sourceTree = "<group>"; };
 		EC1F86B319DBA41D0019CA9F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Views/LoginViewController.m; sourceTree = "<group>"; };
+		ECD6D99B19DCF7D800B2F48E /* ProductsContViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsContViewController.h; path = Views/ProductsContViewController.h; sourceTree = "<group>"; };
+		ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsContViewController.m; path = Views/ProductsContViewController.m; sourceTree = "<group>"; };
+		ECD6D99F19DCFC0800B2F48E /* btnGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnGrid.png; sourceTree = "<group>"; };
+		ECD6D9A019DCFC0800B2F48E /* btnGrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnGrid@2x.png"; sourceTree = "<group>"; };
+		ECD6D9A119DCFC0800B2F48E /* btnList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnList.png; sourceTree = "<group>"; };
+		ECD6D9A219DCFC0800B2F48E /* btnList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnList@2x.png"; sourceTree = "<group>"; };
+		ECD6D9A819DD0B3900B2F48E /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductCollectionViewCell.h; path = Views/Components/ProductCollectionViewCell.h; sourceTree = "<group>"; };
+		ECD6D9A919DD0B3900B2F48E /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCollectionViewCell.m; path = Views/Components/ProductCollectionViewCell.m; sourceTree = "<group>"; };
+		ECFB47EB19DC60BC005B7E16 /* ProductTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductTableViewController.h; path = Views/ProductTableViewController.h; sourceTree = "<group>"; };
+		ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductTableViewController.m; path = Views/ProductTableViewController.m; sourceTree = "<group>"; };
+		ECFB47EE19DC60F2005B7E16 /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsViewController.h; path = Views/ProductsViewController.h; sourceTree = "<group>"; };
+		ECFB47EF19DC60F2005B7E16 /* ProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsViewController.m; path = Views/ProductsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +169,7 @@
 		EC108BEB19DA108B00CBBC17 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				ECD6D99E19DCFC0800B2F48E /* Buttons */,
 				EC108BEC19DA108B00CBBC17 /* UI */,
 			);
 			path = Assets;
@@ -176,10 +197,37 @@
 		EC1F86B519DBA4DE0019CA9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ECD6D9A719DD0B0900B2F48E /* Components */,
 				EC1F86B219DBA41D0019CA9F /* LoginViewController.h */,
 				EC1F86B319DBA41D0019CA9F /* LoginViewController.m */,
+				ECFB47EE19DC60F2005B7E16 /* ProductsViewController.h */,
+				ECFB47EF19DC60F2005B7E16 /* ProductsViewController.m */,
+				ECFB47EB19DC60BC005B7E16 /* ProductTableViewController.h */,
+				ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */,
+				ECD6D99B19DCF7D800B2F48E /* ProductsContViewController.h */,
+				ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		ECD6D99E19DCFC0800B2F48E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				ECD6D99F19DCFC0800B2F48E /* btnGrid.png */,
+				ECD6D9A019DCFC0800B2F48E /* btnGrid@2x.png */,
+				ECD6D9A119DCFC0800B2F48E /* btnList.png */,
+				ECD6D9A219DCFC0800B2F48E /* btnList@2x.png */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		ECD6D9A719DD0B0900B2F48E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ECD6D9A819DD0B3900B2F48E /* ProductCollectionViewCell.h */,
+				ECD6D9A919DD0B3900B2F48E /* ProductCollectionViewCell.m */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,14 +310,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD6D9A519DCFC0800B2F48E /* btnList.png in Resources */,
 				EC108BFF19DA108B00CBBC17 /* btnFacebook.png in Resources */,
 				EC108C0019DA108B00CBBC17 /* btnFacebook@2x.png in Resources */,
 				EC108B8519D8E2F000CBBC17 /* Main.storyboard in Resources */,
+				ECD6D9A419DCFC0800B2F48E /* btnGrid@2x.png in Resources */,
 				EC108B8A19D8E2F000CBBC17 /* LaunchScreen.xib in Resources */,
 				EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */,
 				EC108C0319DA108B00CBBC17 /* logo.png in Resources */,
 				EC108BFC19DA108B00CBBC17 /* btnBlue@2x.png in Resources */,
 				EC108BFD19DA108B00CBBC17 /* btnEmail.png in Resources */,
+				ECD6D9A319DCFC0800B2F48E /* btnGrid.png in Resources */,
 				EC108C0119DA108B00CBBC17 /* btnInfo.png in Resources */,
 				EC108C0819DA16A300CBBC17 /* bg@2x.jpg in Resources */,
 				EC108B8719D8E2F000CBBC17 /* Images.xcassets in Resources */,
@@ -277,6 +328,7 @@
 				EC108BFE19DA108B00CBBC17 /* btnEmail@2x.png in Resources */,
 				EC108C0219DA108B00CBBC17 /* btnInfo@2x.png in Resources */,
 				EC108BFB19DA108B00CBBC17 /* btnBlue.png in Resources */,
+				ECD6D9A619DCFC0800B2F48E /* btnList@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,9 +346,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */,
 				EC108B7F19D8E2F000CBBC17 /* Se_Le_Tiene.xcdatamodeld in Sources */,
 				EC108B7C19D8E2F000CBBC17 /* AppDelegate.m in Sources */,
 				EC108B7919D8E2F000CBBC17 /* main.m in Sources */,
+				ECD6D99D19DCF7D800B2F48E /* ProductsContViewController.m in Sources */,
+				ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */,
+				ECD6D9AA19DD0B3900B2F48E /* ProductCollectionViewCell.m in Sources */,
 				EC1F86B419DBA41D0019CA9F /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
