@@ -7,6 +7,7 @@
 //
 
 #import "ProductTableViewController.h"
+#import "ProductsTableViewCell.h"
 
 @interface ProductTableViewController ()
 
@@ -41,22 +42,21 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 20;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    ProductsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
+    cell.imgProduct.layer.cornerRadius = 4;
+    cell.imgProduct.layer.masksToBounds = YES;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

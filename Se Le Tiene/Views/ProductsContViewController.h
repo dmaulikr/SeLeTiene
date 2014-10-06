@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductsContViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProductsContViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>{
+    double wCell;
+    double hCell;
+    int    numColumns;
+    double padCell;
+    int    wScreen;
+    int    hScreen;
+}
 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *Products;
