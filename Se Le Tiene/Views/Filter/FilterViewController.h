@@ -24,5 +24,8 @@
 
 @property (strong,nonatomic) NSMutableArray *stars;
 
+@property int preN;
+@property int postN;
+
 
 @end

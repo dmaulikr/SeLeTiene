@@ -13,13 +13,39 @@
 @end
 
 @implementation FilterViewController
-@synthesize star1,star2,star3,star4,star5;
+@synthesize star1,star2,star3,star4,star5,preN,postN;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.stars = [[NSMutableArray alloc] initWithCapacity:5];
+    [self.stars addObject:star1];
+    [self.stars addObject:star2];
+    [self.stars addObject:star3];
+    [self.stars addObject:star4];
+    [self.stars addObject:star5];
+    preN = 0;
+}
+
+-(void)setStar:(int)numStars{
+    int s = preN==numStars ? 0 : numStars;
+    for (int i = 0; i<[self.stars count]; i++) {
+        if (i<s) {
+            [(UIButton*)[self.stars objectAtIndex:i] setImage:[UIImage imageNamed:@"btnStar_on"] forState:UIControlStateNormal];
+        }else{
+            [(UIButton*)[self.stars objectAtIndex:i] setImage:[UIImage imageNamed:@"btnStar"] forState:UIControlStateNormal];
+        }
+    }
+}
+
+- (IBAction)setStarT:(id)sender {
+    UIButton *tmp = sender;
+    [self setStar:tmp.tag];
+    preN = tmp.tag;
+}
+
+- (IBAction)applyFilters:(id)sender {
     
 }
+
 
 @end

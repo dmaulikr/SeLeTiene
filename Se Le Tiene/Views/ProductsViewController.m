@@ -8,6 +8,7 @@
 
 #import "ProductsViewController.h"
 #import "ProductTableViewController.h"
+#import "Filter/FilterViewController.h"
 
 
 @interface ProductsViewController ()
@@ -128,7 +129,8 @@
     }
 }
 - (IBAction)filterSearch:(id)sender {
-    
+    FilterViewController *fVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FilterView"];
+    [self.navigationController pushViewController:fVC animated:NO];
 }
 
 @end

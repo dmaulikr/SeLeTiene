@@ -398,7 +398,7 @@ Ofrécelo aquí</string>
         <!--Filter View Controller-->
         <scene sceneID="GaD-F1-LF9">
             <objects>
-                <viewController id="Vkt-9x-eI7" customClass="FilterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vkt-9x-eI7" customClass="FilterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfv-Y0-BHB"/>
                         <viewControllerLayoutGuide type="bottom" id="iOa-fF-nNb"/>
@@ -419,35 +419,50 @@ Ofrécelo aquí</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yp-E7b">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yp-E7b">
                                 <rect key="frame" x="47" y="452" width="39" height="38"/>
                                 <state key="normal" image="btnStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setStarT:" destination="Vkt-9x-eI7" eventType="touchUpInside" id="pyA-3e-hC1"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuw-4W-a5G">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuw-4W-a5G">
                                 <rect key="frame" x="94" y="452" width="39" height="38"/>
                                 <state key="normal" image="btnStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setStarT:" destination="Vkt-9x-eI7" eventType="touchUpInside" id="MRg-Db-l6n"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfh-Kn-gX8">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfh-Kn-gX8">
                                 <rect key="frame" x="141" y="452" width="39" height="38"/>
                                 <state key="normal" image="btnStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setStarT:" destination="Vkt-9x-eI7" eventType="touchUpInside" id="ofh-Do-FGC"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-6r-ARY">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-6r-ARY">
                                 <rect key="frame" x="188" y="452" width="39" height="38"/>
                                 <state key="normal" image="btnStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setStarT:" destination="Vkt-9x-eI7" eventType="touchUpInside" id="V9S-1i-F3U"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzE-fw-Y7V">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzE-fw-Y7V">
                                 <rect key="frame" x="235" y="452" width="39" height="38"/>
                                 <state key="normal" image="btnStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setStarT:" destination="Vkt-9x-eI7" eventType="touchUpInside" id="4Vs-Yo-cSo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sh-UA-AeA">
                                 <rect key="frame" x="25" y="508" width="270" height="60"/>
@@ -456,6 +471,9 @@ Ofrécelo aquí</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="applyFilters:" destination="Vkt-9x-eI7" eventType="touchUpInside" id="Qg6-Ie-ZFq"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hzx-w6-Yv2">
                                 <rect key="frame" x="90" y="74" width="140" height="29"/>

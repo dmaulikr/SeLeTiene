@@ -47,6 +47,8 @@
 		ECCEECFF19E2636B007A88B6 /* btnStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCEECFD19E2636B007A88B6 /* btnStar@2x.png */; };
 		ECCEED0019E2636B007A88B6 /* btnStar.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCEECFE19E2636B007A88B6 /* btnStar.png */; };
 		ECCEED0519E26605007A88B6 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED0419E26605007A88B6 /* FilterViewController.m */; };
+		ECCEED0819E279F5007A88B6 /* btnStar_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCEED0619E279F5007A88B6 /* btnStar_on@2x.png */; };
+		ECCEED0919E279F5007A88B6 /* btnStar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCEED0719E279F5007A88B6 /* btnStar_on.png */; };
 		ECD6D99D19DCF7D800B2F48E /* ProductsContViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */; };
 		ECD6D9A319DCFC0800B2F48E /* btnGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D99F19DCFC0800B2F48E /* btnGrid.png */; };
 		ECD6D9A419DCFC0800B2F48E /* btnGrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D9A019DCFC0800B2F48E /* btnGrid@2x.png */; };
@@ -121,6 +123,8 @@
 		ECCEECFE19E2636B007A88B6 /* btnStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnStar.png; sourceTree = "<group>"; };
 		ECCEED0319E26605007A88B6 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterViewController.h; path = Views/Filter/FilterViewController.h; sourceTree = "<group>"; };
 		ECCEED0419E26605007A88B6 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterViewController.m; path = Views/Filter/FilterViewController.m; sourceTree = "<group>"; };
+		ECCEED0619E279F5007A88B6 /* btnStar_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnStar_on@2x.png"; sourceTree = "<group>"; };
+		ECCEED0719E279F5007A88B6 /* btnStar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnStar_on.png; sourceTree = "<group>"; };
 		ECD6D99B19DCF7D800B2F48E /* ProductsContViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsContViewController.h; path = Views/ProductsContViewController.h; sourceTree = "<group>"; };
 		ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsContViewController.m; path = Views/ProductsContViewController.m; sourceTree = "<group>"; };
 		ECD6D99F19DCFC0800B2F48E /* btnGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnGrid.png; sourceTree = "<group>"; };
@@ -286,14 +290,14 @@
 		ECCEED0219E26576007A88B6 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				ECCEECFA19E227D6007A88B6 /* ProductDetailViewController.h */,
-				ECCEECFB19E227D6007A88B6 /* ProductDetailViewController.m */,
 				ECFB47EE19DC60F2005B7E16 /* ProductsViewController.h */,
 				ECFB47EF19DC60F2005B7E16 /* ProductsViewController.m */,
 				ECFB47EB19DC60BC005B7E16 /* ProductTableViewController.h */,
 				ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */,
 				ECD6D99B19DCF7D800B2F48E /* ProductsContViewController.h */,
 				ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */,
+				ECCEECFA19E227D6007A88B6 /* ProductDetailViewController.h */,
+				ECCEECFB19E227D6007A88B6 /* ProductDetailViewController.m */,
 			);
 			name = Product;
 			sourceTree = "<group>";
@@ -301,6 +305,8 @@
 		ECD6D99E19DCFC0800B2F48E /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				ECCEED0619E279F5007A88B6 /* btnStar_on@2x.png */,
+				ECCEED0719E279F5007A88B6 /* btnStar_on.png */,
 				ECCEECFD19E2636B007A88B6 /* btnStar@2x.png */,
 				ECCEECFE19E2636B007A88B6 /* btnStar.png */,
 				ECCEECF819E0B0D8007A88B6 /* btnUserMenu@2x.png */,
@@ -417,6 +423,7 @@
 				EC108C0019DA108B00CBBC17 /* btnFacebook@2x.png in Resources */,
 				EC66560E19DE56CF005B0B00 /* logoHeader.png in Resources */,
 				ECCEECF419E099F2007A88B6 /* btnSearchMenu@2x.png in Resources */,
+				ECCEED0819E279F5007A88B6 /* btnStar_on@2x.png in Resources */,
 				ECCEECE919DF4DF8007A88B6 /* amasijos3.jpg in Resources */,
 				EC66560F19DE56CF005B0B00 /* bgHeader.png in Resources */,
 				ECCEECF919E0B0D8007A88B6 /* btnUserMenu@2x.png in Resources */,
@@ -428,6 +435,7 @@
 				EC108C0319DA108B00CBBC17 /* logo.png in Resources */,
 				EC66560519DE44C1005B0B00 /* btnSearch@2x.png in Resources */,
 				EC108BFC19DA108B00CBBC17 /* btnBlue@2x.png in Resources */,
+				ECCEED0919E279F5007A88B6 /* btnStar_on.png in Resources */,
 				EC108BFD19DA108B00CBBC17 /* btnEmail.png in Resources */,
 				ECD6D9A319DCFC0800B2F48E /* btnGrid.png in Resources */,
 				EC108C0119DA108B00CBBC17 /* btnInfo.png in Resources */,
