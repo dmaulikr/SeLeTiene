@@ -9,6 +9,7 @@
 #import "ProductsViewController.h"
 #import "ProductTableViewController.h"
 #import "Filter/FilterViewController.h"
+#import "Offer/OfferViewController.h"
 
 
 @interface ProductsViewController ()
@@ -52,6 +53,9 @@
     
     
     
+    
+
+    [btnMen2 addTarget:self action:@selector(addProduct:) forControlEvents:UIControlEventTouchUpInside];
     
     
     GridView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -118,6 +122,12 @@
     UISegmentedControl * tmpControl = sender;
     NSLog(@"Selected %ld", (long)tmpControl.selectedSegmentIndex);
     [self.containerViewController swapViewControllers];
+}
+
+
+-(IBAction)addProduct:(id)sender{
+    OfferViewController *oVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OfferView"];
+    [self.navigationController pushViewController:oVC animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

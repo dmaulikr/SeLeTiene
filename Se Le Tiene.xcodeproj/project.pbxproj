@@ -49,6 +49,14 @@
 		ECCEED0519E26605007A88B6 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED0419E26605007A88B6 /* FilterViewController.m */; };
 		ECCEED0819E279F5007A88B6 /* btnStar_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCEED0619E279F5007A88B6 /* btnStar_on@2x.png */; };
 		ECCEED0919E279F5007A88B6 /* btnStar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCEED0719E279F5007A88B6 /* btnStar_on.png */; };
+		ECCEED0D19E2F09C007A88B6 /* OfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED0C19E2F09C007A88B6 /* OfferViewController.m */; };
+		ECCEED0F19E31110007A88B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED0E19E31110007A88B6 /* CoreGraphics.framework */; };
+		ECCEED1119E3111E007A88B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED1019E3111E007A88B6 /* UIKit.framework */; };
+		ECCEED1319E3115C007A88B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED1219E3115C007A88B6 /* Foundation.framework */; };
+		ECCEED1519E31245007A88B6 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED1419E31245007A88B6 /* GPUImage.framework */; };
+		ECCEED1819E392AA007A88B6 /* OfferProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED1719E392AA007A88B6 /* OfferProViewController.m */; };
+		ECCEED1B19E392F0007A88B6 /* OfferSerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED1A19E392F0007A88B6 /* OfferSerViewController.m */; };
+		ECCEED1E19E3A2C0007A88B6 /* ContainerViewOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED1C19E3A2C0007A88B6 /* ContainerViewOffer.m */; };
 		ECD6D99D19DCF7D800B2F48E /* ProductsContViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */; };
 		ECD6D9A319DCFC0800B2F48E /* btnGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D99F19DCFC0800B2F48E /* btnGrid.png */; };
 		ECD6D9A419DCFC0800B2F48E /* btnGrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D9A019DCFC0800B2F48E /* btnGrid@2x.png */; };
@@ -125,6 +133,18 @@
 		ECCEED0419E26605007A88B6 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterViewController.m; path = Views/Filter/FilterViewController.m; sourceTree = "<group>"; };
 		ECCEED0619E279F5007A88B6 /* btnStar_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnStar_on@2x.png"; sourceTree = "<group>"; };
 		ECCEED0719E279F5007A88B6 /* btnStar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnStar_on.png; sourceTree = "<group>"; };
+		ECCEED0B19E2F09C007A88B6 /* OfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferViewController.h; path = Views/Offer/OfferViewController.h; sourceTree = "<group>"; };
+		ECCEED0C19E2F09C007A88B6 /* OfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferViewController.m; path = Views/Offer/OfferViewController.m; sourceTree = "<group>"; };
+		ECCEED0E19E31110007A88B6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ECCEED1019E3111E007A88B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ECCEED1219E3115C007A88B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ECCEED1419E31245007A88B6 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = ../../../../Colors/Objc/colors/colors/GPUImage.framework; sourceTree = "<group>"; };
+		ECCEED1619E392AA007A88B6 /* OfferProViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferProViewController.h; path = Views/Offer/OfferProViewController.h; sourceTree = "<group>"; };
+		ECCEED1719E392AA007A88B6 /* OfferProViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferProViewController.m; path = Views/Offer/OfferProViewController.m; sourceTree = "<group>"; };
+		ECCEED1919E392F0007A88B6 /* OfferSerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferSerViewController.h; path = Views/Offer/OfferSerViewController.h; sourceTree = "<group>"; };
+		ECCEED1A19E392F0007A88B6 /* OfferSerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferSerViewController.m; path = Views/Offer/OfferSerViewController.m; sourceTree = "<group>"; };
+		ECCEED1C19E3A2C0007A88B6 /* ContainerViewOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerViewOffer.m; path = Views/Components/ContainerViewOffer.m; sourceTree = "<group>"; };
+		ECCEED1D19E3A2C0007A88B6 /* ContainerViewOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerViewOffer.h; path = Views/Components/ContainerViewOffer.h; sourceTree = "<group>"; };
 		ECD6D99B19DCF7D800B2F48E /* ProductsContViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsContViewController.h; path = Views/ProductsContViewController.h; sourceTree = "<group>"; };
 		ECD6D99C19DCF7D800B2F48E /* ProductsContViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsContViewController.m; path = Views/ProductsContViewController.m; sourceTree = "<group>"; };
 		ECD6D99F19DCFC0800B2F48E /* btnGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnGrid.png; sourceTree = "<group>"; };
@@ -145,6 +165,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECCEED1519E31245007A88B6 /* GPUImage.framework in Frameworks */,
+				ECCEED1319E3115C007A88B6 /* Foundation.framework in Frameworks */,
+				ECCEED1119E3111E007A88B6 /* UIKit.framework in Frameworks */,
+				ECCEED0F19E31110007A88B6 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +219,10 @@
 		EC108B7619D8E2F000CBBC17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ECCEED1419E31245007A88B6 /* GPUImage.framework */,
+				ECCEED1219E3115C007A88B6 /* Foundation.framework */,
+				ECCEED1019E3111E007A88B6 /* UIKit.framework */,
+				ECCEED0E19E31110007A88B6 /* CoreGraphics.framework */,
 				EC108B7719D8E2F000CBBC17 /* Info.plist */,
 				EC108B7819D8E2F000CBBC17 /* main.m */,
 			);
@@ -254,6 +282,7 @@
 		EC1F86B519DBA4DE0019CA9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ECCEED0A19E2F070007A88B6 /* Offer */,
 				ECCEED0219E26576007A88B6 /* Product */,
 				ECCEED0119E2656F007A88B6 /* Filter */,
 				ECD6D9A719DD0B0900B2F48E /* Components */,
@@ -300,6 +329,21 @@
 				ECCEECFB19E227D6007A88B6 /* ProductDetailViewController.m */,
 			);
 			name = Product;
+			sourceTree = "<group>";
+		};
+		ECCEED0A19E2F070007A88B6 /* Offer */ = {
+			isa = PBXGroup;
+			children = (
+				ECCEED1D19E3A2C0007A88B6 /* ContainerViewOffer.h */,
+				ECCEED1C19E3A2C0007A88B6 /* ContainerViewOffer.m */,
+				ECCEED0B19E2F09C007A88B6 /* OfferViewController.h */,
+				ECCEED0C19E2F09C007A88B6 /* OfferViewController.m */,
+				ECCEED1619E392AA007A88B6 /* OfferProViewController.h */,
+				ECCEED1719E392AA007A88B6 /* OfferProViewController.m */,
+				ECCEED1919E392F0007A88B6 /* OfferSerViewController.h */,
+				ECCEED1A19E392F0007A88B6 /* OfferSerViewController.m */,
+			);
+			name = Offer;
 			sourceTree = "<group>";
 		};
 		ECD6D99E19DCFC0800B2F48E /* Buttons */ = {
@@ -474,11 +518,15 @@
 				EC108B7F19D8E2F000CBBC17 /* Se_Le_Tiene.xcdatamodeld in Sources */,
 				EC108B7C19D8E2F000CBBC17 /* AppDelegate.m in Sources */,
 				ECCEED0519E26605007A88B6 /* FilterViewController.m in Sources */,
+				ECCEED1819E392AA007A88B6 /* OfferProViewController.m in Sources */,
 				EC66560919DE5486005B0B00 /* NVControllerGeneric.m in Sources */,
 				EC66561219DEFDB6005B0B00 /* ContainerViewController.m in Sources */,
 				ECCEECFC19E227D6007A88B6 /* ProductDetailViewController.m in Sources */,
+				ECCEED1E19E3A2C0007A88B6 /* ContainerViewOffer.m in Sources */,
+				ECCEED1B19E392F0007A88B6 /* OfferSerViewController.m in Sources */,
 				EC108B7919D8E2F000CBBC17 /* main.m in Sources */,
 				ECD6D99D19DCF7D800B2F48E /* ProductsContViewController.m in Sources */,
+				ECCEED0D19E2F09C007A88B6 /* OfferViewController.m in Sources */,
 				ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */,
 				ECCEECEC19DF9107007A88B6 /* ProductsTableViewCell.m in Sources */,
 				ECD6D9AA19DD0B3900B2F48E /* ProductCollectionViewCell.m in Sources */,
@@ -608,6 +656,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
+				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -622,6 +674,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
+				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

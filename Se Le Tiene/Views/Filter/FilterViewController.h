@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *star5;
 @property (weak, nonatomic) UITextField *tfWord;
 @property (weak, nonatomic) UIPickerView *pkCity;
+@property (weak, nonatomic) IBOutlet UIButton *btnFilter;
 
 
 @property (strong,nonatomic) NSMutableArray *stars;

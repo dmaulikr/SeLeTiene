@@ -13,7 +13,7 @@
 @end
 
 @implementation FilterViewController
-@synthesize star1,star2,star3,star4,star5,preN,postN;
+@synthesize star1,star2,star3,star4,star5,preN,postN,btnFilter;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +24,9 @@
     [self.stars addObject:star4];
     [self.stars addObject:star5];
     preN = 0;
+    self.title = @"Filtrar búsqueda";
+    
+    btnFilter.layer.cornerRadius = 5.0f;
 }
 
 -(void)setStar:(int)numStars{
