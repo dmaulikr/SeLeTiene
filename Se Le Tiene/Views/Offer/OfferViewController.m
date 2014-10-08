@@ -40,7 +40,13 @@
     }
 }
 
+/*-(void)viewWillAppear:(BOOL)animated{
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+}*/
 
+-(void)viewDidAppear:(BOOL)animated{
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+}
 
 
 
