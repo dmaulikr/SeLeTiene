@@ -44,7 +44,7 @@
     txtDesc.layer.borderColor = [UIColor colorWithRed:0.553 green:0.557 blue:0.592 alpha:1].CGColor;
     txtDesc.layer.borderWidth = 0.5f;
     txtDesc.delegate = self;
-    //txtDesc.contentInset = UIEdgeInsetsMake(15,58,0,95);
+    txtDesc.contentInset = UIEdgeInsetsMake(30,0,0,0);
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -52,6 +52,14 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
+    int xVal = btnSetType.bounds.size.width  - 10;
+    int yVal = btnSetType.bounds.size.height - 20;
+    
+    
+    UIImage *image = [UIImage imageNamed:@"btnArr"];
+    UIImageView *imgArr = [[UIImageView alloc] initWithFrame:CGRectMake(xVal-13, yVal/2, 13, 20)];
+    [imgArr setImage:image];
+    [btnSetType addSubview:imgArr];
     
     
 }

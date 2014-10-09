@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LogViewController : UIViewController <UITextFieldDelegate>
-
+@interface LogViewController : UIViewController <UITextFieldDelegate>{
+    int yPos;
+    int sW;
+    int sH;
+}
+extern int dev;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignIn;

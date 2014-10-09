@@ -35,6 +35,9 @@
 		EC66560F19DE56CF005B0B00 /* bgHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = EC66560C19DE56CF005B0B00 /* bgHeader.png */; };
 		EC66561219DEFDB6005B0B00 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC66561019DEFDB6005B0B00 /* ContainerViewController.m */; };
 		EC66561519DF01AB005B0B00 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EC66561319DF01AB005B0B00 /* EmptySegue.m */; };
+		EC74AFE319E5DBA700DB431A /* btnArr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE119E5DBA700DB431A /* btnArr@2x.png */; };
+		EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE219E5DBA700DB431A /* btnArr.png */; };
+		EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFE619E6148300DB431A /* InformationViewController.m */; };
 		ECC1090119E481DD003335EF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090019E481DD003335EF /* RegisterViewController.m */; };
 		ECC1090719E4A11E003335EF /* RememberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090619E4A11E003335EF /* RememberViewController.m */; };
 		ECC1090A19E4B2BA003335EF /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090919E4B2BA003335EF /* LogViewController.m */; };
@@ -119,6 +122,10 @@
 		EC66561119DEFDB6005B0B00 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerViewController.h; path = Views/Components/ContainerViewController.h; sourceTree = "<group>"; };
 		EC66561319DF01AB005B0B00 /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptySegue.m; path = Views/Components/EmptySegue.m; sourceTree = "<group>"; };
 		EC66561419DF01AB005B0B00 /* EmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptySegue.h; path = Views/Components/EmptySegue.h; sourceTree = "<group>"; };
+		EC74AFE119E5DBA700DB431A /* btnArr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnArr@2x.png"; sourceTree = "<group>"; };
+		EC74AFE219E5DBA700DB431A /* btnArr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnArr.png; sourceTree = "<group>"; };
+		EC74AFE519E6148300DB431A /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationViewController.h; path = Views/Information/InformationViewController.h; sourceTree = "<group>"; };
+		EC74AFE619E6148300DB431A /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationViewController.m; path = Views/Information/InformationViewController.m; sourceTree = "<group>"; };
 		ECC108FF19E481DD003335EF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Views/Register/RegisterViewController.h; sourceTree = "<group>"; };
 		ECC1090019E481DD003335EF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Views/Register/RegisterViewController.m; sourceTree = "<group>"; };
 		ECC1090519E4A11E003335EF /* RememberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RememberViewController.h; path = Views/Register/RememberViewController.h; sourceTree = "<group>"; };
@@ -291,15 +298,25 @@
 		EC1F86B519DBA4DE0019CA9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ECC108FE19E481B9003335EF /* Register */,
-				ECCEED0A19E2F070007A88B6 /* Offer */,
-				ECCEED0219E26576007A88B6 /* Product */,
-				ECCEED0119E2656F007A88B6 /* Filter */,
+				EC74AFE819E6149F00DB431A /* Information */,
 				ECD6D9A719DD0B0900B2F48E /* Components */,
+				ECCEED0119E2656F007A88B6 /* Filter */,
 				EC1F86B219DBA41D0019CA9F /* LoginViewController.h */,
 				EC1F86B319DBA41D0019CA9F /* LoginViewController.m */,
+				ECCEED0A19E2F070007A88B6 /* Offer */,
+				ECCEED0219E26576007A88B6 /* Product */,
+				ECC108FE19E481B9003335EF /* Register */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		EC74AFE819E6149F00DB431A /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				EC74AFE519E6148300DB431A /* InformationViewController.h */,
+				EC74AFE619E6148300DB431A /* InformationViewController.m */,
+			);
+			name = Information;
 			sourceTree = "<group>";
 		};
 		ECC108FE19E481B9003335EF /* Register */ = {
@@ -372,6 +389,8 @@
 		ECD6D99E19DCFC0800B2F48E /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				EC74AFE119E5DBA700DB431A /* btnArr@2x.png */,
+				EC74AFE219E5DBA700DB431A /* btnArr.png */,
 				ECCEED0619E279F5007A88B6 /* btnStar_on@2x.png */,
 				ECCEED0719E279F5007A88B6 /* btnStar_on.png */,
 				ECCEECFD19E2636B007A88B6 /* btnStar@2x.png */,
@@ -508,10 +527,12 @@
 				EC108C0119DA108B00CBBC17 /* btnInfo.png in Resources */,
 				EC66560D19DE56CF005B0B00 /* logoHeader@2x.png in Resources */,
 				EC108C0819DA16A300CBBC17 /* bg@2x.jpg in Resources */,
+				EC74AFE319E5DBA700DB431A /* btnArr@2x.png in Resources */,
 				ECCEECF619E099F2007A88B6 /* btnAddMenu@2x.png in Resources */,
 				EC108B8719D8E2F000CBBC17 /* Images.xcassets in Resources */,
 				EC108C0419DA108B00CBBC17 /* logo@2x.png in Resources */,
 				EC66560619DE44C1005B0B00 /* btnSearch.png in Resources */,
+				EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */,
 				EC108BFE19DA108B00CBBC17 /* btnEmail@2x.png in Resources */,
 				EC108C0219DA108B00CBBC17 /* btnInfo@2x.png in Resources */,
 				EC108BFB19DA108B00CBBC17 /* btnBlue.png in Resources */,
@@ -547,6 +568,7 @@
 				EC66561219DEFDB6005B0B00 /* ContainerViewController.m in Sources */,
 				ECC1090119E481DD003335EF /* RegisterViewController.m in Sources */,
 				ECCEECFC19E227D6007A88B6 /* ProductDetailViewController.m in Sources */,
+				EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */,
 				ECCEED1E19E3A2C0007A88B6 /* ContainerViewOffer.m in Sources */,
 				ECCEED1B19E392F0007A88B6 /* OfferSerViewController.m in Sources */,
 				EC108B7919D8E2F000CBBC17 /* main.m in Sources */,
@@ -690,7 +712,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "aa93e187-be3e-49e0-b264-6d6f2cae5136";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -699,7 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jorge Ovalle Z (QF2P6LAFBK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
@@ -708,7 +732,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fd2ce974-e588-4fd0-a748-a87af4554c62";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

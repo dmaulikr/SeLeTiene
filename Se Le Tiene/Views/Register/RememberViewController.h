@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RememberViewController : UIViewController <UITextFieldDelegate>
+@interface RememberViewController : UIViewController <UITextFieldDelegate>{
+    int yPos;
+    int sW;
+    int sH;
+}
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UIButton *btnRemember;
+extern int dev;
 
 @end

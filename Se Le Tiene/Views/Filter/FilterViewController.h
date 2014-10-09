@@ -8,25 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FilterViewController : UIViewController
+@interface FilterViewController : UIViewController <UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *serviceSelector;
-@property (weak, nonatomic) IBOutlet UIButton *btnApply;
 @property (weak, nonatomic) IBOutlet UIButton *star1;
 @property (weak, nonatomic) IBOutlet UIButton *star2;
 @property (weak, nonatomic) IBOutlet UIButton *star3;
 @property (weak, nonatomic) IBOutlet UIButton *star4;
 @property (weak, nonatomic) IBOutlet UIButton *star5;
-@property (weak, nonatomic) UITextField *tfWord;
-@property (weak, nonatomic) UIPickerView *pkCity;
+@property (weak, nonatomic) IBOutlet UITextField *tfWord;
+@property (weak, nonatomic) IBOutlet UIButton *pkCity;
 @property (weak, nonatomic) IBOutlet UIButton *btnFilter;
-
-
 @property (strong,nonatomic) NSMutableArray *stars;
-
 @property int preN;
 @property int postN;
-
 
 @end

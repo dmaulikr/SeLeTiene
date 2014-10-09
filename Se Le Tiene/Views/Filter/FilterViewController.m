@@ -13,7 +13,7 @@
 @end
 
 @implementation FilterViewController
-@synthesize star1,star2,star3,star4,star5,preN,postN,btnFilter;
+@synthesize star1,star2,star3,star4,star5,preN,postN,btnFilter,pkCity,tfWord;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +27,32 @@
     self.title = @"Filtrar búsqueda";
     
     btnFilter.layer.cornerRadius = 5.0f;
+    
+    tfWord.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    tfWord.layer.cornerRadius = 5.0f;
+    tfWord.layer.borderWidth = 2.0f;
+    
+    pkCity.layer.borderWidth = 1.0f;
+    pkCity.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
+    tfWord.leftView = paddingView;
+    tfWord.leftViewMode = UITextFieldViewModeAlways;
+    tfWord.delegate = self;
+
+    int xVal = pkCity.bounds.size.width  - 10;
+    int yVal = pkCity.bounds.size.height - 20;
+    
+    UIImage *image = [UIImage imageNamed:@"btnArr"];
+    UIImageView *imgArr = [[UIImageView alloc] initWithFrame:CGRectMake(xVal-13, yVal/2, 13, 20)];
+    [imgArr setImage:image];
+    [pkCity addSubview:imgArr];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 -(void)setStar:(int)numStars{
@@ -48,6 +74,42 @@
 
 - (IBAction)applyFilters:(id)sender {
     
+}
+
+
+// Text METHODS DELEGATE
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [tfWord resignFirstResponder];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    textField.layer.borderColor = [UIColor lightGrayColor].CGColor;
+}
+
+
+- (void)keyboardWillHide:(NSNotification *)aNotification
+{
+    NSTimeInterval animationDuration =
+    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.view.frame;
+    frame.origin.y = 64;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.layer.borderColor = [UIColor colorWithRed:0.039 green:0.337 blue:0.643 alpha:1].CGColor;
+    int yPos = textField.frame.origin.y;
+    CGRect frame = self.view.frame;
+    frame.origin.y = -(yPos - ((self.view.bounds.size.height - 216) - 60));
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:0.25];
+    self.view.frame = frame;
+    [UIView commitAnimations];
 }
 
 

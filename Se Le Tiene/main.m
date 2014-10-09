@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
+
+int dev;
+
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        NSString *deviceModel = (NSString*)[UIDevice currentDevice].model;
+        if ([[deviceModel substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPad"]) {
+            dev = 1;
+        } else {
+            dev = 2;
+        }
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface OfferSerViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *btnType;
 
+@property (weak, nonatomic) IBOutlet UITextView *txtComment;
+@property (weak, nonatomic) IBOutlet UITextView *txtCapac;
 @end
