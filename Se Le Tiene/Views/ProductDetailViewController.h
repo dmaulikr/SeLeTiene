@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <pop/POP.h>
 
-@interface ProductDetailViewController : UIViewController
+@interface ProductDetailViewController : UIViewController{
+    int x;
+    int z;
+    int s;
+}
 
 @property (strong,nonatomic) UIView *tstBtn;
 @property (weak,nonatomic) IBOutlet UIImageView * imgProduct;
@@ -22,5 +26,10 @@
 @property (strong,nonatomic) IBOutlet UIButton    *btnMen1;
 @property (strong,nonatomic) IBOutlet UIButton    *btnMen2;
 @property (strong,nonatomic) IBOutlet UIButton    *btnMen3;
+
+@property (strong,nonatomic) UIButton *lblPhone;
+@property (strong,nonatomic) UIButton *lblCell;
+@property (strong,nonatomic) UIButton *btnTw;
+@property (strong,nonatomic) UIButton *btnFb;
 
 @end
