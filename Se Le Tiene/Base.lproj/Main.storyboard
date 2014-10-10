@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sVm-WB-2LI">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -705,6 +704,9 @@ Ofrécelo aquí</string>
                                 <state key="normal" title="Ordenar por">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="qhB-XP-7lh" kind="push" id="y44-UW-W88"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fOX-ar-wgc">
                                 <rect key="frame" x="236" y="119" width="123" height="29"/>
@@ -1140,6 +1142,56 @@ Ofrécelo aquí</string>
             </objects>
             <point key="canvasLocation" x="1746" y="205"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="LgO-10-u60">
+            <objects>
+                <viewController id="ZOv-4u-P4F" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wVD-Sn-hYw"/>
+                        <viewControllerLayoutGuide type="bottom" id="sV1-i2-TKR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7ip-L6-DoK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOb-hJ-GlY">
+                                <rect key="frame" x="0.0" y="20" width="320" height="53"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1m-Bv-2CE">
+                                <rect key="frame" x="0.0" y="81" width="320" height="53"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="teléfono" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqR-KT-tIt">
+                                <rect key="frame" x="0.0" y="142" width="320" height="53"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="teléfono 2 (opcional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ydu-xy-fny">
+                                <rect key="frame" x="0.0" y="203" width="320" height="53"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Kt-T7v">
+                                <rect key="frame" x="25" y="508" width="270" height="60"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Ofrecer servicio">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="thA-SA-BZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120" y="205"/>
+        </scene>
         <!--Offer Ser View Controller-->
         <scene sceneID="M2t-rt-XDU">
             <objects>
@@ -1445,6 +1497,9 @@ Ofrécelo aquí</string>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="377" y="640" width="270" height="60"/>
                                 </variation>
+                                <connections>
+                                    <action selector="btnContact:" destination="474-Z9-zwe" eventType="touchUpInside" id="pK9-JL-F2h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1495,6 +1550,134 @@ Ofrécelo aquí</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgr-hm-7Uu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33" y="1516"/>
+        </scene>
+        <!--Ordenar-->
+        <scene sceneID="jV5-3C-GUp">
+            <objects>
+                <viewController id="qhB-XP-7lh" customClass="OrderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="At0-yX-Vnr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gfb-fS-SN8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kt8-3p-UfN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona uno de los siguientes ítems para ordenar los resultados de la búsqueda " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="nNn-TG-Hsq">
+                                <rect key="frame" x="25" y="72" width="270" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="NbF-J2-058"/>
+                                    <constraint firstAttribute="width" constant="270" id="tQp-ib-Wv1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyH-5A-nRt">
+                                <rect key="frame" x="0.0" y="177" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yOk-0x-Ph1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Calificación">
+                                    <color key="titleColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="activeOrder:" destination="qhB-XP-7lh" eventType="touchUpInside" id="zQq-DL-DJU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mY-AM-ugG">
+                                <rect key="frame" x="0.0" y="226" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SYp-QO-uIP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Ubicación">
+                                    <color key="titleColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="activeOrder:" destination="qhB-XP-7lh" eventType="touchUpInside" id="Bkp-30-6mD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuS-r7-95X">
+                                <rect key="frame" x="0.0" y="275" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sm2-q3-IBE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="A-Z Productos o Servicios">
+                                    <color key="titleColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="activeOrder:" destination="qhB-XP-7lh" eventType="touchUpInside" id="eue-A6-vLD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olL-Jd-UK9">
+                                <rect key="frame" x="0.0" y="324" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="e6a-3U-nG3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="A-Z Ofertante">
+                                    <color key="titleColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="activeOrder:" destination="qhB-XP-7lh" eventType="touchUpInside" id="3la-2r-8Nn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwI-8A-ip8">
+                                <rect key="frame" x="25" y="508" width="270" height="60"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ck9-2W-VeH"/>
+                                    <constraint firstAttribute="width" constant="270" id="Xy2-Ff-r4T"/>
+                                </constraints>
+                                <state key="normal" title="Ordenar resultados">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XyH-5A-nRt" firstAttribute="leading" secondItem="Kt8-3p-UfN" secondAttribute="leading" id="8Ps-Yc-kTx"/>
+                            <constraint firstItem="ZuS-r7-95X" firstAttribute="leading" secondItem="Kt8-3p-UfN" secondAttribute="leading" id="9FH-J6-SyR"/>
+                            <constraint firstItem="olL-Jd-UK9" firstAttribute="leading" secondItem="Kt8-3p-UfN" secondAttribute="leading" id="HoU-ix-H0i"/>
+                            <constraint firstAttribute="trailing" secondItem="olL-Jd-UK9" secondAttribute="trailing" id="LfL-UT-25Y"/>
+                            <constraint firstItem="Gfb-fS-SN8" firstAttribute="top" secondItem="DwI-8A-ip8" secondAttribute="bottom" id="Sf7-Ha-qdw"/>
+                            <constraint firstAttribute="trailing" secondItem="1mY-AM-ugG" secondAttribute="trailing" id="TWv-XV-juV"/>
+                            <constraint firstAttribute="trailing" secondItem="XyH-5A-nRt" secondAttribute="trailing" id="V6c-tK-Ss3"/>
+                            <constraint firstItem="ZuS-r7-95X" firstAttribute="top" secondItem="nNn-TG-Hsq" secondAttribute="bottom" constant="106" id="VrV-Yt-hds"/>
+                            <constraint firstAttribute="centerX" secondItem="nNn-TG-Hsq" secondAttribute="centerX" id="XBd-jZ-MCG"/>
+                            <constraint firstItem="XyH-5A-nRt" firstAttribute="top" secondItem="nNn-TG-Hsq" secondAttribute="bottom" constant="8" id="dCP-nS-lba"/>
+                            <constraint firstItem="olL-Jd-UK9" firstAttribute="top" secondItem="nNn-TG-Hsq" secondAttribute="bottom" constant="155" id="dz6-Z1-P6P"/>
+                            <constraint firstAttribute="trailing" secondItem="ZuS-r7-95X" secondAttribute="trailing" id="iEh-nH-jap"/>
+                            <constraint firstItem="1mY-AM-ugG" firstAttribute="leading" secondItem="Kt8-3p-UfN" secondAttribute="leading" id="kwn-QT-dIe"/>
+                            <constraint firstItem="nNn-TG-Hsq" firstAttribute="top" secondItem="At0-yX-Vnr" secondAttribute="bottom" constant="8" id="qgI-dy-8eZ"/>
+                            <constraint firstAttribute="centerX" secondItem="DwI-8A-ip8" secondAttribute="centerX" id="t2T-H0-gjr"/>
+                            <constraint firstItem="1mY-AM-ugG" firstAttribute="top" secondItem="nNn-TG-Hsq" secondAttribute="bottom" constant="57" id="vPW-89-9c2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ordenar" id="2rx-aA-xgt"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnAZOfr" destination="olL-Jd-UK9" id="zQE-ib-Cv9"/>
+                        <outlet property="btnAZPro" destination="ZuS-r7-95X" id="W66-Lc-79V"/>
+                        <outlet property="btnCal" destination="XyH-5A-nRt" id="Yth-q2-uXh"/>
+                        <outlet property="btnUbi" destination="1mY-AM-ugG" id="zAw-r8-W8q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vwl-Cn-cMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-840" y="934"/>
         </scene>
         <!--Products Cont View Controller-->
         <scene sceneID="0Rm-9o-IRB">
@@ -1728,7 +1911,7 @@ Ofrécelo aquí</string>
         <image name="logo.png" width="355" height="245"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3cj-44-bYx"/>
+        <segue reference="W9R-at-Bf8"/>
         <segue reference="FSP-Om-E3A"/>
         <segue reference="XJq-Y7-VUu"/>
     </inferredMetricsTieBreakers>

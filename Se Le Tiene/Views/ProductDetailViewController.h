@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <pop/POP.h>
 
 @interface ProductDetailViewController : UIViewController
 
-
+@property (strong,nonatomic) UIView *tstBtn;
 @property (weak,nonatomic) IBOutlet UIImageView * imgProduct;
 @property (weak,nonatomic) IBOutlet UILabel     * lblTitleProduct;
 @property (weak,nonatomic) IBOutlet UILabel     * lblUserProduct;
