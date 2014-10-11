@@ -42,6 +42,11 @@
 		EC701BB119E79AA7003912B0 /* btnTws.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BAD19E79AA7003912B0 /* btnTws.png */; };
 		EC701BB219E79AA7003912B0 /* btnFbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BAE19E79AA7003912B0 /* btnFbs@2x.png */; };
 		EC701BB319E79AA7003912B0 /* btnFbs.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BAF19E79AA7003912B0 /* btnFbs.png */; };
+		EC701BBD19E848CB003912B0 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = EC701BBC19E848CB003912B0 /* Product.m */; };
+		EC701BC019E8633B003912B0 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC701BBF19E8633B003912B0 /* APIManager.m */; };
+		EC701BC319E87259003912B0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EC701BC219E87259003912B0 /* User.m */; };
+		EC701BC619E8B70B003912B0 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BC419E8B70B003912B0 /* placeholder@2x.png */; };
+		EC701BC719E8B70B003912B0 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BC519E8B70B003912B0 /* placeholder.png */; };
 		EC74AFE319E5DBA700DB431A /* btnArr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE119E5DBA700DB431A /* btnArr@2x.png */; };
 		EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE219E5DBA700DB431A /* btnArr.png */; };
 		EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFE619E6148300DB431A /* InformationViewController.m */; };
@@ -138,6 +143,14 @@
 		EC701BAD19E79AA7003912B0 /* btnTws.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTws.png; sourceTree = "<group>"; };
 		EC701BAE19E79AA7003912B0 /* btnFbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnFbs@2x.png"; sourceTree = "<group>"; };
 		EC701BAF19E79AA7003912B0 /* btnFbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnFbs.png; sourceTree = "<group>"; };
+		EC701BBB19E848CB003912B0 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = Classes/Product.h; sourceTree = "<group>"; };
+		EC701BBC19E848CB003912B0 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = Classes/Product.m; sourceTree = "<group>"; };
+		EC701BBE19E8633B003912B0 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIManager.h; path = Classes/APIManager.h; sourceTree = "<group>"; };
+		EC701BBF19E8633B003912B0 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIManager.m; path = Classes/APIManager.m; sourceTree = "<group>"; };
+		EC701BC119E87259003912B0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Classes/User.h; sourceTree = "<group>"; };
+		EC701BC219E87259003912B0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Classes/User.m; sourceTree = "<group>"; };
+		EC701BC419E8B70B003912B0 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		EC701BC519E8B70B003912B0 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		EC74AFE119E5DBA700DB431A /* btnArr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnArr@2x.png"; sourceTree = "<group>"; };
 		EC74AFE219E5DBA700DB431A /* btnArr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnArr.png; sourceTree = "<group>"; };
 		EC74AFE519E6148300DB431A /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationViewController.h; path = Views/Information/InformationViewController.h; sourceTree = "<group>"; };
@@ -248,6 +261,7 @@
 		EC108B7519D8E2F000CBBC17 /* Se Le Tiene */ = {
 			isa = PBXGroup;
 			children = (
+				EC701BBA19E84888003912B0 /* Classes */,
 				EC1F86B519DBA4DE0019CA9F /* Views */,
 				EC108BEB19DA108B00CBBC17 /* Assets */,
 				EC108B7A19D8E2F000CBBC17 /* AppDelegate.h */,
@@ -303,6 +317,8 @@
 		EC108BEC19DA108B00CBBC17 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EC701BC419E8B70B003912B0 /* placeholder@2x.png */,
+				EC701BC519E8B70B003912B0 /* placeholder.png */,
 				EC701BA819E77DC2003912B0 /* bgContact@2x.png */,
 				EC701BA919E77DC2003912B0 /* bgContact.png */,
 				ECCEECE819DF4DF8007A88B6 /* amasijos3.jpg */,
@@ -340,6 +356,19 @@
 				ECC108FE19E481B9003335EF /* Register */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		EC701BBA19E84888003912B0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC701BC119E87259003912B0 /* User.h */,
+				EC701BC219E87259003912B0 /* User.m */,
+				EC701BBB19E848CB003912B0 /* Product.h */,
+				EC701BBC19E848CB003912B0 /* Product.m */,
+				EC701BBE19E8633B003912B0 /* APIManager.h */,
+				EC701BBF19E8633B003912B0 /* APIManager.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		EC74AFE819E6149F00DB431A /* Information */ = {
@@ -566,6 +595,7 @@
 				ECD6D9A419DCFC0800B2F48E /* btnGrid@2x.png in Resources */,
 				ECCEECF519E099F2007A88B6 /* btnSearchMenu.png in Resources */,
 				EC701BB219E79AA7003912B0 /* btnFbs@2x.png in Resources */,
+				EC701BC719E8B70B003912B0 /* placeholder.png in Resources */,
 				EC108B8A19D8E2F000CBBC17 /* LaunchScreen.xib in Resources */,
 				EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */,
 				EC108C0319DA108B00CBBC17 /* logo.png in Resources */,
@@ -584,6 +614,7 @@
 				EC108C0419DA108B00CBBC17 /* logo@2x.png in Resources */,
 				EC66560619DE44C1005B0B00 /* btnSearch.png in Resources */,
 				EC701BB119E79AA7003912B0 /* btnTws.png in Resources */,
+				EC701BC619E8B70B003912B0 /* placeholder@2x.png in Resources */,
 				EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */,
 				EC701BB319E79AA7003912B0 /* btnFbs.png in Resources */,
 				EC108BFE19DA108B00CBBC17 /* btnEmail@2x.png in Resources */,
@@ -643,6 +674,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC701BC319E87259003912B0 /* User.m in Sources */,
 				ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */,
 				EC66561519DF01AB005B0B00 /* EmptySegue.m in Sources */,
 				ECC1090719E4A11E003335EF /* RememberViewController.m in Sources */,
@@ -657,6 +689,7 @@
 				ECCEECFC19E227D6007A88B6 /* ProductDetailViewController.m in Sources */,
 				EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */,
 				ECCEED1E19E3A2C0007A88B6 /* ContainerViewOffer.m in Sources */,
+				EC701BC019E8633B003912B0 /* APIManager.m in Sources */,
 				ECCEED1B19E392F0007A88B6 /* OfferSerViewController.m in Sources */,
 				EC108B7919D8E2F000CBBC17 /* main.m in Sources */,
 				ECC1090A19E4B2BA003335EF /* LogViewController.m in Sources */,
@@ -664,6 +697,7 @@
 				ECCEED0D19E2F09C007A88B6 /* OfferViewController.m in Sources */,
 				ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */,
 				ECCEECEC19DF9107007A88B6 /* ProductsTableViewCell.m in Sources */,
+				EC701BBD19E848CB003912B0 /* Product.m in Sources */,
 				ECD6D9AA19DD0B3900B2F48E /* ProductCollectionViewCell.m in Sources */,
 				EC1F86B419DBA41D0019CA9F /* LoginViewController.m in Sources */,
 			);

@@ -31,28 +31,26 @@
     [self.view.layer addSublayer:sublayer];*/
     
     
+    double sw = self.view.bounds.size.width;
 
     btnMen1 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen1.frame = CGRectMake(0, 0, self.viewMenu.bounds.size.width/3, 60);
+    btnMen1.frame = CGRectMake(0, 0, sw/3, 60);
     [btnMen1 setImage:[UIImage imageNamed:@"btnSearchMenu"] forState:UIControlStateNormal];
     btnMen1.tintColor = [UIColor colorWithRed:0.263 green:0.596 blue:0.804 alpha:1];
     [viewMenu addSubview:btnMen1];
     
     
     btnMen2 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen2.frame = CGRectMake(self.viewMenu.bounds.size.width/3, 0, self.viewMenu.bounds.size.width/3, 60);
+    btnMen2.frame = CGRectMake(sw/3, 0, sw/3, 60);
     [btnMen2 setImage:[UIImage imageNamed:@"btnAddMenu"] forState:UIControlStateNormal];
     btnMen2.tintColor = [UIColor whiteColor];
     [viewMenu addSubview:btnMen2];
     
     btnMen3 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen3.frame = CGRectMake((self.viewMenu.bounds.size.width/3)*2, 0, self.viewMenu.bounds.size.width/3, 60);
+    btnMen3.frame = CGRectMake((sw/3)*2, 0, sw/3, 60);
     [btnMen3 setImage:[UIImage imageNamed:@"btnUserMenu"] forState:UIControlStateNormal];
     btnMen3.tintColor = [UIColor whiteColor];
     [viewMenu addSubview:btnMen3];
-    
-    
-    
     
 
     [btnMen2 addTarget:self action:@selector(addProduct:) forControlEvents:UIControlEventTouchUpInside];
@@ -111,6 +109,8 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    /*UITouch *touch = [touches anyObject];
+     NSLog(@"Touched view  %@",[touch.view class] );*/
     [searchBar resignFirstResponder];
 }
 

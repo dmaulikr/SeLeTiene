@@ -10,4 +10,6 @@
 
 @interface ProductTableViewController : UITableViewController
 
+extern NSMutableArray *productsArray;
+
 @end

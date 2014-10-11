@@ -8,6 +8,7 @@
 
 #import "ProductTableViewController.h"
 #import "ProductsTableViewCell.h"
+#import "Product.h"
 
 @interface ProductTableViewController ()
 
@@ -46,15 +47,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProductsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
+    Product *prdTemp = (Product*)[productsArray objectAtIndex:indexPath.row];
+    
+    
     cell.imgProduct.layer.cornerRadius = 4;
     cell.imgProduct.layer.masksToBounds = YES;
     
+    
+    
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.imgProduct.layer.cornerRadius = 3;
+    
+    if (![prdTemp getImageProduct]) {
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            NSData * data = [[NSData alloc] initWithContentsOfURL: [prdTemp getImageURL]];
+            if ( data == nil )
+                return;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [((Product*)[productsArray objectAtIndex:indexPath.row]) setImageProduct:[UIImage imageWithData: data]];
+                cell.imgProduct.image = [UIImage imageWithData: data];
+            });
+        });
+    }else{
+        cell.imgProduct.image = [prdTemp getImageProduct];
+    }
+    
+    cell.imgProduct.layer.masksToBounds = YES;
+    cell.lblNameProduct.text = prdTemp.getNamProduct;
+
     return cell;
 }
 
 /*
 // Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)tableView:(UITableV3iew *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }

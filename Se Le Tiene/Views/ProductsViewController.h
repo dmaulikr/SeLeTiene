@@ -15,7 +15,6 @@
 @interface ProductsViewController : UIViewController <UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *viewLoaded;
-
 @property (strong,nonatomic) ProductsContViewController *GridView;
 @property (strong,nonatomic) ProductTableViewController *ListView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *typeView;

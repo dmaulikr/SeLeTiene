@@ -7,6 +7,7 @@
 //
 
 #import "ProductDetailViewController.h"
+#import "APIManager.h"
 
 @interface ProductDetailViewController ()
 
@@ -19,6 +20,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
 
+    NSLog(@"Entro al detalle");
+    
+    APIManager *test = [[APIManager alloc]init];
+    [test rememberPass:@"Test"];
+    
+    
+    
     [imgProduct.layer setShadowOffset:CGSizeMake(0, 3)];
     [imgProduct.layer setCornerRadius:5];
     [imgProduct.layer setShadowOpacity:0.4];
@@ -27,7 +35,6 @@
     imgProduct.layer.masksToBounds = YES;
     [imgProduct.layer setCornerRadius:10.0f];
     [imgProduct.layer setShadowPath: [[UIBezierPath bezierPathWithRoundedRect:imgProduct.layer.bounds cornerRadius:12.0f] CGPath]];
-    
     DescProduct.textAlignment = NSTextAlignmentJustified;
     
     btnContact.layer.cornerRadius = 10.0f;
@@ -35,20 +42,22 @@
     self.navigationController.title = @"Ofrecer";
     self.title = @"Ofrecer";
     
+    
+    NSLog(@"Ancho para el menu %f", self.view.bounds.size.width);
     btnMen1 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen1.frame = CGRectMake(0, 0, self.viewMenu.bounds.size.width/3, 60);
+    btnMen1.frame = CGRectMake(0, 0, self.view.bounds.size.width/3, 60);
     [btnMen1 setImage:[UIImage imageNamed:@"btnSearchMenu"] forState:UIControlStateNormal];
     btnMen1.tintColor = [UIColor colorWithRed:0.263 green:0.596 blue:0.804 alpha:1];
     [viewMenu addSubview:btnMen1];
     
     btnMen2 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen2.frame = CGRectMake(self.viewMenu.bounds.size.width/3, 0, self.viewMenu.bounds.size.width/3, 60);
+    btnMen2.frame = CGRectMake(self.view.bounds.size.width/3, 0, self.view.bounds.size.width/3, 60);
     [btnMen2 setImage:[UIImage imageNamed:@"btnAddMenu"] forState:UIControlStateNormal];
     btnMen2.tintColor = [UIColor whiteColor];
     [viewMenu addSubview:btnMen2];
     
     btnMen3 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen3.frame = CGRectMake((self.viewMenu.bounds.size.width/3)*2, 0, self.viewMenu.bounds.size.width/3, 60);
+    btnMen3.frame = CGRectMake((self.view.bounds.size.width/3)*2, 0, self.view.bounds.size.width/3, 60);
     [btnMen3 setImage:[UIImage imageNamed:@"btnUserMenu"] forState:UIControlStateNormal];
     btnMen3.tintColor = [UIColor whiteColor];
     [viewMenu addSubview:btnMen3];
@@ -197,7 +206,6 @@
     [lblPhone setTitle:@"2237204" forState:UIControlStateNormal];
     lblPhone.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
-    [lblPhone setEnabled:NO];
     [tstBtn addSubview:lblPhone];
     
     lblCell = [[UIButton alloc] initWithFrame:CGRectMake(50, 40, 230, 40)];
@@ -205,7 +213,6 @@
     
     [lblCell setTitle:@"3145295322" forState:UIControlStateNormal];
     lblCell.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [lblCell setEnabled:NO];
     [tstBtn addSubview:lblCell];
     
     UITextField *lblEmail = [[UITextField alloc] initWithFrame:CGRectMake(50, 80, 230, 40)];
@@ -268,5 +275,9 @@
     NSLog(@"Fb...");
 }
 
+-(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+    return NO;
+}
 
 @end

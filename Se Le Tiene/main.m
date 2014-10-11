@@ -11,7 +11,7 @@
 
 
 int dev;
-
+NSMutableArray *productsArray;
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         NSString *deviceModel = (NSString*)[UIDevice currentDevice].model;
