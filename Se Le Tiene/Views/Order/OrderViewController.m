@@ -29,7 +29,7 @@
 
 - (IBAction)activeOrder:(id)sender {
     UIButton *tmpBtn = sender;
-    tmpBtn.backgroundColor = [UIColor colorWithRed:0.000 green:0.333 blue:0.651 alpha:1];
+    tmpBtn.backgroundColor = [UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1];
     [tmpBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 @end

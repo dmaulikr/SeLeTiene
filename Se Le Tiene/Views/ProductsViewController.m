@@ -10,6 +10,7 @@
 #import "ProductTableViewController.h"
 #import "Filter/FilterViewController.h"
 #import "Offer/OfferViewController.h"
+#import "AccountViewController.h"
 
 
 @interface ProductsViewController ()
@@ -54,6 +55,7 @@
     
 
     [btnMen2 addTarget:self action:@selector(addProduct:) forControlEvents:UIControlEventTouchUpInside];
+    [btnMen3 addTarget:self action:@selector(goAccount:) forControlEvents:UIControlEventTouchUpInside];
     
     
     GridView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -128,6 +130,12 @@
 -(IBAction)addProduct:(id)sender{
     OfferViewController *oVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OfferView"];
     [self.navigationController pushViewController:oVC animated:YES];
+}
+
+
+-(IBAction)goAccount:(id)sender{
+    AccountViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountView"];
+    [self.navigationController pushViewController:aVC animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

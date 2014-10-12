@@ -14,7 +14,7 @@
 @end
 
 @implementation ProductDetailViewController
-@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,btnMen1,btnMen2,btnMen3,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell;
+@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,btnMen1,btnMen2,btnMen3,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell, download;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,9 +23,17 @@
     NSLog(@"Entro al detalle");
     
     APIManager *test = [[APIManager alloc]init];
+    test.delegate = self;
     [test rememberPass:@"Test"];
     
+    download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
+    CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
+    download.transform = transform;
     
+    
+    download.progress = 0.0;
+    [self.view addSubview:download];
     
     [imgProduct.layer setShadowOffset:CGSizeMake(0, 3)];
     [imgProduct.layer setCornerRadius:5];
@@ -258,6 +266,22 @@
     [lblPhone addTarget:self action:@selector(callPhone:) forControlEvents: UIControlEventTouchUpInside];
     [btnTw addTarget:self action:@selector(shareTw:) forControlEvents: UIControlEventTouchUpInside];
     [btnFb addTarget:self action:@selector(shareFb:) forControlEvents: UIControlEventTouchUpInside];
+}
+
+
+- (void) percentageDownloaded:(double)dataDownloaded{
+    download.progress = dataDownloaded;
+    if (download.progress == 1.0) {
+        download.tintColor = [UIColor colorWithRed:0.490 green:0.773 blue:0.482 alpha:1];
+    }
+}
+
+-(void) loadedImage:(UIImage *)imageLoaded{
+    self.imgProduct.image = imageLoaded;
+}
+
+- (void) miPerro:(NSString*)textoPerro{
+    NSLog(@"perro: %@", textoPerro);
 }
 
 -(IBAction)callPhone:(id)sender{

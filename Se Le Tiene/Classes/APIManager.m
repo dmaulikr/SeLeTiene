@@ -72,7 +72,7 @@
 
 -(UIImage*) getImageTest{
     UIImage * test;
-    NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://buenainfanciamodeon.files.wordpress.com/2013/09/gvhfgh.png"]];
+    NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.karmapanda.com/wp-content/uploads/2008/12/gato-envuelto.jpg"]];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
     [connection start];
     NSLog(@"Entro aca");
@@ -175,9 +175,11 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"%@",connection);
+    //NSLog(@"%@",connection.currentRequest.URL);
     datos += data.length;
-    NSLog(@"Progress %f", datos / (float)total);
+    //NSLog(@"Progress %f", datos / (float)total);
+    [self.delegate percentageDownloaded: datos / (float)total];
+    
     [apiData appendData:data];
 }
 
@@ -186,7 +188,11 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
    //  NSLog(@"Se atreve a entrar por aca?");
-    NSDictionary *apiResponse = [NSJSONSerialization JSONObjectWithData:apiData options:kNilOptions error:nil];
+    if ([[NSString stringWithFormat:@"%@",connection.currentRequest.URL] isEqualToString:@"http://www.karmapanda.com/wp-content/uploads/2008/12/gato-envuelto.jpg"]) {
+        [self.delegate loadedImage:[UIImage imageWithData:apiData]];
+    }else{
+        NSDictionary *apiResponse = [NSJSONSerialization JSONObjectWithData:apiData options:kNilOptions error:nil];
+    }
     //NSArray *events = [apiResponse objectForKey:@"owner"];
    // NSLog(@"%@",connection);
     //NSLog(@"WTH %@",apiResponse);

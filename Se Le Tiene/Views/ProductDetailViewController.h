@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <pop/POP.h>
+#import "APIManager.h"
 
-@interface ProductDetailViewController : UIViewController{
+@interface ProductDetailViewController : UIViewController <APIManagerDelegate>{
     int x;
     int z;
     int s;
 }
-
+@property (strong,nonatomic) UIProgressView* download;
 @property (strong,nonatomic) UIView *tstBtn;
 @property (weak,nonatomic) IBOutlet UIImageView * imgProduct;
 @property (weak,nonatomic) IBOutlet UILabel     * lblTitleProduct;

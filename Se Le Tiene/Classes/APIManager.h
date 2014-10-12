@@ -11,6 +11,14 @@
 #import "User.h"
 #import "Product.h"
 
+@class APIManager;
+
+@protocol APIManagerDelegate <NSObject>
+@optional
+- (void) percentageDownloaded:(double)dataDownloaded;
+- (void) loadedImage:(UIImage*)imageLoaded;
+@end
+
 @interface APIManager : NSObject <NSURLConnectionDataDelegate,NSURLConnectionDelegate>
 {
     NSMutableData *apiData;
@@ -31,5 +39,6 @@
 -(NSMutableArray*)getProducts;
 -(Product*)getProductDetail:(int)idProduct;
 
+@property (nonatomic, weak) id <APIManagerDelegate> delegate;
 
 @end
