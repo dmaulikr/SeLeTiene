@@ -189,6 +189,7 @@
 		EC701BEA19E9DA4C003912B0 /* star_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_off.png; sourceTree = "<group>"; };
 		EC701BED19E9F40B003912B0 /* EditAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditAccountViewController.h; path = Views/Account/EditAccountViewController.h; sourceTree = "<group>"; };
 		EC701BEE19E9F40B003912B0 /* EditAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditAccountViewController.m; path = Views/Account/EditAccountViewController.m; sourceTree = "<group>"; };
+		EC701BF019EA3D67003912B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EC74AFE119E5DBA700DB431A /* btnArr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnArr@2x.png"; sourceTree = "<group>"; };
 		EC74AFE219E5DBA700DB431A /* btnArr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnArr.png; sourceTree = "<group>"; };
 		EC74AFE519E6148300DB431A /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationViewController.h; path = Views/Information/InformationViewController.h; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 		C55CE4518C9843EAB09FFEDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC701BF019EA3D67003912B0 /* QuartzCore.framework */,
 				4630E06125C741DC9F43B19D /* libPods.a */,
 			);
 			name = Frameworks;

@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     self.title = @"Mi Cuenta";
     contactView.layer.cornerRadius = 5.0f;
@@ -60,7 +61,8 @@
 }
 
 -(IBAction)editUser:(id)sender{
-    
+    EditAccountViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EditView"];
+    [self.navigationController pushViewController:eVC animated:YES];
 }
 
 /*
