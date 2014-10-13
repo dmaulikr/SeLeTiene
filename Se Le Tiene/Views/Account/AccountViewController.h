@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuView.h"
 
-@interface AccountViewController : UIViewController
+
+@interface AccountViewController : UIViewController <MenuViewDelegate>{
+    CATransition *transition;
+}
 @property (weak, nonatomic) IBOutlet UILabel *lblNameUser;
 @property (weak, nonatomic) IBOutlet UIView *contactView;
 @property (weak, nonatomic) IBOutlet UILabel *lblPhoneUser;
@@ -17,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnLogout;
 @property (weak, nonatomic) IBOutlet UIButton *btnFavorites;
 @property (weak, nonatomic) IBOutlet UIButton *btnLastOpened;
-@property (weak, nonatomic) IBOutlet UIView *menuView;
+@property (weak, nonatomic) IBOutlet MenuView *menuView;
 
 @end

@@ -8,13 +8,14 @@
 
 #import "AccountViewController.h"
 #import "EditAccountViewController.h"
+#import "OfferViewController.h"
 
 @interface AccountViewController ()
 
 @end
 
 @implementation AccountViewController
-@synthesize btnFavorites,btnLastOpened,btnLogout,lblCellPhoneUser,lblEmail,lblNameUser,lblPhoneUser,contactView;
+@synthesize btnFavorites,btnLastOpened,btnLogout,lblCellPhoneUser,lblEmail,lblNameUser,lblPhoneUser,contactView,menuView;
 
 
 
@@ -54,15 +55,38 @@
     [imgArr setImage:image];
     [btnLastOpened addSubview:imgArr];
     
-    
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Editar" style:UIBarButtonItemStylePlain target:self action:@selector(editUser:)];
     self.navigationItem.rightBarButtonItem = anotherButton;
     
+    menuView.delegate = self;
+    [menuView setButton:3];
+    
+    transition = [CATransition animation];
+    transition.duration = 0.5f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
 }
 
 -(IBAction)editUser:(id)sender{
     EditAccountViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EditView"];
-    [self.navigationController pushViewController:eVC animated:YES];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:eVC animated:NO];
+}
+
+
+#pragma MENU DELEGATE
+
+- (void) fiendView{
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+- (void) addView{
+    OfferViewController *oVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OfferView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:oVC animated:NO];
+}
+- (void) profileView{
+    
 }
 
 /*

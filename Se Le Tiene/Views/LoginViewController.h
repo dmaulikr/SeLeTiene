@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController{
+    CATransition *transition;
+}
 
 
 @property (strong,nonatomic) IBOutlet UIButton *btnOffer;

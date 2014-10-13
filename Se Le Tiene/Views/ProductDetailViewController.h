@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <pop/POP.h>
 #import "APIManager.h"
+#import "MenuView.h"
 
-@interface ProductDetailViewController : UIViewController <APIManagerDelegate>{
+@interface ProductDetailViewController : UIViewController <APIManagerDelegate,MenuViewDelegate>{
     int x;
     int z;
     int s;
+    CATransition *transition;
 }
 @property (strong,nonatomic) UIProgressView* download;
 @property (strong,nonatomic) UIView *tstBtn;
@@ -23,10 +25,9 @@
 @property (weak,nonatomic) IBOutlet UILabel     * DescProduct;
 @property (weak,nonatomic) IBOutlet UIButton    * btnContact;
 
-@property (weak,nonatomic)   IBOutlet UIView      *viewMenu;
-@property (strong,nonatomic) IBOutlet UIButton    *btnMen1;
-@property (strong,nonatomic) IBOutlet UIButton    *btnMen2;
-@property (strong,nonatomic) IBOutlet UIButton    *btnMen3;
+@property (strong,nonatomic) UIButton *favBtn;
+
+@property (weak,nonatomic)   IBOutlet MenuView  *viewMenu;
 
 @property (strong,nonatomic) UIButton *lblPhone;
 @property (strong,nonatomic) UIButton *lblCell;

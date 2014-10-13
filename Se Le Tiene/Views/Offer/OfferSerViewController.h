@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OfferSerViewController : UIViewController
+@interface OfferSerViewController : UIViewController <UITextViewDelegate>{
+    int yPos;
+    int sW;
+    int sH;
+}
+
 @property (weak, nonatomic) IBOutlet UIButton *btnType;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;
 @property (weak, nonatomic) IBOutlet UITextView *txtCapac;
+extern int dev;
+
 @end

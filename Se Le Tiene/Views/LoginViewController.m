@@ -7,6 +7,11 @@
 //
 
 #import "LoginViewController.h"
+#import "InformationViewController.h"
+#import "RegisterViewController.h"
+#import "LogViewController.h"
+#import "ProductsViewController.h"
+
 
 @interface LoginViewController ()
 
@@ -20,6 +25,11 @@
     self.btnOffer.titleLabel.numberOfLines = 2;
     self.btnOffer.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.btnOffer.titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    transition = [CATransition animation];
+    transition.duration = 0.5f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -29,6 +39,26 @@
 - (IBAction)getInformation:(id)sender {
     NSLog(@"Funciona Boton");
     
+}
+- (IBAction)signIn:(id)sender {
+    LogViewController *lVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:lVC animated:NO];
+}
+- (IBAction)loginFb:(id)sender {
+    ProductsViewController *PVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProdView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:PVC animated:NO];
+}
+- (IBAction)signUp:(id)sender {
+    RegisterViewController *RVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:RVC animated:NO];
+}
+- (IBAction)getInfo:(id)sender {
+    InformationViewController *iVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:iVC animated:NO];
 }
 
 @end

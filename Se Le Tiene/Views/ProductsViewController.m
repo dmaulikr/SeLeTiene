@@ -18,45 +18,22 @@
 @end
 
 @implementation ProductsViewController
-@synthesize GridView,ListView,typeView,searchBar,btnFilter,btnOpenPopUP,loader, btnMen1, btnMen2, btnMen3, viewMenu;
+@synthesize GridView,ListView,typeView,searchBar,btnFilter,btnOpenPopUP,loader,viewMenu,imgTmp,download;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoHeader"]];
-
     
+    imgTmp = [[UIImageView alloc] initWithFrame:CGRectMake(0, 94, self.view.bounds.size.width, self.view.bounds.size.height - 220)];
+    //imgTmp.alpha = 0.3;
     /*CALayer *sublayer = [CALayer layer];
     sublayer.backgroundColor = [UIColor blueColor].CGColor;
     sublayer.frame = CGRectMake(0, 0, self.view.bounds.size.width,searchBar.bounds.size.height);
     [self.view.layer addSublayer:sublayer];*/
     
-    
-    double sw = self.view.bounds.size.width;
-
-    btnMen1 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen1.frame = CGRectMake(0, 0, sw/3, 60);
-    [btnMen1 setImage:[UIImage imageNamed:@"btnSearchMenu"] forState:UIControlStateNormal];
-    btnMen1.tintColor = [UIColor colorWithRed:0.263 green:0.596 blue:0.804 alpha:1];
-    [viewMenu addSubview:btnMen1];
-    
-    
-    btnMen2 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen2.frame = CGRectMake(sw/3, 0, sw/3, 60);
-    [btnMen2 setImage:[UIImage imageNamed:@"btnAddMenu"] forState:UIControlStateNormal];
-    btnMen2.tintColor = [UIColor whiteColor];
-    [viewMenu addSubview:btnMen2];
-    
-    btnMen3 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen3.frame = CGRectMake((sw/3)*2, 0, sw/3, 60);
-    [btnMen3 setImage:[UIImage imageNamed:@"btnUserMenu"] forState:UIControlStateNormal];
-    btnMen3.tintColor = [UIColor whiteColor];
-    [viewMenu addSubview:btnMen3];
-    
-
-    [btnMen2 addTarget:self action:@selector(addProduct:) forControlEvents:UIControlEventTouchUpInside];
-    [btnMen3 addTarget:self action:@selector(goAccount:) forControlEvents:UIControlEventTouchUpInside];
-    
+    viewMenu.delegate = self;
+    [viewMenu setButton:1];
     
     GridView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     GridView.view.frame = CGRectMake(0, 0, self.viewLoaded.bounds.size.width,self.viewLoaded.bounds.size.height);
@@ -90,6 +67,10 @@
     btnOpenPopUP.layer.borderWidth = 1.0f;
     btnOpenPopUP.layer.cornerRadius = 5.0f;
     
+    transition = [CATransition animation];
+    transition.duration = 0.5f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,12 +78,37 @@
 }
 
 
-// SEARCH BAR METHODS DELEGATE
+-(void)viewDidAppear:(BOOL)animated{
+    APIManager *test = [[APIManager alloc]init];
+    test.delegate = self;
+    [test rememberPass:@"Test"];
+    download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    download.alpha = 0.5;
+    download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
+    download.backgroundColor = [UIColor redColor];
+    download.layer.backgroundColor = [UIColor orangeColor].CGColor;
+    CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
+    download.transform = transform;
+    download.progress = 0.0;
+    [self.view addSubview:download];
+}
+
+
+
+#pragma SEARCH BAR METHODS DELEGATE
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"Buscando: %@", self.searchBar.text);
     
     [self.searchBar resignFirstResponder];
 }
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    imgTmp.image = [self captureScreen];
+
+    [self.view addSubview:imgTmp];
+}
+
 - (void)searchBarBookmarkButtonClicked:(UISearchBar *)searchBar{
     [self.searchBar resignFirstResponder];
 }
@@ -111,31 +117,17 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    /*UITouch *touch = [touches anyObject];
-     NSLog(@"Touched view  %@",[touch.view class] );*/
     [searchBar resignFirstResponder];
 }
 
 
-// CUSTOM METHODS
+#pragma CUSTOM METHODS
 
 - (IBAction)changeView:(id)sender {
     //[[self.viewLoaded subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UISegmentedControl * tmpControl = sender;
     NSLog(@"Selected %ld", (long)tmpControl.selectedSegmentIndex);
     [self.containerViewController swapViewControllers];
-}
-
-
--(IBAction)addProduct:(id)sender{
-    OfferViewController *oVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OfferView"];
-    [self.navigationController pushViewController:oVC animated:YES];
-}
-
-
--(IBAction)goAccount:(id)sender{
-    AccountViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountView"];
-    [self.navigationController pushViewController:aVC animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -148,7 +140,54 @@
 }
 - (IBAction)filterSearch:(id)sender {
     FilterViewController *fVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FilterView"];
-    [self.navigationController pushViewController:fVC animated:NO];
+    [self.navigationController pushViewController:fVC animated:YES];
+}
+
+- (UIImage *) captureScreen {
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    CGRect rect = [keyWindow bounds];
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [keyWindow.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    
+    CGRect clippedRect  = CGRectMake(0 ,158,img.size.width, self.view.bounds.size.height - 160);
+    CGImageRef imageRef = CGImageCreateWithImageInRect(img.CGImage, clippedRect);
+    
+    return [UIImage imageWithCGImage:imageRef];
+}
+
+#pragma MENU DELEGATE
+
+- (void) fiendView{
+    NSLog(@"Uno");
+}
+- (void) addView{
+    OfferViewController *oVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OfferView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:oVC animated:NO];
+}
+- (void) profileView{
+    AccountViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:aVC animated:NO];
+}
+
+
+#pragma API DELEGATE
+
+- (void) percentageDownloaded:(double)dataDownloaded{
+    download.progress = dataDownloaded;
+    if (download.progress == 1.0) {
+        download.tintColor = [UIColor colorWithRed:0.490 green:0.773 blue:0.482 alpha:1];
+        [download removeFromSuperview];
+    }
+}
+
+-(void) loadedImage:(UIImage *)imageLoaded{
+    //self.imgProduct.image = imageLoaded;
 }
 
 @end

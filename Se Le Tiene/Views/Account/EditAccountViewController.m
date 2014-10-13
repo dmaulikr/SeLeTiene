@@ -7,6 +7,7 @@
 //
 
 #import "EditAccountViewController.h"
+#import "OfferViewController.h"
 
 @interface EditAccountViewController ()
 
@@ -44,6 +45,15 @@
     txtCellPhone.backgroundColor = [UIColor whiteColor];
     txtCellPhone.leftViewMode = UITextFieldViewModeAlways;
     btnSave.layer.cornerRadius = 5.0f;
+    
+    menuView.delegate = self;
+    [menuView setButton:3];
+    
+    transition = [CATransition animation];
+    transition.duration = 0.5f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
+    
 }
 
 #pragma DELEGATE METHODS
@@ -54,8 +64,6 @@
     [txtCellPhone resignFirstResponder];
     [txtPhone resignFirstResponder];
 }
-
-
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
@@ -101,6 +109,21 @@
     [txtPhone resignFirstResponder];
     /*EditAccountViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EditView"];
      [self.navigationController pushViewController:eVC animated:YES];*/
+}
+
+#pragma MENU DELEGATE
+
+- (void) fiendView{
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+- (void) addView{
+    OfferViewController *oVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OfferView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:oVC animated:NO];
+}
+- (void) profileView{
+    
 }
 
 

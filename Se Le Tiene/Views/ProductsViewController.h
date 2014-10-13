@@ -10,10 +10,14 @@
 #import "ProductsContViewController.h"
 #import "ContainerViewController.h"
 #import "ProductTableViewController.h"
+#import "MenuView.h"
+#import "APIManager.h"
 
 
-@interface ProductsViewController : UIViewController <UISearchBarDelegate>
-
+@interface ProductsViewController : UIViewController <UISearchBarDelegate,MenuViewDelegate,APIManagerDelegate>{
+    CATransition *transition;
+}
+@property (strong,nonatomic) UIProgressView* download;
 @property (weak, nonatomic) IBOutlet UIView *viewLoaded;
 @property (strong,nonatomic) ProductsContViewController *GridView;
 @property (strong,nonatomic) ProductTableViewController *ListView;
@@ -25,10 +29,9 @@
 
 @property (retain,nonatomic) UIProgressView *loader;
 
-@property (weak, nonatomic) IBOutlet UIView *viewMenu;
-@property (strong,nonatomic) IBOutlet UIButton *btnMen1;
-@property (strong,nonatomic) IBOutlet UIButton *btnMen2;
-@property (strong,nonatomic) IBOutlet UIButton *btnMen3;
+@property (weak, nonatomic) IBOutlet MenuView *viewMenu;
+
+@property (strong,nonatomic) UIImageView *imgTmp;
 
 
 @end

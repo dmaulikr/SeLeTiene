@@ -65,6 +65,7 @@
 		EC701BEB19E9DA4C003912B0 /* star_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BE919E9DA4C003912B0 /* star_off@2x.png */; };
 		EC701BEC19E9DA4C003912B0 /* star_off.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BEA19E9DA4C003912B0 /* star_off.png */; };
 		EC701BEF19E9F40B003912B0 /* EditAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC701BEE19E9F40B003912B0 /* EditAccountViewController.m */; };
+		EC701BF419EAF7DC003912B0 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC701BF319EAF7DC003912B0 /* MenuView.m */; };
 		EC74AFE319E5DBA700DB431A /* btnArr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE119E5DBA700DB431A /* btnArr@2x.png */; };
 		EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE219E5DBA700DB431A /* btnArr.png */; };
 		EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFE619E6148300DB431A /* InformationViewController.m */; };
@@ -190,6 +191,8 @@
 		EC701BED19E9F40B003912B0 /* EditAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditAccountViewController.h; path = Views/Account/EditAccountViewController.h; sourceTree = "<group>"; };
 		EC701BEE19E9F40B003912B0 /* EditAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditAccountViewController.m; path = Views/Account/EditAccountViewController.m; sourceTree = "<group>"; };
 		EC701BF019EA3D67003912B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EC701BF219EAF7DC003912B0 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuView.h; path = Views/Components/MenuView.h; sourceTree = "<group>"; };
+		EC701BF319EAF7DC003912B0 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuView.m; path = Views/Components/MenuView.m; sourceTree = "<group>"; };
 		EC74AFE119E5DBA700DB431A /* btnArr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnArr@2x.png"; sourceTree = "<group>"; };
 		EC74AFE219E5DBA700DB431A /* btnArr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnArr.png; sourceTree = "<group>"; };
 		EC74AFE519E6148300DB431A /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationViewController.h; path = Views/Information/InformationViewController.h; sourceTree = "<group>"; };
@@ -567,6 +570,8 @@
 				ECCEECED19DF9D77007A88B6 /* ProductsView */,
 				EC66560819DE5486005B0B00 /* NVControllerGeneric.h */,
 				EC66560719DE5486005B0B00 /* NVControllerGeneric.m */,
+				EC701BF219EAF7DC003912B0 /* MenuView.h */,
+				EC701BF319EAF7DC003912B0 /* MenuView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -767,6 +772,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC701BC319E87259003912B0 /* User.m in Sources */,
+				EC701BF419EAF7DC003912B0 /* MenuView.m in Sources */,
 				ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */,
 				EC66561519DF01AB005B0B00 /* EmptySegue.m in Sources */,
 				ECC1090719E4A11E003335EF /* RememberViewController.m in Sources */,

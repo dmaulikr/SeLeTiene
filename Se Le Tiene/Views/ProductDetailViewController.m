@@ -8,20 +8,19 @@
 
 #import "ProductDetailViewController.h"
 #import "APIManager.h"
+#import "Offer/OfferViewController.h"
+#import "AccountViewController.h"
 
 @interface ProductDetailViewController ()
 
 @end
 
 @implementation ProductDetailViewController
-@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,btnMen1,btnMen2,btnMen3,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell, download;
+@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell,download,favBtn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-
-    NSLog(@"Entro al detalle");
-    
     APIManager *test = [[APIManager alloc]init];
     test.delegate = self;
     [test rememberPass:@"Test"];
@@ -30,8 +29,6 @@
     download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
     CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
     download.transform = transform;
-    
-    
     download.progress = 0.0;
     [self.view addSubview:download];
     
@@ -50,34 +47,27 @@
     self.navigationController.title = @"Ofrecer";
     self.title = @"Ofrecer";
     
+    transition = [CATransition animation];
+    transition.duration = 0.5f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
     
-    NSLog(@"Ancho para el menu %f", self.view.bounds.size.width);
-    btnMen1 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen1.frame = CGRectMake(0, 0, self.view.bounds.size.width/3, 60);
-    [btnMen1 setImage:[UIImage imageNamed:@"btnSearchMenu"] forState:UIControlStateNormal];
-    btnMen1.tintColor = [UIColor colorWithRed:0.263 green:0.596 blue:0.804 alpha:1];
-    [viewMenu addSubview:btnMen1];
+    viewMenu.delegate = self;
+    [viewMenu setButton:1];
     
-    btnMen2 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen2.frame = CGRectMake(self.view.bounds.size.width/3, 0, self.view.bounds.size.width/3, 60);
-    [btnMen2 setImage:[UIImage imageNamed:@"btnAddMenu"] forState:UIControlStateNormal];
-    btnMen2.tintColor = [UIColor whiteColor];
-    [viewMenu addSubview:btnMen2];
+    NSLog(@"x= %f w= %f",imgProduct.center.x, imgProduct.frame.size.width);
+    int posX = (imgProduct.frame.size.width/2 + imgProduct.center.x)-25;
+    int posY = imgProduct.frame.origin.y -1;
+    favBtn = [[UIButton alloc] initWithFrame:CGRectMake(posX, posY, 30, 47)];
+    [favBtn setBackgroundImage:[UIImage imageNamed:@"btnFavorite_off"] forState:UIControlStateNormal];
+    [self.view addSubview:favBtn];
     
-    btnMen3 = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnMen3.frame = CGRectMake((self.view.bounds.size.width/3)*2, 0, self.view.bounds.size.width/3, 60);
-    [btnMen3 setImage:[UIImage imageNamed:@"btnUserMenu"] forState:UIControlStateNormal];
-    btnMen3.tintColor = [UIColor whiteColor];
-    [viewMenu addSubview:btnMen3];
     
 }
 
 
 - (IBAction)btnContact:(id)sender {
     int screenVal=imgProduct.bounds.size.height + 261;
-    NSLog(@"ScreenVal %d", screenVal);
-    NSLog(@"Screen Size %f", self.view.bounds.size.height);
-    
     if (screenVal > self.view.bounds.size.height) {
         POPSpringAnimation *scl1 = [POPSpringAnimation animation];
         scl1.property = [POPAnimatableProperty propertyWithName:kPOPViewCenter];
@@ -97,7 +87,6 @@
     }else{
         [self imgAnimated];
     }
-   
 }
 
 
@@ -269,6 +258,7 @@
 }
 
 
+
 - (void) percentageDownloaded:(double)dataDownloaded{
     download.progress = dataDownloaded;
     if (download.progress == 1.0) {
@@ -276,17 +266,13 @@
     }
 }
 
+
 -(void) loadedImage:(UIImage *)imageLoaded{
     self.imgProduct.image = imageLoaded;
 }
 
-- (void) miPerro:(NSString*)textoPerro{
-    NSLog(@"perro: %@", textoPerro);
-}
-
 -(IBAction)callPhone:(id)sender{
     UIButton *phone = sender;
-    NSLog(@"llamando...");
     NSString *pn = [@"tel:" stringByAppendingString:phone.titleLabel.text];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:pn]];
 }
@@ -302,6 +288,23 @@
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
     return NO;
+}
+
+#pragma MENU DELEGATE
+
+- (void) fiendView{
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+- (void) addView{
+    OfferViewController *oVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OfferView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:oVC animated:NO];
+}
+- (void) profileView{
+    AccountViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountView"];
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:aVC animated:NO];
 }
 
 @end

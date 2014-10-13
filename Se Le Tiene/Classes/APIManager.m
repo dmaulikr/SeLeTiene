@@ -72,7 +72,7 @@
 
 -(UIImage*) getImageTest{
     UIImage * test;
-    NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.karmapanda.com/wp-content/uploads/2008/12/gato-envuelto.jpg"]];
+    NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
     [connection start];
     NSLog(@"Entro aca");
@@ -187,11 +187,10 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-   //  NSLog(@"Se atreve a entrar por aca?");
-    if ([[NSString stringWithFormat:@"%@",connection.currentRequest.URL] isEqualToString:@"http://www.karmapanda.com/wp-content/uploads/2008/12/gato-envuelto.jpg"]) {
+    if ([[NSString stringWithFormat:@"%@",connection.currentRequest.URL] isEqualToString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]) {
         [self.delegate loadedImage:[UIImage imageWithData:apiData]];
     }else{
-        NSDictionary *apiResponse = [NSJSONSerialization JSONObjectWithData:apiData options:kNilOptions error:nil];
+        //NSDictionary *apiResponse = [NSJSONSerialization JSONObjectWithData:apiData options:kNilOptions error:nil];
     }
     //NSArray *events = [apiResponse objectForKey:@"owner"];
    // NSLog(@"%@",connection);
@@ -213,6 +212,11 @@
             }
         }
     }*/
+}
+
+-(Product*)getProductDetail:(int)idProduct{
+    Product *g;
+    return g;
 }
 
 @end

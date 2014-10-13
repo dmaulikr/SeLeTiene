@@ -21,6 +21,11 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     btnOffer.layer.cornerRadius = 5.0f;
     self.title = @"Ofrecer";
+    
+    transition = [CATransition animation];
+    transition.duration = 0.5f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
 }
 
 - (IBAction)changeType:(id)sender {
@@ -40,9 +45,6 @@
     }
 }
 
-/*-(void)viewWillAppear:(BOOL)animated{
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
-}*/
 
 -(void)viewDidAppear:(BOOL)animated{
     [[self navigationController] setNavigationBarHidden:NO animated:YES];

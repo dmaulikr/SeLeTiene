@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ContainerViewOffer.h"
 
-@interface OfferViewController : UIViewController 
+@interface OfferViewController : UIViewController{
+    CATransition *transition;
+}
 
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmented;
