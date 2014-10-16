@@ -6,11 +6,13 @@
 //  Copyright (c) 2014 Olinguito. All rights reserved.
 //
 
+#import "NVControllerGeneric.h"
 #import "ProductsViewController.h"
 #import "ProductTableViewController.h"
 #import "Filter/FilterViewController.h"
 #import "Offer/OfferViewController.h"
 #import "AccountViewController.h"
+#import "Connection.h"
 
 
 @interface ProductsViewController ()
@@ -18,59 +20,66 @@
 @end
 
 @implementation ProductsViewController
-@synthesize GridView,ListView,typeView,searchBar,btnFilter,btnOpenPopUP,loader,viewMenu,imgTmp,download;
+@synthesize GridView,ListView,typeView,searchBar,btnFilter,btnOpenPopUP,loader,viewMenu,imgTmp,download,APIManagerClass;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoHeader"]];
-    
-    imgTmp = [[UIImageView alloc] initWithFrame:CGRectMake(0, 94, self.view.bounds.size.width, self.view.bounds.size.height - 220)];
-    //imgTmp.alpha = 0.3;
-    /*CALayer *sublayer = [CALayer layer];
-    sublayer.backgroundColor = [UIColor blueColor].CGColor;
-    sublayer.frame = CGRectMake(0, 0, self.view.bounds.size.width,searchBar.bounds.size.height);
-    [self.view.layer addSublayer:sublayer];*/
-    
-    viewMenu.delegate = self;
-    [viewMenu setButton:1];
-    
-    GridView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    GridView.view.frame = CGRectMake(0, 0, self.viewLoaded.bounds.size.width,self.viewLoaded.bounds.size.height);
-    GridView = [self.storyboard instantiateViewControllerWithIdentifier:@"GridView"];
-    
-    ListView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    ListView.view.frame = CGRectMake(0, 0, self.viewLoaded.bounds.size.width,self.viewLoaded.bounds.size.height);
-    ListView = [self.storyboard instantiateViewControllerWithIdentifier:@"ListView"];
-    
-    searchBar.backgroundColor = [UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1];
-    [searchBar setBackgroundColor:[UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1]];
-    [searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"bgSearch.png"] forState:UIControlStateNormal];
+    Connection *conn = [[Connection alloc] init];
+    if ([@"" isEqualToString:[conn checkSession]]) {
+        NSLog(@"Redirect Login Page");
+        NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogin"];
+        tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:tmp animated:YES completion:nil];
+        
+    }else{
+        APIManagerClass = [[APIManager alloc]init];
+        
+        self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoHeader"]];
+        
+        imgTmp = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height - 220)];
+        imgTmp.backgroundColor = [UIColor clearColor];
+        
+        viewMenu.delegate = self;
+        [viewMenu setButton:1];
+        
+        GridView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        GridView.view.frame = CGRectMake(0, 0, self.viewLoaded.bounds.size.width,self.viewLoaded.bounds.size.height);
+        GridView = [self.storyboard instantiateViewControllerWithIdentifier:@"GridView"];
+        
+        ListView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        ListView.view.frame = CGRectMake(0, 0, self.viewLoaded.bounds.size.width,self.viewLoaded.bounds.size.height);
+        ListView = [self.storyboard instantiateViewControllerWithIdentifier:@"ListView"];
+        
+        searchBar.backgroundColor = [UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1];
+        [searchBar setBackgroundColor:[UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1]];
+        [searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"bgSearch.png"] forState:UIControlStateNormal];
 
-    searchBar.delegate = self;
-    UITextField *searchField = [searchBar valueForKey:@"_searchField"];
-    searchField.textColor = [UIColor whiteColor];
-    [searchField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    searchField.tintColor = [UIColor whiteColor];
-    searchField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    
-    searchField.keyboardAppearance = UIKeyboardAppearanceDark;
-    
-    UIImage *image = [UIImage imageNamed: @"btnSearch.png"];
-    UIImageView *iView = [[UIImageView alloc] initWithImage:image];
-    searchField.leftView = iView;
-    
-    btnFilter.layer.borderColor = [UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1].CGColor;
-    btnFilter.layer.borderWidth = 1.0f;
-    btnFilter.layer.cornerRadius = 5.0f;
-    btnOpenPopUP.layer.borderColor = [UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1].CGColor;
-    btnOpenPopUP.layer.borderWidth = 1.0f;
-    btnOpenPopUP.layer.cornerRadius = 5.0f;
-    
-    transition = [CATransition animation];
-    transition.duration = 0.5f;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionFade;
+        searchBar.delegate = self;
+        UITextField *searchField = [searchBar valueForKey:@"_searchField"];
+        searchField.textColor = [UIColor whiteColor];
+        [searchField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+        searchField.tintColor = [UIColor whiteColor];
+        searchField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        
+        searchField.keyboardAppearance = UIKeyboardAppearanceDark;
+        
+        UIImage *image = [UIImage imageNamed: @"btnSearch.png"];
+        UIImageView *iView = [[UIImageView alloc] initWithImage:image];
+        searchField.leftView = iView;
+        
+        btnFilter.layer.borderColor = [UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1].CGColor;
+        btnFilter.layer.borderWidth = 1.0f;
+        btnFilter.layer.cornerRadius = 5.0f;
+        btnOpenPopUP.layer.borderColor = [UIColor colorWithRed:0.243 green:0.592 blue:0.812 alpha:1].CGColor;
+        btnOpenPopUP.layer.borderWidth = 1.0f;
+        btnOpenPopUP.layer.cornerRadius = 5.0f;
+        
+        transition = [CATransition animation];
+        transition.duration = 0.5f;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        transition.type = kCATransitionFade;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,9 +88,8 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    APIManager *test = [[APIManager alloc]init];
-    test.delegate = self;
-    [test rememberPass:@"Test"];
+    APIManagerClass.delegate = self;
+    [APIManagerClass rememberPass:@"Test"];
     download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     download.alpha = 0.5;
     download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
@@ -101,23 +109,27 @@
     NSLog(@"Buscando: %@", self.searchBar.text);
     
     [self.searchBar resignFirstResponder];
+    [imgTmp removeFromSuperview];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    imgTmp.image = [self captureScreen];
+    //imgTmp.image = [self captureScreen];
 
     [self.view addSubview:imgTmp];
 }
 
 - (void)searchBarBookmarkButtonClicked:(UISearchBar *)searchBar{
     [self.searchBar resignFirstResponder];
+    [imgTmp removeFromSuperview];
 }
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [self.searchBar resignFirstResponder];
+    [imgTmp removeFromSuperview];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [searchBar resignFirstResponder];
+    [imgTmp removeFromSuperview];
 }
 
 

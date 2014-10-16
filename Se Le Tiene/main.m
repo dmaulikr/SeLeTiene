@@ -11,6 +11,7 @@
 
 
 int dev;
+int order;
 NSMutableArray *productsArray;
 int main(int argc, char * argv[]) {
     @autoreleasepool {

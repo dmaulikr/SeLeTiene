@@ -66,6 +66,12 @@
 		EC701BEC19E9DA4C003912B0 /* star_off.png in Resources */ = {isa = PBXBuildFile; fileRef = EC701BEA19E9DA4C003912B0 /* star_off.png */; };
 		EC701BEF19E9F40B003912B0 /* EditAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC701BEE19E9F40B003912B0 /* EditAccountViewController.m */; };
 		EC701BF419EAF7DC003912B0 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC701BF319EAF7DC003912B0 /* MenuView.m */; };
+		EC703F3719EC9361000C24CF /* stars.m in Sources */ = {isa = PBXBuildFile; fileRef = EC703F3619EC9361000C24CF /* stars.m */; };
+		EC703F3A19ED6966000C24CF /* TSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC703F3919ED6966000C24CF /* TSButton.m */; };
+		EC703F3C19ED7AEA000C24CF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC703F3B19ED7AEA000C24CF /* Social.framework */; };
+		EC703F3F19ED7EED000C24CF /* GenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC703F3E19ED7EED000C24CF /* GenTableViewController.m */; };
+		EC703F4219EE029D000C24CF /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC703F4119EE029D000C24CF /* Filter.m */; };
+		EC703F4519EE0EC8000C24CF /* JOAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = EC703F4419EE0EC8000C24CF /* JOAlert.m */; };
 		EC74AFE319E5DBA700DB431A /* btnArr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE119E5DBA700DB431A /* btnArr@2x.png */; };
 		EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE219E5DBA700DB431A /* btnArr.png */; };
 		EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFE619E6148300DB431A /* InformationViewController.m */; };
@@ -102,6 +108,9 @@
 		ECD6D9A619DCFC0800B2F48E /* btnList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D9A219DCFC0800B2F48E /* btnList@2x.png */; };
 		ECD6D9AA19DD0B3900B2F48E /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD6D9A919DD0B3900B2F48E /* ProductCollectionViewCell.m */; };
 		ECD6D9AC19DDFE8900B2F48E /* bgSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD6D9AB19DDFE8900B2F48E /* bgSearch.png */; };
+		ECEAF28219EF6CBD00FCA68E /* SLT.db in Resources */ = {isa = PBXBuildFile; fileRef = ECEAF28119EF6CBD00FCA68E /* SLT.db */; };
+		ECEAF28519EF721800FCA68E /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEAF28319EF721800FCA68E /* Connection.m */; };
+		ECEAF28719EF722F00FCA68E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */; };
 		ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */; };
 		ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EF19DC60F2005B7E16 /* ProductsViewController.m */; };
 /* End PBXBuildFile section */
@@ -193,6 +202,17 @@
 		EC701BF019EA3D67003912B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EC701BF219EAF7DC003912B0 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuView.h; path = Views/Components/MenuView.h; sourceTree = "<group>"; };
 		EC701BF319EAF7DC003912B0 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuView.m; path = Views/Components/MenuView.m; sourceTree = "<group>"; };
+		EC703F3519EC9361000C24CF /* stars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stars.h; path = Views/Components/stars.h; sourceTree = "<group>"; };
+		EC703F3619EC9361000C24CF /* stars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = stars.m; path = Views/Components/stars.m; sourceTree = "<group>"; };
+		EC703F3819ED6966000C24CF /* TSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSButton.h; path = Views/Components/TSButton.h; sourceTree = "<group>"; };
+		EC703F3919ED6966000C24CF /* TSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSButton.m; path = Views/Components/TSButton.m; sourceTree = "<group>"; };
+		EC703F3B19ED7AEA000C24CF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		EC703F3D19ED7EED000C24CF /* GenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenTableViewController.h; path = Views/Components/GenTableViewController.h; sourceTree = "<group>"; };
+		EC703F3E19ED7EED000C24CF /* GenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenTableViewController.m; path = Views/Components/GenTableViewController.m; sourceTree = "<group>"; };
+		EC703F4019EE029C000C24CF /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filter.h; path = Classes/Filter.h; sourceTree = "<group>"; };
+		EC703F4119EE029D000C24CF /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Filter.m; path = Classes/Filter.m; sourceTree = "<group>"; };
+		EC703F4319EE0EC8000C24CF /* JOAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JOAlert.h; path = Views/Components/JOAlert.h; sourceTree = "<group>"; };
+		EC703F4419EE0EC8000C24CF /* JOAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JOAlert.m; path = Views/Components/JOAlert.m; sourceTree = "<group>"; };
 		EC74AFE119E5DBA700DB431A /* btnArr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnArr@2x.png"; sourceTree = "<group>"; };
 		EC74AFE219E5DBA700DB431A /* btnArr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnArr.png; sourceTree = "<group>"; };
 		EC74AFE519E6148300DB431A /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationViewController.h; path = Views/Information/InformationViewController.h; sourceTree = "<group>"; };
@@ -243,6 +263,10 @@
 		ECD6D9A819DD0B3900B2F48E /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductCollectionViewCell.h; path = Views/Components/ProductCollectionViewCell.h; sourceTree = "<group>"; };
 		ECD6D9A919DD0B3900B2F48E /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCollectionViewCell.m; path = Views/Components/ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		ECD6D9AB19DDFE8900B2F48E /* bgSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgSearch.png; sourceTree = "<group>"; };
+		ECEAF28119EF6CBD00FCA68E /* SLT.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = SLT.db; sourceTree = "<group>"; };
+		ECEAF28319EF721800FCA68E /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = Classes/Connection.m; sourceTree = "<group>"; };
+		ECEAF28419EF721800FCA68E /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = Classes/Connection.h; sourceTree = "<group>"; };
+		ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		ECFB47EB19DC60BC005B7E16 /* ProductTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductTableViewController.h; path = Views/ProductTableViewController.h; sourceTree = "<group>"; };
 		ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductTableViewController.m; path = Views/ProductTableViewController.m; sourceTree = "<group>"; };
 		ECFB47EE19DC60F2005B7E16 /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsViewController.h; path = Views/ProductsViewController.h; sourceTree = "<group>"; };
@@ -254,6 +278,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEAF28719EF722F00FCA68E /* libsqlite3.0.dylib in Frameworks */,
+				EC703F3C19ED7AEA000C24CF /* Social.framework in Frameworks */,
 				ECCEED1519E31245007A88B6 /* GPUImage.framework in Frameworks */,
 				ECCEED1319E3115C007A88B6 /* Foundation.framework in Frameworks */,
 				ECCEED1119E3111E007A88B6 /* UIKit.framework in Frameworks */,
@@ -275,6 +301,8 @@
 		C55CE4518C9843EAB09FFEDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */,
+				EC703F3B19ED7AEA000C24CF /* Social.framework */,
 				EC701BF019EA3D67003912B0 /* QuartzCore.framework */,
 				4630E06125C741DC9F43B19D /* libPods.a */,
 			);
@@ -284,6 +312,7 @@
 		EC108B6A19D8E2F000CBBC17 = {
 			isa = PBXGroup;
 			children = (
+				ECEAF28119EF6CBD00FCA68E /* SLT.db */,
 				EC108B7519D8E2F000CBBC17 /* Se Le Tiene */,
 				EC108B9219D8E2F000CBBC17 /* Se Le TieneTests */,
 				EC108B7419D8E2F000CBBC17 /* Products */,
@@ -408,12 +437,16 @@
 		EC701BBA19E84888003912B0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ECEAF28419EF721800FCA68E /* Connection.h */,
+				ECEAF28319EF721800FCA68E /* Connection.m */,
 				EC701BC119E87259003912B0 /* User.h */,
 				EC701BC219E87259003912B0 /* User.m */,
 				EC701BBB19E848CB003912B0 /* Product.h */,
 				EC701BBC19E848CB003912B0 /* Product.m */,
 				EC701BBE19E8633B003912B0 /* APIManager.h */,
 				EC701BBF19E8633B003912B0 /* APIManager.m */,
+				EC703F4019EE029C000C24CF /* Filter.h */,
+				EC703F4119EE029D000C24CF /* Filter.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -572,6 +605,14 @@
 				EC66560719DE5486005B0B00 /* NVControllerGeneric.m */,
 				EC701BF219EAF7DC003912B0 /* MenuView.h */,
 				EC701BF319EAF7DC003912B0 /* MenuView.m */,
+				EC703F3519EC9361000C24CF /* stars.h */,
+				EC703F3619EC9361000C24CF /* stars.m */,
+				EC703F3819ED6966000C24CF /* TSButton.h */,
+				EC703F3919ED6966000C24CF /* TSButton.m */,
+				EC703F3D19ED7EED000C24CF /* GenTableViewController.h */,
+				EC703F3E19ED7EED000C24CF /* GenTableViewController.m */,
+				EC703F4319EE0EC8000C24CF /* JOAlert.h */,
+				EC703F4419EE0EC8000C24CF /* JOAlert.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -661,6 +702,7 @@
 			files = (
 				EC701BDE19E9DA43003912B0 /* starBig.png in Resources */,
 				ECD6D9A519DCFC0800B2F48E /* btnList.png in Resources */,
+				ECEAF28219EF6CBD00FCA68E /* SLT.db in Resources */,
 				EC108BFF19DA108B00CBBC17 /* btnFacebook.png in Resources */,
 				ECCEED0019E2636B007A88B6 /* btnStar.png in Resources */,
 				EC701BE019E9DA43003912B0 /* starBig_off.png in Resources */,
@@ -774,6 +816,7 @@
 				EC701BC319E87259003912B0 /* User.m in Sources */,
 				EC701BF419EAF7DC003912B0 /* MenuView.m in Sources */,
 				ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */,
+				EC703F3719EC9361000C24CF /* stars.m in Sources */,
 				EC66561519DF01AB005B0B00 /* EmptySegue.m in Sources */,
 				ECC1090719E4A11E003335EF /* RememberViewController.m in Sources */,
 				EC108B7F19D8E2F000CBBC17 /* Se_Le_Tiene.xcdatamodeld in Sources */,
@@ -781,6 +824,7 @@
 				ECCEED0519E26605007A88B6 /* FilterViewController.m in Sources */,
 				ECCEED1819E392AA007A88B6 /* OfferProViewController.m in Sources */,
 				EC74AFEC19E6FBDB00DB431A /* OrderViewController.m in Sources */,
+				EC703F3A19ED6966000C24CF /* TSButton.m in Sources */,
 				EC66560919DE5486005B0B00 /* NVControllerGeneric.m in Sources */,
 				EC66561219DEFDB6005B0B00 /* ContainerViewController.m in Sources */,
 				ECC1090119E481DD003335EF /* RegisterViewController.m in Sources */,
@@ -789,6 +833,8 @@
 				ECCEED1E19E3A2C0007A88B6 /* ContainerViewOffer.m in Sources */,
 				EC701BC019E8633B003912B0 /* APIManager.m in Sources */,
 				EC701BEF19E9F40B003912B0 /* EditAccountViewController.m in Sources */,
+				EC703F3F19ED7EED000C24CF /* GenTableViewController.m in Sources */,
+				EC703F4519EE0EC8000C24CF /* JOAlert.m in Sources */,
 				ECCEED1B19E392F0007A88B6 /* OfferSerViewController.m in Sources */,
 				EC108B7919D8E2F000CBBC17 /* main.m in Sources */,
 				ECC1090A19E4B2BA003335EF /* LogViewController.m in Sources */,
@@ -796,6 +842,8 @@
 				ECCEED0D19E2F09C007A88B6 /* OfferViewController.m in Sources */,
 				ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */,
 				EC701BD019E9A889003912B0 /* AccountViewController.m in Sources */,
+				ECEAF28519EF721800FCA68E /* Connection.m in Sources */,
+				EC703F4219EE029D000C24CF /* Filter.m in Sources */,
 				ECCEECEC19DF9107007A88B6 /* ProductsTableViewCell.m in Sources */,
 				EC701BBD19E848CB003912B0 /* Product.m in Sources */,
 				ECD6D9AA19DD0B3900B2F48E /* ProductCollectionViewCell.m in Sources */,

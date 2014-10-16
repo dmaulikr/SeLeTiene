@@ -40,6 +40,7 @@
         self.firstViewController = segue.destinationViewController;
     }
     if ([segue.identifier isEqualToString:SegueIdentifierSecond]) {
+        self.secondViewController.mode = 1;
         self.secondViewController = segue.destinationViewController;
     }
 

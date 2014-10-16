@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LogViewController : UIViewController <UITextFieldDelegate>{
+#import "APIManager.h"
+#import "JOAlert.h"
+@interface LogViewController : UIViewController <UITextFieldDelegate,APIManagerDelegate>{
     int yPos;
     int sW;
     int sH;
+    APIManager *APIManagerClass;
 }
 extern int dev;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignIn;
+@property (strong, nonatomic) JOAlert *alert;
 @end

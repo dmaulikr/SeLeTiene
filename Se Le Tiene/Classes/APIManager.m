@@ -8,65 +8,42 @@
 
 #import "APIManager.h"
 #import "Product.h"
-//#define APIip @"http://api.bogotacomovamos.org/api/datas/71/?key=comovamos/"
-#define APIip @"https://api.github.com/users/lojals/repos"
-
+#import "Connection.h"
 
 @implementation APIManager
 
 -(id)init{
     self = [super init];
     if (self) {
-       respo = @"";
+       URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
     }
     return self;
 }
 
 
 -(BOOL)loginEmail:(NSString*)userEmail :(NSString*)userPass{
-    // Setup NSURLConnection
-    /*NSURL *URL = [NSURL URLWithString:url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                         timeoutInterval:30.0];
+    NSString *URL = [NSString stringWithFormat:@"%@usuario/me",URLAPI];
+    NSData *tokBase64 = [[NSString stringWithFormat:@"%@:%@", userEmail, userPass] dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection start];
-    [connection release];
+    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [operationManager.requestSerializer setValue:[tokBase64 base64EncodedStringWithOptions:0] forHTTPHeaderField:@"x-Authentication"];
+
+    Connection* conn = [[Connection alloc] init];
+    [conn openDB];
     
-    // NSURLConnection Delegates
-    - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-        if ([challenge previousFailureCount] == 0) {
-            NSLog(@"received authentication challenge");
-            NSURLCredential *newCredential = [NSURLCredential credentialWithUser:@"USER"
-                                                                        password:@"PASSWORD"
-                                                                     persistence:NSURLCredentialPersistenceForSession];
-            NSLog(@"credential created");
-            [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
-            NSLog(@"responded to authentication challenge");
-        }
-        else {
-            NSLog(@"previous authentication failure");
-        }
-    }
-    
-    - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-        ...
-    }
-    
-    - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-        ...
-    }
-    
-    - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-        ...
-    }
-    
-    - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-        ...
-    }
-    
-    */
+    [operationManager GET:URL parameters:nil
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"Success: %@", responseObject);
+              [conn createSession:[tokBase64 base64EncodedStringWithOptions:0]];
+              [self.delegate loaded:true :@""];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"Error: %@", [error description]);
+              [self.delegate loaded:false :@"Revise sus datos"];
+          }
+     ];
     return YES;
 }
 
@@ -76,8 +53,6 @@
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
     [connection start];
     NSLog(@"Entro aca");
-    
-    
     return test;
 }
 
@@ -157,9 +132,9 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
-     NSLog(@"Se atreve a entrar por aca?");
-    NSURLCredential *newCredential = [NSURLCredential credentialWithUser:@"USERNAME"
-                                                                password:@"PASSWORD"
+     NSLog(@"Necesita autenticación");
+    NSURLCredential *newCredential = [NSURLCredential credentialWithUser:@"pedro@gmail.com"
+                                                                password:@"1234"
                                                              persistence:NSURLCredentialPersistenceForSession];
     [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
 }
@@ -187,11 +162,15 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    /*NSLog(@"%@",connection.currentRequest.URL);
     if ([[NSString stringWithFormat:@"%@",connection.currentRequest.URL] isEqualToString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]) {
         [self.delegate loadedImage:[UIImage imageWithData:apiData]];
     }else{
-        //NSDictionary *apiResponse = [NSJSONSerialization JSONObjectWithData:apiData options:kNilOptions error:nil];
-    }
+        NSDictionary *apiResponse = [NSJSONSerialization JSONObjectWithData:apiData options:kNilOptions error:nil];
+        NSLog(@"%@",apiResponse);
+    }*/
+    
+    
     //NSArray *events = [apiResponse objectForKey:@"owner"];
    // NSLog(@"%@",connection);
     //NSLog(@"WTH %@",apiResponse);

@@ -7,6 +7,7 @@
 //
 
 #import "OfferProViewController.h"
+#import "GenTableViewController.h"
 
 @interface OfferProViewController ()
 
@@ -62,6 +63,11 @@
     [btnSetType addSubview:imgArr];
     
     
+    UILabel *lblDesc = [[UILabel alloc] initWithFrame:CGRectMake(10, -15, 270, 15)];
+    lblDesc.font =  [UIFont fontWithName:@"Helvetic" size:13];
+    lblDesc.text = @"Descripción";
+    [txtDesc addSubview:lblDesc];
+    
 }
 
 - (IBAction)takePic:(id)sender {
@@ -112,19 +118,23 @@
     [UIView commitAnimations];
 }
 
-/*- (BOOL)textViewShouldBeginEditing:(UITextView *)textView;
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView;
+- (BOOL)textFieldShouldReturn:(UITextField *)textView{
+    [textView resignFirstResponder];
+    return YES;
+}
 
-- (void)textViewDidBeginEditing:(UITextView *)textView;
-- (void)textViewDidEndEditing:(UITextView *)textView;
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
-- (void)textViewDidChange:(UITextView *)textView;
 
-- (void)textViewDidChangeSelection:(UITextView *)textView;
+//getTypeP
 
-- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange NS_AVAILABLE_IOS(7_0);
-- (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange NS_AVAILABLE_IOS(7_0);
+#pragma mark - Navigation
 
-*/
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    GenTableViewController *tmpView = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"getTypeP"]) {
+        tmpView.modeTable= 2;
+    }
+}
+
+
 @end

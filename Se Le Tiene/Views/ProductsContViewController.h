@@ -16,7 +16,6 @@
     int    wScreen;
     int    hScreen;
 }
-
 extern NSMutableArray *productsArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *Products;
 

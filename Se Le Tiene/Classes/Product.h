@@ -38,7 +38,7 @@
 -(void)setImageProduct:(UIImage*)imageProductN;
 -(void)setImageURL:(NSURL*)imageURLnew;
 
-
+-(NSString*)toString;
 
 
 

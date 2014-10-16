@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
 #import <pop/POP.h>
 #import "APIManager.h"
 #import "MenuView.h"
+#import "TSButton.h"
+#import "stars.h"
+#import "Product.h"
 
 @interface ProductDetailViewController : UIViewController <APIManagerDelegate,MenuViewDelegate>{
     int x;
@@ -25,13 +29,17 @@
 @property (weak,nonatomic) IBOutlet UILabel     * DescProduct;
 @property (weak,nonatomic) IBOutlet UIButton    * btnContact;
 
-@property (strong,nonatomic) UIButton *favBtn;
+@property (weak,nonatomic) IBOutlet TSButton *favBtn;
 
 @property (weak,nonatomic)   IBOutlet MenuView  *viewMenu;
+@property (weak,nonatomic)   IBOutlet stars  *strs;
 
 @property (strong,nonatomic) UIButton *lblPhone;
 @property (strong,nonatomic) UIButton *lblCell;
 @property (strong,nonatomic) UIButton *btnTw;
 @property (strong,nonatomic) UIButton *btnFb;
+
+
+@property (strong,nonatomic) Product *actProduct;
 
 @end

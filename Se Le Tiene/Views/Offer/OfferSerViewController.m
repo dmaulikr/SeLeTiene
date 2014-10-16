@@ -7,6 +7,7 @@
 //
 
 #import "OfferSerViewController.h"
+#import "GenTableViewController.h"
 
 @interface OfferSerViewController ()
 
@@ -84,6 +85,18 @@
     [UIView setAnimationDuration:0.25];
     self.view.frame = frame;
     [UIView commitAnimations];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textView{
+    [textView resignFirstResponder];
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    GenTableViewController *tmpView = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"getTypeS"]) {
+        tmpView.modeTable= 3;
+    }
 }
 
 @end

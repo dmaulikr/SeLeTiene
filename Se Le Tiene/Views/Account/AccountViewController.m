@@ -9,6 +9,7 @@
 #import "AccountViewController.h"
 #import "EditAccountViewController.h"
 #import "OfferViewController.h"
+#import "ProductTableViewController.h"
 
 @interface AccountViewController ()
 
@@ -89,14 +90,19 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    ProductTableViewController *tmpView = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"goFavorite"]) {
+        tmpView.mode= 2;
+    }else{
+        if ([segue.identifier isEqualToString:@"goRecent"]) {
+            tmpView.mode= 3;
+        }
+    }
 }
-*/
+
 
 @end

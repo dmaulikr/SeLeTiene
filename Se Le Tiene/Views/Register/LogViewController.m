@@ -7,13 +7,14 @@
 //
 
 #import "LogViewController.h"
+#import "APIManager.h"
 
 @interface LogViewController ()
 
 @end
 
 @implementation LogViewController
-@synthesize txtEmail,txtPassword,btnSignIn;
+@synthesize txtEmail,txtPassword,btnSignIn,alert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +42,18 @@
     
     btnSignIn.layer.cornerRadius = 5.0f;
     
+    APIManagerClass = [[APIManager alloc]init];
+    APIManagerClass.delegate = self;
+    
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+}
+
+- (void) percentageDownloaded:(double)dataDownloaded{
+
+}
+
+
+-(void) loadedImage:(UIImage *)imageLoaded{
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -48,7 +61,7 @@
 }
 
 
-// Text METHODS DELEGATE
+#pragma TEXTVIEW METHODS DELEGATE
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [txtEmail resignFirstResponder];
@@ -88,6 +101,25 @@
     [UIView setAnimationDuration:0.25];
     self.view.frame = frame;
     [UIView commitAnimations];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)doLogin:(id)sender {
+    [APIManagerClass loginEmail:txtEmail.text :txtPassword.text];
+}
+
+#pragma API Delegate
+
+- (void) loaded:(BOOL)checker :(NSString *)msg{
+    if (!checker) {
+        [self.view addSubview:alert];
+        [alert setText:msg];
+        [alert showAlert];
+    }
 }
 
 @end

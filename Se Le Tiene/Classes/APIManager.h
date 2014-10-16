@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
 #import "User.h"
 #import "Product.h"
+
 
 @class APIManager;
 
@@ -17,14 +19,14 @@
 @optional
 - (void) percentageDownloaded:(double)dataDownloaded;
 - (void) loadedImage:(UIImage*)imageLoaded;
+- (void) loaded:(BOOL)checker :(NSString*)msg;
 @end
 
 @interface APIManager : NSObject <NSURLConnectionDataDelegate,NSURLConnectionDelegate>
 {
     NSMutableData *apiData;
     NSMutableData *_responseData;
-    NSString *twitterUrl;
-    NSString *respo;
+    NSString *URLAPI;
     int datos;
     long long total;
 }

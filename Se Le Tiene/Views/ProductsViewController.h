@@ -28,10 +28,10 @@
 @property (nonatomic, strong) ContainerViewController *containerViewController;
 
 @property (retain,nonatomic) UIProgressView *loader;
-
+@property (strong,nonatomic) APIManager *APIManagerClass;
 @property (weak, nonatomic) IBOutlet MenuView *viewMenu;
 
-@property (strong,nonatomic) UIImageView *imgTmp;
+@property (strong,nonatomic) UIView *imgTmp;
 
 
 @end

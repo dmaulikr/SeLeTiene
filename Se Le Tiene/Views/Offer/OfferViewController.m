@@ -26,6 +26,9 @@
     transition.duration = 0.5f;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    
 }
 
 - (IBAction)changeType:(id)sender {

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "stars.h"
 
 @interface ProductsTableViewCell : UITableViewCell
 
@@ -15,5 +16,6 @@
 @property (weak,nonatomic) IBOutlet UILabel* lblNameProduct;
 @property (weak,nonatomic) IBOutlet UILabel* lblNameUser;
 @property (weak,nonatomic) IBOutlet UILabel* lblDescProduct;
+@property (weak,nonatomic) IBOutlet stars* strs;
 
 @end

@@ -11,5 +11,6 @@
 @interface ProductTableViewController : UITableViewController
 
 extern NSMutableArray *productsArray;
+@property int mode;
 
 @end

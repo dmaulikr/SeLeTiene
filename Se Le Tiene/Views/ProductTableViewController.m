@@ -27,7 +27,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.0f];
+    switch (self.mode) {
+        case 1:
+            self.tableView.backgroundColor = [UIColor clearColor];
+        break;
+        case 2:
+            self.title = @"Favoritos";
+            self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
+        break;
+        case 3:
+            self.title = @"Recientes";
+            self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
+        break;
+        default:
+            self.tableView.backgroundColor = [UIColor clearColor];
+        break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +68,7 @@
     cell.imgProduct.layer.cornerRadius = 4;
     cell.imgProduct.layer.masksToBounds = YES;
     
-    
+    [cell.strs setStarsNum:3];
     
     cell.backgroundColor = [UIColor whiteColor];
     cell.imgProduct.layer.cornerRadius = 3;

@@ -72,6 +72,7 @@
     cell.layer.borderColor = [UIColor colorWithRed:0.788 green:0.788 blue:0.788 alpha:1].CGColor;
     cell.layer.borderWidth = 1.5f;
     cell.imgProduct.layer.cornerRadius = 3;
+    [cell.strs setStarsNum:3];
     
     if (![prdTemp getImageProduct]) {
         dispatch_async(dispatch_get_global_queue(0,0), ^{

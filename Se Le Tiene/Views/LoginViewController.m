@@ -11,6 +11,8 @@
 #import "RegisterViewController.h"
 #import "LogViewController.h"
 #import "ProductsViewController.h"
+#import "Connection.h"
+#import "JOAlert.h"
 
 
 @interface LoginViewController ()
@@ -30,6 +32,8 @@
     transition.duration = 0.5f;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
+    Connection* conn = [[Connection alloc] init];
+    [conn openDB];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -38,7 +42,6 @@
 
 - (IBAction)getInformation:(id)sender {
     NSLog(@"Funciona Boton");
-    
 }
 - (IBAction)signIn:(id)sender {
     LogViewController *lVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginView"];

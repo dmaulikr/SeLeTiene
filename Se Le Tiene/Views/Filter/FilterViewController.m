@@ -7,7 +7,7 @@
 //
 
 #import "FilterViewController.h"
-
+#import "GenTableViewController.h"
 @interface FilterViewController ()
 
 @end
@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     self.stars = [[NSMutableArray alloc] initWithCapacity:5];
     [self.stars addObject:star1];
     [self.stars addObject:star2];
@@ -24,7 +26,7 @@
     [self.stars addObject:star4];
     [self.stars addObject:star5];
     preN = 0;
-    self.title = @"Filtrar búsqueda";
+    self.title = @"Filtrar";
     
     btnFilter.layer.cornerRadius = 5.0f;
     
@@ -53,6 +55,16 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textView{
+    [textView resignFirstResponder];
+    return YES;
+}
+
+-(void)back{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)setStar:(int)numStars{
@@ -110,6 +122,16 @@
     [UIView setAnimationDuration:0.25];
     self.view.frame = frame;
     [UIView commitAnimations];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    GenTableViewController *tmpView = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"getCities"]) {
+        NSLog(@"djfgdfjkghkdf");
+        tmpView.modeTable= 1;
+    }
 }
 
 

@@ -70,4 +70,8 @@
 -(void)setImageURL:(NSURL*)imageURLnew{
     imageURL = imageURLnew;
 }
+
+-(NSString*)toString{
+    return [NSString stringWithFormat:@"Recomiendo el/la %@ de %@", namProduct, offerProduct];
+}
 @end

@@ -16,7 +16,7 @@
 @end
 
 @implementation ProductDetailViewController
-@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell,download,favBtn;
+@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell,download,favBtn,actProduct;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,13 +55,8 @@
     viewMenu.delegate = self;
     [viewMenu setButton:1];
     
-    NSLog(@"x= %f w= %f",imgProduct.center.x, imgProduct.frame.size.width);
-    int posX = (imgProduct.frame.size.width/2 + imgProduct.center.x)-25;
-    int posY = imgProduct.frame.origin.y -1;
-    favBtn = [[UIButton alloc] initWithFrame:CGRectMake(posX, posY, 30, 47)];
-    [favBtn setBackgroundImage:[UIImage imageNamed:@"btnFavorite_off"] forState:UIControlStateNormal];
-    [self.view addSubview:favBtn];
-    
+    [self.strs setStarsNum:4];
+    [self.favBtn setState:true];
     
 }
 
@@ -278,11 +273,17 @@
 }
 
 -(IBAction)shareTw:(id)sender{
-    NSLog(@"TW...");
+    NSString *str = [actProduct toString];
+    SLComposeViewController *composeController  = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [composeController setInitialText:str];
+    [self presentViewController:composeController animated:YES completion:nil];
 }
 
 -(IBAction)shareFb:(id)sender{
-    NSLog(@"Fb...");
+    NSString *str = [actProduct toString];
+    SLComposeViewController *composeController  = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [composeController setInitialText:str];
+    [self presentViewController:composeController animated:YES completion:nil];
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds

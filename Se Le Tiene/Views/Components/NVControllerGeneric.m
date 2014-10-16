@@ -18,7 +18,6 @@
 {
     [super viewDidLoad];
     self.navigationBar.tintColor = [UIColor whiteColor];
-    
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.000 green:0.329 blue:0.651 alpha:1]];    
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bgHeader"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setTranslucent:NO];
