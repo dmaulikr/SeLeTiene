@@ -37,7 +37,7 @@
     padCell = wScreen*0.03;
     
     APIManager *tst = [[APIManager alloc] init];
-    //productsArray = [tst getProducts];
+    productsArray = [tst getProducts];
     
     [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(reloaded:) userInfo:nil repeats:NO];
 }

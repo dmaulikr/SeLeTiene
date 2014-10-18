@@ -7,13 +7,17 @@
 //
 
 #import "RegisterViewController.h"
+#import "NVControllerGeneric.h"
+#import "LogViewController.h"
+#import "User.h"
+
 
 @interface RegisterViewController ()
 
 @end
 
 @implementation RegisterViewController
-@synthesize txtConfPass,txtEmail,txtName,txtPass,txtPhone,btnSignUp;
+@synthesize txtConfPass,txtEmail,txtName,txtPass,txtPhone,btnSignUp,alert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,6 +73,9 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -127,5 +134,27 @@
     return YES;
 }
 
+- (IBAction)SignUpUser:(id)sender {
+    User *tmpUser = [[User alloc] init];
+    tmpUser.nombre = txtName.text;
+    tmpUser.email = txtEmail.text;
+    tmpUser.telefono = txtPhone.text;
+    tmpUser.password = txtPass.text;
+    [APIManagerClass signUpUser:tmpUser];
+}
+
+#pragma APIDelegate
+
+- (void) returnResponse:(NSString *)msg{
+    [self.view addSubview:alert];
+    [alert setText:msg];
+    [alert showAlertAutoDismiss];
+    [self performSelector:@selector(redirectLogin) withObject:nil afterDelay:0.6];
+}
+
+-(void) redirectLogin{
+    LogViewController *lVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginView"];
+    [self.navigationController pushViewController:lVC animated:YES];
+}
 
 @end

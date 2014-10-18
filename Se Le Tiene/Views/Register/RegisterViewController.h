@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JOAlert.h"
+#import "APIManager.h"
 
-@interface RegisterViewController : UIViewController{
+@interface RegisterViewController : UIViewController <APIManagerDelegate>{
     int yPos;
     int sW;
     int sH;
+    APIManager *APIManagerClass;
 }
 extern int dev;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
@@ -20,5 +23,6 @@ extern int dev;
 @property (weak, nonatomic) IBOutlet UITextField *txtPass;
 @property (weak, nonatomic) IBOutlet UITextField *txtConfPass;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignUp;
+@property (strong,nonatomic) JOAlert *alert;
 
 @end

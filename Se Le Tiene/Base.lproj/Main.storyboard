@@ -269,7 +269,12 @@ Ofrécelo aquí</string>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-qC-Uth">
                                 <rect key="frame" x="45" y="114" width="231" height="147"/>
-                                <string key="text">Departamento para laProsperidad Social©2014- Derechos ReservadosTenga en cuenta que esta aplicación requiere acceso a internet y puede consumir recursos de su plan de datos.</string>
+                                <string key="text">Departamento para la
+Prosperidad Social
+
+©2014- Derechos Reservados
+
+Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir recursos de su plan de datos.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -439,6 +444,9 @@ Ofrécelo aquí</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="SignUpUser:" destination="Mfx-z3-1W8" eventType="touchUpInside" id="TBD-jq-h0H"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -480,7 +488,7 @@ Ofrécelo aquí</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ord-HW-Hbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34" y="-1149"/>
+            <point key="canvasLocation" x="-18" y="-1149"/>
         </scene>
         <!--Ingresar-->
         <scene sceneID="5YQ-MA-a1y">

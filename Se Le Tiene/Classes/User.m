@@ -8,10 +8,16 @@
 
 #import "User.h"
 
-@implementation User{
+@implementation User
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+       
+    }
+    return self;
 }
-
 
 
 

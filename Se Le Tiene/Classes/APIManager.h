@@ -20,6 +20,8 @@
 - (void) percentageDownloaded:(double)dataDownloaded;
 - (void) loadedImage:(UIImage*)imageLoaded;
 - (void) loaded:(BOOL)checker :(NSString*)msg :(NSString*)tokenR;
+- (void) returnResponse:(NSString *)msg;
+
 @end
 
 @interface APIManager : NSObject <NSURLConnectionDataDelegate,NSURLConnectionDelegate>
@@ -29,7 +31,6 @@
     NSString *URLAPI;
     int datos;
     long long total;
-    
     id objReturn;
 }
 

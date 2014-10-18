@@ -20,14 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - NSObject-ObjectMap (2.3.1)
   - pop (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - NSObject-ObjectMap (~> 2.0)
   - pop (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  NSObject-ObjectMap: b25adb10d18c60930db2c441c2fb7ae6c3d80282
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.4
