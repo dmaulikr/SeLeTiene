@@ -34,6 +34,7 @@
 }
 
 -(NSString *) filePath{
+   // [self copyDataBase];
     //return [[NSBundle bundleForClass:[self class]] pathForResource:@"eldorado" ofType:@"db"];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -52,11 +53,12 @@
         sqlite3_close(db);
         NSAssert(0,@"Database failed to open");
     }else{
-        NSLog(@"database opened");
+       // NSLog(@"database opened");
     }
 }
 
 -(void)createSession:(NSString*)token{
+    //NSLog(@"Insertando %@", token);
     char *errorMsg;
     NSString *query = [NSString stringWithFormat:@"INSERT INTO User (token) VALUES ('%@');",token];
     if (sqlite3_exec(db, [query UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK) {

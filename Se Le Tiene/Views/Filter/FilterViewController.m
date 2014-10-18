@@ -129,7 +129,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     GenTableViewController *tmpView = [segue destinationViewController];
     if ([segue.identifier isEqualToString:@"getCities"]) {
-        NSLog(@"djfgdfjkghkdf");
         tmpView.modeTable= 1;
     }
 }

@@ -10,18 +10,21 @@
 #import "EditAccountViewController.h"
 #import "OfferViewController.h"
 #import "ProductTableViewController.h"
+#import "NVControllerGeneric.h"
 
 @interface AccountViewController ()
 
 @end
 
 @implementation AccountViewController
-@synthesize btnFavorites,btnLastOpened,btnLogout,lblCellPhoneUser,lblEmail,lblNameUser,lblPhoneUser,contactView,menuView;
+@synthesize btnFavorites,btnLastOpened,btnLogout,lblCellPhoneUser,lblEmail,lblNameUser,lblPhoneUser,contactView,menuView,APIManagerClass;
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    APIManagerClass = [[APIManager alloc] init];
+    
     self.navigationItem.hidesBackButton = YES;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     self.title = @"Mi Cuenta";
@@ -74,6 +77,12 @@
     [self.navigationController pushViewController:eVC animated:NO];
 }
 
+- (IBAction)logout:(id)sender {
+    [APIManagerClass logout];
+    NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogin"];
+    tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:tmp animated:YES completion:nil];
+}
 
 #pragma MENU DELEGATE
 

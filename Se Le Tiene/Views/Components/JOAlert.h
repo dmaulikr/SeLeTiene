@@ -21,5 +21,6 @@
 -(void)showAlert;
 -(void)dismissAlert;
 -(void)setText:(NSString*)text;
+-(void)showAlertAutoDismiss;
 
 @end

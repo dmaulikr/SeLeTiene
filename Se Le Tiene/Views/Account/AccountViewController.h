@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuView.h"
+#import "APIManager.h"
 
 
-@interface AccountViewController : UIViewController <MenuViewDelegate>{
+@interface AccountViewController : UIViewController <MenuViewDelegate,APIManagerDelegate>{
     CATransition *transition;
 }
+@property (strong,nonatomic) APIManager *APIManagerClass;
 @property (weak, nonatomic) IBOutlet UILabel *lblNameUser;
 @property (weak, nonatomic) IBOutlet UIView *contactView;
 @property (weak, nonatomic) IBOutlet UILabel *lblPhoneUser;

@@ -14,6 +14,8 @@
 #import "TSButton.h"
 #import "stars.h"
 #import "Product.h"
+#import "JOAlert.h"
+
 
 @interface ProductDetailViewController : UIViewController <APIManagerDelegate,MenuViewDelegate>{
     int x;
@@ -36,8 +38,11 @@
 
 @property (strong,nonatomic) UIButton *lblPhone;
 @property (strong,nonatomic) UIButton *lblCell;
+@property (strong,nonatomic) UIButton *lblEmail;
 @property (strong,nonatomic) UIButton *btnTw;
 @property (strong,nonatomic) UIButton *btnFb;
+
+@property (strong,nonatomic) JOAlert *alert;
 
 
 @property (strong,nonatomic) Product *actProduct;

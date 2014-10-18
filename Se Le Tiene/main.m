@@ -8,19 +8,28 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "Connection.h"
 
 
 int dev;
 int order;
+BOOL ret;
+Connection *conn;
+NSString *token;
+
 NSMutableArray *productsArray;
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        token = @"";
         NSString *deviceModel = (NSString*)[UIDevice currentDevice].model;
         if ([[deviceModel substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPad"]) {
             dev = 1;
         } else {
             dev = 2;
         }
+        conn = [[Connection alloc] init];
+        [conn openDB];
+        token = [conn checkSession];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

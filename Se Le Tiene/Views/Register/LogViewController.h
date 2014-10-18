@@ -16,6 +16,7 @@
     APIManager *APIManagerClass;
 }
 extern int dev;
+extern NSString* token;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignIn;

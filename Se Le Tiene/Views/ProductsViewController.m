@@ -12,7 +12,6 @@
 #import "Filter/FilterViewController.h"
 #import "Offer/OfferViewController.h"
 #import "AccountViewController.h"
-#import "Connection.h"
 
 
 @interface ProductsViewController ()
@@ -25,16 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-    Connection *conn = [[Connection alloc] init];
-    if ([@"" isEqualToString:[conn checkSession]]) {
-        NSLog(@"Redirect Login Page");
+    NSLog(@"Token: %@",token);
+    
+    if ([@"" isEqualToString:token]) {
         NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogin"];
         tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:tmp animated:YES completion:nil];
         
     }else{
         APIManagerClass = [[APIManager alloc]init];
-        
+        APIManagerClass.delegate = self;
+        [APIManagerClass rememberPass:@"Test"];
+
         self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoHeader"]];
         
         imgTmp = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height - 220)];
@@ -88,8 +89,6 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    APIManagerClass.delegate = self;
-    [APIManagerClass rememberPass:@"Test"];
     download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     download.alpha = 0.5;
     download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
@@ -144,7 +143,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //NSLog(@"%s", __PRETTY_FUNCTION__);
     
     if ([segue.identifier isEqualToString:@"embedContainer"]) {
         self.containerViewController = segue.destinationViewController;

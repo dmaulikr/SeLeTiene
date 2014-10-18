@@ -17,6 +17,8 @@
 @interface ProductsViewController : UIViewController <UISearchBarDelegate,MenuViewDelegate,APIManagerDelegate>{
     CATransition *transition;
 }
+
+extern NSString *token;
 @property (strong,nonatomic) UIProgressView* download;
 @property (weak, nonatomic) IBOutlet UIView *viewLoaded;
 @property (strong,nonatomic) ProductsContViewController *GridView;

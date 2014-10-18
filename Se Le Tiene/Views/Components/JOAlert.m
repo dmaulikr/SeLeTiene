@@ -63,7 +63,7 @@
     
     POPSpringAnimation *sA1 = [POPSpringAnimation animation];
     sA1.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionY];
-    sA1.toValue = @(self.bounds.size.height/2);
+    sA1.toValue = @((self.bounds.size.height/2)-50);
     [sA1 setValue:@"toCenter1" forKey:@"animName"];
     sA1.springBounciness = 10;
     sA1.springSpeed = 10;
@@ -115,5 +115,13 @@
 -(void)setText:(NSString*)text{
     lblMsg.text = text;
 }
+
+-(void)showAlertAutoDismiss{
+    [self showAlert];
+    [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:0.4];
+//    [self dismissAlert];
+}
+
+
 
 @end

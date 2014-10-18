@@ -15,34 +15,39 @@
 -(id)init{
     self = [super init];
     if (self) {
-       URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
+       //URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
+        URLAPI = @"http://se-le-tiene.cloudapp.net/SeLeTiene.svc/";
     }
     return self;
 }
 
-
 -(BOOL)loginEmail:(NSString*)userEmail :(NSString*)userPass{
-    NSString *URL = [NSString stringWithFormat:@"%@usuario/me",URLAPI];
+    Connection* conn = [[Connection alloc] init];
+    [conn openDB];
     NSData *tokBase64 = [[NSString stringWithFormat:@"%@:%@", userEmail, userPass] dataUsingEncoding:NSUTF8StringEncoding];
-    
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [operationManager.requestSerializer setValue:[tokBase64 base64EncodedStringWithOptions:0] forHTTPHeaderField:@"x-Authentication"];
-
-    Connection* conn = [[Connection alloc] init];
-    [conn openDB];
-    
-    [operationManager GET:URL parameters:nil
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              NSLog(@"Success: %@", responseObject);
-              [conn createSession:[tokBase64 base64EncodedStringWithOptions:0]];
-              [self.delegate loaded:true :@""];
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"Error: %@", [error description]);
-              [self.delegate loaded:false :@"Revise sus datos"];
-          }
+    [operationManager GET:[NSString stringWithFormat:@"%@usuario/me",URLAPI] parameters:nil
+                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                      NSLog(@"Success: %@", responseObject);
+                      [self.delegate loaded:true :@"" :[tokBase64 base64EncodedStringWithOptions:0]];
+                      [conn createSession:[tokBase64 base64EncodedStringWithOptions:0]];
+                  }
+                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                      //NSLog(@"Error: %@", [error description]);
+                      NSLog(@"Error: %@", [error localizedDescription]);
+                      
+                      if ([[error localizedDescription] rangeOfString:@"(401)"].location != NSNotFound) {
+                          //NSLog(@"NO autorizado");
+                          [self.delegate loaded:false :@"Revise sus datos" :@""];
+                      } else {
+                          //NSLog(@"Error de servidor");
+                          [self.delegate loaded:false :@"Error en el servidor" :@""];
+                      }
+                      
+                  }
      ];
     return YES;
 }
@@ -52,49 +57,20 @@
     NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
     [connection start];
-    NSLog(@"Entro aca");
     return test;
 }
 
 -(BOOL)rememberPass:(NSString*)userEmail{
-    
-    
-    NSLog(@"Entro aca");
     [self getImageTest];
-    
-    //resp  = [self makeRestAPICall: APIip];
-   // NSDictionary *json = [self makeRestAPICall2:APIip];
-   // NSLog(@"Realiza Qyery %@",json);
-    //NSLog(@"%@",[json objectForKey:(@"description")]);
-    
-    //NSLog(@"%@",[json objectForKey:(@"name")]);
-    /*self.presupuesto.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"presupuesto")] ] ;
-    self.estado.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"estado")] ] ;
-    self.adjudicado.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"name")] ] ;
-    self.localizacion.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"lugar")] ] ;
-    self.name.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"name")] ] ;
-    self.adjudicado.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"adjudicado")] ] ;
-    
-    self.dat1.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"fecha_inicial")] ] ;
-    self.dat2.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"fecha_final")] ] ;
-    
-    self.progress.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"porcentaje")] ] ;
-    
-    NSString *str = [NSString stringWithFormat:@"%@", [json objectForKey:(@"porcentaje")] ] ;
-    
-    self.progressView.progress = (str.floatValue)/100;*/
-    
-    
-    /*NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:APIip]];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
-    [connection start];*/
-    //NSLog(@"Entro aca");
-    
+    //self.presupuesto.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"presupuesto")] ] ;
     return NO;
 }
 
 -(void)logout{
-    
+    token = @"";
+    Connection* conn = [[Connection alloc] init];
+    [conn openDB];
+    [conn deleteSession];
 }
 
 -(NSString*)signUpUser:(User*)user{
@@ -104,6 +80,15 @@
 
 
 -(NSMutableArray*)getProducts{
+    /*if ([self manager:@"usuario/me" :token]) {
+        //[self.delegate loaded:true :@""];
+        NSLog(@"Success: %@", objReturn);
+    }else{
+        //[self.delegate loaded:false :@"Revise sus datos"];
+    }*/
+    [self performGet:@"producto?orderby=p(a-z)&page=0&rows=1" :token];
+    
+    
     NSMutableArray *tst = [[NSMutableArray alloc] init];
     for (int i=0; i<20; i++) {
         Product *tmp = [[Product alloc] init];
@@ -117,7 +102,7 @@
 
 
 
--(NSDictionary*) makeRestAPICall2 : (NSString*) reqURLStr
+-(NSDictionary*) makeRestAPICall2 : (NSString*)reqURLStr
 {
     NSURLRequest *Request = [NSURLRequest requestWithURL:[NSURL URLWithString: reqURLStr]];
     NSURLResponse *resp = nil;
@@ -162,13 +147,13 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    /*NSLog(@"%@",connection.currentRequest.URL);
+    NSLog(@"%@",connection.currentRequest.URL);
     if ([[NSString stringWithFormat:@"%@",connection.currentRequest.URL] isEqualToString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]) {
         [self.delegate loadedImage:[UIImage imageWithData:apiData]];
     }else{
         NSDictionary *apiResponse = [NSJSONSerialization JSONObjectWithData:apiData options:kNilOptions error:nil];
         NSLog(@"%@",apiResponse);
-    }*/
+    }
     
     
     //NSArray *events = [apiResponse objectForKey:@"owner"];
@@ -197,5 +182,47 @@
     Product *g;
     return g;
 }
+
+
+#pragma Manager Methods
+
+-(void) performGet:(NSString*)url :(NSString*)token{
+    NSLog(@"Performing Get");
+    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"x-Authentication"];
+    [operationManager GET:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:nil
+                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                      NSLog(@"Success: %@", responseObject);
+                      //[self.delegate loaded:true :@"" :[tokBase64 base64EncodedStringWithOptions:0]];
+                      //[conn createSession:[tokBase64 base64EncodedStringWithOptions:0]];
+                  }
+                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                      NSLog(@"Error: %@", [error description]);
+                      //[self.delegate loaded:false :@"Revise sus datos" :@""];
+                  }
+     ];
+}
+
+-(void) performPost:(NSString*)url :(NSString*)token{
+    NSLog(@"Performing Post");
+    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"x-Authentication"];
+    [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:nil
+                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                      NSLog(@"Success: %@", responseObject);
+                      //[self.delegate loaded:true :@"" :[tokBase64 base64EncodedStringWithOptions:0]];
+                      //[conn createSession:[tokBase64 base64EncodedStringWithOptions:0]];
+                  }
+                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                      NSLog(@"Error: %@", [error description]);
+                      //[self.delegate loaded:false :@"Revise sus datos" :@""];
+                  }
+     ];
+}
+
 
 @end

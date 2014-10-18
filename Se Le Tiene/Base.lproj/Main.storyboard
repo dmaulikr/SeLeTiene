@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eax-0q-XrH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eax-0q-XrH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -264,25 +264,46 @@ Ofrécelo aquí</string>
                         <viewControllerLayoutGuide type="bottom" id="EIf-5d-X5T"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pjK-li-JdT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUE-M0-H1B">
-                                <rect key="frame" x="11" y="119" width="298" height="224"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-qC-Uth">
+                                <rect key="frame" x="45" y="114" width="231" height="147"/>
+                                <string key="text">Departamento para laProsperidad Social©2014- Derechos ReservadosTenga en cuenta que esta aplicación requiere acceso a internet y puede consumir recursos de su plan de datos.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-Fp-fWd">
+                                <rect key="frame" x="117" y="28" width="87" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="V 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-au-tF2">
+                                <rect key="frame" x="114" y="90" width="92" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3A-W4-8pT">
+                                <rect key="frame" x="139" y="326" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logosDPS.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qvh-VY-9pi">
+                                <rect key="frame" x="45" y="274" width="114" height="37"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoMinTIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-52-lUg">
+                                <rect key="frame" x="162" y="274" width="114" height="37"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Información" id="g8e-qa-gQk"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0N-6t-0ie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-64" y="-1719"/>
+            <point key="canvasLocation" x="-351" y="-1719"/>
         </scene>
         <!--Registro-->
         <scene sceneID="eg7-gQ-59W">
@@ -1444,6 +1465,9 @@ Ofrécelo aquí</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logout:" destination="gxM-Eq-zzC" eventType="touchUpInside" id="EVX-Ni-wKA"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm8-WX-0vS" customClass="MenuView">
                                 <rect key="frame" x="0.0" y="420" width="320" height="60"/>
@@ -1520,7 +1544,7 @@ Ofrécelo aquí</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0W3-Ug-hDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="205"/>
+            <point key="canvasLocation" x="515" y="201"/>
         </scene>
         <!--Gen Table View Controller-->
         <scene sceneID="y63-NP-iHe">
@@ -1709,7 +1733,7 @@ Ofrécelo aquí</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjT-iQ-kHy">
                                 <rect key="frame" x="25" y="8" width="270" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amasijos3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="U7J-SL-f4u">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="U7J-SL-f4u">
                                         <rect key="frame" x="0.0" y="2" width="270" height="198"/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="139" y="28" width="745" height="452"/>
@@ -1788,7 +1812,7 @@ Ofrécelo aquí</string>
                         <outlet property="DescProduct" destination="mst-PP-gmS" id="vrq-nk-kup"/>
                         <outlet property="btnContact" destination="QKh-HG-JU1" id="vgF-cC-r1T"/>
                         <outlet property="favBtn" destination="WHq-dQ-S6D" id="Fue-OU-bQc"/>
-                        <outlet property="imgProduct" destination="U7J-SL-f4u" id="bVc-ws-kyX"/>
+                        <outlet property="imgProduct" destination="U7J-SL-f4u" id="9Xb-7M-x0x"/>
                         <outlet property="lblTitleProduct" destination="TTE-lp-swL" id="LaV-7M-a5b"/>
                         <outlet property="lblUserProduct" destination="eNg-aC-XGm" id="G7c-J8-6Ce"/>
                         <outlet property="strs" destination="J3Z-Dk-dke" id="Fji-HX-FKT"/>
@@ -2135,7 +2159,7 @@ Ofrécelo aquí</string>
         <!--Controller Generic-->
         <scene sceneID="2fY-Yd-kbg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eax-0q-XrH" customClass="NVControllerGeneric" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NVLogged" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eax-0q-XrH" customClass="NVControllerGeneric" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="A4M-82-jea"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -2173,7 +2197,6 @@ Ofrécelo aquí</string>
         </scene>
     </scenes>
     <resources>
-        <image name="amasijos3.jpg" width="300" height="238"/>
         <image name="bgContact.png" width="272" height="122"/>
         <image name="bgSearch.png" width="642" height="81"/>
         <image name="btnBlue.png" width="530" height="114"/>
@@ -2184,6 +2207,8 @@ Ofrécelo aquí</string>
         <image name="btnList.png" width="14" height="14"/>
         <image name="btnStar.png" width="39" height="38"/>
         <image name="logo.png" width="355" height="245"/>
+        <image name="logoMinTIC.png" width="228" height="74"/>
+        <image name="logosDPS.png" width="228" height="74"/>
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>

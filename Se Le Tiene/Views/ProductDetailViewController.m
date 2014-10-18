@@ -16,7 +16,7 @@
 @end
 
 @implementation ProductDetailViewController
-@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell,download,favBtn,actProduct;
+@synthesize imgProduct,btnContact,lblTitleProduct,lblUserProduct,DescProduct,viewMenu,tstBtn,btnFb,btnTw,lblPhone,lblCell,lblEmail,download,favBtn,actProduct,alert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,8 +58,9 @@
     [self.strs setStarsNum:4];
     [self.favBtn setState:true];
     
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
 }
-
 
 - (IBAction)btnContact:(id)sender {
     int screenVal=imgProduct.bounds.size.height + 261;
@@ -83,7 +84,6 @@
         [self imgAnimated];
     }
 }
-
 
 -(void) imgAnimated {
     x = imgProduct.center.y+(imgProduct.bounds.size.height/2)+10;
@@ -137,7 +137,6 @@
     [DescProduct pop_addAnimation:toGreen forKey:@"toGreen"];
 
 }
-
 
 - (void)pop_animationDidStop:(POPAnimation *)anim finished:(BOOL)finished {
     if (finished) {
@@ -202,15 +201,14 @@
     
     lblCell = [[UIButton alloc] initWithFrame:CGRectMake(50, 40, 230, 40)];
     [lblCell setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
     [lblCell setTitle:@"3145295322" forState:UIControlStateNormal];
     lblCell.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [tstBtn addSubview:lblCell];
     
-    UITextField *lblEmail = [[UITextField alloc] initWithFrame:CGRectMake(50, 80, 230, 40)];
-    [lblEmail setTextColor:[UIColor whiteColor]];
-    [lblEmail setEnabled:NO];
-    lblEmail.text = @"jroz9105@gmail.com";
+    lblEmail = [[UIButton alloc] initWithFrame:CGRectMake(50, 80, 230, 40)];
+    [lblEmail setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [lblEmail setTitle:@"jroz9105@gmail.com" forState:UIControlStateNormal];
+    lblEmail.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [tstBtn addSubview:lblEmail];
     
     int fX = tstBtn.center.x;
@@ -248,11 +246,10 @@
     
     [lblCell addTarget:self action:@selector(callPhone:) forControlEvents: UIControlEventTouchUpInside];
     [lblPhone addTarget:self action:@selector(callPhone:) forControlEvents: UIControlEventTouchUpInside];
+    [lblEmail addTarget:self action:@selector(callPhone:) forControlEvents: UIControlEventTouchUpInside];
     [btnTw addTarget:self action:@selector(shareTw:) forControlEvents: UIControlEventTouchUpInside];
     [btnFb addTarget:self action:@selector(shareFb:) forControlEvents: UIControlEventTouchUpInside];
 }
-
-
 
 - (void) percentageDownloaded:(double)dataDownloaded{
     download.progress = dataDownloaded;
@@ -261,15 +258,22 @@
     }
 }
 
-
 -(void) loadedImage:(UIImage *)imageLoaded{
     self.imgProduct.image = imageLoaded;
 }
 
 -(IBAction)callPhone:(id)sender{
     UIButton *phone = sender;
-    NSString *pn = [@"tel:" stringByAppendingString:phone.titleLabel.text];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:pn]];
+    /*NSString *pn = [@"tel:" stringByAppendingString:phone.titleLabel.text];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:pn]];*/
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [NSString stringWithFormat:@"%@",phone.titleLabel.text];
+    
+    [self.view addSubview:alert];
+    [alert setText:@"Copiado"];
+    [alert showAlertAutoDismiss];
+    
 }
 
 -(IBAction)shareTw:(id)sender{

@@ -19,7 +19,7 @@
 @optional
 - (void) percentageDownloaded:(double)dataDownloaded;
 - (void) loadedImage:(UIImage*)imageLoaded;
-- (void) loaded:(BOOL)checker :(NSString*)msg;
+- (void) loaded:(BOOL)checker :(NSString*)msg :(NSString*)tokenR;
 @end
 
 @interface APIManager : NSObject <NSURLConnectionDataDelegate,NSURLConnectionDelegate>
@@ -29,11 +29,12 @@
     NSString *URLAPI;
     int datos;
     long long total;
+    
+    id objReturn;
 }
 
-
+extern NSString* token;
 -(UIImage*) getImageTest;
-
 -(BOOL)loginEmail:(NSString*)userEmail :(NSString*)userPass;
 -(BOOL)rememberPass:(NSString*)userEmail;
 -(void)logout;

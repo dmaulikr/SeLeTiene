@@ -111,6 +111,10 @@
 		ECEAF28219EF6CBD00FCA68E /* SLT.db in Resources */ = {isa = PBXBuildFile; fileRef = ECEAF28119EF6CBD00FCA68E /* SLT.db */; };
 		ECEAF28519EF721800FCA68E /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEAF28319EF721800FCA68E /* Connection.m */; };
 		ECEAF28719EF722F00FCA68E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */; };
+		ECF3FF7619F1911500011935 /* logosDPS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3FF7219F1911500011935 /* logosDPS@2x.png */; };
+		ECF3FF7719F1911500011935 /* logosDPS.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3FF7319F1911500011935 /* logosDPS.png */; };
+		ECF3FF7819F1911500011935 /* logoMinTIC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3FF7419F1911500011935 /* logoMinTIC@2x.png */; };
+		ECF3FF7919F1911500011935 /* logoMinTIC.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3FF7519F1911500011935 /* logoMinTIC.png */; };
 		ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */; };
 		ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EF19DC60F2005B7E16 /* ProductsViewController.m */; };
 /* End PBXBuildFile section */
@@ -267,6 +271,10 @@
 		ECEAF28319EF721800FCA68E /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = Classes/Connection.m; sourceTree = "<group>"; };
 		ECEAF28419EF721800FCA68E /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = Classes/Connection.h; sourceTree = "<group>"; };
 		ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		ECF3FF7219F1911500011935 /* logosDPS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logosDPS@2x.png"; sourceTree = "<group>"; };
+		ECF3FF7319F1911500011935 /* logosDPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logosDPS.png; sourceTree = "<group>"; };
+		ECF3FF7419F1911500011935 /* logoMinTIC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoMinTIC@2x.png"; sourceTree = "<group>"; };
+		ECF3FF7519F1911500011935 /* logoMinTIC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoMinTIC.png; sourceTree = "<group>"; };
 		ECFB47EB19DC60BC005B7E16 /* ProductTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductTableViewController.h; path = Views/ProductTableViewController.h; sourceTree = "<group>"; };
 		ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductTableViewController.m; path = Views/ProductTableViewController.m; sourceTree = "<group>"; };
 		ECFB47EE19DC60F2005B7E16 /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsViewController.h; path = Views/ProductsViewController.h; sourceTree = "<group>"; };
@@ -389,6 +397,10 @@
 		EC108BEC19DA108B00CBBC17 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ECF3FF7219F1911500011935 /* logosDPS@2x.png */,
+				ECF3FF7319F1911500011935 /* logosDPS.png */,
+				ECF3FF7419F1911500011935 /* logoMinTIC@2x.png */,
+				ECF3FF7519F1911500011935 /* logoMinTIC.png */,
 				EC701BE919E9DA4C003912B0 /* star_off@2x.png */,
 				EC701BEA19E9DA4C003912B0 /* star_off.png */,
 				EC701BC819E8EE62003912B0 /* star@2x.png */,
@@ -703,6 +715,7 @@
 				EC701BDE19E9DA43003912B0 /* starBig.png in Resources */,
 				ECD6D9A519DCFC0800B2F48E /* btnList.png in Resources */,
 				ECEAF28219EF6CBD00FCA68E /* SLT.db in Resources */,
+				ECF3FF7719F1911500011935 /* logosDPS.png in Resources */,
 				EC108BFF19DA108B00CBBC17 /* btnFacebook.png in Resources */,
 				ECCEED0019E2636B007A88B6 /* btnStar.png in Resources */,
 				EC701BE019E9DA43003912B0 /* starBig_off.png in Resources */,
@@ -725,9 +738,11 @@
 				EC701BB219E79AA7003912B0 /* btnFbs@2x.png in Resources */,
 				EC701BC719E8B70B003912B0 /* placeholder.png in Resources */,
 				EC701BE119E9DA43003912B0 /* btnHis@2x.png in Resources */,
+				ECF3FF7919F1911500011935 /* logoMinTIC.png in Resources */,
 				EC108B8A19D8E2F000CBBC17 /* LaunchScreen.xib in Resources */,
 				EC701BE519E9DA43003912B0 /* btnFavorite_off@2x.png in Resources */,
 				EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */,
+				ECF3FF7819F1911500011935 /* logoMinTIC@2x.png in Resources */,
 				EC108C0319DA108B00CBBC17 /* logo.png in Resources */,
 				EC66560519DE44C1005B0B00 /* btnSearch@2x.png in Resources */,
 				EC108BFC19DA108B00CBBC17 /* btnBlue@2x.png in Resources */,
@@ -755,6 +770,7 @@
 				EC701BE319E9DA43003912B0 /* btnFavorite_on@2x.png in Resources */,
 				EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */,
 				EC701BB319E79AA7003912B0 /* btnFbs.png in Resources */,
+				ECF3FF7619F1911500011935 /* logosDPS@2x.png in Resources */,
 				EC701BDF19E9DA43003912B0 /* starBig_off@2x.png in Resources */,
 				EC108BFE19DA108B00CBBC17 /* btnEmail@2x.png in Resources */,
 				EC108C0219DA108B00CBBC17 /* btnInfo@2x.png in Resources */,

@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Olinguito. All rights reserved.
 //
 
+#import "NVControllerGeneric.h"
 #import "LogViewController.h"
 #import "APIManager.h"
+#import "Connection.h"
 
 @interface LogViewController ()
 
@@ -114,11 +116,17 @@
 
 #pragma API Delegate
 
-- (void) loaded:(BOOL)checker :(NSString *)msg{
+- (void) loaded:(BOOL)checker :(NSString *)msg :(NSString*)tokenR{
     if (!checker) {
         [self.view addSubview:alert];
         [alert setText:msg];
         [alert showAlert];
+    }else{
+        token = tokenR;
+        NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogged"];
+        tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:tmp animated:YES completion:nil];
+        
     }
 }
 
