@@ -10,68 +10,21 @@
 
 @implementation Product
 
--(id)init{
+- (instancetype)init
+{
     self = [super init];
     if (self) {
-        idProduct = 0;
-        namProduct = @"";
-        descProduct = @"";
-        stars = 0;
-        imageProduct = nil;
-        
+        self.providerProduct = [[Provider alloc] init];
     }
     return self;
 }
 
-
-//GETTERS
--(int)getIdProduct{
-    return idProduct;
-}
--(NSString*)getNamProduct{
-    return namProduct;
-}
--(NSString*)getDescProduct{
-    return descProduct;
-}
--(NSString*)getOfferProduct{
-    return offerProduct;
-}
--(int) getStars{
-    return stars;
-}
--(UIImage*) getImageProduct{
-    return imageProduct;
-}
--(NSURL*)getImageURL{
-    return imageURL;
+-(NSURL*) getImageURL{
+    return [NSURL URLWithString:@"http://lorempixel.com/g/190/80/"];
 }
 
-
-//SETTERS
--(void)setIdProduct:(int)idProductN{
-    idProduct = idProductN;
-}
--(void)setNamProduct:(NSString*)namProductN{
-    namProduct = namProductN;
-}
--(void)setDescProduct:(NSString*)descProductN{
-    descProduct = descProductN;
-}
--(void)setStars:(int)starsN{
-    stars = starsN;
-}
--(void)setImageProduct:(UIImage*)imageProductN{
-    imageProduct = imageProductN;
-}
--(void)setOfferProduct:(NSString*)offerProductN{
-    offerProduct = offerProductN;
-}
--(void)setImageURL:(NSURL*)imageURLnew{
-    imageURL = imageURLnew;
+-(int) getScore{
+    return [self.scoreProduct intValue];
 }
 
--(NSString*)toString{
-    return [NSString stringWithFormat:@"Recomiendo el/la %@ de %@", namProduct, offerProduct];
-}
 @end

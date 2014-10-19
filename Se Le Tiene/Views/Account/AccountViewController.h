@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MenuView.h"
 #import "APIManager.h"
+#import "User.h"
 
 
 @interface AccountViewController : UIViewController <MenuViewDelegate,APIManagerDelegate>{
     CATransition *transition;
+    User* actUser;
 }
 @property (strong,nonatomic) APIManager *APIManagerClass;
 @property (weak, nonatomic) IBOutlet UILabel *lblNameUser;

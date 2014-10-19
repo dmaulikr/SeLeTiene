@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
+    [APIManagerClass getSelfUser];
     
     self.navigationItem.hidesBackButton = YES;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
@@ -69,6 +71,8 @@
     transition.duration = 0.5f;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
+    
+    actUser = [[User alloc] init];
 }
 
 -(IBAction)editUser:(id)sender{
@@ -82,6 +86,15 @@
     NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogin"];
     tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:tmp animated:YES completion:nil];
+}
+
+
+#pragma APIMANAGER
+
+-(void) returnObt:(id)responseObject{
+    lblEmail.text = responseObject[@"email"];
+    lblNameUser.text = responseObject[@"nombre"];
+    lblPhoneUser.text = responseObject[@"telefono"];
 }
 
 #pragma MENU DELEGATE
@@ -99,7 +112,6 @@
     
 }
 
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -112,6 +124,5 @@
         }
     }
 }
-
 
 @end

@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIManager.h"
 
-@interface ProductsContViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>{
+@interface ProductsContViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, APIManagerDelegate>{
     double wCell;
     double hCell;
     int    numColumns;
     double padCell;
     int    wScreen;
     int    hScreen;
+    APIManager *APIManagerClass;
 }
 extern NSMutableArray *productsArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *Products;

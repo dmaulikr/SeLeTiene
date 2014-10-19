@@ -277,14 +277,14 @@
 }
 
 -(IBAction)shareTw:(id)sender{
-    NSString *str = [actProduct toString];
+    NSString *str = @"";
     SLComposeViewController *composeController  = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [composeController setInitialText:str];
     [self presentViewController:composeController animated:YES completion:nil];
 }
 
 -(IBAction)shareFb:(id)sender{
-    NSString *str = [actProduct toString];
+    NSString *str = @"";
     SLComposeViewController *composeController  = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     [composeController setInitialText:str];
     [self presentViewController:composeController animated:YES completion:nil];

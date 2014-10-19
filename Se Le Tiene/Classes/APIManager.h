@@ -21,6 +21,9 @@
 - (void) loadedImage:(UIImage*)imageLoaded;
 - (void) loaded:(BOOL)checker :(NSString*)msg :(NSString*)tokenR;
 - (void) returnResponse:(NSString *)msg;
+- (void)returnList:(id)responseObject;
+- (void) returnObt:(id)responseObject;
+
 
 @end
 
@@ -35,13 +38,14 @@
 }
 
 extern NSString* token;
--(UIImage*) getImageTest;
--(BOOL)loginEmail:(NSString*)userEmail :(NSString*)userPass;
--(BOOL)rememberPass:(NSString*)userEmail;
+-(void) getImageTest;
+-(void)loginEmail:(NSString*)userEmail :(NSString*)userPass;
+-(void)rememberPass:(NSString*)userEmail;
 -(void)logout;
--(NSString*)signUpUser:(User*)user;
--(NSMutableArray*)getProducts;
--(Product*)getProductDetail:(int)idProduct;
+-(void)signUpUser:(User*)user;
+-(void)getProducts;
+-(void)getProductDetail:(int)idProduct;
+-(void)getSelfUser;
 
 @property (nonatomic, weak) id <APIManagerDelegate> delegate;
 

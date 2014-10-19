@@ -64,7 +64,7 @@
     
     
     UILabel *lblDesc = [[UILabel alloc] initWithFrame:CGRectMake(10, -15, 270, 15)];
-    lblDesc.font =  [UIFont fontWithName:@"Helvetic" size:13];
+    lblDesc.font =  [UIFont fontWithName:@"Helvetica" size:13];
     lblDesc.text = @"Descripción";
     [txtDesc addSubview:lblDesc];
     

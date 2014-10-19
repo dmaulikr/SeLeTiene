@@ -16,8 +16,8 @@ int order;
 BOOL ret;
 Connection *conn;
 NSString *token;
-
 NSMutableArray *productsArray;
+
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         token = @"";

@@ -56,7 +56,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return [productsArray count];
 }
 
 
@@ -68,12 +68,12 @@
     cell.imgProduct.layer.cornerRadius = 4;
     cell.imgProduct.layer.masksToBounds = YES;
     
-    [cell.strs setStarsNum:3];
+    [cell.strs setStarsNum:[prdTemp getScore]];
     
     cell.backgroundColor = [UIColor whiteColor];
     cell.imgProduct.layer.cornerRadius = 3;
     
-    if (![prdTemp getImageProduct]) {
+    if (!prdTemp.imageProduct) {
         dispatch_async(dispatch_get_global_queue(0,0), ^{
             NSData * data = [[NSData alloc] initWithContentsOfURL: [prdTemp getImageURL]];
             if ( data == nil )
@@ -84,12 +84,11 @@
             });
         });
     }else{
-        cell.imgProduct.image = [prdTemp getImageProduct];
+        cell.imgProduct.image = prdTemp.imageProduct;
     }
-    
     cell.imgProduct.layer.masksToBounds = YES;
-    cell.lblNameProduct.text = prdTemp.getNamProduct;
-
+    cell.lblNameProduct.text = prdTemp.nameProduct;
+    cell.lblDescProduct.text = prdTemp.descProduct;
     return cell;
 }
 
