@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIManager.h"
+#import "JOAlert.h"
 
-@interface ProductTableViewController : UITableViewController
+@interface ProductTableViewController : UITableViewController <APIManagerDelegate>{
+    APIManager *APIManagerClass;
+    JOAlert *alert;
+    NSMutableArray *favList;
+}
 
 extern NSMutableArray *productsArray;
 @property int mode;

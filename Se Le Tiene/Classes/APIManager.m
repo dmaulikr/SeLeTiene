@@ -78,22 +78,16 @@
 }
 
 
--(void)getProducts{
-    [self performGet:@"producto?orderby=p(a-z)&page=0&rows=20" :token :true];
-    
-    /*NSMutableArray *tst = [[NSMutableArray alloc] init];
-    for (int i=0; i<20; i++) {
-        Product *tmp = [[Product alloc] init];
-        [tmp setNamProduct:[NSString stringWithFormat:@"Envueltos %d",i]];
-        [tmp setDescProduct:@"Lorem Ipsum dolor amet"];
-        [tmp setImageURL:[NSURL URLWithString:@"http://lorempixel.com/g/190/80/"]];
-        [tst addObject:tmp];
-    }
-    return tst;*/
+-(void)getProducts:(NSString*)filters{
+    [self performGet:[NSString stringWithFormat:@"producto%@",filters] :token :true];
 }
 
 -(void)getProductDetail:(int)idProduct{
     
+}
+
+-(void)getFavorites{
+    [self performGet:@"usuario/me/favorito" :token :true];
 }
 
 -(void)getSelfUser{

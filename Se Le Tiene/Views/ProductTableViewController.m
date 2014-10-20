@@ -7,6 +7,7 @@
 //
 
 #import "ProductTableViewController.h"
+#import "ProductDetailViewController.h"
 #import "ProductsTableViewCell.h"
 #import "Product.h"
 
@@ -34,6 +35,14 @@
         case 2:
             self.title = @"Favoritos";
             self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
+            APIManagerClass = [[APIManager alloc] init];
+            APIManagerClass.delegate = self;
+            
+            [APIManagerClass getFavorites];
+            alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
+            NSLog(@"Tamaño %f", self.view.frame.size.height);
+            [self.view addSubview:alert];
+            [alert showAlertAnim];
         break;
         case 3:
             self.title = @"Recientes";
@@ -56,6 +65,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    switch (self.mode) {
+        case 1:
+            return [productsArray count];
+            
+            break;
+        case 2:
+            return [favList count];
+            break;
+        case 3:
+            return [favList count];
+            break;
+    }
     return [productsArray count];
 }
 
@@ -92,48 +113,44 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableV3iew *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ProductDetailViewController *tmpView = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
+    tmpView.actProduct = [productsArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:tmpView animated:YES];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(void) returnList:(id)responseObject
+{
+    NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
+    NSLog(@"Retorno una lista");
+    for (id key in (NSDictionary*)responseObject) {
+        Product *tmpProduct = [[Product alloc] init];
+        tmpProduct.nameProduct = key[@"nombre"];
+        tmpProduct.scoreProduct = key[@"calificacion"];
+        tmpProduct.descProduct = key[@"descripcion"];
+        NSDictionary *prov = key[@"Proveedor"];
+        tmpProduct.providerProduct.nameProvider  = prov[@"nombre"];
+        tmpProduct.providerProduct.emailProvider = prov[@"email"];
+        tmpProduct.providerProduct.phoneProvider = prov[@"telefono"];
+        tmpProduct.providerProduct.celProvider   = prov[@"ceular"];
+        [tmpArray addObject:tmpProduct];
+    }
+    
+    
+    switch (self.mode) {
+        case 1:
+            productsArray = tmpArray;
+            
+            break;
+        case 2:
+            favList = tmpArray;
+            break;
+        case 3:
+            favList = tmpArray;
+            break;
+    }
+    [self.tableView reloadData];
+    [alert dismissAlertAnim];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

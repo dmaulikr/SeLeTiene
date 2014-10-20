@@ -31,9 +31,11 @@
     txtPhone.leftViewMode = UITextFieldViewModeAlways;
     paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
     txtName.leftView = paddingView;
+    [txtName setTextColor:[UIColor lightGrayColor]];
     txtName.leftViewMode = UITextFieldViewModeAlways;
     txtName.layer.borderColor = [UIColor lightGrayColor].CGColor;
     txtName.backgroundColor = [UIColor whiteColor];
+    txtName.enabled = NO;
     txtEmail.layer.borderColor = [UIColor lightGrayColor].CGColor;
     paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
     txtEmail.leftView = paddingView;
@@ -54,6 +56,9 @@
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
     
+    txtPhone.text = self.edituser.telefono;
+    txtEmail.text = self.edituser.email;
+    txtName.text = self.edituser.nombre;
 }
 
 #pragma DELEGATE METHODS

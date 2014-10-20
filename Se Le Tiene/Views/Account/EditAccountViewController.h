@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuView.h"
+#import "User.h"
 
 @interface EditAccountViewController : UIViewController <UITextFieldDelegate,MenuViewDelegate>{
     int yPos;
     int sW;
     int sH;
     CATransition *transition;
+    
 }
+@property (weak, nonatomic) User *edituser;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPhone;

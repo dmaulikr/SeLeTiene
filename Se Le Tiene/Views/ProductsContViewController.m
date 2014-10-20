@@ -18,7 +18,7 @@
 @end
 
 @implementation ProductsContViewController
-@synthesize Products;
+@synthesize Products,alert;
 
 
 #pragma mark UIViewController methods
@@ -26,10 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     Products.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0];
-    
     wScreen = self.view.bounds.size.width;
     wCell = (wScreen*0.88)/2;
-    
     if (wCell>300) {
         wCell = (wScreen*0.88)/3;
     }
@@ -40,17 +38,15 @@
     APIManagerClass.delegate = self;
     
     [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(reloaded:) userInfo:nil repeats:NO];
-}
-
-
--(IBAction)reloaded:(id)sender{
-    NSLog(@"Relodeando");
-    [self.Products reloadData];
+    [APIManagerClass getProducts:@"?orderby=p(a-z)&page=0&rows=20"];
+    alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
+    NSLog(@"Tamaño %f", self.view.frame.size.height);
+    [self.view addSubview:alert];
+    [alert showAlertAnim];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [APIManagerClass getProducts];
 }
 
 - (NSInteger)numberOfSections{
@@ -102,47 +98,21 @@
     return CGSizeMake(wCell,hCell);
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   NSLog(@"Entra al segue para ir al detalle");
-   
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    ProductDetailViewController *tmpView = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
+    tmpView.actProduct = [productsArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:tmpView animated:YES];
 }
-
-/* JSON Example
- 
- {
- Proveedor =         {
- cedula = 9876543210;
- ceular = 3144577085;
- cuidad = Tunja;
- email = "david.barinas.dev@gmail.com";
- estado = Activo;
- "fecha_registro" = "/Date(1391040000000+0000)/";
- nombre = "David barinas";
- telefono = "+570386444505";
- };
- calificacion = "4.3";
- "cedula_proveedor" = 9876543210;
- descripcion = "Las mejores arepas";
- "fecha_registro" = "/Date(1391040000000+0000)/";
- id = 1;
- nombre = Arepas;
- }
- 
- */
 
 -(void) returnList:(id)responseObject
 {
     NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
     NSLog(@"Retorno una lista");
     for (id key in (NSDictionary*)responseObject) {
-        NSLog(@"Toma tu producto");
         Product *tmpProduct = [[Product alloc] init];
         tmpProduct.nameProduct = key[@"nombre"];
         tmpProduct.scoreProduct = key[@"calificacion"];
         tmpProduct.descProduct = key[@"descripcion"];
-        NSLog(@"%@", key);
-        NSLog(@"Valor buscado %@", key[@"Proveedor"]);
         NSDictionary *prov = key[@"Proveedor"];
         tmpProduct.providerProduct.nameProvider  = prov[@"nombre"];
         tmpProduct.providerProduct.emailProvider = prov[@"email"];
@@ -152,6 +122,7 @@
     }
     productsArray = tmpArray;
     [self.Products reloadData];
+    [alert dismissAlertAnim];
 }
 
 @end

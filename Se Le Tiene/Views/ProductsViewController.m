@@ -34,7 +34,7 @@
     }else{
         APIManagerClass = [[APIManager alloc]init];
         APIManagerClass.delegate = self;
-        [APIManagerClass rememberPass:@"Test"];
+        //[APIManagerClass rememberPass:@"Test"];
 
         self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoHeader"]];
         
@@ -137,7 +137,6 @@
 - (IBAction)changeView:(id)sender {
     //[[self.viewLoaded subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UISegmentedControl * tmpControl = sender;
-    NSLog(@"Selected %ld", (long)tmpControl.selectedSegmentIndex);
     [self.containerViewController swapViewControllers];
 }
 

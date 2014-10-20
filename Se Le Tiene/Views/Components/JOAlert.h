@@ -16,10 +16,14 @@
 @property (strong,nonatomic) UILabel *lblMsg;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic, strong) UISwipeGestureRecognizer *tapGesture2;
+@property (strong,nonatomic) UIImageView *animationView;
 
+-(instancetype)initWithAnimFrame :(CGRect)frame;
 -(instancetype)initWithTextNFrame:(NSString*)text :(CGRect)frame;
 -(void)showAlert;
+-(void)showAlertAnim;
 -(void)dismissAlert;
+-(void)dismissAlertAnim;
 -(void)setText:(NSString*)text;
 -(void)showAlertAutoDismiss;
 

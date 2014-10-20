@@ -14,6 +14,7 @@
 {
     self = [super init];
     if (self) {
+        self.imageProduct = nil;
         self.providerProduct = [[Provider alloc] init];
     }
     return self;

@@ -77,6 +77,7 @@
 
 -(IBAction)editUser:(id)sender{
     EditAccountViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EditView"];
+    eVC.edituser = actUser;
     [self.navigationController.view.layer addAnimation:transition forKey:nil];
     [self.navigationController pushViewController:eVC animated:NO];
 }
@@ -92,9 +93,14 @@
 #pragma APIMANAGER
 
 -(void) returnObt:(id)responseObject{
-    lblEmail.text = responseObject[@"email"];
-    lblNameUser.text = responseObject[@"nombre"];
-    lblPhoneUser.text = responseObject[@"telefono"];
+    actUser.telefono = responseObject[@"telefono"];
+    actUser.email = responseObject[@"email"];
+    actUser.nombre = responseObject[@"nombre"];
+    actUser._id = responseObject[@"id"];
+    
+    lblPhoneUser.text = actUser.telefono;
+    lblEmail.text = actUser.email;
+    lblNameUser.text = actUser.nombre;
 }
 
 #pragma MENU DELEGATE

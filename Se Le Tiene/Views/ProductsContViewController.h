@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "APIManager.h"
+#import "Product.h"
+#import "JOAlert.h"
 
 @interface ProductsContViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, APIManagerDelegate>{
     double wCell;
@@ -20,5 +22,6 @@
 }
 extern NSMutableArray *productsArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *Products;
+@property (strong, nonatomic) JOAlert *alert;
 
 @end

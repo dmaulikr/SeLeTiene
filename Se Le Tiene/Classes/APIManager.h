@@ -43,8 +43,9 @@ extern NSString* token;
 -(void)rememberPass:(NSString*)userEmail;
 -(void)logout;
 -(void)signUpUser:(User*)user;
--(void)getProducts;
+-(void)getProducts:(NSString*)filters;
 -(void)getProductDetail:(int)idProduct;
+-(void)getFavorites;
 -(void)getSelfUser;
 
 @property (nonatomic, weak) id <APIManagerDelegate> delegate;

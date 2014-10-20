@@ -21,9 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-    APIManager *test = [[APIManager alloc]init];
-    test.delegate = self;
-    [test rememberPass:@"Test"];
+    //APIManager *test = [[APIManager alloc]init];
+    //test.delegate = self;
     
     download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
@@ -58,8 +57,14 @@
     [self.strs setStarsNum:4];
     [self.favBtn setState:true];
     
-    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    lblTitleProduct.text = actProduct.nameProduct;
+    lblUserProduct.text = actProduct.providerProduct.nameProvider;
+    DescProduct.text = actProduct.descProduct;
+    imgProduct.image = actProduct.imageProduct;
 }
 
 - (IBAction)btnContact:(id)sender {
@@ -194,20 +199,20 @@
 -(void)setData{
     lblPhone = [[UIButton alloc] initWithFrame:CGRectMake(50, 0, 230, 40)];
     [lblPhone setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [lblPhone setTitle:@"2237204" forState:UIControlStateNormal];
+    [lblPhone setTitle:actProduct.providerProduct.phoneProvider forState:UIControlStateNormal];
     lblPhone.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
     [tstBtn addSubview:lblPhone];
     
     lblCell = [[UIButton alloc] initWithFrame:CGRectMake(50, 40, 230, 40)];
     [lblCell setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [lblCell setTitle:@"3145295322" forState:UIControlStateNormal];
+    [lblCell setTitle:actProduct.providerProduct.celProvider forState:UIControlStateNormal];
     lblCell.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [tstBtn addSubview:lblCell];
     
     lblEmail = [[UIButton alloc] initWithFrame:CGRectMake(50, 80, 230, 40)];
     [lblEmail setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [lblEmail setTitle:@"jroz9105@gmail.com" forState:UIControlStateNormal];
+    [lblEmail setTitle:actProduct.providerProduct.emailProvider forState:UIControlStateNormal];
     lblEmail.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [tstBtn addSubview:lblEmail];
     

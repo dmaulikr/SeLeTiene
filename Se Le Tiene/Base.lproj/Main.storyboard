@@ -1670,7 +1670,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
         <!--Product Detail View Controller-->
         <scene sceneID="WDH-6T-PuW">
             <objects>
-                <viewController id="474-Z9-zwe" customClass="ProductDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="474-Z9-zwe" customClass="ProductDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="27A-My-hcN"/>
                         <viewControllerLayoutGuide type="bottom" id="0Ua-aG-lh8"/>
@@ -1679,7 +1679,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envueltos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-lp-swL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-lp-swL">
                                 <rect key="frame" x="25" y="215" width="270" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Md3-Mz-tOh"/>
@@ -1692,7 +1692,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <rect key="frame" x="377" y="497" width="270" height="23"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="middleTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="mst-PP-gmS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="middleTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="mst-PP-gmS">
                                 <rect key="frame" x="25" y="263" width="270" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81" id="33b-hJ-gc8"/>
@@ -1700,7 +1700,6 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstAttribute="width" constant="270" id="Eg0-rl-khn"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="IUg-xD-J9W"/>
                                 </constraints>
-                                <string key="text">Los mejores envueltos de maiz del barrio Jerusalém. Belén lleva a su mesa una preparación única elaborada con el sabor cundiboyacense de una larga tradición familiar.</string>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1779,7 +1778,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstItem="J3Z-Dk-dke" firstAttribute="leading" secondItem="jjT-iQ-kHy" secondAttribute="leading" constant="8" id="pHV-cf-4U9"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belén Quinche" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="eNg-aC-XGm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="eNg-aC-XGm">
                                 <rect key="frame" x="25" y="239" width="270" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="PE8-uz-SXX"/>
@@ -2040,7 +2039,6 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                             <outlet property="lblNameProduct" destination="yAS-7h-mCX" id="5CY-sC-adq"/>
                                             <outlet property="lblNameUser" destination="9BB-rk-PH6" id="hXR-bR-Lyc"/>
                                             <outlet property="strs" destination="Vkb-Vw-co5" id="NX2-Q5-Vgo"/>
-                                            <segue destination="474-Z9-zwe" kind="push" id="Tkt-m5-Y2b"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2148,7 +2146,6 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <outlet property="lblNameProduct" destination="3jJ-Gi-IYa" id="EwE-Xx-9y4"/>
                                     <outlet property="lblNameUser" destination="aaP-BC-1Ts" id="Hum-Ww-m87"/>
                                     <outlet property="strs" destination="p1a-yr-HI6" id="C8d-to-Bhz"/>
-                                    <segue destination="474-Z9-zwe" kind="push" id="XJq-Y7-VUu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2222,6 +2219,5 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
     <inferredMetricsTieBreakers>
         <segue reference="W9R-at-Bf8"/>
         <segue reference="wP8-Zi-hcC"/>
-        <segue reference="XJq-Y7-VUu"/>
     </inferredMetricsTieBreakers>
 </document>
