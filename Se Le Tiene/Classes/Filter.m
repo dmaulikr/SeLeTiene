@@ -58,5 +58,10 @@
 }
 
 
+-(void)setFilter{
+    //http://api.seletiene.olinguito.com.co/SeLeTiene.svc/producto?orderby=Stars&page=0&rows=1&query={texto_buscar}
+    filterStr = [NSString stringWithFormat:@"&%@",[self getKeyWord]];
+}
+
 
 @end

@@ -44,7 +44,6 @@
 
 @property (strong,nonatomic) JOAlert *alert;
 
-
 @property (strong,nonatomic) Product *actProduct;
 
 @end

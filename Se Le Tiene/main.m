@@ -18,6 +18,10 @@ Connection *conn;
 NSString *token;
 NSMutableArray *productsArray;
 
+NSString *orderStr;
+NSString *filterStr;
+
+
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         token = @"";

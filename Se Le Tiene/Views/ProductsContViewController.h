@@ -19,8 +19,13 @@
     int    wScreen;
     int    hScreen;
     APIManager *APIManagerClass;
+    NSString* filter;
+    NSString* order;
 }
 extern NSMutableArray *productsArray;
+extern NSString *orderStr;
+extern NSString *filterStr;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *Products;
 @property (strong, nonatomic) JOAlert *alert;
 

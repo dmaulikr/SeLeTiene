@@ -186,5 +186,33 @@
 }
 
 
+-(void) performPut:(NSString*)url :(NSString*)token :(NSString*)data :(NSString*)successMsg :(NSString*)failMsg {
+    NSLog(@"Performing Put");
+    NSError *e;
+    NSDictionary *JSON =
+    [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]
+                                    options: NSJSONReadingMutableContainers
+                                      error: &e];
+    
+    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+    operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"x-Authentication"];
+    
+    
+    [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:JSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success: %@", responseObject);
+        [self.delegate returnResponse:successMsg];
+    }
+                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                       NSLog(@"Error: %@", [error description]);
+                       [self.delegate returnResponse:failMsg];
+                       //[self.delegate loaded:false :@"Revise sus datos" :@""];
+                   }];
+    
+}
+
+
 
 @end

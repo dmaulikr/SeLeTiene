@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 Olinguito. All rights reserved.
 //
 
+#import "ProductDetailViewController.h"
 #import "ProductsContViewController.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductsViewController.h"
+#import "APIManager.h"
 #import "Product.h"
 
-#import "ProductDetailViewController.h"
-
-#import "APIManager.h"
 @interface ProductsContViewController ()
 @end
 
@@ -28,19 +27,14 @@
     Products.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0];
     wScreen = self.view.bounds.size.width;
     wCell = (wScreen*0.88)/2;
-    if (wCell>300) {
+    if (wCell>300)
         wCell = (wScreen*0.88)/3;
-    }
     hCell = wCell/1.39;
     padCell = wScreen*0.03;
-    
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
-    
-    [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(reloaded:) userInfo:nil repeats:NO];
-    [APIManagerClass getProducts:@"?orderby=p(a-z)&page=0&rows=20"];
+    [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
     alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
-    NSLog(@"Tamaño %f", self.view.frame.size.height);
     [self.view addSubview:alert];
     [alert showAlertAnim];
 }
@@ -107,7 +101,6 @@
 -(void) returnList:(id)responseObject
 {
     NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
-    NSLog(@"Retorno una lista");
     for (id key in (NSDictionary*)responseObject) {
         Product *tmpProduct = [[Product alloc] init];
         tmpProduct.nameProduct = key[@"nombre"];

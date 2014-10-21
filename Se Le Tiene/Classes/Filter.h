@@ -15,6 +15,7 @@
     NSString *keyWord;
     int stars;
 }
+extern NSString *filterStr;
 
 //Getters
 -(int)getTypeFil;
@@ -30,5 +31,6 @@
 -(void)setKeyWord:(NSString*)keyWordN;
 -(void)setStars:(int)starsN;
 
+-(void)setFilter;
 
 @end

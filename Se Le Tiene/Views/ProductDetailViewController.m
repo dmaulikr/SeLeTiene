@@ -54,7 +54,7 @@
     viewMenu.delegate = self;
     [viewMenu setButton:1];
     
-    [self.strs setStarsNum:4];
+    [self.strs setStarsNum:[actProduct getScore]];
     [self.favBtn setState:true];
     
     alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];    

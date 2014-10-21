@@ -17,6 +17,9 @@
 }
 
 extern NSMutableArray *productsArray;
+extern NSString *orderStr;
+extern NSString *filterStr;
+
 @property int mode;
 
 @end
