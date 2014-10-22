@@ -14,12 +14,17 @@
     APIManager *APIManagerClass;
     JOAlert *alert;
     NSMutableArray *favList;
+    NSString* filter;
+    NSString* order;
 }
 
+extern NSString *orderStr;
+extern NSString *filterStr;
 extern NSMutableArray *productsArray;
 extern NSString *orderStr;
 extern NSString *filterStr;
 
 @property int mode;
+@property (strong,nonatomic) IBOutlet UITableView *table;
 
 @end

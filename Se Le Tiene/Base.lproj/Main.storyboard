@@ -2119,7 +2119,6 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1a-yr-HI6" customClass="stars">
                                             <rect key="frame" x="206" y="8" width="81" height="28"/>
-                                            <color key="backgroundColor" red="0.98039215690000003" green="0.38823529410000002" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28" id="Tdg-Dn-45r"/>
                                                 <constraint firstAttribute="width" constant="81" id="iRq-Zq-i4d"/>
@@ -2217,7 +2216,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="W9R-at-Bf8"/>
+        <segue reference="ZMY-V2-xZ1"/>
         <segue reference="wP8-Zi-hcC"/>
     </inferredMetricsTieBreakers>
 </document>

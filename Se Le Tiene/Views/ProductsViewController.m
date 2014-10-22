@@ -24,8 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-    NSLog(@"Token: %@",token);
-    
     if ([@"" isEqualToString:token]) {
         NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogin"];
         tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -34,8 +32,6 @@
     }else{
         APIManagerClass = [[APIManager alloc]init];
         APIManagerClass.delegate = self;
-        //[APIManagerClass rememberPass:@"Test"];
-
         self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoHeader"]];
         
         imgTmp = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height - 220)];
@@ -83,13 +79,8 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-
 -(void)viewDidAppear:(BOOL)animated{
-    download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    /*download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     download.alpha = 0.5;
     download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
     download.backgroundColor = [UIColor redColor];
@@ -97,23 +88,18 @@
     CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
     download.transform = transform;
     download.progress = 0.0;
-    [self.view addSubview:download];
+    [self.view addSubview:download];*/
 }
-
-
 
 #pragma SEARCH BAR METHODS DELEGATE
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"Buscando: %@", self.searchBar.text);
-    
     [self.searchBar resignFirstResponder];
     [imgTmp removeFromSuperview];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    //imgTmp.image = [self captureScreen];
-
     [self.view addSubview:imgTmp];
 }
 
@@ -135,15 +121,12 @@
 #pragma CUSTOM METHODS
 
 - (IBAction)changeView:(id)sender {
-    //[[self.viewLoaded subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    UISegmentedControl * tmpControl = sender;
     [self.containerViewController swapViewControllers];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //NSLog(@"%s", __PRETTY_FUNCTION__);
-    
     if ([segue.identifier isEqualToString:@"embedContainer"]) {
         self.containerViewController = segue.destinationViewController;
     }
@@ -161,11 +144,8 @@
     [keyWindow.layer renderInContext:context];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
-    
     CGRect clippedRect  = CGRectMake(0 ,158,img.size.width, self.view.bounds.size.height - 160);
     CGImageRef imageRef = CGImageCreateWithImageInRect(img.CGImage, clippedRect);
-    
     return [UIImage imageWithCGImage:imageRef];
 }
 

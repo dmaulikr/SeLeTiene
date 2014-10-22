@@ -37,10 +37,19 @@
     alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
     [self.view addSubview:alert];
     [alert showAlertAnim];
+    filter = @"";
+    order = @"";
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
+        [self.view addSubview:alert];
+        [alert showAlertAnim];
+        [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
+        filter = filterStr;
+        order = orderStr;
+    }
 }
 
 - (NSInteger)numberOfSections{

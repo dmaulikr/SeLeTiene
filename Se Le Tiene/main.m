@@ -25,6 +25,8 @@ NSString *filterStr;
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         token = @"";
+        orderStr = @"";
+        filterStr = @"";
         NSString *deviceModel = (NSString*)[UIDevice currentDevice].model;
         if ([[deviceModel substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPad"]) {
             dev = 1;

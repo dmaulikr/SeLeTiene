@@ -11,6 +11,7 @@
 @interface OrderViewController : UIViewController
 
 extern int order;
+extern NSString *orderStr;
 @property (weak, nonatomic) IBOutlet UIButton *btnCal;
 @property (weak, nonatomic) IBOutlet UIButton *btnUbi;
 @property (weak, nonatomic) IBOutlet UIButton *btnAZPro;

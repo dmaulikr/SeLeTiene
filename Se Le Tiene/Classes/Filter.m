@@ -59,8 +59,19 @@
 
 
 -(void)setFilter{
-    //http://api.seletiene.olinguito.com.co/SeLeTiene.svc/producto?orderby=Stars&page=0&rows=1&query={texto_buscar}
-    filterStr = [NSString stringWithFormat:@"&%@",[self getKeyWord]];
+    NSString *filter = @"";
+    if (![keyWord isEqualToString:@""]) {
+        NSLog(@"fdgxghjc  %@",keyWord);
+        filter = [NSString stringWithFormat:@"query=%@",keyWord];
+    }
+
+    /*if (stars>0) {
+        filter = [NSString stringWithFormat:@"query=%@",filter];
+    }*/
+    
+    filterStr = [NSString stringWithFormat:@"%@",filter];
+    
+    NSLog(@"Filter actualizado %@", filterStr);
 }
 
 

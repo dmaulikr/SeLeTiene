@@ -10,9 +10,6 @@
 #import "Product.h"
 #import "Connection.h"
 
-
-//#import "<#header#>"
-
 @implementation APIManager
 
 -(id)init{
@@ -103,7 +100,7 @@
 {
     total = response.expectedContentLength;
     NSLog(@"Expected %lld",response.expectedContentLength);
-     //NSLog(@"Tamaño de la descarga: %@", response);
+    //Tamaño de la descarga: %@", response
     apiData = [[NSMutableData alloc] init];
     
 }
@@ -132,7 +129,7 @@
 #pragma Manager Methods
 
 -(void) performGet:(NSString*)url :(NSString*)token :(BOOL)list{
-    NSLog(@"Performing Get");
+    NSLog(@"Performing Get with URL: %@",[NSString stringWithFormat:@"%@%@",URLAPI,url]);
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -141,7 +138,7 @@
     [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"x-Authentication"];
     [operationManager GET:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:nil
                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      NSLog(@"Success: %@", responseObject);
+                      //NSLog(@"Success: %@", responseObject);
                       if (list) {
                           [self.delegate returnList:responseObject];
                       }else{
@@ -201,7 +198,7 @@
     [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"x-Authentication"];
     
     
-    [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:JSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operationManager POST:[NSString stringWithFormat:@"%@&page=0&rows=20&%@",URLAPI,url] parameters:JSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success: %@", responseObject);
         [self.delegate returnResponse:successMsg];
     }

@@ -8,6 +8,7 @@
 
 #import "FilterViewController.h"
 #import "GenTableViewController.h"
+#import "Filter.h"
 @interface FilterViewController ()
 
 @end
@@ -68,6 +69,7 @@
 }
 
 -(void)setStar:(int)numStars{
+    stars = numStars;
     int s = preN==numStars ? 0 : numStars;
     for (int i = 0; i<[self.stars count]; i++) {
         if (i<s) {
@@ -85,6 +87,13 @@
 }
 
 - (IBAction)applyFilters:(id)sender {
+    Filter *tmpFilter = [[Filter alloc] init];
+    [tmpFilter setTypeFil:self.serviceSelector.selectedSegmentIndex];
+    //[tmpFilter setStars:stars];
+    [tmpFilter setKeyWord:tfWord.text];
+    [tmpFilter setFilter];
+    [self.navigationController popViewControllerAnimated:YES];
+    
     
 }
 

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FilterViewController : UIViewController <UITextFieldDelegate>
+{
+    int stars;
+}
 
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *serviceSelector;

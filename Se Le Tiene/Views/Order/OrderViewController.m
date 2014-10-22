@@ -54,6 +54,23 @@
         [tmpBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         order = tmpBtn.tag;
     }
+    
+    switch (tmpBtn.tag) {
+        case 1:
+            orderStr = @"orderby=Stars";
+        break;
+        case 2:
+            orderStr = @"orderby=Stars";
+        break;
+        case 3:
+            orderStr = @"orderby=p(a-z)";
+        break;
+        case 4:
+            orderStr = @"orderby=i(a-z)";
+        break;
+        default:
+            break;
+    }
 }
 
 - (IBAction)doOrder:(id)sender {

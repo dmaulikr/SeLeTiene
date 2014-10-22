@@ -16,6 +16,7 @@
 @end
 
 @implementation ProductTableViewController
+@synthesize table;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
+    alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
+    
     switch (self.mode) {
         case 1:
             self.tableView.backgroundColor = [UIColor clearColor];
@@ -35,12 +40,7 @@
         case 2:
             self.title = @"Favoritos";
             self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-            APIManagerClass = [[APIManager alloc] init];
-            APIManagerClass.delegate = self;
-            
             [APIManagerClass getFavorites];
-            alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
-            NSLog(@"Tamaño %f", self.view.frame.size.height);
             [self.view addSubview:alert];
             [alert showAlertAnim];
         break;
@@ -52,8 +52,20 @@
             self.tableView.backgroundColor = [UIColor clearColor];
         break;
     }
+    filter = @"";
+    order = @"";
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
+        [self.view addSubview:alert];
+        [alert showAlertAnim];
+        [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
+        filter = filterStr;
+        order = orderStr;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -149,7 +161,8 @@
             favList = tmpArray;
             break;
     }
-    [self.tableView reloadData];
+    [(UITableView*)self.view reloadData];
+    
     [alert dismissAlertAnim];
 }
 
