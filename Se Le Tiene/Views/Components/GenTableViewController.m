@@ -13,13 +13,14 @@
 @end
 
 @implementation GenTableViewController
-@synthesize modeTable;
+@synthesize modeTable,APIManagerClass,data;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     if (modeTable==1) {
         self.title = @"Ciudad";
+        [APIManagerClass getCities];
     }else{
         if (modeTable==2) {
             self.title = @"Tipo Producto";
@@ -47,14 +48,33 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return [data count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenCell" forIndexPath:indexPath];
-    cell.textLabel.text = @"Texto generico";
+    cell.textLabel.text = [((NSDictionary*)[data objectAtIndex:indexPath.row]) valueForKey:@"name"];
     return cell;
 }
+
+
+
+#pragma APIMANAGER
+
+-(void) returnList:(id)responseObject
+{
+    NSLog(@"Retorno una lista");
+    for (id key in (NSDictionary*)responseObject) {
+        NSDictionary *tmpObj = @{
+                                    @"id":key[@"id"],
+                                    @"name":key[@"name"]
+                                };
+        [data addObject:tmpObj];
+    }
+    [(UITableView*)self.view reloadData];
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.

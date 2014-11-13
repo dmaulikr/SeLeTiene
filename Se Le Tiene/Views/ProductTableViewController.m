@@ -36,17 +36,21 @@
     switch (self.mode) {
         case 1:
             self.tableView.backgroundColor = [UIColor clearColor];
+            mode = 1;
         break;
         case 2:
+            NSLog(@"Entro a Favoritos");
             self.title = @"Favoritos";
             self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
             [APIManagerClass getFavorites];
             [self.view addSubview:alert];
             [alert showAlertAnim];
+            mode = 2;
         break;
         case 3:
             self.title = @"Recientes";
             self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
+            mode = 3;
         break;
         default:
             self.tableView.backgroundColor = [UIColor clearColor];
@@ -58,12 +62,14 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
-        [self.view addSubview:alert];
-        [alert showAlertAnim];
-        [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
-        filter = filterStr;
-        order = orderStr;
+    if (mode==1) {
+        if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
+            [self.view addSubview:alert];
+            [alert showAlertAnim];
+            [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
+            filter = filterStr;
+            order = orderStr;
+        }
     }
 }
 - (void)didReceiveMemoryWarning {
@@ -129,6 +135,25 @@
     ProductDetailViewController *tmpView = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
     tmpView.actProduct = [productsArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:tmpView animated:YES];
+}
+
+-(void) returnObt:(id)responseObject{
+    NSLog(@"Retorno un objeto");
+    NSDictionary *test = (NSDictionary*)responseObject;
+    NSMutableArray *tmpArray = (NSMutableArray*)test[@"favorites"];
+    for (id key in (NSDictionary*)responseObject) {
+        Product *tmpProduct = [[Product alloc] init];
+        tmpProduct.nameProduct = key[@"nombre"];
+        tmpProduct.scoreProduct = key[@"calificacion"];
+        tmpProduct.descProduct = key[@"descripcion"];
+        NSDictionary *prov = key[@"Proveedor"];
+        tmpProduct.providerProduct.nameProvider  = prov[@"nombre"];
+        tmpProduct.providerProduct.emailProvider = prov[@"email"];
+        tmpProduct.providerProduct.phoneProvider = prov[@"telefono"];
+        tmpProduct.providerProduct.celProvider   = prov[@"ceular"];
+        [tmpArray addObject:tmpProduct];
+    }
+    [(UITableView*)self.view reloadData];
 }
 
 -(void) returnList:(id)responseObject

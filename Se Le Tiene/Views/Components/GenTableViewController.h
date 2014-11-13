@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIManager.h"
 
-@interface GenTableViewController : UITableViewController
+@interface GenTableViewController : UITableViewController <APIManagerDelegate>
 
+
+@property (strong,nonatomic) APIManager *APIManagerClass;
 @property int modeTable;
+@property (strong,nonatomic) NSMutableArray *data;
+
 
 @end

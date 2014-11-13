@@ -60,34 +60,38 @@
 
 -(void)setFilter{
     NSString *filter = @"";
-    if (![keyWord isEqualToString:@""]) {
-        NSLog(@"fdgxghjc  %@",keyWord);
-        filter = [NSString stringWithFormat:@"q=%@",keyWord];
-    }
-
-    if (stars>0&&![filter isEqualToString:@""]) {
-        filter = [NSString stringWithFormat:@"%@&minStars=%d",filter,stars];
+    if ([keyWord isEqualToString:@""]&&stars==0) {
+        
     }else{
-        if (stars>0) {
-            filter = [NSString stringWithFormat:@"minStars=%d",stars];
+    
+        
+        if (![keyWord isEqualToString:@""]) {
+            filter = [NSString stringWithFormat:@"q=%@",keyWord];
         }
-    }
-    
-    
-    if(typeFil==0&&![filter isEqualToString:@""]){
-        filter = [NSString stringWithFormat:@"%@&type=product",filter];
-    }else{
-        if(typeFil==0){
-            filter = [NSString stringWithFormat:@"type=product"];
-        }if(typeFil==1&&![filter isEqualToString:@""]){
-            filter = [NSString stringWithFormat:@"%@&type=service",filter];
+
+        if (stars>0&&![filter isEqualToString:@""]) {
+            filter = [NSString stringWithFormat:@"%@&minStars=%d",filter,stars];
+        }else{
+            if (stars>0) {
+                filter = [NSString stringWithFormat:@"minStars=%d",stars];
+            }
+        }
+        
+        
+        if(typeFil==0&&![filter isEqualToString:@""]){
+            filter = [NSString stringWithFormat:@"%@&type=product",filter];
         }else{
             if(typeFil==0){
-                filter = [NSString stringWithFormat:@"type=service"];
+                filter = [NSString stringWithFormat:@"type=product"];
+            }if(typeFil==1&&![filter isEqualToString:@""]){
+                filter = [NSString stringWithFormat:@"%@&type=service",filter];
+            }else{
+                if(typeFil==0){
+                    filter = [NSString stringWithFormat:@"type=service"];
+                }
             }
         }
     }
-    
     filterStr = [NSString stringWithFormat:@"%@",filter];
     
     NSLog(@"Filter actualizado %@", filterStr);

@@ -16,6 +16,7 @@
     NSMutableArray *favList;
     NSString* filter;
     NSString* order;
+    int mode;
 }
 
 extern NSString *orderStr;

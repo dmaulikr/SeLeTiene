@@ -18,9 +18,6 @@
 
 @implementation AccountViewController
 @synthesize btnFavorites,btnLastOpened,btnLogout,lblCellPhoneUser,lblEmail,lblNameUser,lblPhoneUser,contactView,menuView,APIManagerClass;
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     APIManagerClass = [[APIManager alloc] init];

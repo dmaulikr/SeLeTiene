@@ -27,18 +27,6 @@
     Connection* conn = [[Connection alloc] init];
     [conn openDB];
     
-    /*User *tst = [[User alloc] init];
-    
-    tst.email = userEmail;
-    tst.password = userPass;*/
-    
-    
-    
-    /*NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:@"password" forKey:@"grant_type"];
-    [dic setObject:userEmail forKey:@"email"];
-    [dic setObject:userPass forKey:@"password"];*/
-    
     NSDictionary* jsonDict = @{ @"grant_type": @"password",
                                 @"username": userEmail,
                                 @"password": userPass};
@@ -53,14 +41,7 @@
     [NSJSONSerialization JSONObjectWithData: [[tst JSONString] dataUsingEncoding:NSUTF8StringEncoding]
                                     options: NSJSONReadingMutableContainers
                                       error: &e];
-    */
-    
-    
-   /* NSError *e;
-    NSDictionary *JSON =
-    [NSJSONSerialization JSONObjectWithData: [jsonString dataUsingEncoding:NSUTF8StringEncoding]
-                                    options: NSJSONReadingMutableContainers
-                                      error: &e];*/
+*/
     
 
     
@@ -69,7 +50,6 @@
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
 //    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
-   // [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"x-Authentication"];
     NSLog(@"Rquest creado");
     //NSLog(@"%@",dic);
     
@@ -107,12 +87,19 @@
 }
 
 -(void)signUpUser:(User*)user{
-    [self performPost:@"Account" :token :[user JSONString] :@"Creado correctamente" :@"Ocurrio un error al crear"];
+    NSDictionary *userDic = @{
+                              //@"key":@"value"
+                              @"email":user.email,
+                              @"name":user.name,
+                              @"password":user.passwordHash,
+                              @"phoneNumber":user.phoneNumber
+                              };
+    [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
 }
 
 
 -(void)getProducts:(NSString*)filters{
-    [self performGet:[NSString stringWithFormat:@"products%@",filters] :token :true];
+    [self performGet:[NSString stringWithFormat:@"productservices?ignoredpsvalidation=true%@",filters] :token :true];
 }
 
 -(void)getProductDetail:(int)idProduct{
@@ -120,8 +107,13 @@
 }
 
 -(void)getFavorites{
-    [self performGet:@"usuario/me/favorito" :token :true];
+    [self performGet:@"Account" :token :false];
 }
+
+-(void)getCities{
+    [self performGet:@"Cities" :token :true];
+}
+
 
 -(void)getSelfUser{
     //NSLog(@"retriving self user with token %@",token);
@@ -191,13 +183,13 @@
 }
 
 
--(void) performPost:(NSString*)url :(NSString*)token :(NSString*)data :(NSString*)successMsg :(NSString*)failMsg {
+-(void) performPost:(NSString*)url :(NSString*)token :(NSDictionary*)data :(NSString*)successMsg :(NSString*)failMsg {
     NSLog(@"Performing Post");
     NSError *e;
-    NSDictionary *JSON =
-    [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]
-                                    options: NSJSONReadingMutableContainers
-                                      error: &e];
+   // NSDictionary *JSON =
+   // [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]
+     //                               options: NSJSONReadingMutableContainers
+       //                               error: &e];
     
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -205,7 +197,7 @@
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
     
-    [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:JSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"Success: %@", responseObject);
             [self.delegate returnResponse:successMsg];
         }

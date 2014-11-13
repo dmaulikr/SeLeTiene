@@ -46,6 +46,7 @@ extern NSString* token;
 -(void)getProducts:(NSString*)filters;
 -(void)getProductDetail:(int)idProduct;
 -(void)getFavorites;
+-(void)getCities;
 -(void)getSelfUser;
 
 @property (nonatomic, weak) id <APIManagerDelegate> delegate;

@@ -33,7 +33,8 @@
     padCell = wScreen*0.03;
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
-    [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
+    [APIManagerClass getProducts:[NSString stringWithFormat:@"%@&%@",orderStr,filterStr]];
+    
     alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
     [self.view addSubview:alert];
     [alert showAlertAnim];
@@ -46,7 +47,7 @@
     if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
         [self.view addSubview:alert];
         [alert showAlertAnim];
-        [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
+        [APIManagerClass getProducts:[NSString stringWithFormat:@"%@&%@",orderStr,filterStr]];
         filter = filterStr;
         order = orderStr;
     }
