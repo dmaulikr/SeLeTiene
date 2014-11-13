@@ -93,14 +93,24 @@
 #pragma APIMANAGER
 
 -(void) returnObt:(id)responseObject{
-    actUser.telefono = responseObject[@"telefono"];
+    actUser.phoneNumber = responseObject[@"phoneNumber"];
+    actUser.mobileNumber = responseObject[@"mobileNumber"];
     actUser.email = responseObject[@"email"];
-    actUser.nombre = responseObject[@"nombre"];
+    actUser.name = responseObject[@"name"];
     actUser._id = responseObject[@"id"];
     
-    lblPhoneUser.text = actUser.telefono;
+   /* if (actUser.phoneNumber) {
+
+    //}*/
+    //lblPhoneUser.text = [NSString stringWithFormat:@"%@",actUser.phoneNumber];
+    //lblPhoneUser.text = [NSString stringWithFormat:@"%@",actUser.phoneNumber];
+    //lblPhoneUser.text = !actUser.phoneNumber?@"---":actUser.phoneNumber;
+    lblPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.phoneNumber] isEqualToString:@"<null>"]? @"---":actUser.phoneNumber;
+    lblCellPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.mobileNumber] isEqualToString:@"<null>"]? @"---":actUser.mobileNumber;
+    
+    //lblCellPhoneUser.text = actUser.mobileNumber!=nil?actUser.mobileNumber:@"---";
     lblEmail.text = actUser.email;
-    lblNameUser.text = actUser.nombre;
+    lblNameUser.text = actUser.name;
 }
 
 #pragma MENU DELEGATE

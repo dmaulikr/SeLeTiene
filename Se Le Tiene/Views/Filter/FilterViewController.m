@@ -89,7 +89,7 @@
 - (IBAction)applyFilters:(id)sender {
     Filter *tmpFilter = [[Filter alloc] init];
     [tmpFilter setTypeFil:self.serviceSelector.selectedSegmentIndex];
-    //[tmpFilter setStars:stars];
+    [tmpFilter setStars:stars];
     [tmpFilter setKeyWord:tfWord.text];
     [tmpFilter setFilter];
     [self.navigationController popViewControllerAnimated:YES];

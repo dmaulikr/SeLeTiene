@@ -62,12 +62,31 @@
     NSString *filter = @"";
     if (![keyWord isEqualToString:@""]) {
         NSLog(@"fdgxghjc  %@",keyWord);
-        filter = [NSString stringWithFormat:@"query=%@",keyWord];
+        filter = [NSString stringWithFormat:@"q=%@",keyWord];
     }
 
-    /*if (stars>0) {
-        filter = [NSString stringWithFormat:@"query=%@",filter];
-    }*/
+    if (stars>0&&![filter isEqualToString:@""]) {
+        filter = [NSString stringWithFormat:@"%@&minStars=%d",filter,stars];
+    }else{
+        if (stars>0) {
+            filter = [NSString stringWithFormat:@"minStars=%d",stars];
+        }
+    }
+    
+    
+    if(typeFil==0&&![filter isEqualToString:@""]){
+        filter = [NSString stringWithFormat:@"%@&type=product",filter];
+    }else{
+        if(typeFil==0){
+            filter = [NSString stringWithFormat:@"type=product"];
+        }if(typeFil==1&&![filter isEqualToString:@""]){
+            filter = [NSString stringWithFormat:@"%@&type=service",filter];
+        }else{
+            if(typeFil==0){
+                filter = [NSString stringWithFormat:@"type=service"];
+            }
+        }
+    }
     
     filterStr = [NSString stringWithFormat:@"%@",filter];
     

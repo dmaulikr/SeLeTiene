@@ -18,9 +18,10 @@
 
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSString *_id;
-@property (nonatomic, retain) NSString *nombre;
-@property (nonatomic, retain) NSString *telefono;
-@property (nonatomic, retain) NSString *password;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *phoneNumber;
+@property (nonatomic, retain) NSString *mobileNumber;
+@property (nonatomic, retain) NSString *passwordHash;
 
 
 

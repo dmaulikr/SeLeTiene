@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eax-0q-XrH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eax-0q-XrH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1874,7 +1875,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstAttribute="height" constant="50" id="SYp-QO-uIP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Ubicación">
+                                <state key="normal" title="A-Z Productos o Servicios">
                                     <color key="titleColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1889,7 +1890,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstAttribute="height" constant="50" id="sm2-q3-IBE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="A-Z Productos o Servicios">
+                                <state key="normal" title="A-Z Ofertante">
                                     <color key="titleColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1947,12 +1948,17 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             <constraint firstAttribute="centerX" secondItem="DwI-8A-ip8" secondAttribute="centerX" id="t2T-H0-gjr"/>
                             <constraint firstItem="1mY-AM-ugG" firstAttribute="top" secondItem="nNn-TG-Hsq" secondAttribute="bottom" constant="57" id="vPW-89-9c2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="olL-Jd-UK9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Ordenar" id="2rx-aA-xgt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btnAZOfr" destination="olL-Jd-UK9" id="zQE-ib-Cv9"/>
-                        <outlet property="btnAZPro" destination="ZuS-r7-95X" id="W66-Lc-79V"/>
+                        <outlet property="btnAZOfr" destination="ZuS-r7-95X" id="Tmt-v6-bYk"/>
+                        <outlet property="btnAZPro" destination="1mY-AM-ugG" id="fai-C8-7tp"/>
                         <outlet property="btnCal" destination="XyH-5A-nRt" id="Yth-q2-uXh"/>
                         <outlet property="btnOrder" destination="DwI-8A-ip8" id="3IL-vz-1Vz"/>
                         <outlet property="btnUbi" destination="1mY-AM-ugG" id="zAw-r8-W8q"/>

@@ -135,14 +135,63 @@
 }
 
 - (IBAction)SignUpUser:(id)sender {
-    User *tmpUser = [[User alloc] init];
-    tmpUser.nombre = txtName.text;
-    tmpUser.email = txtEmail.text;
-    tmpUser.telefono = txtPhone.text;
-    tmpUser.password = txtPass.text;
-    [APIManagerClass signUpUser:tmpUser];
+    btnSignUp.enabled = false;
+    if ([self validate]) {
+        User *tmpUser = [[User alloc] init];
+        tmpUser.name = txtName.text;
+        tmpUser.email = txtEmail.text;
+        tmpUser.phoneNumber = txtPhone.text;
+        tmpUser.passwordHash = txtPass.text;
+        [APIManagerClass signUpUser:tmpUser];
+    }else{
+        [self.view addSubview:alert];
+        [alert setText:@"Revise los campos"];
+        [alert showAlertAutoDismiss];
+        btnSignUp.enabled = true;
+    }
 }
 
+
+-(BOOL) validate{
+    BOOL val = true;
+    if([self.txtEmail.text isEqualToString:@""]||![self validateEmail:self.txtEmail.text]){
+        self.txtEmail.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
+        self.txtEmail.layer.borderWidth = 1.0f;
+        val = false;
+    }
+    if([self.txtName.text isEqualToString:@""]){
+        self.txtName.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
+        self.txtName.layer.borderWidth = 1.0f;
+        val = false;
+    }
+    if([self.txtPhone.text isEqualToString:@""]){
+        self.txtPhone.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
+        self.txtPhone.layer.borderWidth = 1.0f;
+        val = false;
+    }
+    if([self.txtPass.text isEqualToString:@""]||![self.txtPass.text isEqualToString:self.txtConfPass.text]||[self.txtConfPass.text isEqualToString:@""]){
+        self.txtPass.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
+        self.txtPass.layer.borderWidth = 1.0f;
+        self.txtConfPass.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
+        self.txtConfPass.layer.borderWidth = 1.0f;
+        val = false;
+    }
+    return val;
+}
+
+- (BOOL) validateEmail: (NSString *) candidate {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:candidate];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([textField.text length] > 25) {
+        textField.text = [textField.text substringToIndex:25-1];
+        return NO;
+    }
+    return YES;
+}
 #pragma APIDelegate
 
 - (void) returnResponse:(NSString *)msg{

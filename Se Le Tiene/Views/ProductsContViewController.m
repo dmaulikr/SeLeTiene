@@ -112,9 +112,9 @@
     NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
     for (id key in (NSDictionary*)responseObject) {
         Product *tmpProduct = [[Product alloc] init];
-        tmpProduct.nameProduct = key[@"nombre"];
-        tmpProduct.scoreProduct = key[@"calificacion"];
-        tmpProduct.descProduct = key[@"descripcion"];
+        tmpProduct.nameProduct = key[@"title"];
+        tmpProduct.scoreProduct = key[@"rating"];
+        tmpProduct.descProduct = key[@"description"];
         NSDictionary *prov = key[@"Proveedor"];
         tmpProduct.providerProduct.nameProvider  = prov[@"nombre"];
         tmpProduct.providerProduct.emailProvider = prov[@"email"];

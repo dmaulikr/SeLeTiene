@@ -57,16 +57,16 @@
     
     switch (tmpBtn.tag) {
         case 1:
-            orderStr = @"orderby=Stars";
+            orderStr = @"order=stars";
         break;
         case 2:
-            orderStr = @"orderby=Stars";
+            orderStr = @"order=stars";
         break;
         case 3:
-            orderStr = @"orderby=p(a-z)";
+            orderStr = @"order=p(a-z)";
         break;
         case 4:
-            orderStr = @"orderby=i(a-z)";
+            orderStr = @"order=i(a-z)";
         break;
         default:
             break;

@@ -56,9 +56,10 @@
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
     
-    txtPhone.text = self.edituser.telefono;
+    txtCellPhone.text = self.edituser.mobileNumber;
+    txtPhone.text = self.edituser.phoneNumber;
     txtEmail.text = self.edituser.email;
-    txtName.text = self.edituser.nombre;
+    txtName.text = self.edituser.name;
 }
 
 #pragma DELEGATE METHODS
