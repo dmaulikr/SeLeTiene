@@ -20,10 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-    //APIManager *test = [[APIManager alloc]init];
-    //test.delegate = self;
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];    
     download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
     CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
@@ -57,7 +54,12 @@
     [self.strs setStarsNum:[actProduct getScore]];
     [self.favBtn setState:true];
     
-    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];    
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
+    APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
+    [APIManagerClass getProductDetail:actProduct.idProduct.intValue];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -66,6 +68,17 @@
     DescProduct.text = actProduct.descProduct;
     imgProduct.image = actProduct.imageProduct;
 }
+
+
+-(void) returnObt:(id)responseObject{
+    NSDictionary *prov = responseObject[@"owner"];
+    actProduct.providerProduct.nameProvider = [[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"];
+    actProduct.providerProduct.celProvider = [[NSString stringWithFormat:@"%@",prov[@"mobileNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"mobileNumber"];
+    actProduct.providerProduct.phoneProvider = [[NSString stringWithFormat:@"%@",prov[@"phoneNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"phoneNumber"];
+    actProduct.providerProduct.emailProvider = [[NSString stringWithFormat:@"%@",prov[@"email"]] isEqualToString:@"<null>"]? @"---":prov[@"email"];
+}
+
+
 
 - (IBAction)btnContact:(id)sender {
     int screenVal=imgProduct.bounds.size.height + 261;
@@ -282,14 +295,14 @@
 }
 
 -(IBAction)shareTw:(id)sender{
-    NSString *str = @"";
+    NSString *str = [NSString stringWithFormat:@"Recomiendo a %@ con su producto \"%@\", cél: %@", actProduct.providerProduct.nameProvider, actProduct.nameProduct, actProduct.providerProduct.celProvider ];
     SLComposeViewController *composeController  = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [composeController setInitialText:str];
     [self presentViewController:composeController animated:YES completion:nil];
 }
 
 -(IBAction)shareFb:(id)sender{
-    NSString *str = @"";
+    NSString *str = [NSString stringWithFormat:@"Recomiendo a %@ con su producto \"%@\", cél: %@", actProduct.providerProduct.nameProvider, actProduct.nameProduct, actProduct.providerProduct.celProvider ];
     SLComposeViewController *composeController  = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     [composeController setInitialText:str];
     [self presentViewController:composeController animated:YES completion:nil];

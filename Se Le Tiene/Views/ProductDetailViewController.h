@@ -22,6 +22,7 @@
     int z;
     int s;
     CATransition *transition;
+    APIManager *APIManagerClass;
 }
 @property (strong,nonatomic) UIProgressView* download;
 @property (strong,nonatomic) UIView *tstBtn;

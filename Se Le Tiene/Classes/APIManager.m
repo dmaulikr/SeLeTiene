@@ -103,7 +103,7 @@
 }
 
 -(void)getProductDetail:(int)idProduct{
-    
+    [self performGet:[NSString stringWithFormat:@"productservices/%d",idProduct] :token :false];
 }
 
 -(void)getFavorites{
