@@ -53,6 +53,15 @@
             mode = 3;
         break;
         default:
+            APIManagerClass = [[APIManager alloc] init];
+            APIManagerClass.delegate = self;
+            [APIManagerClass getProducts:[NSString stringWithFormat:@"%@&%@",orderStr,filterStr]];
+            
+            alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
+            [self.view addSubview:alert];
+            [alert showAlertAnim];
+            filter = @"";
+            order = @"";
             self.tableView.backgroundColor = [UIColor clearColor];
         break;
     }
@@ -177,7 +186,6 @@
     switch (self.mode) {
         case 1:
             productsArray = tmpArray;
-            
             break;
         case 2:
             favList = tmpArray;

@@ -94,7 +94,9 @@
     actUser.mobileNumber = responseObject[@"mobileNumber"];
     actUser.email = responseObject[@"email"];
     actUser.name = responseObject[@"name"];
-    actUser._id = responseObject[@"id"];
+    //actUser._id = responseObject[@"id"];
+    
+    //NSLog(@"Identificador: %@", actUser._id);
     
    /* if (actUser.phoneNumber) {
 

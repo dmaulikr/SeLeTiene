@@ -95,8 +95,11 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"Buscando: %@", self.searchBar.text);
-    filterStr = [NSString stringWithFormat:@"?q=%@",self.searchBar.text];
-    [APIManagerClass getProducts:@""];
+    
+    //filterStr = [NSString stringWithFormat:@"?q=%@",self.searchBar.text];
+    APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
+    [APIManagerClass getProducts:[NSString stringWithFormat:@"%@&q=%@",orderStr,self.searchBar.text]];
     [self.searchBar resignFirstResponder];
     [imgTmp removeFromSuperview];
 }

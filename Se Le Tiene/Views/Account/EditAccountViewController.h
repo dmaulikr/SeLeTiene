@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MenuView.h"
 #import "User.h"
+#import "JOAlert.h"
+#import "APIManager.h"
 
-@interface EditAccountViewController : UIViewController <UITextFieldDelegate,MenuViewDelegate>{
+@interface EditAccountViewController : UIViewController <UITextFieldDelegate,MenuViewDelegate,APIManagerDelegate>{
     int yPos;
     int sW;
     int sH;
     CATransition *transition;
-    
+    JOAlert *alert;
+    APIManager *APIManagerClass;
 }
 @property (weak, nonatomic) User *edituser;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;

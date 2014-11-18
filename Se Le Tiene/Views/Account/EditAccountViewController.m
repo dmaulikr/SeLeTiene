@@ -56,10 +56,14 @@
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
     
-    txtCellPhone.text = self.edituser.mobileNumber;
-    txtPhone.text = self.edituser.phoneNumber;
+    txtCellPhone.text = [[NSString stringWithFormat:@"%@",self.edituser.mobileNumber] isEqualToString:@"<null>"]? @"---":self.edituser.mobileNumber;
+    txtPhone.text = [[NSString stringWithFormat:@"%@",self.edituser.phoneNumber] isEqualToString:@"<null>"]? @"---":self.edituser.phoneNumber;
     txtEmail.text = self.edituser.email;
     txtName.text = self.edituser.name;
+    
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
 }
 
 #pragma DELEGATE METHODS
@@ -113,9 +117,23 @@
     [txtName resignFirstResponder];
     [txtCellPhone resignFirstResponder];
     [txtPhone resignFirstResponder];
-    /*EditAccountViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EditView"];
-     [self.navigationController pushViewController:eVC animated:YES];*/
+    self.edituser.mobileNumber = txtCellPhone.text;
+    self.edituser.phoneNumber = txtPhone.text;
+    self.edituser.email = txtEmail.text;
+    [APIManagerClass updateUser:self.edituser];
+    NSLog(@"Updeteando data...");
 }
+
+
+#pragma APIDelegate
+
+- (void) returnResponse:(NSString *)msg{
+    [self.view addSubview:alert];
+    [alert setText:msg];
+    [alert showAlertAutoDismiss];
+}
+
+
 
 #pragma MENU DELEGATE
 

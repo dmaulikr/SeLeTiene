@@ -98,7 +98,26 @@
 }
 
 
+-(void)updateUser:(User*)user{
+    NSLog(@"Updeteando");
+    NSLog(@"Id: %@",user._id);
+    
+    NSDictionary *userDic = @{
+                              //@"key":@"value"
+                              @"email":user.email,
+                              @"name":user.name,
+                              @"phoneNumber":user.phoneNumber
+                              };
+    NSLog(@"Updeteando 2");
+    [self performPut:@"Account" :token :userDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
+}
+
+
+
+
+
 -(void)getProducts:(NSString*)filters{
+    NSLog(@"Hola ?????");
     [self performGet:[NSString stringWithFormat:@"productservices?ignoredpsvalidation=true%@",filters] :token :true];
 }
 
@@ -107,7 +126,7 @@
 }
 
 -(void)getFavorites{
-    [self performGet:@"Account" :token :false];
+    [self performGet:@"Account/Favorites" :token :true];
 }
 
 -(void)getCities{
@@ -185,11 +204,6 @@
 
 -(void) performPost:(NSString*)url :(NSString*)token :(NSDictionary*)data :(NSString*)successMsg :(NSString*)failMsg {
     NSLog(@"Performing Post");
-    NSError *e;
-   // NSDictionary *JSON =
-   // [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]
-     //                               options: NSJSONReadingMutableContainers
-       //                               error: &e];
     
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -204,27 +218,25 @@
                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                        NSLog(@"Error: %@", [error description]);
                        [self.delegate returnResponse:failMsg];
-                       //[self.delegate loaded:false :@"Revise sus datos" :@""];
        }];
 }
 
 
--(void) performPut:(NSString*)url :(NSString*)token :(NSString*)data :(NSString*)successMsg :(NSString*)failMsg {
-    NSLog(@"Performing Put");
-    NSError *e;
-    NSDictionary *JSON =
-    [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]
-                                    options: NSJSONReadingMutableContainers
-                                      error: &e];
+-(void) performPut:(NSString*)url :(NSString*)token :(NSDictionary*)data :(NSString*)successMsg :(NSString*)failMsg {
+    NSLog(@"Performing Post");
+    
+    // NSDictionary *JSON =
+    // [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]
+    //                               options: NSJSONReadingMutableContainers
+    //                               error: &e];
     
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"x-Authentication"];
+    [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
     
-    
-    [operationManager POST:[NSString stringWithFormat:@"%@&page=0&rows=20&%@",URLAPI,url] parameters:JSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operationManager PUT:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success: %@", responseObject);
         [self.delegate returnResponse:successMsg];
     }
@@ -233,7 +245,6 @@
                        [self.delegate returnResponse:failMsg];
                        //[self.delegate loaded:false :@"Revise sus datos" :@""];
                    }];
-    
 }
 
 
