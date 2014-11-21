@@ -100,20 +100,25 @@
 
 -(void)updateUser:(User*)user{
     NSLog(@"Updeteando");
-    NSLog(@"Id: %@",user._id);
-    
     NSDictionary *userDic = @{
                               //@"key":@"value"
                               @"email":user.email,
                               @"name":user.name,
-                              @"phoneNumber":user.phoneNumber
+                              @"phoneNumber":user.phoneNumber,
+                              @"mobileNumber":user.mobileNumber
                               };
     NSLog(@"Updeteando 2");
+    NSLog(@"%@",token);
+    
+    
     [self performPut:@"Account" :token :userDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
 }
 
 
-
+-(void)setFavorite:(int)productServiceId{
+    NSDictionary *test;
+    [self performPut:@"ProductServices/Favorite?productServiceId={productServiceId}" :token :test :@"Sirve" :@"No sirve"];
+}
 
 
 -(void)getProducts:(NSString*)filters{
@@ -209,7 +214,7 @@
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
     
     [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"Success: %@", responseObject);
@@ -223,21 +228,16 @@
 
 
 -(void) performPut:(NSString*)url :(NSString*)token :(NSDictionary*)data :(NSString*)successMsg :(NSString*)failMsg {
-    NSLog(@"Performing Post");
-    
-    // NSDictionary *JSON =
-    // [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]
-    //                               options: NSJSONReadingMutableContainers
-    //                               error: &e];
-    
+    NSLog(@"Performing PUT");
+    NSLog(@"Esto es lo que se envia Carol : %@",data);
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [operationManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
     
     [operationManager PUT:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success: %@", responseObject);
+        NSLog(@"Success response: %@", responseObject);
         [self.delegate returnResponse:successMsg];
     }
                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -51,6 +51,8 @@ extern NSString* token;
 -(void)getCities;
 -(void)getSelfUser;
 
+-(void)setFavorite:(int)productServiceId;
+
 @property (nonatomic, weak) id <APIManagerDelegate> delegate;
 
 @end
