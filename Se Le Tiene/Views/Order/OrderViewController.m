@@ -63,10 +63,10 @@
             orderStr = @"order=stars";
         break;
         case 3:
-            orderStr = @"order=p(a-z)";
+            orderStr = @"order=provider";
         break;
         case 4:
-            orderStr = @"order=i(a-z)";
+            orderStr = @"order=lexic";
         break;
         default:
             break;
