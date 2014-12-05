@@ -10,6 +10,7 @@
 #import "APIManager.h"
 #import "Offer/OfferViewController.h"
 #import "AccountViewController.h"
+#import "Connection.h"
 
 @interface ProductDetailViewController ()
 
@@ -76,6 +77,12 @@
     actProduct.providerProduct.celProvider = [[NSString stringWithFormat:@"%@",prov[@"mobileNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"mobileNumber"];
     actProduct.providerProduct.phoneProvider = [[NSString stringWithFormat:@"%@",prov[@"phoneNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"phoneNumber"];
     actProduct.providerProduct.emailProvider = [[NSString stringWithFormat:@"%@",prov[@"email"]] isEqualToString:@"<null>"]? @"---":prov[@"email"];
+    
+    
+    NSLog(@"Detalle de %@", responseObject);
+    Connection *conn = [[Connection alloc] init];
+     [conn openDB];
+    [conn insertToRecent:responseObject[@"title"] :[[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"] :@"http://lorempixel.com/300/150/" :@"3" :[NSString stringWithFormat:@"%@", responseObject[@"rating"]].intValue];
 }
 
 

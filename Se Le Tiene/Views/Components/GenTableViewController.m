@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
+
+    
     if (modeTable==1) {
         self.title = @"Ciudad";
         [APIManagerClass getCities];
@@ -63,7 +68,7 @@
 
 -(void) returnList:(id)responseObject
 {
-    NSLog(@"Retorno una lista");
+    NSLog(@"Retorno una lista %@", responseObject);
     for (id key in (NSDictionary*)responseObject) {
         NSDictionary *tmpObj = @{
                                     @"id":key[@"id"],

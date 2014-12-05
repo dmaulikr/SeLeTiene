@@ -7,6 +7,7 @@
 //
 
 #import "Connection.h"
+#import "Product.h"
 
 @implementation Connection
 @synthesize returnList;
@@ -65,6 +66,52 @@
         NSLog(@"DB Error. '%s'", sqlite3_errmsg(db));
     }
 }
+
+
+-(void)insertToRecent:(NSString*)nameProduct :(NSString*)nameProvider :(NSString*)urlImage :(NSString*)idAPI :(int)rating{
+    //NSLog(@"Insertando %@", token);
+    char *errorMsg;
+    
+   // NSLog(@"Entro con: %@, %@, %@, %@, %d",nameProduct,nameProvider,urlImage,idAPI,rating);
+    
+    NSString *query = [NSString stringWithFormat:@"insert into Recent (nameProduct, nameProvider, urlImage, idAPI, rating) values (\"%@\",\"%@\",\"%@\",\"%@\",%d);",nameProduct,nameProvider,urlImage,idAPI,rating];
+    
+    NSLog(@"%@",query);
+    if (sqlite3_exec(db, [query UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK) {
+        NSLog(@"DB Error. '%s'", sqlite3_errmsg(db));
+    }
+}
+
+
+-(NSMutableArray*) getRecent{
+    returnList = [[NSMutableArray alloc] init];
+    NSString *sql = @"select * from Recent";
+    sqlite3_stmt *statement;
+    if(sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil)==SQLITE_OK)
+    {
+        while (sqlite3_step(statement)==SQLITE_ROW) {
+            Product *proObj = [[Product alloc] init];
+            char *field1 = (char *) sqlite3_column_text(statement, 0);
+            NSString *field1str = [[NSString alloc]initWithUTF8String:field1];
+            [proObj setIdProduct: field1str];
+            field1 = (char *) sqlite3_column_text(statement, 1);
+            [proObj setNameProduct:[[NSString alloc]initWithUTF8String:field1]];
+            field1 = (char *) sqlite3_column_text(statement, 2);
+            [proObj setImgProduct:[NSURL URLWithString:[[NSString alloc]initWithUTF8String:field1]]];
+            field1 = (char *) sqlite3_column_text(statement, 3);
+            [proObj setDescProduct:[[NSString alloc]initWithUTF8String:field1]];
+            field1 = (char *) sqlite3_column_text(statement, 5);
+            field1str = [[NSString alloc]initWithUTF8String:field1];
+            proObj.scoreProduct = field1str;
+            [returnList addObject:proObj];
+        }
+    }else{
+        NSLog(@"Fallo al realizar query");
+    }
+    return returnList;
+}
+
+
 -(void)deleteSession{
     char *errorMsg;
     NSString *query = @"delete from User";

@@ -161,7 +161,7 @@
         [alert showAlert];
         btnSignIn.enabled = true;
     }else{
-        token = tokenR;
+        //token = tokenR;
         NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogged"];
         tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:tmp animated:YES completion:nil];

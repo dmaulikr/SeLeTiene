@@ -10,6 +10,7 @@
 #import "ProductDetailViewController.h"
 #import "ProductsTableViewCell.h"
 #import "Product.h"
+#import "Connection.h"
 
 @interface ProductTableViewController ()
 
@@ -32,6 +33,11 @@
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
     alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
+    
+    conn = [[Connection alloc]init];
+    [conn openDB];
+    
+    recList = [conn getRecent];
     
     switch (self.mode) {
         case 1:
@@ -56,7 +62,6 @@
             APIManagerClass = [[APIManager alloc] init];
             APIManagerClass.delegate = self;
             [APIManagerClass getProducts:[NSString stringWithFormat:@"%@&%@",orderStr,filterStr]];
-            
             alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-150)];
             [self.view addSubview:alert];
             [alert showAlertAnim];
@@ -101,7 +106,7 @@
             return [favList count];
             break;
         case 3:
-            return [favList count];
+            return [recList count];
             break;
     }
     return [productsArray count];
@@ -110,7 +115,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProductsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
-    Product *prdTemp = (Product*)[productsArray objectAtIndex:indexPath.row];
+    Product *prdTemp;
+    
+    switch (self.mode) {
+        case 1:
+            prdTemp = (Product*)[productsArray objectAtIndex:indexPath.row];
+            break;
+        case 2:
+            prdTemp = (Product*)[favList objectAtIndex:indexPath.row];
+            break;
+        case 3:
+            prdTemp = (Product*)[recList objectAtIndex:indexPath.row];
+            break;
+    }
     
     
     cell.imgProduct.layer.cornerRadius = 4;
@@ -127,7 +144,18 @@
             if ( data == nil )
                 return;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [((Product*)[productsArray objectAtIndex:indexPath.row]) setImageProduct:[UIImage imageWithData: data]];
+                switch (self.mode) {
+                    case 1:
+                        [((Product*)[productsArray objectAtIndex:indexPath.row]) setImageProduct:[UIImage imageWithData: data]];
+                        break;
+                    case 2:
+                        [((Product*)[favList objectAtIndex:indexPath.row]) setImageProduct:[UIImage imageWithData: data]];
+                        break;
+                    case 3:
+                        [((Product*)[recList objectAtIndex:indexPath.row]) setImageProduct:[UIImage imageWithData: data]];
+                        break;
+                }
+                
                 cell.imgProduct.image = [UIImage imageWithData: data];
             });
         });
@@ -142,7 +170,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ProductDetailViewController *tmpView = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
-    tmpView.actProduct = [productsArray objectAtIndex:indexPath.row];
+    switch (self.mode) {
+        case 1:
+            tmpView.actProduct = [productsArray objectAtIndex:indexPath.row];
+            break;
+        case 2:
+            tmpView.actProduct = [favList objectAtIndex:indexPath.row];
+            break;
+        case 3:
+            tmpView.actProduct = [recList objectAtIndex:indexPath.row];
+            break;
+    }
+    
     [self.navigationController pushViewController:tmpView animated:YES];
 }
 
@@ -188,9 +227,6 @@
             productsArray = tmpArray;
             break;
         case 2:
-            favList = tmpArray;
-            break;
-        case 3:
             favList = tmpArray;
             break;
     }

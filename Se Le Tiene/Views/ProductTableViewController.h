@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "APIManager.h"
 #import "JOAlert.h"
+#import "Connection.h"
 
 @interface ProductTableViewController : UITableViewController <APIManagerDelegate>{
     APIManager *APIManagerClass;
@@ -17,6 +18,8 @@
     NSString* filter;
     NSString* order;
     int mode;
+    Connection *conn;
+    NSMutableArray *recList;
 }
 
 extern NSString *orderStr;

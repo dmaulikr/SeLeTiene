@@ -54,10 +54,15 @@
     //NSLog(@"%@",dic);
     
     [operationManager POST:@"http://seletiene.cloudapp.net/token"  parameters:jsonDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success: %@", [responseObject objectForKey:(@"access_token")]);
+        NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
+        token =[responseObject objectForKey:(@"access_token")];
         //[self.delegate returnResponse:successMsg];
+        [conn createSession:token];
+        
+        
         [self.delegate loaded:true :@"Revise sus datos" :@""];
-        [conn createSession:[responseObject objectForKey:(@"access_token")]];
+
+
         
     }
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {

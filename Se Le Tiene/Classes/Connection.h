@@ -21,6 +21,8 @@
 -(void)createSession:(NSString*)token;
 -(void)deleteSession;
 -(NSString*)checkSession;
+-(void)insertToRecent:(NSString*)nameProduct :(NSString*)nameProvider :(NSString*)urlImage :(NSString*)idAPI :(int)rating;
+-(NSMutableArray*) getRecent;
 
 @end
 
