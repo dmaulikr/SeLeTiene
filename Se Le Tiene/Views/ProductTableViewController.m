@@ -40,9 +40,8 @@
     recList = [conn getRecent];
     
     switch (self.mode) {
-        case 1:
+        case 0:
             self.tableView.backgroundColor = [UIColor clearColor];
-            mode = 1;
         break;
         case 2:
             NSLog(@"Entro a Favoritos");
@@ -77,7 +76,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (mode==1) {
+    if (mode==0) {
         if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
             [self.view addSubview:alert];
             [alert showAlertAnim];
@@ -99,7 +98,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (self.mode) {
-        case 1:
+        case 0:
             return [productsArray count];
             
             break;
@@ -119,7 +118,7 @@
     Product *prdTemp;
     
     switch (self.mode) {
-        case 1:
+        case 0:
             prdTemp = (Product*)[productsArray objectAtIndex:indexPath.row];
             break;
         case 2:
@@ -146,7 +145,7 @@
                 return;
             dispatch_async(dispatch_get_main_queue(), ^{
                 switch (self.mode) {
-                    case 1:
+                    case 0:
                         [((Product*)[productsArray objectAtIndex:indexPath.row]) setImageProduct:[UIImage imageWithData: data]];
                         break;
                     case 2:
@@ -173,7 +172,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ProductDetailViewController *tmpView = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
     switch (self.mode) {
-        case 1:
+        case 0:
             tmpView.actProduct = [productsArray objectAtIndex:indexPath.row];
             break;
         case 2:
@@ -218,10 +217,9 @@
         tmpProduct.providerProduct.nameProvider  = [[NSString stringWithFormat:@"%@",key[@"ownerName"]] isEqualToString:@"<null>"]? @"No especificado!":key[@"ownerName"];
         [tmpArray addObject:tmpProduct];
     }
-
-    
+    NSLog(@"Modo!!! %d", self.mode);
     switch (self.mode) {
-        case 1:
+        case 0:
             productsArray = tmpArray;
         break;
         case 2:
@@ -229,7 +227,6 @@
         break;
     }
     [(UITableView*)self.view reloadData];
-    
     [alert dismissAlertAnim];
 }
 

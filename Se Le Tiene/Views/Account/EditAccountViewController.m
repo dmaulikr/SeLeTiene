@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Terminar" style:UIBarButtonItemStylePlain target:self action:@selector(saveData:)];
-    self.navigationItem.rightBarButtonItem = anotherButton;
+    //UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Guardar" style:UIBarButtonItemStylePlain target:self action:@selector(saveData:)];
+    //self.navigationItem.rightBarButtonItem = anotherButton;
     
     sH = [[UIScreen mainScreen] bounds].size.height;
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];

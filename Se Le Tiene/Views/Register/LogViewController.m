@@ -25,19 +25,14 @@
     txtPassword.layer.cornerRadius = 5.0f;
     txtPassword.layer.borderWidth = 2.0f;
     txtPassword.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    
     sH = [[UIScreen mainScreen] bounds].size.height;
     txtEmail.layer.borderColor = [UIColor lightGrayColor].CGColor;
     txtEmail.layer.cornerRadius = 5.0f;
     txtEmail.layer.borderWidth = 2.0f;
     txtEmail.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    
-    
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
     txtPassword.leftView = paddingView;
     txtPassword.leftViewMode = UITextFieldViewModeAlways;
-    
-    
     paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
     txtEmail.leftView = paddingView;
     txtEmail.leftViewMode = UITextFieldViewModeAlways;
@@ -145,8 +140,8 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if ([textField.text length] > 25) {
-        textField.text = [textField.text substringToIndex:25-1];
+    if ([textField.text length] > 35) {
+        textField.text = [textField.text substringToIndex:35];
         return NO;
     }
     return YES;
