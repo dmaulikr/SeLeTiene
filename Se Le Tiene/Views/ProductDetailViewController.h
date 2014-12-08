@@ -17,13 +17,17 @@
 #import "JOAlert.h"
 
 
-@interface ProductDetailViewController : UIViewController <APIManagerDelegate,MenuViewDelegate>{
+@interface ProductDetailViewController : UIViewController <APIManagerDelegate,MenuViewDelegate,TSButtonDelegate>{
     int x;
     int z;
     int s;
     CATransition *transition;
     APIManager *APIManagerClass;
 }
+
+extern NSMutableArray *favArray;
+
+
 @property (strong,nonatomic) UIProgressView* download;
 @property (strong,nonatomic) UIView *tstBtn;
 @property (weak,nonatomic) IBOutlet UIImageView * imgProduct;

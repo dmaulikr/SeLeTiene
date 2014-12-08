@@ -21,7 +21,7 @@
 - (void) loadedImage:(UIImage*)imageLoaded;
 - (void) loaded:(BOOL)checker :(NSString*)msg :(NSString*)tokenR;
 - (void) returnResponse:(NSString *)msg;
-- (void)returnList:(id)responseObject;
+- (void)returnList:(id)responseObject :(NSString*)url;
 - (void) returnObt:(id)responseObject;
 
 

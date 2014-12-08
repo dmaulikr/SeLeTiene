@@ -53,7 +53,19 @@
     [viewMenu setButton:1];
     
     [self.strs setStarsNum:[actProduct getScore]];
-    [self.favBtn setState:true];
+    
+    int counter = 0;
+    for (Product *product in favArray){
+        if(product.idProduct.intValue == actProduct.idProduct.intValue){
+            counter++;
+        }
+    }
+    
+    [self.favBtn setState:counter>0?true:false];
+    
+
+    
+    self.favBtn.delegate = self;
     
     alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
@@ -62,6 +74,16 @@
     [APIManagerClass getProductDetail:actProduct.idProduct.intValue];
     
 }
+
+- (void) changeState:(BOOL)value{
+    if (value) {
+        [APIManagerClass setFavorite:actProduct.idProduct.intValue];
+    }else{
+        [APIManagerClass setFavorite:actProduct.idProduct.intValue];
+    }
+}
+
+
 
 -(void)viewDidAppear:(BOOL)animated{
     lblTitleProduct.text = actProduct.nameProduct;
@@ -77,12 +99,10 @@
     actProduct.providerProduct.celProvider = [[NSString stringWithFormat:@"%@",prov[@"mobileNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"mobileNumber"];
     actProduct.providerProduct.phoneProvider = [[NSString stringWithFormat:@"%@",prov[@"phoneNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"phoneNumber"];
     actProduct.providerProduct.emailProvider = [[NSString stringWithFormat:@"%@",prov[@"email"]] isEqualToString:@"<null>"]? @"---":prov[@"email"];
-    
-    
     NSLog(@"Detalle de %@", responseObject);
     Connection *conn = [[Connection alloc] init];
      [conn openDB];
-    [conn insertToRecent:responseObject[@"title"] :[[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"] :@"http://lorempixel.com/300/150/" :@"3" :[NSString stringWithFormat:@"%@", responseObject[@"rating"]].intValue];
+    [conn insertToRecent:responseObject[@"title"] :[[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"] :@"http://lorempixel.com/300/150/" :[NSString stringWithFormat:@"%d", actProduct.idProduct.intValue] :[NSString stringWithFormat:@"%@", responseObject[@"rating"]].intValue];
 }
 
 

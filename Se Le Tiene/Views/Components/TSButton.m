@@ -30,9 +30,11 @@
         NSLog(@"?????");
         val = true;
         [self setBackgroundImage:[UIImage imageNamed:@"btnFavorite_on"] forState:UIControlStateNormal];
+        [self.delegate changeState:true];
     }else{
         val = false;
         [self setBackgroundImage:[UIImage imageNamed:@"btnFavorite_off"] forState:UIControlStateNormal];
+        [self.delegate changeState:false];
     }
     
 }

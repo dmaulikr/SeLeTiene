@@ -22,6 +22,7 @@
     NSString* filter;
     NSString* order;
 }
+extern NSMutableArray *favArray;
 extern NSMutableArray *productsArray;
 extern NSString *orderStr;
 extern NSString *filterStr;

@@ -17,7 +17,7 @@
 @end
 
 @implementation ProductTableViewController
-@synthesize table;
+@synthesize table,mode;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +48,7 @@
             NSLog(@"Entro a Favoritos");
             self.title = @"Favoritos";
             self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
+            alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64)];
             [APIManagerClass getFavorites];
             [self.view addSubview:alert];
             [alert showAlertAnim];
@@ -164,6 +165,7 @@
     }
     cell.imgProduct.layer.masksToBounds = YES;
     cell.lblNameProduct.text = prdTemp.nameProduct;
+    cell.lblNameUser.text = prdTemp.providerProduct.nameProvider;
     cell.lblDescProduct.text = prdTemp.descProduct;
     return cell;
 }
@@ -204,31 +206,27 @@
     [(UITableView*)self.view reloadData];
 }
 
--(void) returnList:(id)responseObject
+-(void) returnList:(id)responseObject :(NSString*)url
 {
     NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
-    NSLog(@"Retorno una lista");
     for (id key in (NSDictionary*)responseObject) {
         Product *tmpProduct = [[Product alloc] init];
-        tmpProduct.nameProduct = key[@"nombre"];
-        tmpProduct.scoreProduct = key[@"calificacion"];
-        tmpProduct.descProduct = key[@"descripcion"];
-        NSDictionary *prov = key[@"Proveedor"];
-        tmpProduct.providerProduct.nameProvider  = prov[@"nombre"];
-        tmpProduct.providerProduct.emailProvider = prov[@"email"];
-        tmpProduct.providerProduct.phoneProvider = prov[@"telefono"];
-        tmpProduct.providerProduct.celProvider   = prov[@"ceular"];
+        tmpProduct.idProduct = key[@"id"];
+        tmpProduct.nameProduct = key[@"title"];
+        tmpProduct.scoreProduct = key[@"rating"];
+        tmpProduct.descProduct = key[@"description"];
+        tmpProduct.providerProduct.nameProvider  = [[NSString stringWithFormat:@"%@",key[@"ownerName"]] isEqualToString:@"<null>"]? @"No especificado!":key[@"ownerName"];
         [tmpArray addObject:tmpProduct];
     }
-    
+
     
     switch (self.mode) {
         case 1:
             productsArray = tmpArray;
-            break;
+        break;
         case 2:
             favList = tmpArray;
-            break;
+        break;
     }
     [(UITableView*)self.view reloadData];
     

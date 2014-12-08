@@ -17,7 +17,7 @@ BOOL ret;
 Connection *conn;
 NSString *token;
 NSMutableArray *productsArray;
-
+NSMutableArray *favArray;
 NSString *orderStr;
 NSString *filterStr;
 

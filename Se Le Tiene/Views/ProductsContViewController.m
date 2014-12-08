@@ -40,6 +40,8 @@
     [alert showAlertAnim];
     filter = @"";
     order = @"";
+    
+   
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -51,6 +53,11 @@
         filter = filterStr;
         order = orderStr;
     }
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [APIManagerClass getFavorites];
+        });
+    });
 }
 
 - (NSInteger)numberOfSections{
@@ -108,7 +115,7 @@
     [self.navigationController pushViewController:tmpView animated:YES];
 }
 
--(void) returnList:(id)responseObject
+-(void) returnList:(id)responseObject :(NSString*)url
 {
     NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
     for (id key in (NSDictionary*)responseObject) {
@@ -117,16 +124,16 @@
         tmpProduct.nameProduct = key[@"title"];
         tmpProduct.scoreProduct = key[@"rating"];
         tmpProduct.descProduct = key[@"description"];
-        NSDictionary *prov = key[@"Proveedor"];
-        tmpProduct.providerProduct.nameProvider  = prov[@"nombre"];
-        tmpProduct.providerProduct.emailProvider = prov[@"email"];
-        tmpProduct.providerProduct.phoneProvider = prov[@"telefono"];
-        tmpProduct.providerProduct.celProvider   = prov[@"ceular"];
+        tmpProduct.providerProduct.nameProvider  = [[NSString stringWithFormat:@"%@",key[@"ownerName"]] isEqualToString:@"<null>"]? @"No especificado!":key[@"ownerName"];
         [tmpArray addObject:tmpProduct];
     }
-    productsArray = tmpArray;
-    [self.Products reloadData];
-    [alert dismissAlertAnim];
+    if ([url isEqualToString:@"Account/Favorites"]) {
+        favArray = tmpArray;
+    }else{
+        productsArray = tmpArray;
+        [self.Products reloadData];
+        [alert dismissAlertAnim];
+    }
 }
 
 @end

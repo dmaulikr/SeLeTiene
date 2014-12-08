@@ -122,12 +122,11 @@
 
 -(void)setFavorite:(int)productServiceId{
     NSDictionary *test;
-    [self performPut:@"ProductServices/Favorite?productServiceId={productServiceId}" :token :test :@"Sirve" :@"No sirve"];
+    [self performPut:[NSString stringWithFormat:@"ProductServices/Favorite?productServiceId=%d",productServiceId] :token :test :@"Sirve" :@"No sirve"];
 }
 
 
 -(void)getProducts:(NSString*)filters{
-    NSLog(@"Hola ?????");
     [self performGet:[NSString stringWithFormat:@"productservices?ignoredpsvalidation=true%@",filters] :token :true];
 }
 
@@ -197,12 +196,10 @@
                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
                       NSLog(@"Sirveee: %@", responseObject);
                       if (list) {
-                          [self.delegate returnList:responseObject];
+                          [self.delegate returnList:responseObject :url];
                       }else{
                           [self.delegate returnObt:responseObject];
                       }
-                      //[self.delegate loaded:true :@"" :[tokBase64 base64EncodedStringWithOptions:0]];
-                      //[conn createSession:[tokBase64 base64EncodedStringWithOptions:0]];
                   }
                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                       NSLog(@"Error: %@", [error description]);
@@ -214,7 +211,6 @@
 
 -(void) performPost:(NSString*)url :(NSString*)token :(NSDictionary*)data :(NSString*)successMsg :(NSString*)failMsg {
     NSLog(@"Performing Post");
-    
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -234,7 +230,6 @@
 
 -(void) performPut:(NSString*)url :(NSString*)token :(NSDictionary*)data :(NSString*)successMsg :(NSString*)failMsg {
     NSLog(@"Performing PUT");
-    NSLog(@"Esto es lo que se envia Carol : %@",data);
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -245,11 +240,11 @@
         NSLog(@"Success response: %@", responseObject);
         [self.delegate returnResponse:successMsg];
     }
-                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                       NSLog(@"Error: %@", [error description]);
-                       [self.delegate returnResponse:failMsg];
-                       //[self.delegate loaded:false :@"Revise sus datos" :@""];
-                   }];
+       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+           NSLog(@"Error: %@", [error description]);
+           [self.delegate returnResponse:failMsg];
+           //[self.delegate loaded:false :@"Revise sus datos" :@""];
+       }];
 }
 
 

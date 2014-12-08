@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+
+@class TSButton;
+
+@protocol TSButtonDelegate <NSObject>
+@optional
+- (void) changeState:(BOOL)value;
+@end
+
 @interface TSButton : UIButton{
     BOOL val;
 }
+@property (nonatomic, weak) id <TSButtonDelegate> delegate;
 -(void)setState:(BOOL)stateBtn;
+
 
 @end

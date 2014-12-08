@@ -94,20 +94,8 @@
     actUser.mobileNumber = responseObject[@"mobileNumber"];
     actUser.email = responseObject[@"email"];
     actUser.name = responseObject[@"name"];
-    //actUser._id = responseObject[@"id"];
-    
-    //NSLog(@"Identificador: %@", actUser._id);
-    
-   /* if (actUser.phoneNumber) {
-
-    //}*/
-    //lblPhoneUser.text = [NSString stringWithFormat:@"%@",actUser.phoneNumber];
-    //lblPhoneUser.text = [NSString stringWithFormat:@"%@",actUser.phoneNumber];
-    //lblPhoneUser.text = !actUser.phoneNumber?@"---":actUser.phoneNumber;
     lblPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.phoneNumber] isEqualToString:@"<null>"]? @"---":actUser.phoneNumber;
     lblCellPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.mobileNumber] isEqualToString:@"<null>"]? @"---":actUser.mobileNumber;
-    
-    //lblCellPhoneUser.text = actUser.mobileNumber!=nil?actUser.mobileNumber:@"---";
     lblEmail.text = actUser.email;
     lblNameUser.text = actUser.name;
 }
