@@ -94,12 +94,8 @@
 #pragma SEARCH BAR METHODS DELEGATE
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    NSLog(@"Buscando: %@", self.searchBar.text);
-    
-    //filterStr = [NSString stringWithFormat:@"?q=%@",self.searchBar.text];
-    APIManagerClass = [[APIManager alloc] init];
-    APIManagerClass.delegate = self;
-    [APIManagerClass getProducts:[NSString stringWithFormat:@"%@&q=%@",orderStr,self.searchBar.text]];
+    filterStr = [NSString  stringWithFormat:@"q=%@",self.searchBar.text];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"filterStrChange" object:self];
     [self.searchBar resignFirstResponder];
     [imgTmp removeFromSuperview];
 }

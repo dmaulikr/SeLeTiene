@@ -37,6 +37,9 @@
     conn = [[Connection alloc]init];
     [conn openDB];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFilter:) name:@"filterStrChange" object:nil];
+    
     recList = [conn getRecent];
     
     switch (self.mode) {
@@ -74,13 +77,22 @@
     order = @"";
 }
 
+- (void)changeFilter:(NSNotification*)notification{
+    [self.view addSubview:alert];
+    [alert showAlertAnim];
+    [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
+    filter = filterStr;
+    order = orderStr;
+}
+
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     if (mode==0) {
         if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
             [self.view addSubview:alert];
             [alert showAlertAnim];
-            [APIManagerClass getProducts:[NSString stringWithFormat:@"?%@&%@",orderStr,filterStr]];
+            [APIManagerClass getProducts:[NSString stringWithFormat:@"&%@&%@",orderStr,filterStr]];
             filter = filterStr;
             order = orderStr;
         }

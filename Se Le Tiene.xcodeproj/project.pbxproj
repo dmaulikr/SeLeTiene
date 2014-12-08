@@ -76,6 +76,8 @@
 		EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE219E5DBA700DB431A /* btnArr.png */; };
 		EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFE619E6148300DB431A /* InformationViewController.m */; };
 		EC74AFEC19E6FBDB00DB431A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */; };
+		ECB6033B1A35643D00E5DBC4 /* dps-01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB603391A35643D00E5DBC4 /* dps-01.jpg */; };
+		ECB6033C1A35643D00E5DBC4 /* dps-01@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */; };
 		ECC1090119E481DD003335EF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090019E481DD003335EF /* RegisterViewController.m */; };
 		ECC1090719E4A11E003335EF /* RememberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090619E4A11E003335EF /* RememberViewController.m */; };
 		ECC1090A19E4B2BA003335EF /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090919E4B2BA003335EF /* LogViewController.m */; };
@@ -233,6 +235,8 @@
 		EC74AFE619E6148300DB431A /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationViewController.m; path = Views/Information/InformationViewController.m; sourceTree = "<group>"; };
 		EC74AFEA19E6FBDB00DB431A /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderViewController.h; path = Views/Order/OrderViewController.h; sourceTree = "<group>"; };
 		EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderViewController.m; path = Views/Order/OrderViewController.m; sourceTree = "<group>"; };
+		ECB603391A35643D00E5DBC4 /* dps-01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01.jpg"; sourceTree = "<group>"; };
+		ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01@2x.jpg"; sourceTree = "<group>"; };
 		ECC108FF19E481DD003335EF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Views/Register/RegisterViewController.h; sourceTree = "<group>"; };
 		ECC1090019E481DD003335EF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Views/Register/RegisterViewController.m; sourceTree = "<group>"; };
 		ECC1090519E4A11E003335EF /* RememberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RememberViewController.h; path = Views/Register/RememberViewController.h; sourceTree = "<group>"; };
@@ -427,6 +431,8 @@
 		EC108BEC19DA108B00CBBC17 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ECB603391A35643D00E5DBC4 /* dps-01.jpg */,
+				ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */,
 				ECF3FF7219F1911500011935 /* logosDPS@2x.png */,
 				ECF3FF7319F1911500011935 /* logosDPS.png */,
 				ECF3FF7419F1911500011935 /* logoMinTIC@2x.png */,
@@ -782,6 +788,7 @@
 				ECCEECF919E0B0D8007A88B6 /* btnUserMenu@2x.png in Resources */,
 				ECD994F119F48DC000E70421 /* fr-02@2x.png in Resources */,
 				EC108B8519D8E2F000CBBC17 /* Main.storyboard in Resources */,
+				ECB6033C1A35643D00E5DBC4 /* dps-01@2x.jpg in Resources */,
 				ECD994F419F48DC000E70421 /* fr-04.png in Resources */,
 				ECD6D9A419DCFC0800B2F48E /* btnGrid@2x.png in Resources */,
 				ECCEECF519E099F2007A88B6 /* btnSearchMenu.png in Resources */,
@@ -789,6 +796,7 @@
 				ECD994F019F48DC000E70421 /* fr-02.png in Resources */,
 				EC701BC719E8B70B003912B0 /* placeholder.png in Resources */,
 				EC701BE119E9DA43003912B0 /* btnHis@2x.png in Resources */,
+				ECB6033B1A35643D00E5DBC4 /* dps-01.jpg in Resources */,
 				ECF3FF7919F1911500011935 /* logoMinTIC.png in Resources */,
 				EC108B8A19D8E2F000CBBC17 /* LaunchScreen.xib in Resources */,
 				EC701BE519E9DA43003912B0 /* btnFavorite_off@2x.png in Resources */,

@@ -268,48 +268,158 @@ Ofrécelo aquí</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-qC-Uth">
-                                <rect key="frame" x="45" y="114" width="231" height="147"/>
-                                <string key="text">Departamento para la
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-5r-Q9x">
+                                <rect key="frame" x="40" y="326" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Yyj-Is-mtU"/>
+                                    <constraint firstAttribute="width" constant="240" id="y0e-de-HOL"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Desarrollado por grupo ">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Olinguito">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="HelveticaNeue-Italic"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="2">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=":">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Roberto Jalkh
+Daniel Olano
+Jorge Ovalle
+Daniel Suárez</string>
+                                        <attributes>
+                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-qC-Uth">
+                                <rect key="frame" x="45" y="106" width="231" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="0nf-Oe-R9I"/>
+                                    <constraint firstAttribute="width" constant="231" id="5ty-HG-NO6"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Departamento para la
 Prosperidad Social
 
 ©2014- Derechos Reservados
 
 Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir recursos de su plan de datos.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-Fp-fWd">
-                                <rect key="frame" x="117" y="28" width="87" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-Fp-fWd">
+                                <rect key="frame" x="117" y="21" width="87" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="Ate-Ws-gTS"/>
+                                    <constraint firstAttribute="height" constant="60" id="TSu-K1-lbG"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="V 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-au-tF2">
-                                <rect key="frame" x="114" y="90" width="92" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="V 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-au-tF2">
+                                <rect key="frame" x="114" y="83" width="92" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2MU-00-mT3"/>
+                                    <constraint firstAttribute="width" constant="92" id="fx7-zQ-dwk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3A-W4-8pT">
-                                <rect key="frame" x="139" y="326" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logosDPS.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qvh-VY-9pi">
-                                <rect key="frame" x="45" y="274" width="114" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="dps-01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qvh-VY-9pi">
+                                <rect key="frame" x="36" y="231" width="248" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="FNJ-P9-foX"/>
+                                    <constraint firstAttribute="width" constant="248" id="myA-7C-V5n"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoMinTIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-52-lUg">
-                                <rect key="frame" x="162" y="274" width="114" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logoMinTIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-52-lUg">
+                                <rect key="frame" x="103" y="294" width="114" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="AVI-OE-saJ"/>
+                                    <constraint firstAttribute="height" constant="37" id="xjt-Ye-6Xb"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vl6-Fp-fWd" firstAttribute="top" secondItem="qz5-Rr-Zag" secondAttribute="bottom" constant="1" id="2t7-Tq-GMn"/>
+                            <constraint firstItem="Qvh-VY-9pi" firstAttribute="top" secondItem="uhG-qC-Uth" secondAttribute="bottom" constant="8" id="BvJ-Rc-cSw"/>
+                            <constraint firstAttribute="centerX" secondItem="uhG-qC-Uth" secondAttribute="centerX" id="DUk-mi-5Jm"/>
+                            <constraint firstAttribute="centerX" secondItem="FlI-52-lUg" secondAttribute="centerX" id="Ie8-nC-FcI"/>
+                            <constraint firstAttribute="centerX" secondItem="Qvh-VY-9pi" secondAttribute="centerX" id="Slx-Vs-ZSP"/>
+                            <constraint firstAttribute="centerX" secondItem="eTW-au-tF2" secondAttribute="centerX" id="TqD-HO-UDt"/>
+                            <constraint firstItem="h1a-5r-Q9x" firstAttribute="top" secondItem="Qvh-VY-9pi" secondAttribute="bottom" constant="40" id="VSw-aT-EEP"/>
+                            <constraint firstItem="FlI-52-lUg" firstAttribute="top" secondItem="Qvh-VY-9pi" secondAttribute="bottom" constant="8" id="dRs-dw-Q0X"/>
+                            <constraint firstAttribute="centerX" secondItem="Vl6-Fp-fWd" secondAttribute="centerX" id="gab-iY-9Hc"/>
+                            <constraint firstItem="uhG-qC-Uth" firstAttribute="top" secondItem="eTW-au-tF2" secondAttribute="bottom" constant="2" id="xm6-Y4-5K1"/>
+                            <constraint firstAttribute="centerX" secondItem="h1a-5r-Q9x" secondAttribute="centerX" id="y2x-bg-jVc"/>
+                            <constraint firstItem="eTW-au-tF2" firstAttribute="top" secondItem="Vl6-Fp-fWd" secondAttribute="bottom" constant="2" id="zNE-9Q-rSA"/>
+                        </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="2t7-Tq-GMn"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact"/>
+                        <variation key="heightClass=regular-widthClass=compact"/>
                     </view>
                     <navigationItem key="navigationItem" title="Información" id="g8e-qa-gQk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0N-6t-0ie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="-1719"/>
+            <point key="canvasLocation" x="-351" y="-2051"/>
         </scene>
         <!--Registro-->
         <scene sceneID="eg7-gQ-59W">
@@ -2219,9 +2329,9 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
         <image name="btnInfo.png" width="48" height="49"/>
         <image name="btnList.png" width="14" height="14"/>
         <image name="btnStar.png" width="39" height="38"/>
+        <image name="dps-01.jpg" width="248" height="55"/>
         <image name="logo.png" width="355" height="245"/>
         <image name="logoMinTIC.png" width="228" height="74"/>
-        <image name="logosDPS.png" width="228" height="74"/>
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>

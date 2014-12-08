@@ -19,6 +19,8 @@
 }
 
 extern NSString *token;
+extern NSString *filterStr;
+
 @property (strong,nonatomic) UIProgressView* download;
 @property (weak, nonatomic) IBOutlet UIView *viewLoaded;
 @property (strong,nonatomic) ProductsContViewController *GridView;

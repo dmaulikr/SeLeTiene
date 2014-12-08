@@ -40,8 +40,16 @@
     [alert showAlertAnim];
     filter = @"";
     order = @"";
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFilter:) name:@"filterStrChange" object:nil];
    
+}
+
+- (void)changeFilter:(NSNotification*)notification{
+    [self.view addSubview:alert];
+    [alert showAlertAnim];
+    [APIManagerClass getProducts:[NSString stringWithFormat:@"&%@&%@",orderStr,filterStr]];
+    filter = filterStr;
+    order = orderStr;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
