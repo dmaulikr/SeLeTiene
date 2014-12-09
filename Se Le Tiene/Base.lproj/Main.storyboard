@@ -141,8 +141,8 @@ Ofrécelo aquí</string>
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="loginFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gwa-oA-7Wl"/>
                                     <action selector="loginFb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9hi-Dj-rR0"/>
-                                    <segue destination="Eax-0q-XrH" kind="modal" modalTransitionStyle="crossDissolve" id="FSP-Om-E3A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-be-PSg">
@@ -254,7 +254,7 @@ Ofrécelo aquí</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482" y="-503"/>
+            <point key="canvasLocation" x="-630" y="-503"/>
         </scene>
         <!--Información-->
         <scene sceneID="dcL-SH-AF1">
@@ -268,7 +268,7 @@ Ofrécelo aquí</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-5r-Q9x">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-5r-Q9x">
                                 <rect key="frame" x="40" y="326" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -336,7 +336,7 @@ Daniel Suárez</string>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-qC-Uth">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-qC-Uth">
                                 <rect key="frame" x="45" y="106" width="231" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="0nf-Oe-R9I"/>
@@ -359,14 +359,14 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-Fp-fWd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-Fp-fWd">
                                 <rect key="frame" x="117" y="21" width="87" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="Ate-Ws-gTS"/>
                                     <constraint firstAttribute="height" constant="60" id="TSu-K1-lbG"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="V 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-au-tF2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-au-tF2">
                                 <rect key="frame" x="114" y="83" width="92" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2MU-00-mT3"/>
@@ -376,14 +376,14 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="dps-01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qvh-VY-9pi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dps-01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qvh-VY-9pi">
                                 <rect key="frame" x="36" y="231" width="248" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="FNJ-P9-foX"/>
                                     <constraint firstAttribute="width" constant="248" id="myA-7C-V5n"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logoMinTIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-52-lUg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMinTIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-52-lUg">
                                 <rect key="frame" x="103" y="294" width="114" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="AVI-OE-saJ"/>
@@ -411,8 +411,6 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 <include reference="2t7-Tq-GMn"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=compact-widthClass=compact"/>
-                        <variation key="heightClass=regular-widthClass=compact"/>
                     </view>
                     <navigationItem key="navigationItem" title="Información" id="g8e-qa-gQk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -1535,7 +1533,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
                                 <rect key="frame" x="25" y="71" width="270" height="121"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgContact.png" translatesAutoresizingMaskIntoConstraints="NO" id="XAA-YL-Qx1">
@@ -1566,7 +1564,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstAttribute="height" constant="121" id="tnG-9q-ggz"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
                                 <rect key="frame" x="25" y="37" width="270" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="nq8-Em-L1c"/>
@@ -1576,7 +1574,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
                                 <rect key="frame" x="25" y="200" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.086274509803921567" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1598,7 +1596,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstAttribute="height" constant="60" id="Kmr-AS-DEu"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
                                 <rect key="frame" x="0.0" y="253" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1614,7 +1612,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <segue destination="DyE-7r-2b2" kind="push" identifier="goFavorite" id="N0t-3A-1bw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
                                 <rect key="frame" x="0.0" y="311" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1695,7 +1693,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlS-al-bS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="1550"/>
+            <point key="canvasLocation" x="2238" y="1551"/>
         </scene>
         <!--Offer Pro View Controller-->
         <scene sceneID="tlw-5e-Qns">
@@ -2316,7 +2314,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jna-se-v7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007" y="-503"/>
+            <point key="canvasLocation" x="-1254" y="-503"/>
         </scene>
     </scenes>
     <resources>
@@ -2335,7 +2333,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZMY-V2-xZ1"/>
         <segue reference="wP8-Zi-hcC"/>
+        <segue reference="W9R-at-Bf8"/>
     </inferredMetricsTieBreakers>
 </document>

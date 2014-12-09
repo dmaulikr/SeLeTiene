@@ -13,7 +13,8 @@
 #import "ProductsViewController.h"
 #import "Connection.h"
 #import "JOAlert.h"
-
+#import <FacebookSDK/FacebookSDK.h>
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -62,6 +63,26 @@
     InformationViewController *iVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoView"];
     [self.navigationController.view.layer addAnimation:transition forKey:nil];
     [self.navigationController pushViewController:iVC animated:NO];
+}
+- (IBAction)loginFacebook:(id)sender {
+    if (FBSession.activeSession.state == FBSessionStateOpen
+        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+        [FBSession.activeSession closeAndClearTokenInformation];
+    } else {
+        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile,email"]
+                                           allowLoginUI:YES
+                                      completionHandler:
+         ^(FBSession *session, FBSessionState state, NSError *error) {
+             
+             // Retrieve the app delegate
+             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+             // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+             [appDelegate sessionStateChanged:session state:state error:error];
+             NSLog(@"Creando sessión");
+             
+             
+         }];
+    }
 }
 
 @end

@@ -74,6 +74,8 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    loader = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
 }
@@ -138,6 +140,8 @@
 - (IBAction)SignUpUser:(id)sender {
     btnSignUp.enabled = false;
     if ([self validate]) {
+        [self.view addSubview:loader];
+        [loader showAlertAnim];
         User *tmpUser = [[User alloc] init];
         tmpUser.name = txtName.text;
         tmpUser.email = txtEmail.text;

@@ -78,6 +78,7 @@
 		EC74AFEC19E6FBDB00DB431A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */; };
 		ECB6033B1A35643D00E5DBC4 /* dps-01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB603391A35643D00E5DBC4 /* dps-01.jpg */; };
 		ECB6033C1A35643D00E5DBC4 /* dps-01@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */; };
+		ECB6033E1A3577E300E5DBC4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB6033D1A3577E300E5DBC4 /* FacebookSDK.framework */; };
 		ECC1090119E481DD003335EF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090019E481DD003335EF /* RegisterViewController.m */; };
 		ECC1090719E4A11E003335EF /* RememberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090619E4A11E003335EF /* RememberViewController.m */; };
 		ECC1090A19E4B2BA003335EF /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090919E4B2BA003335EF /* LogViewController.m */; };
@@ -237,6 +238,7 @@
 		EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderViewController.m; path = Views/Order/OrderViewController.m; sourceTree = "<group>"; };
 		ECB603391A35643D00E5DBC4 /* dps-01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01.jpg"; sourceTree = "<group>"; };
 		ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01@2x.jpg"; sourceTree = "<group>"; };
+		ECB6033D1A3577E300E5DBC4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		ECC108FF19E481DD003335EF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Views/Register/RegisterViewController.h; sourceTree = "<group>"; };
 		ECC1090019E481DD003335EF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Views/Register/RegisterViewController.m; sourceTree = "<group>"; };
 		ECC1090519E4A11E003335EF /* RememberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RememberViewController.h; path = Views/Register/RememberViewController.h; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				ECCEED1519E31245007A88B6 /* GPUImage.framework in Frameworks */,
 				ECCEED1319E3115C007A88B6 /* Foundation.framework in Frameworks */,
 				ECCEED1119E3111E007A88B6 /* UIKit.framework in Frameworks */,
+				ECB6033E1A3577E300E5DBC4 /* FacebookSDK.framework in Frameworks */,
 				ECCEED0F19E31110007A88B6 /* CoreGraphics.framework in Frameworks */,
 				C8519DF00A8541CAAF71F209 /* libPods.a in Frameworks */,
 			);
@@ -342,6 +345,7 @@
 		C55CE4518C9843EAB09FFEDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECB6033D1A3577E300E5DBC4 /* FacebookSDK.framework */,
 				ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */,
 				EC703F3B19ED7AEA000C24CF /* Social.framework */,
 				EC701BF019EA3D67003912B0 /* QuartzCore.framework */,
@@ -1058,6 +1062,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
+					/Users/JorgeOvalle/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1081,6 +1086,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
+					/Users/JorgeOvalle/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

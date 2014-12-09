@@ -81,6 +81,9 @@
 
 - (IBAction)logout:(id)sender {
     [APIManagerClass logout];
+    
+    
+    
     NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogin"];
     tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:tmp animated:YES completion:nil];

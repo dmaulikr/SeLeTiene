@@ -39,6 +39,7 @@
 
 extern NSString* token;
 -(void) getImageTest;
+-(void)signUpUserFB;
 -(void)loginEmail:(NSString*)userEmail :(NSString*)userPass;
 -(void)rememberPass:(NSString*)userEmail;
 -(void)logout;

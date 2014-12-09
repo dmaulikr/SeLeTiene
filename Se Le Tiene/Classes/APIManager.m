@@ -10,6 +10,7 @@
 #import "Product.h"
 #import "Connection.h"
 #import "User.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation APIManager
 
@@ -35,39 +36,18 @@
     NSString* jsonString = [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
     
     NSLog(@"Dict:%@", jsonString);
-    
-    /*NSError *e;
-    NSDictionary *JSON =
-    [NSJSONSerialization JSONObjectWithData: [[tst JSONString] dataUsingEncoding:NSUTF8StringEncoding]
-                                    options: NSJSONReadingMutableContainers
-                                      error: &e];
-*/
-    
-
-    
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-//    operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
 //    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
-    NSLog(@"Rquest creado");
-    //NSLog(@"%@",dic);
-    
     [operationManager POST:@"http://seletiene.cloudapp.net/token"  parameters:jsonDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
         token =[responseObject objectForKey:(@"access_token")];
-        //[self.delegate returnResponse:successMsg];
         [conn createSession:token];
-        
-        
         [self.delegate loaded:true :@"Revise sus datos" :@""];
-
-
-        
     }
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
            NSLog(@"Error: %@", [error description]);
-          // [self.delegate returnResponse:failMsg];
            [self.delegate loaded:false :@"Revise sus datos" :@""];
     }];
 
@@ -81,7 +61,7 @@
 
 -(void)rememberPass:(NSString*)userEmail{
     [self getImageTest];
-    //self.presupuesto.text = [NSString stringWithFormat:@"%@", [json objectForKey:(@"presupuesto")] ] ;
+    //self.presupuesto.text = [NSString stringWit   hFormat:@"%@", [json objectForKey:(@"presupuesto")] ] ;
 }
 
 -(void)logout{
@@ -89,6 +69,7 @@
     Connection* conn = [[Connection alloc] init];
     [conn openDB];
     [conn deleteSession];
+    [FBSession.activeSession closeAndClearTokenInformation];
 }
 
 -(void)signUpUser:(User*)user{
@@ -99,7 +80,46 @@
                               @"password":user.passwordHash,
                               @"phoneNumber":user.phoneNumber
                               };
+    
+    
     [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
+}
+
+
+-(void)signUpUserFB{
+    [FBRequestConnection startWithGraphPath:@"me?fields=id,name,email" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            
+            NSDictionary *userDic = @{@"email":result[@"email"],
+                                      @"token":[[FBSession activeSession] accessTokenData].accessToken
+                                      };
+            NSLog(@"Login data: %@", userDic);
+            //[self performPost:@"Account/FacebookLogin" :token :userDic :@"Logeado correctamente" :@"Ocurrio un error al loggear"];
+            
+            NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDic options:0 error:nil];
+            NSString* jsonString = [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"Dict:%@", jsonString);
+            AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+            operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+            //    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
+            [operationManager POST:[NSString stringWithFormat:@"%@Account/FacebookLogin",URLAPI]  parameters:userDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                //NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
+                NSLog(@"Exito: %@", responseObject );
+                //token =[responseObject objectForKey:(@"access_token")];
+                //[conn createSession:token];
+                [self.delegate loaded:true :@"Revise sus datos" :@""];
+            }
+                           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                               NSLog(@"Error: %@", [error description]);
+                               [self.delegate loaded:false :@"Revise sus datos" :@""];
+                           }];
+            
+            
+        } else {
+        }
+    }];
 }
 
 
@@ -185,27 +205,29 @@
 #pragma Manager Methods
 
 -(void) performGet:(NSString*)url :(NSString*)token :(BOOL)list{
-    NSLog(@"Performing Get with URL: %@",[NSString stringWithFormat:@"%@%@",URLAPI,url]);
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    //[operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
-    [operationManager GET:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:nil
-                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      NSLog(@"Sirveee: %@", responseObject);
-                      if (list) {
-                          [self.delegate returnList:responseObject :url];
-                      }else{
-                          [self.delegate returnObt:responseObject];
+    if (![token isEqualToString:@""]) {
+        NSLog(@"Performing Get with URL: %@",[NSString stringWithFormat:@"%@%@",URLAPI,url]);
+        AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+        operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        //[operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+        [operationManager GET:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:nil
+                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                          NSLog(@"Sirveee: %@", responseObject);
+                          if (list) {
+                              [self.delegate returnList:responseObject :url];
+                          }else{
+                              [self.delegate returnObt:responseObject];
+                          }
                       }
-                  }
-                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      NSLog(@"Error: %@", [error description]);
-                      //[self.delegate loaded:false :@"Revise sus datos" :@""];
-                  }
-     ];
+                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                          NSLog(@"Error: %@", [error description]);
+                          //[self.delegate loaded:false :@"Revise sus datos" :@""];
+                      }
+         ];
+    }
 }
 
 

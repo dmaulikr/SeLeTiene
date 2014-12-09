@@ -15,6 +15,7 @@
     int sW;
     int sH;
     APIManager *APIManagerClass;
+    JOAlert *loader;
 }
 extern int dev;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;

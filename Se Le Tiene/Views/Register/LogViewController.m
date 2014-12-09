@@ -41,7 +41,7 @@
     
     APIManagerClass = [[APIManager alloc]init];
     APIManagerClass.delegate = self;
-    
+    loader = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 }
 
@@ -108,6 +108,8 @@
 - (IBAction)doLogin:(id)sender {
     btnSignIn.enabled = false;
     if ([self validate]) {
+        [self.view addSubview:loader];
+        [loader showAlertAnim];
         [APIManagerClass loginEmail:txtEmail.text :txtPassword.text];
     }else{
         [self.view addSubview:alert];

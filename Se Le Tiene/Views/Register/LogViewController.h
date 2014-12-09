@@ -14,6 +14,7 @@
     int sW;
     int sH;
     APIManager *APIManagerClass;
+    JOAlert *loader;
 }
 extern int dev;
 extern NSString* token;
