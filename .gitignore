@@ -16,9 +16,12 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+<<<<<<< HEAD
 .DS_Store
 *.DS_Store
 
+=======
+>>>>>>> 487829b840c2faa28b2b51363c3900a16bf651d6
 
 # CocoaPods
 #
@@ -26,4 +29,8 @@ DerivedData
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
+<<<<<<< HEAD
 # Pods/
+=======
+# Pods/
+>>>>>>> 487829b840c2faa28b2b51363c3900a16bf651d6
