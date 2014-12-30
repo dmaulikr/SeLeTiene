@@ -13,4 +13,4 @@ To compile this project you'll need configure your Pods http://cocoapods.org/
 5. Run it!
 
 
-Support iOS 7 and above!
+-Support iOS 7 and above!
