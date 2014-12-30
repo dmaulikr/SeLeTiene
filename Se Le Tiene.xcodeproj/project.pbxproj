@@ -28,6 +28,8 @@
 		EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0519DA16A300CBBC17 /* bg.jpg */; };
 		EC108C0819DA16A300CBBC17 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0619DA16A300CBBC17 /* bg@2x.jpg */; };
 		EC1F86B419DBA41D0019CA9F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F86B319DBA41D0019CA9F /* LoginViewController.m */; };
+		EC272EE51A530B110000D0D6 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC272EE41A530B110000D0D6 /* GPUImage.framework */; };
+		EC272EE71A530B310000D0D6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC272EE61A530B310000D0D6 /* FacebookSDK.framework */; };
 		EC66560519DE44C1005B0B00 /* btnSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC66560319DE44C1005B0B00 /* btnSearch@2x.png */; };
 		EC66560619DE44C1005B0B00 /* btnSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = EC66560419DE44C1005B0B00 /* btnSearch.png */; };
 		EC66560919DE5486005B0B00 /* NVControllerGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = EC66560719DE5486005B0B00 /* NVControllerGeneric.m */; };
@@ -78,7 +80,6 @@
 		EC74AFEC19E6FBDB00DB431A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */; };
 		ECB6033B1A35643D00E5DBC4 /* dps-01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB603391A35643D00E5DBC4 /* dps-01.jpg */; };
 		ECB6033C1A35643D00E5DBC4 /* dps-01@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */; };
-		ECB6033E1A3577E300E5DBC4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB6033D1A3577E300E5DBC4 /* FacebookSDK.framework */; };
 		ECC1090119E481DD003335EF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090019E481DD003335EF /* RegisterViewController.m */; };
 		ECC1090719E4A11E003335EF /* RememberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090619E4A11E003335EF /* RememberViewController.m */; };
 		ECC1090A19E4B2BA003335EF /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090919E4B2BA003335EF /* LogViewController.m */; };
@@ -100,7 +101,6 @@
 		ECCEED0F19E31110007A88B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED0E19E31110007A88B6 /* CoreGraphics.framework */; };
 		ECCEED1119E3111E007A88B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED1019E3111E007A88B6 /* UIKit.framework */; };
 		ECCEED1319E3115C007A88B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED1219E3115C007A88B6 /* Foundation.framework */; };
-		ECCEED1519E31245007A88B6 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCEED1419E31245007A88B6 /* GPUImage.framework */; };
 		ECCEED1819E392AA007A88B6 /* OfferProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED1719E392AA007A88B6 /* OfferProViewController.m */; };
 		ECCEED1B19E392F0007A88B6 /* OfferSerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED1A19E392F0007A88B6 /* OfferSerViewController.m */; };
 		ECCEED1E19E3A2C0007A88B6 /* ContainerViewOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCEED1C19E3A2C0007A88B6 /* ContainerViewOffer.m */; };
@@ -171,6 +171,8 @@
 		EC108C0619DA16A300CBBC17 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
 		EC1F86B219DBA41D0019CA9F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Views/LoginViewController.h; sourceTree = "<group>"; };
 		EC1F86B319DBA41D0019CA9F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Views/LoginViewController.m; sourceTree = "<group>"; };
+		EC272EE41A530B110000D0D6 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
+		EC272EE61A530B310000D0D6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		EC66560319DE44C1005B0B00 /* btnSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnSearch@2x.png"; sourceTree = "<group>"; };
 		EC66560419DE44C1005B0B00 /* btnSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnSearch.png; sourceTree = "<group>"; };
 		EC66560719DE5486005B0B00 /* NVControllerGeneric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NVControllerGeneric.m; path = Views/Components/NVControllerGeneric.m; sourceTree = "<group>"; };
@@ -238,7 +240,6 @@
 		EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderViewController.m; path = Views/Order/OrderViewController.m; sourceTree = "<group>"; };
 		ECB603391A35643D00E5DBC4 /* dps-01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01.jpg"; sourceTree = "<group>"; };
 		ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01@2x.jpg"; sourceTree = "<group>"; };
-		ECB6033D1A3577E300E5DBC4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		ECC108FF19E481DD003335EF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Views/Register/RegisterViewController.h; sourceTree = "<group>"; };
 		ECC1090019E481DD003335EF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Views/Register/RegisterViewController.m; sourceTree = "<group>"; };
 		ECC1090519E4A11E003335EF /* RememberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RememberViewController.h; path = Views/Register/RememberViewController.h; sourceTree = "<group>"; };
@@ -267,7 +268,6 @@
 		ECCEED0E19E31110007A88B6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ECCEED1019E3111E007A88B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ECCEED1219E3115C007A88B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		ECCEED1419E31245007A88B6 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = ../../../../Colors/Objc/colors/colors/GPUImage.framework; sourceTree = "<group>"; };
 		ECCEED1619E392AA007A88B6 /* OfferProViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferProViewController.h; path = Views/Offer/OfferProViewController.h; sourceTree = "<group>"; };
 		ECCEED1719E392AA007A88B6 /* OfferProViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferProViewController.m; path = Views/Offer/OfferProViewController.m; sourceTree = "<group>"; };
 		ECCEED1919E392F0007A88B6 /* OfferSerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferSerViewController.h; path = Views/Offer/OfferSerViewController.h; sourceTree = "<group>"; };
@@ -314,10 +314,10 @@
 			files = (
 				ECEAF28719EF722F00FCA68E /* libsqlite3.0.dylib in Frameworks */,
 				EC703F3C19ED7AEA000C24CF /* Social.framework in Frameworks */,
-				ECCEED1519E31245007A88B6 /* GPUImage.framework in Frameworks */,
 				ECCEED1319E3115C007A88B6 /* Foundation.framework in Frameworks */,
 				ECCEED1119E3111E007A88B6 /* UIKit.framework in Frameworks */,
-				ECB6033E1A3577E300E5DBC4 /* FacebookSDK.framework in Frameworks */,
+				EC272EE51A530B110000D0D6 /* GPUImage.framework in Frameworks */,
+				EC272EE71A530B310000D0D6 /* FacebookSDK.framework in Frameworks */,
 				ECCEED0F19E31110007A88B6 /* CoreGraphics.framework in Frameworks */,
 				C8519DF00A8541CAAF71F209 /* libPods.a in Frameworks */,
 			);
@@ -345,7 +345,7 @@
 		C55CE4518C9843EAB09FFEDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ECB6033D1A3577E300E5DBC4 /* FacebookSDK.framework */,
+				EC272EE61A530B310000D0D6 /* FacebookSDK.framework */,
 				ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */,
 				EC703F3B19ED7AEA000C24CF /* Social.framework */,
 				EC701BF019EA3D67003912B0 /* QuartzCore.framework */,
@@ -395,7 +395,7 @@
 		EC108B7619D8E2F000CBBC17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ECCEED1419E31245007A88B6 /* GPUImage.framework */,
+				EC272EE41A530B110000D0D6 /* GPUImage.framework */,
 				ECCEED1219E3115C007A88B6 /* Foundation.framework */,
 				ECCEED1019E3111E007A88B6 /* UIKit.framework */,
 				ECCEED0E19E31110007A88B6 /* CoreGraphics.framework */,
@@ -1063,6 +1063,10 @@
 					"$(inherited)",
 					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
 					/Users/JorgeOvalle/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Se",
+					Le,
+					Tiene,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1087,6 +1091,10 @@
 					"$(inherited)",
 					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
 					/Users/JorgeOvalle/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Se",
+					Le,
+					Tiene,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
