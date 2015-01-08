@@ -20,27 +20,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     sH = [[UIScreen mainScreen] bounds].size.height;
-    txtComment.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtComment.layer.borderWidth = 1.0f;
     
-    txtCapac.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtCapac.layer.borderWidth = 1.0f;
+    self.txtName.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.txtName.layer.borderWidth = 1.0f;
+    self.txtName.backgroundColor = [UIColor whiteColor];
     
-    btnType.layer.borderWidth = 1.0f;
-    btnType.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    UIView *vil = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 11, 20)];
+    self.txtName.leftViewMode = UITextFieldViewModeAlways;
+    self.txtName.leftView = vil;
     
-    int xVal = btnType.bounds.size.width  - 10;
-    int yVal = btnType.bounds.size.height - 20;
     
-    UIImage *image = [UIImage imageNamed:@"btnArr"];
-    UIImageView *imgArr = [[UIImageView alloc] initWithFrame:CGRectMake(xVal-13, yVal/2, 13, 20)];
-    [imgArr setImage:image];
-    [btnType addSubview:imgArr];
-    
-    txtComment.contentInset = UIEdgeInsetsMake(30,0,0,0);
-    txtCapac.contentInset = UIEdgeInsetsMake(30,0,0,0);
     txtCapac.delegate = self;
     txtComment.delegate = self;
+    
+    self.uiview1.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.uiview1.layer.borderWidth = 1.0f;
+    self.uiview2.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.uiview2.layer.borderWidth = 1.0f;
+    
+    self.txtCapac.layer.borderColor = [UIColor clearColor].CGColor;
+    self.txtComment.layer.borderColor = [UIColor clearColor].CGColor;
 }
 
 // Text METHODS DELEGATE

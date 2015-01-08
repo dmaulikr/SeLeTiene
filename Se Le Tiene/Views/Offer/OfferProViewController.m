@@ -26,6 +26,15 @@
     imagePicker.showsCameraControls = YES;
     
     
+    self.txtName.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.txtName.layer.borderWidth = 1.0f;
+    self.txtName.backgroundColor = [UIColor whiteColor];
+    
+    UIView *vil = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 11, 20)];
+    self.txtName.leftViewMode = UITextFieldViewModeAlways;
+    self.txtName.leftView = vil;
+    
+    
     imgProduct.layer.masksToBounds = YES;
      
     btnAddPic.layer.cornerRadius = btnAddPic.bounds.size.height/2;

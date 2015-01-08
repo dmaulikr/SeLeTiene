@@ -17,7 +17,7 @@
 @property (strong,nonatomic) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet UIButton *btnSetType;
 
-
+@property (weak, nonatomic) IBOutlet UITextField *txtName;
 
 
 @end

@@ -15,9 +15,14 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *btnType;
+@property (weak, nonatomic) IBOutlet UITextField *txtName;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;
 @property (weak, nonatomic) IBOutlet UITextView *txtCapac;
+@property (weak, nonatomic) IBOutlet UIView *uiview1;
+@property (weak, nonatomic) IBOutlet UIView *uiview2;
+
+
 extern int dev;
 
 @end
