@@ -15,6 +15,7 @@
 #import "JOAlert.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "AppDelegate.h"
+#import "NVControllerGeneric.h"
 
 @interface LoginViewController ()
 
@@ -35,6 +36,8 @@
     transition.type = kCATransitionFade;
     Connection* conn = [[Connection alloc] init];
     [conn openDB];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logged:) name:@"logged" object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -78,11 +81,21 @@
              AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
              // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
              [appDelegate sessionStateChanged:session state:state error:error];
-             NSLog(@"Creando sessión");
              
              
          }];
     }
 }
+
+
+
+
+- (void)logged:(NSNotification*)notification{
+    NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogged"];
+    tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:tmp animated:YES completion:nil];
+}
+
+
 
 @end

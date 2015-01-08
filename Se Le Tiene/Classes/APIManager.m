@@ -20,13 +20,14 @@
       // URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
       //  URLAPI = @"http://se-le-tiene.cloudapp.net/SeLeTiene.svc/";
         URLAPI = @"http://seletiene.cloudapp.net/api/";
+        conn = [[Connection alloc] init];
+        [conn openDB];
     }
     return self;
 }
 
 -(void)loginEmail:(NSString*)userEmail :(NSString*)userPass{
-    Connection* conn = [[Connection alloc] init];
-    [conn openDB];
+    
     
     NSDictionary* jsonDict = @{ @"grant_type": @"password",
                                 @"username": userEmail,
@@ -38,7 +39,6 @@
     NSLog(@"Dict:%@", jsonString);
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
-//    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
     [operationManager POST:@"http://seletiene.cloudapp.net/token"  parameters:jsonDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
@@ -51,38 +51,6 @@
            [self.delegate loaded:false :@"Revise sus datos" :@""];
     }];
 
-}
-
--(void) getImageTest{
-    NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
-    [connection start];
-}
-
--(void)rememberPass:(NSString*)userEmail{
-    [self getImageTest];
-    //self.presupuesto.text = [NSString stringWit   hFormat:@"%@", [json objectForKey:(@"presupuesto")] ] ;
-}
-
--(void)logout{
-    token = @"";
-    Connection* conn = [[Connection alloc] init];
-    [conn openDB];
-    [conn deleteSession];
-    [FBSession.activeSession closeAndClearTokenInformation];
-}
-
--(void)signUpUser:(User*)user{
-    NSDictionary *userDic = @{
-                              //@"key":@"value"
-                              @"email":user.email,
-                              @"name":user.name,
-                              @"password":user.passwordHash,
-                              @"phoneNumber":user.phoneNumber
-                              };
-    
-    
-    [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
 }
 
 
@@ -105,11 +73,11 @@
             //    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
             [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
             [operationManager POST:[NSString stringWithFormat:@"%@Account/FacebookLogin",URLAPI]  parameters:userDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                //NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
-                NSLog(@"Exito: %@", responseObject );
-                //token =[responseObject objectForKey:(@"access_token")];
-                //[conn createSession:token];
-                [self.delegate loaded:true :@"Revise sus datos" :@""];
+                NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
+                token =[responseObject objectForKey:(@"access_token")];
+                [conn createSession:token];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"logged" object:self];
+              //  [self.delegate loaded:true :@"Revise sus datos" :@""];
             }
                            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                NSLog(@"Error: %@", [error description]);
@@ -122,6 +90,35 @@
     }];
 }
 
+-(void) getImageTest{
+    NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
+    [connection start];
+}
+
+-(void)rememberPass:(NSString*)userEmail{
+    [self getImageTest];
+    //self.presupuesto.text = [NSString stringWit   hFormat:@"%@", [json objectForKey:(@"presupuesto")] ] ;
+}
+
+-(void)logout{
+    token = @"";
+    [conn deleteSession];
+    [FBSession.activeSession closeAndClearTokenInformation];
+}
+
+-(void)signUpUser:(User*)user{
+    NSDictionary *userDic = @{
+                              //@"key":@"value"
+                              @"email":user.email,
+                              @"name":user.name,
+                              @"password":user.passwordHash,
+                              @"phoneNumber":user.phoneNumber
+                              };
+    
+    
+    [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
+}
 
 -(void)updateUser:(User*)user{
     NSLog(@"Updeteando");

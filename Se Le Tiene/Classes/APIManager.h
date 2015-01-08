@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "User.h"
 #import "Product.h"
+#import "Connection.h"
 
 
 @class APIManager;
@@ -35,6 +36,7 @@
     int datos;
     long long total;
     id objReturn;
+    Connection* conn;
 }
 
 extern NSString* token;

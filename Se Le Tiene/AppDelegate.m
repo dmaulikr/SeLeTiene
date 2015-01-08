@@ -146,6 +146,7 @@
     APIManager *APIManagerClass = [[APIManager alloc]init];
     [APIManagerClass signUpUserFB];
     [self showMessage:@"Bienvenido :)" withTitle:@""];
+    
 }
 
 
