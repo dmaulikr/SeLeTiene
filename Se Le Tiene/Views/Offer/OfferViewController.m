@@ -28,7 +28,8 @@
     transition.type = kCATransitionFade;
     
     self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-    
+    APIManagerclass = [[APIManager alloc]init];
+    APIManagerclass.delegate = self;
 }
 
 - (IBAction)changeType:(id)sender {
@@ -53,6 +54,22 @@
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
+- (IBAction)offerProduct:(id)sender {
+    Product* t;
+    if (self.segmented.selectedSegmentIndex == 0) {
+        NSLog(@"Ofrenciendo Producto");
+        t = [self.containerViewController getProduct];
+        [APIManagerclass registerProduct:t :0];
+    }else{
+        NSLog(@"Ofrenciendo Servicio");
+        t = [self.containerViewController getProduct];
+        [APIManagerclass registerProduct:t :1];
+    }
+    NSLog(@"%@",t.nameProduct);
+}
 
+- (void) returnResponse:(NSString *)msg{
+
+}
 
 @end

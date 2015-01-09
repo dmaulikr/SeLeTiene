@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <GPUImage/GPUImage.h>
+#import "Product.h"
 
 @interface OfferProViewController : UIViewController <UIImagePickerControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
 
@@ -18,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnSetType;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
+
+-(Product*)getActualProduct;
 
 
 @end

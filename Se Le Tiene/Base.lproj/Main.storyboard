@@ -50,12 +50,12 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <state key="normal">
                                     <string key="title">¿Tienes un producto o servicio?
-Ofrécelo aquí</string>
+Registrate</string>
                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2Vj-Bh-BYI" kind="show" id="Hba-dZ-Js7"/>
+                                    <segue destination="Mfx-z3-1W8" kind="show" id="OfP-MD-Bkm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHk-jj-yXX">
@@ -1318,6 +1318,9 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="offerProduct:" destination="2Vj-Bh-BYI" eventType="touchUpInside" id="jw8-KZ-TbT"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTe-qd-6Qt">
                                 <rect key="frame" x="0.0" y="71" width="320" height="434"/>

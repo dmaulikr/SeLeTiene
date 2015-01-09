@@ -95,4 +95,16 @@
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }
 
+-(Product*)getProduct{
+    Product *r;
+    if (([self.currentSegueIdentifier isEqualToString:SegueIdentifierFirst]) && self.firstViewController) {
+        r = [self.firstViewController getActualProduct];
+    }else{
+        r = [self.secondViewController getActualProduct];
+    }
+    
+    return r;
+}
+
+
 @end

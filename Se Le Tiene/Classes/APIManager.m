@@ -266,6 +266,24 @@
        }];
 }
 
+-(void)registerProduct:(Product*)product :(int)type{
+    NSDictionary *productDic = @{
+                              //@"key":@"value"
+                              @"Title":product.nameProduct,
+                              @"Description":product.descProduct,
+                              @"Type":[NSString stringWithFormat:@"%d",type]
+                              };
+    NSLog(@"Posteando Producto%@",token);
+    [self performPost:@"ProductServices" :token :productDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
+}
 
+-(void)postImage:(int*)idProduct :(UIImage*)imageProduct{
+    NSDictionary *productDic = @{
+                                 //@"key":@"value"
+                                 @"Image":imageProduct
+                                 };
+    NSLog(@"Posteando Producto%@",token);
+    [self performPost:[NSString stringWithFormat:@"ProductServices/Image?ProductoServicioId=%@",idProduct] :token :productDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
+}
 
 @end

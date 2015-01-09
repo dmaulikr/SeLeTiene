@@ -29,7 +29,6 @@
     self.txtName.leftViewMode = UITextFieldViewModeAlways;
     self.txtName.leftView = vil;
     
-    
     txtCapac.delegate = self;
     txtComment.delegate = self;
     
@@ -40,6 +39,11 @@
     
     self.txtCapac.layer.borderColor = [UIColor clearColor].CGColor;
     self.txtComment.layer.borderColor = [UIColor clearColor].CGColor;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 // Text METHODS DELEGATE
@@ -59,7 +63,7 @@
     NSTimeInterval animationDuration =
     [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect frame = self.view.frame;
-    frame.origin.y = 64;
+    frame.origin.y = 0;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
     self.view.frame = frame;
@@ -69,9 +73,14 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     textView.layer.borderColor = [UIColor colorWithRed:0.039 green:0.337 blue:0.643 alpha:1].CGColor;
-    NSLog(@"int %f", textView.frame.origin.y);
     yPos = textView.frame.origin.y + 71;
-    NSLog(@"int %d", yPos);
+    if([textView isDescendantOfView:self.uiview1]) {
+        yPos += 68;
+    } else {
+        if([textView isDescendantOfView:self.uiview2]) {
+            yPos += 256;
+        }
+    }
     CGRect frame = self.view.frame;
     if(dev ==1 && yPos >= (sH - 328) - 50){
         frame.origin.y = 160;
@@ -96,6 +105,13 @@
     if ([segue.identifier isEqualToString:@"getTypeS"]) {
         tmpView.modeTable= 3;
     }
+}
+
+-(Product*)getActualProduct{
+    Product *r = [[Product alloc]init];
+    r.nameProduct = self.txtName.text;
+    r.descProduct = [NSString stringWithFormat:@"%@ \n %@", self.txtComment.text, self.txtCapac.text];
+    return r;
 }
 
 @end

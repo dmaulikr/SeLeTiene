@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
 
 @interface OfferSerViewController : UIViewController <UITextViewDelegate>{
     int yPos;
@@ -24,5 +25,7 @@
 
 
 extern int dev;
+
+-(Product*)getActualProduct;
 
 @end

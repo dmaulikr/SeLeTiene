@@ -47,12 +47,16 @@ extern NSString* token;
 -(void)logout;
 -(void)signUpUser:(User*)user;
 -(void)updateUser:(User*)user;
+-(void)registerProduct:(Product*)product :(int)type;
+
 
 -(void)getProducts:(NSString*)filters;
 -(void)getProductDetail:(int)idProduct;
 -(void)getFavorites;
 -(void)getCities;
 -(void)getSelfUser;
+
+-(void)postImage:(int*)idProduct :(UIImage*)imageProduct;
 
 -(void)setFavorite:(int)productServiceId;
 

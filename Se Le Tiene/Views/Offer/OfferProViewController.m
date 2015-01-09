@@ -117,7 +117,6 @@
 
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
-    NSLog(@"Paso por aca");
     int yPos = textView.frame.origin.y;
     CGRect frame = self.view.frame;
     frame.origin.y = -(yPos - ((self.view.frame.size.height - 216) - 60));
@@ -145,5 +144,13 @@
     }
 }
 
+
+-(Product*)getActualProduct{
+    Product *r = [[Product alloc]init];
+    r.nameProduct = self.txtName.text;
+    r.descProduct = self.txtDesc.text;
+    r.imageProduct = self.imgProduct.image;
+    return r;
+}
 
 @end

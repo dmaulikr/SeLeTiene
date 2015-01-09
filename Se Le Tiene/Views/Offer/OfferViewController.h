@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ContainerViewOffer.h"
+#import "APIManager.h"
 
-@interface OfferViewController : UIViewController{
+@interface OfferViewController : UIViewController <APIManagerDelegate>{
     CATransition *transition;
+    APIManager *APIManagerclass;
 }
 
 
