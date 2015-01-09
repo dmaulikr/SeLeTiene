@@ -132,6 +132,7 @@
         tmpProduct.nameProduct = key[@"title"];
         tmpProduct.scoreProduct = key[@"rating"];
         tmpProduct.descProduct = key[@"description"];
+        tmpProduct.urlImage = key[@"imageFile"];
         tmpProduct.providerProduct.nameProvider  = [[NSString stringWithFormat:@"%@",key[@"ownerName"]] isEqualToString:@"<null>"]? @"No especificado!":key[@"ownerName"];
         [tmpArray addObject:tmpProduct];
     }

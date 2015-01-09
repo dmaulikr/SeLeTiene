@@ -21,7 +21,11 @@
 }
 
 -(NSURL*) getImageURL{
-    return [NSURL URLWithString:@"http://lorempixel.com/g/190/80/"];
+    if ([self.urlImage isEqual:(id)[NSNull null]]||[self.urlImage  isEqualToString:@"<null>"]||!self.urlImage) {
+        return [NSURL URLWithString:@"http://lorempixel.com/g/190/80/"];
+    }else{
+        return [NSURL URLWithString:[NSString stringWithFormat:@"http://seletiene.cloudapp.net%@",self.urlImage]];
+    }
 }
 
 -(int) getScore{

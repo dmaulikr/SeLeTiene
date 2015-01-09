@@ -21,7 +21,7 @@
 - (void) percentageDownloaded:(double)dataDownloaded;
 - (void) loadedImage:(UIImage*)imageLoaded;
 - (void) loaded:(BOOL)checker :(NSString*)msg :(NSString*)tokenR;
-- (void) returnResponse:(NSString *)msg;
+- (void) returnResponse:(NSString *)msg :(id)response;
 - (void)returnList:(id)responseObject :(NSString*)url;
 - (void) returnObt:(id)responseObject;
 
@@ -56,7 +56,7 @@ extern NSString* token;
 -(void)getCities;
 -(void)getSelfUser;
 
--(void)postImage:(int*)idProduct :(UIImage*)imageProduct;
+-(void)postImage:(int)idProduct :(UIImage*)imageProduct;
 
 -(void)setFavorite:(int)productServiceId;
 

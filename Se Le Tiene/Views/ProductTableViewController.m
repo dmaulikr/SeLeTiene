@@ -47,7 +47,6 @@
             self.tableView.backgroundColor = [UIColor clearColor];
         break;
         case 2:
-            NSLog(@"Entro a Favoritos");
             self.title = @"Favoritos";
             self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
             alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64)];
@@ -207,6 +206,7 @@
         tmpProduct.nameProduct = key[@"nombre"];
         tmpProduct.scoreProduct = key[@"calificacion"];
         tmpProduct.descProduct = key[@"descripcion"];
+        tmpProduct.urlImage = key[@"imageFile"];
         NSDictionary *prov = key[@"Proveedor"];
         tmpProduct.providerProduct.nameProvider  = prov[@"nombre"];
         tmpProduct.providerProduct.emailProvider = prov[@"email"];
@@ -226,6 +226,7 @@
         tmpProduct.nameProduct = key[@"title"];
         tmpProduct.scoreProduct = key[@"rating"];
         tmpProduct.descProduct = key[@"description"];
+        tmpProduct.urlImage = key[@"imageFile"];
         tmpProduct.providerProduct.nameProvider  = [[NSString stringWithFormat:@"%@",key[@"ownerName"]] isEqualToString:@"<null>"]? @"No especificado!":key[@"ownerName"];
         [tmpArray addObject:tmpProduct];
     }

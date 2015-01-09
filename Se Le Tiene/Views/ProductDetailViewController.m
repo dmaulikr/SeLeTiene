@@ -92,17 +92,16 @@
     imgProduct.image = actProduct.imageProduct;
 }
 
-
+- (void) returnResponse:(NSString *)msg{}
 -(void) returnObt:(id)responseObject{
-    NSDictionary *prov = responseObject[@"owner"];
-    actProduct.providerProduct.nameProvider = [[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"];
-    actProduct.providerProduct.celProvider = [[NSString stringWithFormat:@"%@",prov[@"mobileNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"mobileNumber"];
-    actProduct.providerProduct.phoneProvider = [[NSString stringWithFormat:@"%@",prov[@"phoneNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"phoneNumber"];
-    actProduct.providerProduct.emailProvider = [[NSString stringWithFormat:@"%@",prov[@"email"]] isEqualToString:@"<null>"]? @"---":prov[@"email"];
-    NSLog(@"Detalle de %@", responseObject);
-    Connection *conn = [[Connection alloc] init];
-     [conn openDB];
-    [conn insertToRecent:responseObject[@"title"] :[[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"] :@"http://lorempixel.com/300/150/" :[NSString stringWithFormat:@"%d", actProduct.idProduct.intValue] :[NSString stringWithFormat:@"%@", responseObject[@"rating"]].intValue];
+        NSDictionary *prov = responseObject[@"owner"];
+        actProduct.providerProduct.nameProvider = [[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"];
+        actProduct.providerProduct.celProvider = [[NSString stringWithFormat:@"%@",prov[@"mobileNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"mobileNumber"];
+        actProduct.providerProduct.phoneProvider = [[NSString stringWithFormat:@"%@",prov[@"phoneNumber"]] isEqualToString:@"<null>"]? @"---":prov[@"phoneNumber"];
+        actProduct.providerProduct.emailProvider = [[NSString stringWithFormat:@"%@",prov[@"email"]] isEqualToString:@"<null>"]? @"---":prov[@"email"];
+        Connection *conn = [[Connection alloc] init];
+        [conn openDB];
+        [conn insertToRecent:responseObject[@"title"] :[[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"] :prov[@"imageFile"] :[NSString stringWithFormat:@"%d", actProduct.idProduct.intValue] :[NSString stringWithFormat:@"%@", responseObject[@"rating"]].intValue];
 }
 
 
@@ -356,5 +355,7 @@
     [self.navigationController.view.layer addAnimation:transition forKey:nil];
     [self.navigationController pushViewController:aVC animated:NO];
 }
+
+- (void)returnList:(id)responseObject :(NSString*)url{}
 
 @end

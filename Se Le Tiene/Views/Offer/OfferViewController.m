@@ -21,12 +21,10 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     btnOffer.layer.cornerRadius = 5.0f;
     self.title = @"Ofrecer";
-    
     transition = [CATransition animation];
     transition.duration = 0.5f;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
-    
     self.navigationController.interactivePopGestureRecognizer.delegate = nil;
     APIManagerclass = [[APIManager alloc]init];
     APIManagerclass.delegate = self;
@@ -49,27 +47,36 @@
     }
 }
 
-
 -(void)viewDidAppear:(BOOL)animated{
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
 - (IBAction)offerProduct:(id)sender {
-    Product* t;
+    t = [self.containerViewController getProduct];
+    [APIManagerclass postImage:6 :t.imageProduct];
+    /*self.segmented.userInteractionEnabled = false;
+    self.btnOffer.userInteractionEnabled = false;
+    
+    t = [self.containerViewController getProduct];
     if (self.segmented.selectedSegmentIndex == 0) {
-        NSLog(@"Ofrenciendo Producto");
-        t = [self.containerViewController getProduct];
         [APIManagerclass registerProduct:t :0];
     }else{
-        NSLog(@"Ofrenciendo Servicio");
-        t = [self.containerViewController getProduct];
         [APIManagerclass registerProduct:t :1];
-    }
-    NSLog(@"%@",t.nameProduct);
+    }*/
 }
 
-- (void) returnResponse:(NSString *)msg{
-
+- (void) returnResponse:(NSString *)msg :(id)response{
+    if ([msg isEqualToString:@"creado"]) {
+        NSLog(@"Creado con exito");
+        if (self.segmented.selectedSegmentIndex == 0) {
+            NSDictionary *dic = response;
+            NSLog(@"Posteando Imagen");
+            //[APIManagerclass postImage:(int)dic[@"id"] :t.imageProduct];
+            [APIManagerclass postImage:(int)dic[@"id"] :t.imageProduct];
+        }else{
+        
+        }
+    }
 }
 
 @end

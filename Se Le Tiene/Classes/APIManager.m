@@ -98,7 +98,6 @@
 
 -(void)rememberPass:(NSString*)userEmail{
     [self getImageTest];
-    //self.presupuesto.text = [NSString stringWit   hFormat:@"%@", [json objectForKey:(@"presupuesto")] ] ;
 }
 
 -(void)logout{
@@ -121,7 +120,6 @@
 }
 
 -(void)updateUser:(User*)user{
-    NSLog(@"Updeteando");
     NSDictionary *userDic = @{
                               //@"key":@"value"
                               @"email":user.email,
@@ -129,10 +127,6 @@
                               @"phoneNumber":user.phoneNumber,
                               @"mobileNumber":user.mobileNumber
                               };
-    NSLog(@"Updeteando 2");
-    NSLog(@"%@",token);
-    
-    
     [self performPut:@"Account" :token :userDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
 }
 
@@ -161,7 +155,6 @@
 
 
 -(void)getSelfUser{
-    //NSLog(@"retriving self user with token %@",token);
     [self performGet:@"Account" :token :false];
 }
 
@@ -184,7 +177,6 @@
     datos += data.length;
     //NSLog(@"Progress %f", datos / (float)total);
     [self.delegate percentageDownloaded: datos / (float)total];
-    
     [apiData appendData:data];
 }
 
@@ -237,12 +229,12 @@
     [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
     
     [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"Success: %@", responseObject);
-            [self.delegate returnResponse:successMsg];
+            //NSLog(@"Success: %@", responseObject);
+            [self.delegate returnResponse:successMsg :responseObject];
         }
                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                       NSLog(@"Error: %@", [error description]);
-                       [self.delegate returnResponse:failMsg];
+                      // NSLog(@"Error: %@", [error description]);
+                       [self.delegate returnResponse:failMsg :nil];
        }];
 }
 
@@ -256,12 +248,12 @@
     [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
     
     [operationManager PUT:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success response: %@", responseObject);
-        [self.delegate returnResponse:successMsg];
+       // NSLog(@"Success response: %@", responseObject);
+        [self.delegate returnResponse:successMsg :nil];
     }
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-           NSLog(@"Error: %@", [error description]);
-           [self.delegate returnResponse:failMsg];
+         //  NSLog(@"Error: %@", [error description]);
+           [self.delegate returnResponse:failMsg :nil];
            //[self.delegate loaded:false :@"Revise sus datos" :@""];
        }];
 }
@@ -273,17 +265,59 @@
                               @"Description":product.descProduct,
                               @"Type":[NSString stringWithFormat:@"%d",type]
                               };
-    NSLog(@"Posteando Producto%@",token);
-    [self performPost:@"ProductServices" :token :productDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
+   // NSLog(@"Posteando Producto%@",token);
+    [self performPost:@"ProductServices" :token :productDic :@"Creado" :@"Ocurrio un error al crear"];
 }
 
--(void)postImage:(int*)idProduct :(UIImage*)imageProduct{
-    NSDictionary *productDic = @{
+
+-(void)postImage:(int)idProduct :(UIImage*)imageProduct{
+   /* AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager POST:URLAPI parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:UIImagePNGRepresentation(imageProduct)
+                                    name:@"image"
+                                fileName:@"Upload" mimeType:@"image/png"];
+        // etc.
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+       // NSLog(@"Response: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       // NSLog(@"Error: %@", error);
+    }];*/
+    
+    /*NSDictionary *productDic = @{
                                  //@"key":@"value"
-                                 @"Image":imageProduct
+                                 @"image":imageProduct
                                  };
-    NSLog(@"Posteando Producto%@",token);
-    [self performPost:[NSString stringWithFormat:@"ProductServices/Image?ProductoServicioId=%@",idProduct] :token :productDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
+    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+    //operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operationManager.requestSerializer setValue:@"application/form-data" forHTTPHeaderField:@"Accept"];
+    [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
+    
+    [operationManager POST:[NSString stringWithFormat:@"%@/ProductServices/Image?ProductoServicioId=%d",URLAPI,idProduct] parameters:productDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success: %@", responseObject);
+       // [self.delegate returnResponse:successMsg :responseObject];
+    }
+                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                        NSLog(@"Error: %@", [error description]);
+                  //     [self.delegate returnResponse:failMsg :nil];
+                   }];*/
+    
+    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+    //operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //[operationManager.requestSerializer setValue:@"application/form-data" forHTTPHeaderField:@"Accept"];
+    [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
+    
+    /// !!! only jpg, have to cover png as well
+    NSData *imageData = UIImageJPEGRepresentation(imageProduct, 0.5); // image size ca. 50 KB
+    [operationManager POST:[NSString stringWithFormat:@"%@/ProductServices/Image?ProductoServicioId=%d",URLAPI,idProduct] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"image" fileName:@"upload" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure %@, %@", error, operation.responseString);
+    }];
 }
 
 @end

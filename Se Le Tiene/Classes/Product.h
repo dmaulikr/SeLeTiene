@@ -21,6 +21,8 @@
 @property (nonatomic, retain) NSString *scoreProduct;
 @property (nonatomic, retain) NSURL *imgProduct;
 
+@property (nonatomic, retain) NSString *urlImage;
+
 
 -(NSURL*) getImageURL;
 -(int) getScore;

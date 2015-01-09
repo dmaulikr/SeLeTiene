@@ -13,6 +13,7 @@
 @interface OfferViewController : UIViewController <APIManagerDelegate>{
     CATransition *transition;
     APIManager *APIManagerclass;
+    Product *t;
 }
 
 
