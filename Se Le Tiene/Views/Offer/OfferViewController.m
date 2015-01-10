@@ -28,6 +28,9 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = nil;
     APIManagerclass = [[APIManager alloc]init];
     APIManagerclass.delegate = self;
+    
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :self.view.frame];
+    alert.delegate = self;
 }
 
 - (IBAction)changeType:(id)sender {
@@ -53,30 +56,52 @@
 
 - (IBAction)offerProduct:(id)sender {
     t = [self.containerViewController getProduct];
-    [APIManagerclass postImage:6 :t.imageProduct];
-    /*self.segmented.userInteractionEnabled = false;
+    //[APIManagerclass postImage:6 :t.imageProduct];
+    self.segmented.userInteractionEnabled = false;
     self.btnOffer.userInteractionEnabled = false;
-    
     t = [self.containerViewController getProduct];
     if (self.segmented.selectedSegmentIndex == 0) {
         [APIManagerclass registerProduct:t :0];
     }else{
         [APIManagerclass registerProduct:t :1];
-    }*/
+    }
 }
 
 - (void) returnResponse:(NSString *)msg :(id)response{
-    if ([msg isEqualToString:@"creado"]) {
-        NSLog(@"Creado con exito");
+    if ([msg isEqualToString:@"Creado"]) {
         if (self.segmented.selectedSegmentIndex == 0) {
-            NSDictionary *dic = response;
-            NSLog(@"Posteando Imagen");
-            //[APIManagerclass postImage:(int)dic[@"id"] :t.imageProduct];
-            [APIManagerclass postImage:(int)dic[@"id"] :t.imageProduct];
+            NSDictionary *key  = (NSDictionary*)response;
+            t.imageProduct = [self imageWithImage:t.imageProduct scaledToSize:CGSizeMake(300, 402)];
+            [APIManagerclass postImage:[NSString stringWithFormat:@"%@", key[@"id"]].intValue :t.imageProduct];
+            [alert setText:@"Subiendo Imagen"];
         }else{
-        
+            [alert setText:@"Producto Creado"];
         }
+    }else{
+        [alert setText:@"Fallo al crear, intente luego"];
     }
+    [self.view addSubview:alert];
+    [alert showAlert];
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+- (void) returnBool:(BOOL)response{
+    if (response) {
+        [alert setText:@"Producto Creado"];
+    }else{
+        [alert setText:@"Ocurrio un error"];
+    }
+}
+
+- (void) alertClosed{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

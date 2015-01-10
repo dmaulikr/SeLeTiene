@@ -30,5 +30,6 @@ extern NSString *filterStr;
 
 @property int mode;
 @property (strong,nonatomic) IBOutlet UITableView *table;
+@property (strong, nonatomic) UIRefreshControl *refresh;
 
 @end

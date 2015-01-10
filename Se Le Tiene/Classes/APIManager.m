@@ -271,52 +271,17 @@
 
 
 -(void)postImage:(int)idProduct :(UIImage*)imageProduct{
-   /* AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    [manager POST:URLAPI parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:UIImagePNGRepresentation(imageProduct)
-                                    name:@"image"
-                                fileName:@"Upload" mimeType:@"image/png"];
-        // etc.
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-       // NSLog(@"Response: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-       // NSLog(@"Error: %@", error);
-    }];*/
-    
-    /*NSDictionary *productDic = @{
-                                 //@"key":@"value"
-                                 @"image":imageProduct
-                                 };
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    //operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operationManager.requestSerializer setValue:@"application/form-data" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
-    
-    [operationManager POST:[NSString stringWithFormat:@"%@/ProductServices/Image?ProductoServicioId=%d",URLAPI,idProduct] parameters:productDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success: %@", responseObject);
-       // [self.delegate returnResponse:successMsg :responseObject];
-    }
-                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                        NSLog(@"Error: %@", [error description]);
-                  //     [self.delegate returnResponse:failMsg :nil];
-                   }];*/
-    
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    //operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    //operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
-    //[operationManager.requestSerializer setValue:@"application/form-data" forHTTPHeaderField:@"Accept"];
-    [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
-    
-    /// !!! only jpg, have to cover png as well
-    NSData *imageData = UIImageJPEGRepresentation(imageProduct, 0.5); // image size ca. 50 KB
+    NSData *imageData = UIImageJPEGRepresentation(imageProduct,1); // image size ca. 50 KB
     [operationManager POST:[NSString stringWithFormat:@"%@/ProductServices/Image?ProductoServicioId=%d",URLAPI,idProduct] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:imageData name:@"image" fileName:@"upload" mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success %@", responseObject);
+        [self.delegate returnBool:true];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure %@, %@", error, operation.responseString);
+       [self.delegate returnBool:false];
     }];
 }
 

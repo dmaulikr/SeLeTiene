@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <pop/POP.h>
 
+
+@class JOAlert;
+
+@protocol JOAlertDelegate <NSObject>
+@optional
+- (void) alertClosed;
+
+@end
+
 @interface JOAlert : UIView
 
 @property (strong,nonatomic) CALayer *lyr;
@@ -26,5 +35,7 @@
 -(void)dismissAlertAnim;
 -(void)setText:(NSString*)text;
 -(void)showAlertAutoDismiss;
+
+@property (nonatomic, weak) id <JOAlertDelegate> delegate;
 
 @end

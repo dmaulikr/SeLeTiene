@@ -29,5 +29,7 @@ extern NSString *filterStr;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *Products;
 @property (strong, nonatomic) JOAlert *alert;
+@property (strong, nonatomic) UIRefreshControl *refresh;
+
 
 @end

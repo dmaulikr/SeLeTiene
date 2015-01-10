@@ -77,6 +77,9 @@
     lblDesc.text = @"Descripción";
     [txtDesc addSubview:lblDesc];
     
+    
+    
+    
 }
 
 - (IBAction)takePic:(id)sender {

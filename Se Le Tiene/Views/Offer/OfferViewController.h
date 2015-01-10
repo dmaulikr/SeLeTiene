@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ContainerViewOffer.h"
 #import "APIManager.h"
+#import "JOAlert.h"
 
 @interface OfferViewController : UIViewController <APIManagerDelegate>{
     CATransition *transition;
     APIManager *APIManagerclass;
     Product *t;
+    JOAlert *alert;
 }
 
 

@@ -17,7 +17,7 @@
 @end
 
 @implementation ProductsContViewController
-@synthesize Products,alert;
+@synthesize Products,alert,refresh;
 
 
 #pragma mark UIViewController methods
@@ -41,8 +41,17 @@
     filter = @"";
     order = @"";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFilter:) name:@"filterStrChange" object:nil];
-   
+    
+    refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Recargando"];
+    [refresh addTarget:self action:@selector(refershControlAction) forControlEvents:UIControlEventValueChanged];
+    [self.Products addSubview:refresh];
 }
+
+- (void) refershControlAction{
+    [APIManagerClass getProducts:[NSString stringWithFormat:@"&%@&%@",orderStr,filterStr]];
+}
+
 
 - (void)changeFilter:(NSNotification*)notification{
     [self.view addSubview:alert];
@@ -125,6 +134,7 @@
 
 -(void) returnList:(id)responseObject :(NSString*)url
 {
+    
     NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
     for (id key in (NSDictionary*)responseObject) {
         Product *tmpProduct = [[Product alloc] init];
@@ -143,6 +153,7 @@
         [self.Products reloadData];
         [alert dismissAlertAnim];
     }
+    [refresh endRefreshing];
 }
 
 @end

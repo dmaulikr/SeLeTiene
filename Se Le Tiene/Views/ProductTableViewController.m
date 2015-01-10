@@ -17,7 +17,7 @@
 @end
 
 @implementation ProductTableViewController
-@synthesize table,mode;
+@synthesize table,mode,refresh;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -74,7 +74,21 @@
     }
     filter = @"";
     order = @"";
+    
+    refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Recargando"];
+    [refresh addTarget:self action:@selector(refershControlAction) forControlEvents:UIControlEventValueChanged];
+
+    [self.view addSubview:refresh];
+    
+    
 }
+
+
+- (void) refershControlAction{
+    [APIManagerClass getProducts:[NSString stringWithFormat:@"&%@&%@",orderStr,filterStr]];
+}
+
 
 - (void)changeFilter:(NSNotification*)notification{
     [self.view addSubview:alert];
@@ -241,6 +255,7 @@
     }
     [(UITableView*)self.view reloadData];
     [alert dismissAlertAnim];
+    [refresh endRefreshing];
 }
 
 @end

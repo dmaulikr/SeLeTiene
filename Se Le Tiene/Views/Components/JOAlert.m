@@ -129,7 +129,7 @@
     [scl setValue:@"alpha4" forKey:@"animName"];
     scl.toValue = @(0);
     [lyr pop_addAnimation:scl forKey:@"alpha4"];
-    
+    [self.delegate alertClosed];
 }
 
 
