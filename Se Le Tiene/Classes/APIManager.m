@@ -19,7 +19,7 @@
     if (self) {
       // URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
       //  URLAPI = @"http://se-le-tiene.cloudapp.net/SeLeTiene.svc/";
-        URLAPI = @"http://seletiene.cloudapp.net/api/";
+        URLAPI = @"http://200.119.110.136:81/seletienea/api/";
         conn = [[Connection alloc] init];
         [conn openDB];
     }
@@ -227,7 +227,7 @@
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
-    
+    NSLog(@"%@",data);
     [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"Success: %@", responseObject);
             [self.delegate returnResponse:successMsg :responseObject];
@@ -246,6 +246,8 @@
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
+    
+    NSLog(@"%@",data);
     
     [operationManager PUT:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
        // NSLog(@"Success response: %@", responseObject);
