@@ -199,7 +199,7 @@
 }
 #pragma APIDelegate
 
-- (void) returnResponse:(NSString *)msg{
+- (void) returnResponse:(NSString *)msg :(id)response{
     [self.view addSubview:alert];
     [alert setText:msg];
     [alert showAlertAutoDismiss];

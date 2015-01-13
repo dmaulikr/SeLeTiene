@@ -431,7 +431,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Ingrese nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-G9-X7q">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Ingrese nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-G9-X7q">
                                 <rect key="frame" x="25" y="98" width="270" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bqs-Sw-ssm"/>
@@ -443,7 +443,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <outlet property="delegate" destination="Mfx-z3-1W8" id="Xnp-jS-efe"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-Mh-zqn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-Mh-zqn">
                                 <rect key="frame" x="25" y="78" width="270" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="nuf-wD-3dW"/>
@@ -453,7 +453,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u23-Uc-rPb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u23-Uc-rPb">
                                 <rect key="frame" x="25" y="166" width="270" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Dhe-vN-BEb"/>
@@ -465,7 +465,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <outlet property="delegate" destination="Mfx-z3-1W8" id="Vfs-b0-usk"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-ok-dK1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-ok-dK1">
                                 <rect key="frame" x="25" y="146" width="270" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="JgT-8n-HvK"/>
@@ -475,7 +475,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="223-51-78" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gc-4g-gu1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="223-51-78" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gc-4g-gu1">
                                 <rect key="frame" x="25" y="234" width="270" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Pfg-oR-NAt"/>
@@ -487,7 +487,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <outlet property="delegate" destination="Mfx-z3-1W8" id="ZNL-Kd-DSm"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="teléfono" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRA-cn-irA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teléfono" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRA-cn-irA">
                                 <rect key="frame" x="25" y="214" width="270" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="Y6V-Ma-SwJ"/>
@@ -497,7 +497,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-bB-JHP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-bB-JHP">
                                 <rect key="frame" x="25" y="302" width="270" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="Vnw-uI-NAE"/>
@@ -509,7 +509,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <outlet property="delegate" destination="Mfx-z3-1W8" id="wie-dd-pq0"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0p-eV-CSX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0p-eV-CSX">
                                 <rect key="frame" x="25" y="282" width="270" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="ZX2-3k-Oq8"/>
@@ -519,7 +519,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPL-ho-WQw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPL-ho-WQw">
                                 <rect key="frame" x="25" y="370" width="270" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="btQ-hW-KfO"/>
@@ -531,7 +531,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <outlet property="delegate" destination="Mfx-z3-1W8" id="WeY-ik-F78"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="confirmar contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bL-3y-uQo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="confirmar contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bL-3y-uQo">
                                 <rect key="frame" x="25" y="350" width="270" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="AhL-Le-oGh"/>

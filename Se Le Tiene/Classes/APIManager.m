@@ -229,11 +229,11 @@
     [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
     
     [operationManager POST:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            //NSLog(@"Success: %@", responseObject);
+            NSLog(@"Success: %@", responseObject);
             [self.delegate returnResponse:successMsg :responseObject];
         }
                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      // NSLog(@"Error: %@", [error description]);
+                       NSLog(@"Error: %@", [error description]);
                        [self.delegate returnResponse:failMsg :nil];
        }];
 }
