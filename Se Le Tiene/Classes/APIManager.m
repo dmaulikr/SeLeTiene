@@ -19,7 +19,8 @@
     if (self) {
       // URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
       //  URLAPI = @"http://se-le-tiene.cloudapp.net/SeLeTiene.svc/";
-        URLAPI = @"http://200.119.110.136:81/seletienea/api/";
+        URL =@"http://200.119.110.136:81/seletienea/";
+        URLAPI = [NSString stringWithFormat:@"%@api/",URL];
         conn = [[Connection alloc] init];
         [conn openDB];
     }
@@ -28,7 +29,6 @@
 
 -(void)loginEmail:(NSString*)userEmail :(NSString*)userPass{
     
-    
     NSDictionary* jsonDict = @{ @"grant_type": @"password",
                                 @"username": userEmail,
                                 @"password": userPass};
@@ -36,11 +36,11 @@
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict options:0 error:nil];
     NSString* jsonString = [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
     
-    NSLog(@"Dict:%@", jsonString);
+    NSLog(@"Dict de Login:%@", jsonString);
     AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     [operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
-    [operationManager POST:@"http://seletiene.cloudapp.net/token"  parameters:jsonDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operationManager POST:[NSString stringWithFormat:@"%@token",URL]  parameters:jsonDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
         token =[responseObject objectForKey:(@"access_token")];
         [conn createSession:token];
@@ -57,16 +57,13 @@
 -(void)signUpUserFB{
     [FBRequestConnection startWithGraphPath:@"me?fields=id,name,email" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
-            
             NSDictionary *userDic = @{@"email":result[@"email"],
                                       @"token":[[FBSession activeSession] accessTokenData].accessToken
                                       };
             NSLog(@"Login data: %@", userDic);
             //[self performPost:@"Account/FacebookLogin" :token :userDic :@"Logeado correctamente" :@"Ocurrio un error al loggear"];
-            
             NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDic options:0 error:nil];
             NSString* jsonString = [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
-            
             NSLog(@"Dict:%@", jsonString);
             AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
             operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -83,21 +80,12 @@
                                NSLog(@"Error: %@", [error description]);
                                [self.delegate loaded:false :@"Revise sus datos" :@""];
                            }];
-            
-            
-        } else {
         }
     }];
 }
 
--(void) getImageTest{
-    NSURLRequest *apiRequest    = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://imagenestodo.com/wp-content/uploads/2014/05/star_wars_logo.jpg"]];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:apiRequest delegate:self];
-    [connection start];
-}
-
 -(void)rememberPass:(NSString*)userEmail{
-    [self getImageTest];
+    //[self getImageTest];
 }
 
 -(void)logout{
@@ -114,8 +102,6 @@
                               @"password":user.passwordHash,
                               @"phoneNumber":user.phoneNumber
                               };
-    
-    
     [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
 }
 
@@ -246,15 +232,13 @@
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
-    
     NSLog(@"%@",data);
-    
     [operationManager PUT:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
-       // NSLog(@"Success response: %@", responseObject);
+        NSLog(@"Success response: %@", responseObject);
         [self.delegate returnResponse:successMsg :nil];
     }
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         //  NSLog(@"Error: %@", [error description]);
+           NSLog(@"Error: %@", [error description]);
            [self.delegate returnResponse:failMsg :nil];
            //[self.delegate loaded:false :@"Revise sus datos" :@""];
        }];

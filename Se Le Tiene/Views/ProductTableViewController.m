@@ -190,7 +190,7 @@
     cell.imgProduct.layer.masksToBounds = YES;
     cell.lblNameProduct.text = prdTemp.nameProduct;
     cell.lblNameUser.text = prdTemp.providerProduct.nameProvider;
-    cell.lblDescProduct.text = prdTemp.descProduct;
+    cell.lblDescProduct.text = [[NSString stringWithFormat:@"%@",prdTemp.descProduct] isEqualToString:@"<null>"]? @"---":prdTemp.descProduct;
     return cell;
 }
 

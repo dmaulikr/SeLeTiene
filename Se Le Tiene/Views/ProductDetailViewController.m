@@ -22,13 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];    
-    download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    /*download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
     CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
     download.transform = transform;
-    download.progress = 0.0;
+    download.progress = 0.0;*/
     [self.view addSubview:download];
-    
     [imgProduct.layer setShadowOffset:CGSizeMake(0, 3)];
     [imgProduct.layer setCornerRadius:5];
     [imgProduct.layer setShadowOpacity:0.4];
@@ -38,41 +37,28 @@
     [imgProduct.layer setCornerRadius:10.0f];
     [imgProduct.layer setShadowPath: [[UIBezierPath bezierPathWithRoundedRect:imgProduct.layer.bounds cornerRadius:12.0f] CGPath]];
     DescProduct.textAlignment = NSTextAlignmentJustified;
-    
     btnContact.layer.cornerRadius = 10.0f;
-    
     self.navigationController.title = @"Ofrecer";
     self.title = @"Ofrecer";
-    
     transition = [CATransition animation];
     transition.duration = 0.5f;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
-    
     viewMenu.delegate = self;
     [viewMenu setButton:1];
-    
     [self.strs setStarsNum:[actProduct getScore]];
-    
     int counter = 0;
     for (Product *product in favArray){
         if(product.idProduct.intValue == actProduct.idProduct.intValue){
             counter++;
         }
     }
-    
     [self.favBtn setState:counter>0?true:false];
-    
-
-    
     self.favBtn.delegate = self;
-    
     alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
     [APIManagerClass getProductDetail:actProduct.idProduct.intValue];
-    
 }
 
 - (void) changeState:(BOOL)value{
@@ -88,7 +74,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     lblTitleProduct.text = actProduct.nameProduct;
     lblUserProduct.text = actProduct.providerProduct.nameProvider;
-    DescProduct.text = actProduct.descProduct;
+    DescProduct.text = [[NSString stringWithFormat:@"%@",actProduct.descProduct] isEqualToString:@"<null>"]? @"---":actProduct.descProduct;
     imgProduct.image = actProduct.imageProduct;
 }
 
@@ -293,13 +279,6 @@
     [lblEmail addTarget:self action:@selector(callPhone:) forControlEvents: UIControlEventTouchUpInside];
     [btnTw addTarget:self action:@selector(shareTw:) forControlEvents: UIControlEventTouchUpInside];
     [btnFb addTarget:self action:@selector(shareFb:) forControlEvents: UIControlEventTouchUpInside];
-}
-
-- (void) percentageDownloaded:(double)dataDownloaded{
-    download.progress = dataDownloaded;
-    if (download.progress == 1.0) {
-        download.tintColor = [UIColor colorWithRed:0.490 green:0.773 blue:0.482 alpha:1];
-    }
 }
 
 -(void) loadedImage:(UIImage *)imageLoaded{

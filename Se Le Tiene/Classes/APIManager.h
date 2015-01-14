@@ -32,6 +32,7 @@
 {
     NSMutableData *apiData;
     NSMutableData *_responseData;
+    NSString *URL;
     NSString *URLAPI;
     int datos;
     long long total;
@@ -40,7 +41,6 @@
 }
 
 extern NSString* token;
--(void) getImageTest;
 -(void)signUpUserFB;
 -(void)loginEmail:(NSString*)userEmail :(NSString*)userPass;
 -(void)rememberPass:(NSString*)userEmail;
