@@ -26,6 +26,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic, strong) UISwipeGestureRecognizer *tapGesture2;
 @property (strong,nonatomic) UIImageView *animationView;
+@property bool gestures;
 
 -(instancetype)initWithAnimFrame :(CGRect)frame;
 -(instancetype)initWithTextNFrame:(NSString*)text :(CGRect)frame;

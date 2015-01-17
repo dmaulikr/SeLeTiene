@@ -75,7 +75,8 @@
             [APIManagerclass postImage:[NSString stringWithFormat:@"%@", key[@"id"]].intValue :t.imageProduct];
             [alert setText:@"Subiendo Imagen"];
         }else{
-            [alert setText:@"Producto Creado"];
+            [alert setText:@"Creado"];
+            [self performSelector:@selector(alertClosed) withObject:self afterDelay:0.8];
         }
     }else{
         [alert setText:@"Fallo al crear, intente luego"];

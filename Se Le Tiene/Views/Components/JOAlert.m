@@ -9,7 +9,7 @@
 #import "JOAlert.h"
 
 @implementation JOAlert
-@synthesize lblMsg,lyr,bgTxt,animationView;
+@synthesize lblMsg,lyr,bgTxt,animationView,gestures;
 
 -(instancetype)initWithTextNFrame:(NSString*)text :(CGRect)frame{
     if (self = [super init]) {
@@ -41,6 +41,7 @@
         self.tapGesture2 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap2:)];
         [self addGestureRecognizer:self.tapGesture];
         [self addGestureRecognizer:self.tapGesture2];
+        gestures = true;
     }
     return self;
 }
@@ -72,7 +73,7 @@
         [self addSubview:animationView];
         self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         self.tapGesture2 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap2:)];
-        
+        gestures = true;
     }
     return self;
 }
@@ -188,11 +189,15 @@
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)recognizer {
-    [self dismissAlert];
+    if (gestures){
+        [self dismissAlert];
+    }
 }
 
 - (void)handleTap2:(UISwipeGestureRecognizer *)recognizer {
-    [self dismissAlert];
+    if (gestures){
+        [self dismissAlert];
+    }
 }
 
 - (void)pop_animationDidStop:(POPAnimation *)anim finished:(BOOL)finished {
@@ -213,8 +218,9 @@
 }
 
 -(void)showAlertAutoDismiss{
+    gestures = false;
     [self showAlert];
-    [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:0.4];
+    [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:1.2];
 //    [self dismissAlert];
 }
 

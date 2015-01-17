@@ -509,7 +509,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <outlet property="delegate" destination="Mfx-z3-1W8" id="wie-dd-pq0"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0p-eV-CSX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contraseña  (Min. 6 Caracteres)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0p-eV-CSX">
                                 <rect key="frame" x="25" y="282" width="270" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="ZX2-3k-Oq8"/>
@@ -1294,8 +1294,12 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBq-xq-Pua">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBq-xq-Pua">
                                 <rect key="frame" x="90" y="28" width="140" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="3ch-aZ-L5q"/>
+                                    <constraint firstAttribute="width" constant="140" id="K2L-mX-tKp"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Producto"/>
                                     <segment title="Servicio"/>
@@ -1334,8 +1338,10 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             <constraint firstItem="6qq-iF-bk0" firstAttribute="top" secondItem="bhj-jc-C6P" secondAttribute="bottom" constant="-5" id="5vb-OO-LH4"/>
                             <constraint firstAttribute="trailing" secondItem="UTe-qd-6Qt" secondAttribute="trailing" id="CJD-4V-Ese"/>
                             <constraint firstItem="UTe-qd-6Qt" firstAttribute="leading" secondItem="ohN-rI-c5u" secondAttribute="leading" id="D2a-av-jxr"/>
+                            <constraint firstAttribute="centerX" secondItem="yBq-xq-Pua" secondAttribute="centerX" id="TBp-R5-iMh"/>
                             <constraint firstAttribute="centerX" secondItem="bhj-jc-C6P" secondAttribute="centerX" id="adw-G7-Nk2"/>
                             <constraint firstItem="bhj-jc-C6P" firstAttribute="top" secondItem="UTe-qd-6Qt" secondAttribute="bottom" constant="8" id="ewn-Oi-RI5"/>
+                            <constraint firstItem="yBq-xq-Pua" firstAttribute="top" secondItem="De1-Ga-sMs" secondAttribute="bottom" constant="8" id="vnS-k5-FRd"/>
                             <constraint firstItem="UTe-qd-6Qt" firstAttribute="top" secondItem="ohN-rI-c5u" secondAttribute="top" constant="71" id="yxo-Tq-jak"/>
                         </constraints>
                     </view>
@@ -1729,8 +1735,12 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstAttribute="width" constant="320" id="z1Y-OR-weH"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGv-4X-3qs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGv-4X-3qs">
                                 <rect key="frame" x="118" y="93" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="MJT-au-Vrt"/>
+                                    <constraint firstAttribute="height" constant="85" id="zx9-JN-UIq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="añadir foto">
@@ -1769,10 +1779,12 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             <constraint firstItem="jBb-0h-m1V" firstAttribute="top" secondItem="TMt-yD-vfw" secondAttribute="bottom" constant="10" id="4Sc-6c-Kjr"/>
                             <constraint firstAttribute="trailing" secondItem="TMt-yD-vfw" secondAttribute="trailing" id="9Ze-kC-TG2"/>
                             <constraint firstItem="cTc-hd-Q2M" firstAttribute="top" secondItem="jBb-0h-m1V" secondAttribute="bottom" id="DiP-Rm-JMn"/>
+                            <constraint firstItem="dGv-4X-3qs" firstAttribute="top" secondItem="fEw-Wc-0Aq" secondAttribute="bottom" constant="40" id="IH1-af-r5B"/>
                             <constraint firstAttribute="centerX" secondItem="TMt-yD-vfw" secondAttribute="centerX" id="Jaa-1y-Vnz"/>
                             <constraint firstItem="TMt-yD-vfw" firstAttribute="leading" secondItem="MYO-ci-V0P" secondAttribute="leading" id="KbJ-fY-gtv"/>
                             <constraint firstAttribute="trailing" secondItem="jBb-0h-m1V" secondAttribute="trailing" id="NfK-e8-XG6"/>
                             <constraint firstItem="jBb-0h-m1V" firstAttribute="leading" secondItem="MYO-ci-V0P" secondAttribute="leading" id="dpI-CD-LOI"/>
+                            <constraint firstAttribute="centerX" secondItem="dGv-4X-3qs" secondAttribute="centerX" id="xat-HX-kJQ"/>
                             <constraint firstAttribute="trailing" secondItem="fEw-Wc-0Aq" secondAttribute="trailing" constant="1" id="xjv-9j-8qt"/>
                         </constraints>
                     </view>

@@ -78,7 +78,7 @@
     imgProduct.image = actProduct.imageProduct;
 }
 
-- (void) returnResponse:(NSString *)msg{}
+- (void) returnResponse:(NSString *)msg :(id)response{}
 -(void) returnObt:(id)responseObject{
         NSDictionary *prov = responseObject[@"owner"];
         actProduct.providerProduct.nameProvider = [[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"];
@@ -317,6 +317,7 @@
 {
     return NO;
 }
+
 
 #pragma MENU DELEGATE
 

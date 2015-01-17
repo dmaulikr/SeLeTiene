@@ -174,7 +174,7 @@
         self.txtPhone.layer.borderWidth = 1.0f;
         val = false;
     }
-    if([self.txtPass.text isEqualToString:@""]||![self.txtPass.text isEqualToString:self.txtConfPass.text]||[self.txtConfPass.text isEqualToString:@""]){
+    if([self.txtPass.text isEqualToString:@""]||![self.txtPass.text isEqualToString:self.txtConfPass.text]||[self.txtConfPass.text isEqualToString:@""]||self.txtPass.text.length < 6){
         self.txtPass.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
         self.txtPass.layer.borderWidth = 1.0f;
         self.txtConfPass.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
