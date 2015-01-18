@@ -88,7 +88,7 @@
     yPos = textField.frame.origin.y;
     CGRect frame = self.view.frame;
     if(dev ==1 && yPos >= (sH - 328) - 50){
-        frame.origin.y = 160;
+        frame.origin.y = -(yPos - ((sH - 216) - 60));
     }else{
         if (dev ==2 && yPos >= (sH - 280) - 40 ) {
             frame.origin.y = -(yPos - ((sH - 216) - 60));
@@ -156,6 +156,7 @@
         [self.view addSubview:alert];
         [alert setText:msg];
         [alert showAlert];
+        [loader dismissAlert];
         btnSignIn.enabled = true;
     }else{
         //token = tokenR;

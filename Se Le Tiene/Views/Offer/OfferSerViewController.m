@@ -75,19 +75,17 @@
     textView.layer.borderColor = [UIColor colorWithRed:0.039 green:0.337 blue:0.643 alpha:1].CGColor;
     yPos = textView.frame.origin.y + 71;
     if([textView isDescendantOfView:self.uiview1]) {
-        yPos += 68;
+        yPos = self.uiview1.frame.origin.y;
     } else {
         if([textView isDescendantOfView:self.uiview2]) {
-            yPos += 256;
+            yPos = self.uiview2.frame.origin.y;
         }
     }
     CGRect frame = self.view.frame;
-    if(dev ==1 && yPos >= (sH - 328) - 50){
-        frame.origin.y = 160;
-    }else{
-        if (dev ==2 && yPos >= (sH - 280) - 40 ) {
-            frame.origin.y = -(yPos - ((sH - 216) - 60)+71);
-        }
+    NSLog(@"yPos=%d SH =%d %f %f", yPos,sH,self.view.frame.origin.x, self.view.frame.size.height);
+    
+    if(yPos+71 >= (sH - 300) - 50){
+        frame.origin.y = (self.view.frame.origin.y - yPos);
     }
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:0.25];
@@ -107,11 +105,23 @@
     }
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
 -(Product*)getActualProduct{
     Product *r = [[Product alloc]init];
     r.nameProduct = self.txtName.text;
     r.descProduct = [NSString stringWithFormat:@"%@ \n %@", self.txtComment.text, self.txtCapac.text];
     return r;
 }
+
+
 
 @end

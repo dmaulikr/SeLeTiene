@@ -118,6 +118,14 @@
     [UIView commitAnimations];
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     int yPos = textView.frame.origin.y;

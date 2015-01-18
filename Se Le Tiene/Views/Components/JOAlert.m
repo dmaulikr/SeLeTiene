@@ -206,7 +206,6 @@
             [self removeFromSuperview];
         }else{
             if ([[anim valueForKey:@"animName"] isEqualToString:@"alpha5"]) {
-                NSLog(@"Entra por aca");
                 [self removeFromSuperview];
             }
         }
@@ -218,9 +217,9 @@
 }
 
 -(void)showAlertAutoDismiss{
-    gestures = false;
+//    gestures = false;
     [self showAlert];
-    [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:1.2];
+    [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:2];
 //    [self dismissAlert];
 }
 

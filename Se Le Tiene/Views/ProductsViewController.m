@@ -19,7 +19,7 @@
 @end
 
 @implementation ProductsViewController
-@synthesize GridView,ListView,typeView,searchBar,btnFilter,btnOpenPopUP,loader,viewMenu,imgTmp,download,APIManagerClass;
+@synthesize GridView,ListView,typeView,searchBar,btnFilter,btnOpenPopUP,loader,viewMenu,imgTmp,download,APIManagerClass,btnBackFltr;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,7 +76,33 @@
         transition.duration = 0.5f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         transition.type = kCATransitionFade;
+        
     }
+   /*
+    btnBackFltr = nil;
+    UIButton* cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton addTarget:self action:@selector(erFltr:) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton setBackgroundImage:[UIImage imageNamed:@"Back.png"] forState:UIControlStateNormal];
+    //[cancelButton sizeButtonToFit];
+    btnBackFltr = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];*/
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60.0f, 40.0f)];
+    UIImage *backImage = [UIImage imageNamed:@"Back.png"];
+    [backButton setImage:backImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(erFltr:) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setTitle:@"Atrás" forState:UIControlStateNormal];
+    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0);
+    btnBackFltr = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+   // self.navigationItem.leftBarButtonItem = btnBackFltr;
+
+    
+
+}
+- (IBAction)erFltr:(id)sender {
+    filterStr = @"";
+    self.searchBar.text =  @"";
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"filterStrChange" object:self];
+    self.navigationItem.leftBarButtonItem = nil;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -98,6 +124,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"filterStrChange" object:self];
     [self.searchBar resignFirstResponder];
     [imgTmp removeFromSuperview];
+    self.navigationItem.leftBarButtonItem = btnBackFltr;
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{

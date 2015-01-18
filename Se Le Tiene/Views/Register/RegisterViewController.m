@@ -10,6 +10,7 @@
 #import "NVControllerGeneric.h"
 #import "LogViewController.h"
 #import "User.h"
+#import <Pop/POP.h>
 
 
 @interface RegisterViewController ()
@@ -17,7 +18,7 @@
 @end
 
 @implementation RegisterViewController
-@synthesize txtConfPass,txtEmail,txtName,txtPass,txtPhone,btnSignUp,alert;
+@synthesize txtConfPass,txtEmail,txtName,txtPass,txtPhone,btnSignUp,alert,viewContainer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -107,10 +108,10 @@
     NSTimeInterval animationDuration =
     [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect frame = self.view.frame;
-    frame.origin.y = 64;
+    frame.origin.y = 0;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
-    self.view.frame = frame;
+    viewContainer.frame = frame;
     [UIView commitAnimations];
 }
 
@@ -118,18 +119,15 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     textField.layer.borderColor = [UIColor colorWithRed:0.039 green:0.337 blue:0.643 alpha:1].CGColor;
     yPos = textField.frame.origin.y;
-    CGRect frame = self.view.frame;
-    if(dev ==1 && yPos >= (sH - 328) - 50){
-        frame.origin.y = 160;
-    }else{
-        if (dev ==2 && yPos >= (sH - 280) - 40 ) {
-            frame.origin.y = -(yPos - ((sH - 216) - 60));
-        }
+    int test = viewContainer.center.y;
+    if(yPos >= (sH - 280) - 40){
+        test = -yPos+(sH/2);
     }
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:0.25];
-    self.view.frame = frame;
-    [UIView commitAnimations];
+    POPBasicAnimation *pop = [POPBasicAnimation animation];
+    pop.property = [POPAnimatableProperty propertyWithName:kPOPViewCenter];
+    pop.fromValue = [NSValue valueWithCGPoint:viewContainer.center];
+    pop.toValue = [NSValue valueWithCGPoint:CGPointMake(viewContainer.center.x,test)];
+    [viewContainer pop_addAnimation:pop forKey:@"Test"];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -202,6 +200,7 @@
 - (void) returnResponse:(NSString *)msg :(id)response{
     [self.view addSubview:alert];
     [alert setText:msg];
+    [loader dismissAlert];
     [alert showAlertAutoDismiss];
     [self performSelector:@selector(redirectLogin) withObject:nil afterDelay:0.6];
 }

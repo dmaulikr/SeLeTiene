@@ -127,6 +127,8 @@
 		ECF3FF7719F1911500011935 /* logosDPS.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3FF7319F1911500011935 /* logosDPS.png */; };
 		ECF3FF7819F1911500011935 /* logoMinTIC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3FF7419F1911500011935 /* logoMinTIC@2x.png */; };
 		ECF3FF7919F1911500011935 /* logoMinTIC.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3FF7519F1911500011935 /* logoMinTIC.png */; };
+		ECF51D491A6B3D1800073421 /* Back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF51D471A6B3D1800073421 /* Back@2x.png */; };
+		ECF51D4A1A6B3D1800073421 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF51D481A6B3D1800073421 /* Back.png */; };
 		ECFB47ED19DC60BC005B7E16 /* ProductTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */; };
 		ECFB47F019DC60F2005B7E16 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB47EF19DC60F2005B7E16 /* ProductsViewController.m */; };
 /* End PBXBuildFile section */
@@ -301,6 +303,8 @@
 		ECF3FF7319F1911500011935 /* logosDPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logosDPS.png; sourceTree = "<group>"; };
 		ECF3FF7419F1911500011935 /* logoMinTIC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoMinTIC@2x.png"; sourceTree = "<group>"; };
 		ECF3FF7519F1911500011935 /* logoMinTIC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoMinTIC.png; sourceTree = "<group>"; };
+		ECF51D471A6B3D1800073421 /* Back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back@2x.png"; sourceTree = "<group>"; };
+		ECF51D481A6B3D1800073421 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
 		ECFB47EB19DC60BC005B7E16 /* ProductTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductTableViewController.h; path = Views/ProductTableViewController.h; sourceTree = "<group>"; };
 		ECFB47EC19DC60BC005B7E16 /* ProductTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductTableViewController.m; path = Views/ProductTableViewController.m; sourceTree = "<group>"; };
 		ECFB47EE19DC60F2005B7E16 /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsViewController.h; path = Views/ProductsViewController.h; sourceTree = "<group>"; };
@@ -435,6 +439,8 @@
 		EC108BEC19DA108B00CBBC17 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ECF51D471A6B3D1800073421 /* Back@2x.png */,
+				ECF51D481A6B3D1800073421 /* Back.png */,
 				ECB603391A35643D00E5DBC4 /* dps-01.jpg */,
 				ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */,
 				ECF3FF7219F1911500011935 /* logosDPS@2x.png */,
@@ -776,6 +782,7 @@
 				EC108BFF19DA108B00CBBC17 /* btnFacebook.png in Resources */,
 				ECCEED0019E2636B007A88B6 /* btnStar.png in Resources */,
 				EC701BE019E9DA43003912B0 /* starBig_off.png in Resources */,
+				ECF51D491A6B3D1800073421 /* Back@2x.png in Resources */,
 				EC701BAA19E77DC2003912B0 /* bgContact@2x.png in Resources */,
 				ECD994EF19F48DC000E70421 /* fr-01@2x.png in Resources */,
 				ECCEECFF19E2636B007A88B6 /* btnStar@2x.png in Resources */,
@@ -840,6 +847,7 @@
 				EC701BDF19E9DA43003912B0 /* starBig_off@2x.png in Resources */,
 				EC108BFE19DA108B00CBBC17 /* btnEmail@2x.png in Resources */,
 				EC108C0219DA108B00CBBC17 /* btnInfo@2x.png in Resources */,
+				ECF51D4A1A6B3D1800073421 /* Back.png in Resources */,
 				EC108BFB19DA108B00CBBC17 /* btnBlue.png in Resources */,
 				ECCEECF319E099F2007A88B6 /* btnUserMenu.png in Resources */,
 				ECD994F219F48DC000E70421 /* fr-03.png in Resources */,
@@ -1074,7 +1082,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e75e42df-47a1-44a3-9b35-59b5f742e8f9";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
@@ -1101,7 +1109,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "30d4cd1d-d930-43c8-b784-59fa088d33c1";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;

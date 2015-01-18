@@ -18,6 +18,7 @@
     CATransition *transition;
 }
 
+@property (strong, nonatomic) UIBarButtonItem *btnBackFltr;
 extern NSString *token;
 extern NSString *filterStr;
 

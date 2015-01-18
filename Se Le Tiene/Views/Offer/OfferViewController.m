@@ -55,6 +55,7 @@
 }
 
 - (IBAction)offerProduct:(id)sender {
+    self.navigationItem.hidesBackButton = YES;
     t = [self.containerViewController getProduct];
     //[APIManagerclass postImage:6 :t.imageProduct];
     self.segmented.userInteractionEnabled = false;
@@ -65,6 +66,7 @@
     }else{
         [APIManagerclass registerProduct:t :1];
     }
+    
 }
 
 - (void) returnResponse:(NSString *)msg :(id)response{
@@ -76,7 +78,6 @@
             [alert setText:@"Subiendo Imagen"];
         }else{
             [alert setText:@"Creado"];
-            [self performSelector:@selector(alertClosed) withObject:self afterDelay:0.8];
         }
     }else{
         [alert setText:@"Fallo al crear, intente luego"];
@@ -95,7 +96,8 @@
 
 - (void) returnBool:(BOOL)response{
     if (response) {
-        [alert setText:@"Producto Creado"];
+        [alert setText:@"Creado"];
+        [self performSelector:@selector(alertClosed) withObject:self afterDelay:0.8];
     }else{
         [alert setText:@"Ocurrio un error"];
     }

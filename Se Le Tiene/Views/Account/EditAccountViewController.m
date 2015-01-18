@@ -38,6 +38,8 @@
     txtEmail.leftView = paddingView;
     txtEmail.leftViewMode = UITextFieldViewModeAlways;
     txtEmail.backgroundColor = [UIColor whiteColor];
+    txtEmail.enabled = NO;
+    [txtEmail setTextColor:[UIColor lightGrayColor]];
     txtCellPhone.layer.borderColor = [UIColor lightGrayColor].CGColor;
     paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
     txtCellPhone.leftView = paddingView;
@@ -61,11 +63,17 @@
     alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 #pragma DELEGATE METHODS
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+
     [txtEmail resignFirstResponder];
     [txtName resignFirstResponder];
     [txtCellPhone resignFirstResponder];
@@ -88,11 +96,15 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     yPos = textField.frame.origin.y;
     CGRect frame = self.view.frame;
+    NSLog(@"Height: %f yPos = %d dev = %d", self.view.frame.size.height, yPos , dev);
+    
     if(dev ==1 && yPos >= (sH - 328) - 50){
-        frame.origin.y = 160;
+        NSLog(@"Rico rico");
+        frame.origin.y = -80;
     }else{
-        if (dev ==2 && yPos >= (sH - 280) - 40 ) {
-            frame.origin.y = -(yPos - ((sH - 216) - 60));
+        if(dev ==2 && yPos >= (sH - 328) - 50){
+            NSLog(@"Rico rico");
+            frame.origin.y = -80;
         }
     }
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
@@ -118,7 +130,6 @@
     self.edituser.phoneNumber = txtPhone.text;
     self.edituser.email = txtEmail.text;
     [APIManagerClass updateUser:self.edituser];
-    NSLog(@"Updeteando data...");
 }
 
 
