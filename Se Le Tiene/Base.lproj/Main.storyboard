@@ -1961,6 +1961,11 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                             <constraint firstAttribute="width" constant="160" id="4Jm-Ji-BlR"/>
                                             <constraint firstAttribute="height" constant="37" id="fGJ-eA-Ddp"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHq-dQ-S6D" customClass="TSButton">
                                         <rect key="frame" x="232" y="0.0" width="30" height="47"/>
@@ -2229,6 +2234,11 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                                         <constraint firstAttribute="width" constant="71" id="fqu-SH-SnD"/>
                                                         <constraint firstAttribute="height" constant="19" id="syr-Xb-TxM"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2336,6 +2346,11 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                                 <constraint firstAttribute="height" constant="28" id="Tdg-Dn-45r"/>
                                                 <constraint firstAttribute="width" constant="81" id="iRq-Zq-i4d"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                                    <integer key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                     <constraints>

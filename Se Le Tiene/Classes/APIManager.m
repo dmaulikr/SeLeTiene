@@ -119,7 +119,7 @@
 
 -(void)setFavorite:(int)productServiceId{
     NSDictionary *test;
-    [self performPut:[NSString stringWithFormat:@"ProductServices/Favorite?productServiceId=%d",productServiceId] :token :test :@"Sirve" :@"No sirve"];
+    [self performPut:[NSString stringWithFormat:@"ProductServices/Favorite?productServiceId=%d",productServiceId] :token :test :@"Favorito" :@"Ocurrio un error"];
 }
 
 
@@ -269,6 +269,11 @@
         NSLog(@"Failure %@, %@", error, operation.responseString);
        [self.delegate returnBool:false];
     }];
+}
+
+-(void)rateStars:(int)stars :(int)idProduct{
+    NSLog(@"Stars: %d, id Product %d",stars,idProduct);
+    [self performPut:[NSString stringWithFormat:@"ProductServices/Rate?productServiceId=%d&newRating=%d",idProduct,stars] :token :nil :@"Calificado" :@"Ocurrio un error"];
 }
 
 @end

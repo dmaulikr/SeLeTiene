@@ -50,6 +50,8 @@ extern NSString* token;
 -(void)registerProduct:(Product*)product :(int)type;
 
 
+-(void)rateStars:(int)stars:(int)idProduct;
+
 -(void)getProducts:(NSString*)filters;
 -(void)getProductDetail:(int)idProduct;
 -(void)getFavorites;

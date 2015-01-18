@@ -17,7 +17,7 @@
 #import "JOAlert.h"
 
 
-@interface ProductDetailViewController : UIViewController <APIManagerDelegate,MenuViewDelegate,TSButtonDelegate>{
+@interface ProductDetailViewController : UIViewController <APIManagerDelegate,MenuViewDelegate,TSButtonDelegate,starsDelegate>{
     int x;
     int z;
     int s;

@@ -22,11 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];    
-    /*download = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-    download.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);
-    CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
-    download.transform = transform;
-    download.progress = 0.0;*/
     [self.view addSubview:download];
     [imgProduct.layer setShadowOffset:CGSizeMake(0, 3)];
     [imgProduct.layer setCornerRadius:5];
@@ -59,6 +54,7 @@
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
     [APIManagerClass getProductDetail:actProduct.idProduct.intValue];
+    self.strs.delegate = self;
 }
 
 - (void) changeState:(BOOL)value{
@@ -70,6 +66,11 @@
 }
 
 
+- (void) voted:(int)votes{
+    //NSLog(@"IdProducto %@",actProduct.idProduct);
+    [APIManagerClass rateStars:votes :actProduct.idProduct.intValue];
+}
+
 
 -(void)viewDidAppear:(BOOL)animated{
     lblTitleProduct.text = actProduct.nameProduct;
@@ -78,7 +79,11 @@
     imgProduct.image = actProduct.imageProduct;
 }
 
-- (void) returnResponse:(NSString *)msg :(id)response{}
+- (void) returnResponse:(NSString *)msg :(id)response{
+    [alert setText:msg];
+    [self.view addSubview:alert];
+    [alert showAlertAutoDismiss];
+}
 -(void) returnObt:(id)responseObject{
         NSDictionary *prov = responseObject[@"owner"];
         actProduct.providerProduct.nameProvider = [[NSString stringWithFormat:@"%@",prov[@"name"]] isEqualToString:@"<null>"]? @"---":prov[@"name"];
@@ -186,6 +191,7 @@
         }
     }
 }
+
 
 -(void)enlarge{
     POPBasicAnimation *toGreen = [POPBasicAnimation animationWithPropertyNamed:kPOPViewBounds];
