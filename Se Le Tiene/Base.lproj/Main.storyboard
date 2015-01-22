@@ -2311,8 +2311,9 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envueltos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jJ-Gi-IYa">
-                                            <rect key="frame" x="91" y="12" width="327" height="19"/>
+                                            <rect key="frame" x="91" y="12" width="120" height="19"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="B88-um-sYN"/>
                                                 <constraint firstAttribute="height" constant="19" id="F2N-xQ-DLe"/>
                                                 <constraint firstAttribute="width" constant="327" id="JxA-hE-d1Z"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="Ufk-3T-mAG"/>
@@ -2320,6 +2321,12 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="JxA-hE-d1Z"/>
+                                                    <exclude reference="Ufk-3T-mAG"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belén Quinche" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-BC-1Ts">
                                             <rect key="frame" x="91" y="28" width="287" height="21"/>

@@ -117,9 +117,12 @@
 }
 
 
--(void)setFavorite:(int)productServiceId{
+-(void)setFavorite:(int)productServiceId :(BOOL)activate{
     NSDictionary *test;
-    [self performPut:[NSString stringWithFormat:@"ProductServices/Favorite?productServiceId=%d",productServiceId] :token :test :@"Favorito" :@"Ocurrio un error"];
+    if (activate)
+        [self performPut:[NSString stringWithFormat:@"ProductServices/Favorite?productServiceId=%d",productServiceId] :token :test :@"Favorito" :@"Ocurrio un error"];
+    else
+        [self performDelete:[NSString stringWithFormat:@"ProductServices/Favorite?productServiceId=%d",productServiceId] :token :test :@"Eliminado de Favoritos" :@"Ocurrio un error"];
 }
 
 
@@ -242,6 +245,25 @@
            [self.delegate returnResponse:failMsg :nil];
            //[self.delegate loaded:false :@"Revise sus datos" :@""];
        }];
+}
+
+-(void) performDelete:(NSString*)url :(NSString*)token :(NSDictionary*)data :(NSString*)successMsg :(NSString*)failMsg {
+    NSLog(@"Performing DELETE");
+    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+    operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [operationManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token]  forHTTPHeaderField:@"Authorization"];
+    NSLog(@"%@",data);
+    [operationManager DELETE:[NSString stringWithFormat:@"%@%@",URLAPI,url] parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success response: %@", responseObject);
+        [self.delegate returnResponse:successMsg :nil];
+    }
+                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                      NSLog(@"Error: %@", [error description]);
+                      [self.delegate returnResponse:failMsg :nil];
+                      //[self.delegate loaded:false :@"Revise sus datos" :@""];
+                  }];
 }
 
 -(void)registerProduct:(Product*)product :(int)type{

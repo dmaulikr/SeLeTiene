@@ -58,11 +58,7 @@
 }
 
 - (void) changeState:(BOOL)value{
-    if (value) {
-        [APIManagerClass setFavorite:actProduct.idProduct.intValue];
-    }else{
-        [APIManagerClass setFavorite:actProduct.idProduct.intValue];
-    }
+    [APIManagerClass setFavorite:actProduct.idProduct.intValue :value];
 }
 
 

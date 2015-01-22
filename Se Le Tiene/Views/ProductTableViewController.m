@@ -45,6 +45,10 @@
     switch (self.mode) {
         case 0:
             self.tableView.backgroundColor = [UIColor clearColor];
+            refresh = [[UIRefreshControl alloc] init];
+            refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Recargando"];
+            [refresh addTarget:self action:@selector(refershControlAction) forControlEvents:UIControlEventValueChanged];
+            [self.view addSubview:refresh];
         break;
         case 2:
             self.title = @"Favoritos";
@@ -74,14 +78,6 @@
     }
     filter = @"";
     order = @"";
-    
-    refresh = [[UIRefreshControl alloc] init];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Recargando"];
-    [refresh addTarget:self action:@selector(refershControlAction) forControlEvents:UIControlEventValueChanged];
-
-    [self.view addSubview:refresh];
-    
-    
 }
 
 
@@ -102,13 +98,21 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     if (mode==0) {
-        if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
+        //if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
             [self.view addSubview:alert];
             [alert showAlertAnim];
             [APIManagerClass getProducts:[NSString stringWithFormat:@"&%@&%@",orderStr,filterStr]];
             filter = filterStr;
             order = orderStr;
-        }
+        //}
+    }else if(mode==2){
+        self.title = @"Favoritos";
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
+        alert = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64)];
+        [APIManagerClass getFavorites];
+        [self.view addSubview:alert];
+        [alert showAlertAnim];
+        mode = 2;
     }
 }
 - (void)didReceiveMemoryWarning {

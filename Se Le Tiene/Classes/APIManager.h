@@ -50,7 +50,7 @@ extern NSString* token;
 -(void)registerProduct:(Product*)product :(int)type;
 
 
--(void)rateStars:(int)stars:(int)idProduct;
+-(void)rateStars:(int)stars :(int)idProduct;
 
 -(void)getProducts:(NSString*)filters;
 -(void)getProductDetail:(int)idProduct;
@@ -60,7 +60,7 @@ extern NSString* token;
 
 -(void)postImage:(int)idProduct :(UIImage*)imageProduct;
 
--(void)setFavorite:(int)productServiceId;
+-(void)setFavorite:(int)productServiceId :(BOOL)activate;
 
 @property (nonatomic, weak) id <APIManagerDelegate> delegate;
 

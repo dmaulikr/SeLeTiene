@@ -63,13 +63,13 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
+    //if (![filter isEqualToString:filterStr] || ![order isEqualToString:orderStr]) {
         [self.view addSubview:alert];
         [alert showAlertAnim];
         [APIManagerClass getProducts:[NSString stringWithFormat:@"%@&%@",orderStr,filterStr]];
         filter = filterStr;
         order = orderStr;
-    }
+    //}
     dispatch_async(dispatch_get_global_queue(0,0), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [APIManagerClass getFavorites];
