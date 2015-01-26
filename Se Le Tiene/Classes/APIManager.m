@@ -139,7 +139,7 @@
 }
 
 -(void)getCities{
-    [self performGet:@"Cities" :token :true];
+    [self performGet:@"Departments" :token :true];
 }
 
 
@@ -183,7 +183,7 @@
 #pragma Manager Methods
 
 -(void) performGet:(NSString*)url :(NSString*)token :(BOOL)list{
-    if (![token isEqualToString:@""]) {
+    //if (![token isEqualToString:@""]) {
         NSLog(@"Performing Get with URL: %@",[NSString stringWithFormat:@"%@%@",URLAPI,url]);
         AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
         operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -205,7 +205,7 @@
                           //[self.delegate loaded:false :@"Revise sus datos" :@""];
                       }
          ];
-    }
+    //}
 }
 
 

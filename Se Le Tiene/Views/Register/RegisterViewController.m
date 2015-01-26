@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "NVControllerGeneric.h"
 #import "LogViewController.h"
+#import "GenTableViewController.h"
 #import "User.h"
 #import <Pop/POP.h>
 
@@ -195,6 +196,16 @@
     }
     return YES;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"department"]) {
+        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        GenTableViewController *destViewController = segue.destinationViewController;
+        destViewController.modeTable = 1;
+    }
+}
+
+
 #pragma APIDelegate
 
 - (void) returnResponse:(NSString *)msg :(id)response{

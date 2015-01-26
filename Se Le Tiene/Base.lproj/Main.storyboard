@@ -487,7 +487,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell0" rowHeight="89" id="x6k-gT-qpT">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell0" rowHeight="89" id="x6k-gT-qpT" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6k-gT-qpT" id="uT4-qt-gM0">
@@ -506,8 +506,12 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ttlLabel" destination="GaZ-Mh-zqn" id="4mc-Zd-Ej5"/>
+                                    <outlet property="txtLabel" destination="HJv-G9-X7q" id="Pfd-Ko-s2s"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" rowHeight="89" id="Uc6-Dd-qDB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell1" rowHeight="89" id="Uc6-Dd-qDB" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uc6-Dd-qDB" id="d4c-gf-4IW">
@@ -526,28 +530,36 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ttlLabel" destination="PWe-ok-dK1" id="1kn-UD-r0d"/>
+                                    <outlet property="txtLabel" destination="u23-Uc-rPb" id="z5g-ab-KCx"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="89" id="Cwa-wc-oc7">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell2" rowHeight="89" id="Cwa-wc-oc7" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cwa-wc-oc7" id="0aS-qK-ecd">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="teléfono" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRA-cn-irA">
-                                            <rect key="frame" x="31" y="13" width="270" height="15"/>
+                                            <rect key="frame" x="22" y="12" width="270" height="15"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="223-51-78" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gc-4g-gu1">
-                                            <rect key="frame" x="22" y="40" width="270" height="40"/>
+                                            <rect key="frame" x="22" y="35" width="270" height="40"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert"/>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ttlLabel" destination="nRA-cn-irA" id="ZKp-sb-vc1"/>
+                                    <outlet property="txtLabel" destination="8gc-4g-gu1" id="Vun-jL-cxE"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell3" rowHeight="89" id="Bdd-mD-n9f">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell3" rowHeight="89" id="Bdd-mD-n9f" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bdd-mD-n9f" id="f7m-qI-zcA">
@@ -566,8 +578,12 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ttlLabel" destination="VTt-7H-MDZ" id="A5P-40-WZ6"/>
+                                    <outlet property="txtLabel" destination="X2Q-ga-Wcx" id="YR5-Jz-irt"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell4" rowHeight="89" id="3jd-Aa-TQK">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell4" rowHeight="89" id="3jd-Aa-TQK" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3jd-Aa-TQK" id="DYz-ii-oex">
@@ -576,11 +592,14 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQF-l6-RDw">
                                             <rect key="frame" x="22" y="33" width="270" height="40"/>
                                             <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Seleccione departamento">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <segue destination="hsY-Jx-ehE" kind="show" identifier="department" id="HDT-H0-tBI"/>
+                                            </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cédula" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmL-sL-Gbg">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="departamento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmL-sL-Gbg">
                                             <rect key="frame" x="22" y="15" width="270" height="15"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -588,8 +607,12 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="btnLabel" destination="pQF-l6-RDw" id="Btz-F3-YG1"/>
+                                    <outlet property="ttlLabel" destination="vmL-sL-Gbg" id="XTG-4c-98A"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell5" rowHeight="89" id="JAS-kw-BRH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell5" rowHeight="89" id="JAS-kw-BRH" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JAS-kw-BRH" id="MJt-Bh-9mx">
@@ -598,11 +621,14 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEK-qG-3Hd">
                                             <rect key="frame" x="22" y="33" width="270" height="40"/>
                                             <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Seleccione ciudad">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <segue destination="hsY-Jx-ehE" kind="show" id="lVX-gh-zGi"/>
+                                            </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cédula" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-F1-5ne">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-F1-5ne">
                                             <rect key="frame" x="22" y="15" width="270" height="15"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -610,8 +636,12 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="btnLabel" destination="EEK-qG-3Hd" id="t84-bX-p4Q"/>
+                                    <outlet property="ttlLabel" destination="ycy-F1-5ne" id="5a5-Xm-xPY"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell6" rowHeight="89" id="x2W-ha-cEu">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell6" rowHeight="89" id="x2W-ha-cEu" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2W-ha-cEu" id="8fK-uP-o2A">
@@ -630,8 +660,12 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ttlLabel" destination="J0p-eV-CSX" id="wAQ-ix-ikt"/>
+                                    <outlet property="txtLabel" destination="XGB-tV-LEe" id="xk8-XD-IeL"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell7" rowHeight="89" id="kpr-IL-phg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell7" rowHeight="89" id="kpr-IL-phg" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpr-IL-phg" id="pDV-cE-j3B">
@@ -650,8 +684,12 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ttlLabel" destination="iva-TG-ug6" id="4Di-kW-RWV"/>
+                                    <outlet property="txtLabel" destination="lPL-ho-WQw" id="1PB-j8-DpL"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell8" rowHeight="89" id="kL2-x6-HCx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell8" rowHeight="89" id="kL2-x6-HCx" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kL2-x6-HCx" id="ibW-v2-q2E">
@@ -676,7 +714,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell9" rowHeight="73" id="vrm-Ha-xQh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell9" rowHeight="73" id="vrm-Ha-xQh" customClass="LblTxtTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vrm-Ha-xQh" id="2HQ-mw-vkJ">
@@ -700,9 +738,6 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             <outlet property="delegate" destination="Dxh-hg-bNx" id="cdM-z7-Jpj"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="txtPhone" destination="8gc-4g-gu1" id="Jmt-nd-tmk"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAo-Rr-BmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1803,10 +1838,18 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenCell" id="FIR-Zd-t9w">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenCell" textLabel="4pB-do-242" style="IBUITableViewCellStyleDefault" id="FIR-Zd-t9w">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIR-Zd-t9w" id="0iF-Xb-UQs">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4pB-do-242">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -1820,7 +1863,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlS-al-bS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2238" y="1551"/>
+            <point key="canvasLocation" x="1039" y="-1335"/>
         </scene>
         <!--Offer Pro View Controller-->
         <scene sceneID="tlw-5e-Qns">
@@ -2484,6 +2527,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="HDT-H0-tBI"/>
         <segue reference="wP8-Zi-hcC"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -58,7 +58,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenCell" forIndexPath:indexPath];
-    cell.textLabel.text = [((NSDictionary*)[data objectAtIndex:indexPath.row]) valueForKey:@"name"];
+    cell.textLabel.text = ((NSDictionary*)[data objectAtIndex:indexPath.row])[@"name"];
+    NSLog(@"entra por aca???");
     return cell;
 }
 
@@ -66,7 +67,7 @@
 
 #pragma APIMANAGER
 
--(void) returnList:(id)responseObject
+- (void) returnList:(id)responseObject :(NSString*)url
 {
     NSLog(@"Retorno una lista %@", responseObject);
     for (id key in (NSDictionary*)responseObject) {
@@ -76,6 +77,8 @@
                                 };
         [data addObject:tmpObj];
     }
+    [self.tableView reloadData];
+    
     [(UITableView*)self.view reloadData];
 }
 

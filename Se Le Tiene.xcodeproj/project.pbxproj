@@ -120,6 +120,7 @@
 		ECD994F319F48DC000E70421 /* fr-03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD994EB19F48DC000E70421 /* fr-03@2x.png */; };
 		ECD994F419F48DC000E70421 /* fr-04.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD994EC19F48DC000E70421 /* fr-04.png */; };
 		ECD994F519F48DC000E70421 /* fr-04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD994ED19F48DC000E70421 /* fr-04@2x.png */; };
+		ECDB1CC01A76B05100582199 /* LblTxtTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDB1CBF1A76B05100582199 /* LblTxtTableViewCell.m */; };
 		ECEAF28219EF6CBD00FCA68E /* SLT.db in Resources */ = {isa = PBXBuildFile; fileRef = ECEAF28119EF6CBD00FCA68E /* SLT.db */; };
 		ECEAF28519EF721800FCA68E /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEAF28319EF721800FCA68E /* Connection.m */; };
 		ECEAF28719EF722F00FCA68E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEAF28619EF722F00FCA68E /* libsqlite3.0.dylib */; };
@@ -295,6 +296,8 @@
 		ECD994EB19F48DC000E70421 /* fr-03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fr-03@2x.png"; sourceTree = "<group>"; };
 		ECD994EC19F48DC000E70421 /* fr-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fr-04.png"; sourceTree = "<group>"; };
 		ECD994ED19F48DC000E70421 /* fr-04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fr-04@2x.png"; sourceTree = "<group>"; };
+		ECDB1CBE1A76B05100582199 /* LblTxtTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LblTxtTableViewCell.h; path = Classes/LblTxtTableViewCell.h; sourceTree = "<group>"; };
+		ECDB1CBF1A76B05100582199 /* LblTxtTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LblTxtTableViewCell.m; path = Classes/LblTxtTableViewCell.m; sourceTree = "<group>"; };
 		ECEAF28119EF6CBD00FCA68E /* SLT.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = SLT.db; sourceTree = "<group>"; };
 		ECEAF28319EF721800FCA68E /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = Classes/Connection.m; sourceTree = "<group>"; };
 		ECEAF28419EF721800FCA68E /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = Classes/Connection.h; sourceTree = "<group>"; };
@@ -673,6 +676,8 @@
 				EC703F3E19ED7EED000C24CF /* GenTableViewController.m */,
 				EC703F4319EE0EC8000C24CF /* JOAlert.h */,
 				EC703F4419EE0EC8000C24CF /* JOAlert.m */,
+				ECDB1CBE1A76B05100582199 /* LblTxtTableViewCell.h */,
+				ECDB1CBF1A76B05100582199 /* LblTxtTableViewCell.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -927,6 +932,7 @@
 				EC701BEF19E9F40B003912B0 /* EditAccountViewController.m in Sources */,
 				EC703F3F19ED7EED000C24CF /* GenTableViewController.m in Sources */,
 				EC703F4519EE0EC8000C24CF /* JOAlert.m in Sources */,
+				ECDB1CC01A76B05100582199 /* LblTxtTableViewCell.m in Sources */,
 				ECCEED1B19E392F0007A88B6 /* OfferSerViewController.m in Sources */,
 				EC108B7919D8E2F000CBBC17 /* main.m in Sources */,
 				ECC1090A19E4B2BA003335EF /* LogViewController.m in Sources */,
