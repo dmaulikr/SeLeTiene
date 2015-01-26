@@ -10,7 +10,7 @@
 #import "JOAlert.h"
 #import "APIManager.h"
 
-@interface RegisterViewController : UIViewController <APIManagerDelegate>{
+@interface RegisterViewController : UITableViewController <APIManagerDelegate>{
     int yPos;
     int sW;
     int sH;
