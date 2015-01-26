@@ -15,6 +15,6 @@
 @property (strong,nonatomic) APIManager *APIManagerClass;
 @property int modeTable;
 @property (strong,nonatomic) NSMutableArray *data;
-
+@property (nonatomic,retain)  NSMutableDictionary *sections;
 
 @end

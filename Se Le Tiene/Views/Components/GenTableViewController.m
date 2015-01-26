@@ -13,12 +13,12 @@
 @end
 
 @implementation GenTableViewController
-@synthesize modeTable,APIManagerClass,data;
+@synthesize modeTable,APIManagerClass,data,sections;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    data =[[NSMutableArray alloc] init];
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
 
@@ -36,7 +36,38 @@
         }
     }
     
+    
 }
+
+-(void) reload{
+    sections = [[NSMutableDictionary alloc] init]; ///Global Object
+    BOOL found;
+    for (NSDictionary *temp in data)
+    {
+        NSString *c = [temp[@"name"] substringToIndex:1];
+        found = NO;
+        for (NSString *str in [sections allKeys])
+        {
+            if ([str isEqualToString:c])
+            {
+                found = YES;
+            }
+        }
+        if (!found)
+        {
+            [sections setValue:[[NSMutableArray alloc] init] forKey:c];
+        }
+    }
+    for (NSDictionary *temp in data)
+    {
+        [[sections objectForKey:[temp[@"name"] substringToIndex:1]] addObject:temp];
+    }
+  //  [self.tableView reloadData];
+    
+    [(UITableView*)self.view reloadData];
+
+}
+
 
 -(void)back{
     [self.navigationController popViewControllerAnimated:YES];
@@ -48,19 +79,25 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[sections allKeys]count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [data count];
+    //return [data count];
+    return [[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenCell" forIndexPath:indexPath];
-    cell.textLabel.text = ((NSDictionary*)[data objectAtIndex:indexPath.row])[@"name"];
-    NSLog(@"entra por aca???");
+//    cell.textLabel.text = ((NSDictionary*)[data objectAtIndex:indexPath.row])[@"name"];
+    cell.textLabel.text = ([[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row])[@"name"];
     return cell;
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil];
 }
 
 
@@ -77,9 +114,7 @@
                                 };
         [data addObject:tmpObj];
     }
-    [self.tableView reloadData];
-    
-    [(UITableView*)self.view reloadData];
+    [self reload];
 }
 
 
