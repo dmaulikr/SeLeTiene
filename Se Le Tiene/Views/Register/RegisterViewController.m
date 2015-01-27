@@ -24,52 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
-    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
     
     sH = [[UIScreen mainScreen] bounds].size.height;
     
-    txtName.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtName.layer.cornerRadius = 5.0f;
-    txtName.layer.borderWidth = 2.0f;
-    txtName.leftView = paddingView;
-    txtName.leftViewMode = UITextFieldViewModeAlways;
-    txtName.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    
-    paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
-    txtEmail.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtEmail.layer.cornerRadius = 5.0f;
-    txtEmail.layer.borderWidth = 2.0f;
-    txtEmail.leftView = paddingView;
-    txtEmail.leftViewMode = UITextFieldViewModeAlways;
-    paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
-    txtEmail.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    
-    
-    txtPhone.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtPhone.layer.cornerRadius = 5.0f;
-    txtPhone.layer.borderWidth = 2.0f;
-    txtPhone.leftView = paddingView;
-    txtPhone.leftViewMode = UITextFieldViewModeAlways;
-    paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
-    txtPhone.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    
-    txtPass.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtPass.layer.cornerRadius = 5.0f;
-    txtPass.layer.borderWidth = 2.0f;
-    txtPass.leftView = paddingView;
-    txtPass.leftViewMode = UITextFieldViewModeAlways;
-    paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
-    txtPass.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    
-    txtConfPass.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtConfPass.layer.cornerRadius = 5.0f;
-    txtConfPass.layer.borderWidth = 2.0f;
-    txtConfPass.leftView = paddingView;
-    txtConfPass.leftViewMode = UITextFieldViewModeAlways;
-    txtConfPass.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    
     btnSignUp.layer.cornerRadius = 5.0f;
-    
+    keybOpened = false;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillHide:)
@@ -106,18 +65,23 @@
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
-    NSTimeInterval animationDuration =
-    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = self.view.frame;
-    frame.origin.y = 0;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    viewContainer.frame = frame;
-    [UIView commitAnimations];
+    if (keybOpened) {
+        POPSpringAnimation *pop2 = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+        pop2.toValue =  [NSValue valueWithCGRect:CGRectMake(0, 64, 320, self.tableView.frame.size.height+216)];
+        [self.tableView pop_addAnimation:pop2 forKey:@"YUju"];
+        keybOpened = false;
+    }
 }
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (!keybOpened) {
+        POPSpringAnimation *pop2 = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+        pop2.toValue =  [NSValue valueWithCGRect:CGRectMake(0, 64, 320, self.tableView.frame.size.height-216)];
+        [self.tableView pop_addAnimation:pop2 forKey:@"YUju"];
+        keybOpened = true;
+    }
+    
     textField.layer.borderColor = [UIColor colorWithRed:0.039 green:0.337 blue:0.643 alpha:1].CGColor;
     yPos = textField.frame.origin.y;
     int test = viewContainer.center.y;

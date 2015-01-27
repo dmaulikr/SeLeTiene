@@ -497,6 +497,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Dxh-hg-bNx" id="cBe-8U-oqL"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-Mh-zqn">
                                             <rect key="frame" x="22" y="8" width="270" height="19"/>
@@ -521,6 +524,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             <rect key="frame" x="22" y="40" width="270" height="40"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Dxh-hg-bNx" id="I9o-33-HVL"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-ok-dK1">
                                             <rect key="frame" x="22" y="17" width="270" height="15"/>
@@ -551,6 +557,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Dxh-hg-bNx" id="6FF-9V-tKy"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -569,6 +578,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             <rect key="frame" x="22" y="40" width="270" height="40"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Dxh-hg-bNx" id="DQ7-Zu-zd0"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cédula" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTt-7H-MDZ">
                                             <rect key="frame" x="22" y="17" width="270" height="15"/>
@@ -657,6 +669,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Dxh-hg-bNx" id="Osh-bD-c7Z"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -675,6 +690,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Dxh-hg-bNx" id="Po4-yP-imJ"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="confirmar contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-TG-ug6">
                                             <rect key="frame" x="22" y="12" width="270" height="15"/>

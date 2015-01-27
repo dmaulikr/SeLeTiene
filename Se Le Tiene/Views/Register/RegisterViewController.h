@@ -16,6 +16,7 @@
     int sH;
     APIManager *APIManagerClass;
     JOAlert *loader;
+    BOOL keybOpened;
 }
 extern int dev;
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
