@@ -93,8 +93,6 @@
     [tmpFilter setKeyWord:tfWord.text];
     [tmpFilter setFilter];
     [self.navigationController popViewControllerAnimated:YES];
-    
-    
 }
 
 

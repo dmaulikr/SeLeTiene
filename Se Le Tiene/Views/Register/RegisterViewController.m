@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "LblTxtTableViewCell.h"
 #import "NVControllerGeneric.h"
 #import "LogViewController.h"
 #import "GenTableViewController.h"
@@ -19,7 +20,7 @@
 @end
 
 @implementation RegisterViewController
-@synthesize txtConfPass,txtEmail,txtName,txtPass,txtPhone,btnSignUp,alert,viewContainer;
+@synthesize btnSignUp,alert,viewContainer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,7 +43,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [[self navigationController] setNavigationBarHidden:NO animated:NO];
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
 
@@ -50,15 +51,33 @@
 // Text METHODS DELEGATE
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [txtConfPass resignFirstResponder];
-    [txtEmail resignFirstResponder];
-    [txtName resignFirstResponder];
-    [txtPass resignFirstResponder];
-    [txtPhone resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     textField.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    switch (textField.tag) {
+        case 1:
+            name = textField.text;
+        break;
+        case 2:
+            email = textField.text;
+        break;
+        case 3:
+            phone = textField.text;
+        break;
+        case 4:
+            idUser = textField.text;
+        break;
+        case 5:
+            pass = textField.text;
+        break;
+        case 6:
+            pass2 = textField.text;
+        break;
+        default:
+        break;
+    }
 }
 
 
@@ -67,7 +86,7 @@
 {
     if (keybOpened) {
         POPSpringAnimation *pop2 = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
-        pop2.toValue =  [NSValue valueWithCGRect:CGRectMake(0, 64, 320, self.tableView.frame.size.height+216)];
+        pop2.toValue =  [NSValue valueWithCGRect:CGRectMake(0, 64, 320, self.tableView.frame.size.height+127)];
         [self.tableView pop_addAnimation:pop2 forKey:@"YUju"];
         keybOpened = false;
     }
@@ -77,7 +96,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (!keybOpened) {
         POPSpringAnimation *pop2 = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
-        pop2.toValue =  [NSValue valueWithCGRect:CGRectMake(0, 64, 320, self.tableView.frame.size.height-216)];
+        pop2.toValue =  [NSValue valueWithCGRect:CGRectMake(0, 64, 320, self.tableView.frame.size.height-127)];
         [self.tableView pop_addAnimation:pop2 forKey:@"YUju"];
         keybOpened = true;
     }
@@ -102,50 +121,51 @@
 
 - (IBAction)SignUpUser:(id)sender {
     btnSignUp.enabled = false;
-    if ([self validate]) {
-        [self.view addSubview:loader];
+    NSString *err = [self validate];
+    if ([err isEqualToString:@""]) {
+        [self.view.superview addSubview:loader];
         [loader showAlertAnim];
         User *tmpUser = [[User alloc] init];
-        tmpUser.name = txtName.text;
-        tmpUser.email = txtEmail.text;
-        tmpUser.phoneNumber = txtPhone.text;
-        tmpUser.passwordHash = txtPass.text;
+        
+        
+        tmpUser.name        = name;
+        //tmpUser.name        = ((LblTxtTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:@"Cell0"]).textLabel.text;
+        tmpUser.email       = email;
+        tmpUser.phoneNumber = phone;
+        tmpUser._id         = idUser;
+        tmpUser.passwordHash = pass;
         [APIManagerClass signUpUser:tmpUser];
     }else{
-        [self.view addSubview:alert];
-        [alert setText:@"Revise los campos"];
+        [self.view.superview addSubview:alert];
+        [alert setText:err];
         [alert showAlertAutoDismiss];
         btnSignUp.enabled = true;
     }
 }
 
 
--(BOOL) validate{
-    BOOL val = true;
-    if([self.txtEmail.text isEqualToString:@""]||![self validateEmail:self.txtEmail.text]){
-        self.txtEmail.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
-        self.txtEmail.layer.borderWidth = 1.0f;
-        val = false;
+-(NSString*) validate{
+    NSString *val = @"";
+    if([email isEqualToString:@""]||![self validateEmail:email]){
+        val = [NSString stringWithFormat:@"%@Error en email\n",val];
     }
-    if([self.txtName.text isEqualToString:@""]){
-        self.txtName.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
-        self.txtName.layer.borderWidth = 1.0f;
-        val = false;
+    if([name isEqualToString:@""]){
+        val = [NSString stringWithFormat:@"%@Error en nombre\n",val];
     }
-    if([self.txtPhone.text isEqualToString:@""]){
-        self.txtPhone.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
-        self.txtPhone.layer.borderWidth = 1.0f;
-        val = false;
+    if([idUser isEqualToString:@""]){
+        val = [NSString stringWithFormat:@"%@Cédula obligatoria\n",val];
     }
-    if([self.txtPass.text isEqualToString:@""]||![self.txtPass.text isEqualToString:self.txtConfPass.text]||[self.txtConfPass.text isEqualToString:@""]||self.txtPass.text.length < 6){
-        self.txtPass.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
-        self.txtPass.layer.borderWidth = 1.0f;
-        self.txtConfPass.layer.borderColor = [UIColor colorWithRed:0.620 green:0.239 blue:0.165 alpha:1].CGColor;
-        self.txtConfPass.layer.borderWidth = 1.0f;
-        val = false;
+    if([phone isEqualToString:@""]){
+        val = [NSString stringWithFormat:@"%@Error en teléfono\n",val];
+    }
+    if([pass isEqualToString:@""]||![pass isEqualToString:pass2]||[pass2 isEqualToString:@""]||pass.length < 6){
+        val = [NSString stringWithFormat:@"%@Error en passwords\n",val];
     }
     return val;
 }
+
+
+
 
 - (BOOL) validateEmail: (NSString *) candidate {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
@@ -173,11 +193,11 @@
 #pragma APIDelegate
 
 - (void) returnResponse:(NSString *)msg :(id)response{
-    [self.view addSubview:alert];
+    [self.view.superview addSubview:alert];
     [alert setText:msg];
     [loader dismissAlert];
     [alert showAlertAutoDismiss];
-    [self performSelector:@selector(redirectLogin) withObject:nil afterDelay:0.6];
+    [self performSelector:@selector(redirectLogin) withObject:nil afterDelay:1.5];
 }
 
 -(void) redirectLogin{

@@ -76,7 +76,6 @@
         transition.duration = 0.5f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         transition.type = kCATransitionFade;
-        
     }
    /*
     btnBackFltr = nil;

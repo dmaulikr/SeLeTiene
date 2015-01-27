@@ -18,8 +18,8 @@
     self = [super init];
     if (self) {
       // URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
-      //  URLAPI = @"http://se-le-tiene.cloudapp.net/SeLeTiene.svc/";
-        URL =@"http://200.119.110.136:81/seletienea/";
+        URL = @"http://seletiene.cloudapp.net/";
+//        URL =@"http://200.119.110.136:81/seletienea/";
         URLAPI = [NSString stringWithFormat:@"%@api/",URL];
         conn = [[Connection alloc] init];
         [conn openDB];
@@ -100,7 +100,8 @@
                               @"email":user.email,
                               @"name":user.name,
                               @"password":user.passwordHash,
-                              @"phoneNumber":user.phoneNumber
+                              @"phoneNumber":user.phoneNumber,
+                              @"UserId":user._id
                               };
     [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
 }

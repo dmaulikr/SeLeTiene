@@ -17,14 +17,16 @@
     APIManager *APIManagerClass;
     JOAlert *loader;
     BOOL keybOpened;
+    
+    NSString *name;
+    NSString *email;
+    NSString *phone;
+    NSString *idUser;
+    NSString *pass;
+    NSString *pass2;
 }
 extern int dev;
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
-@property (weak, nonatomic) IBOutlet UITextField *txtName;
-@property (weak, nonatomic) IBOutlet UITextField *txtEmail;
-@property (weak, nonatomic) IBOutlet UITextField *txtPhone;
-@property (weak, nonatomic) IBOutlet UITextField *txtPass;
-@property (weak, nonatomic) IBOutlet UITextField *txtConfPass;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignUp;
 @property (strong,nonatomic) JOAlert *alert;
 
