@@ -126,8 +126,7 @@
         [self.view.superview addSubview:loader];
         [loader showAlertAnim];
         User *tmpUser = [[User alloc] init];
-        
-        
+
         tmpUser.name        = name;
         //tmpUser.name        = ((LblTxtTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:@"Cell0"]).textLabel.text;
         tmpUser.email       = email;
@@ -164,9 +163,6 @@
     return val;
 }
 
-
-
-
 - (BOOL) validateEmail: (NSString *) candidate {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
@@ -186,6 +182,11 @@
         //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         GenTableViewController *destViewController = segue.destinationViewController;
         destViewController.modeTable = 1;
+    }else{
+        if ([segue.identifier isEqualToString:@"city"]) {
+            GenTableViewController *destViewController = segue.destinationViewController;
+            destViewController.modeTable = 4;
+        }
     }
 }
 

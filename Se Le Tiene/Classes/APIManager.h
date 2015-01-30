@@ -55,7 +55,8 @@ extern NSString* token;
 -(void)getProducts:(NSString*)filters;
 -(void)getProductDetail:(int)idProduct;
 -(void)getFavorites;
--(void)getCities;
+-(void)getDepartments;
+-(void)getCities:(int)idDepartment;
 -(void)getSelfUser;
 
 -(void)postImage:(int)idProduct :(UIImage*)imageProduct;

@@ -17,26 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     data =[[NSMutableArray alloc] init];
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
-
-    
-    if (modeTable==1) {
-        self.title = @"Ciudad";
-        [APIManagerClass getCities];
-    }else{
-        if (modeTable==2) {
+    switch (modeTable) {
+        case 1:
+            self.title = @"Departamento";
+            [APIManagerClass getDepartments];
+        break;
+        case 2:
             self.title = @"Tipo Producto";
-        }else{
-            if (modeTable==3) {
-                self.title =@"Tipo Servicio";
-            }
-        }
+        break;
+        case 3:
+            self.title =@"Tipo Servicio";
+        break;
+        case 4:
+            self.title = @"Ciudad";
+            [APIManagerClass getCities:[NSString stringWithFormat:@"%@",city[@"id"]].intValue];
+        break;
+        default: break;
     }
-    
-    
 }
 
 -(void) reload{
@@ -62,10 +62,7 @@
     {
         [[sections objectForKey:[temp[@"name"] substringToIndex:1]] addObject:temp];
     }
-  //  [self.tableView reloadData];
-    
     [(UITableView*)self.view reloadData];
-
 }
 
 
@@ -91,6 +88,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenCell" forIndexPath:indexPath];
+    cell.tag = [NSString stringWithFormat:@"%@", ([[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row])[@"id"]].intValue;
 //    cell.textLabel.text = ((NSDictionary*)[data objectAtIndex:indexPath.row])[@"name"];
     cell.textLabel.text = ([[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row])[@"name"];
     return cell;
@@ -107,7 +105,12 @@
 - (void) returnList:(id)responseObject :(NSString*)url
 {
     NSLog(@"Retorno una lista %@", responseObject);
-    for (id key in (NSDictionary*)responseObject) {
+    NSDictionary *response = responseObject;
+    if (modeTable==4) {
+        response = response[@"cities"];
+    }
+    
+    for (id key in response) {
         NSDictionary *tmpObj = @{
                                     @"id":key[@"id"],
                                     @"name":key[@"name"]
@@ -117,50 +120,17 @@
     [self reload];
 }
 
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (modeTable == 1) {
+        UITableViewCell *a = [self.tableView cellForRowAtIndexPath:indexPath];
+        city = @{
+             @"id":[NSString stringWithFormat:@"%d",a.tag],
+             @"name":a.textLabel.text
+             };
+    }
+    if (modeTable == 1 || modeTable == 4) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

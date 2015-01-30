@@ -20,7 +20,7 @@ NSMutableArray *productsArray;
 NSMutableArray *favArray;
 NSString *orderStr;
 NSString *filterStr;
-
+NSDictionary *city;
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {

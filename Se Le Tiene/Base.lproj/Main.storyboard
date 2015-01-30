@@ -637,7 +637,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="hsY-Jx-ehE" kind="show" id="lVX-gh-zGi"/>
+                                                <segue destination="hsY-Jx-ehE" kind="show" identifier="city" id="lVX-gh-zGi"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-F1-5ne">
@@ -2548,7 +2548,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HDT-H0-tBI"/>
+        <segue reference="lVX-gh-zGi"/>
         <segue reference="wP8-Zi-hcC"/>
     </inferredMetricsTieBreakers>
 </document>

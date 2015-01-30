@@ -18,8 +18,8 @@
     self = [super init];
     if (self) {
       // URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
-        URL = @"http://seletiene.cloudapp.net/";
-//        URL =@"http://200.119.110.136:81/seletienea/";
+    //URL = @"http://seletiene.cloudapp.net/";
+       URL =@"http://200.119.110.136:81/seletienea/";
         URLAPI = [NSString stringWithFormat:@"%@api/",URL];
         conn = [[Connection alloc] init];
         [conn openDB];
@@ -139,8 +139,12 @@
     [self performGet:@"Account/Favorites" :token :true];
 }
 
--(void)getCities{
+-(void)getDepartments{
     [self performGet:@"Departments" :token :true];
+}
+
+-(void)getCities:(int)idDepartment{
+    [self performGet:[NSString stringWithFormat:@"departments/%d",idDepartment] :token :true];
 }
 
 

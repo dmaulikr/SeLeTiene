@@ -26,6 +26,7 @@
     NSString *pass2;
 }
 extern int dev;
+extern NSDictionary* city;
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignUp;
 @property (strong,nonatomic) JOAlert *alert;

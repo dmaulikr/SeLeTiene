@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=41f6e13ade69">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=ea71a5211a91">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How do I use multiple UICollectionViewCells in a collectionview within a view controller.">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I have two cell classes: 
+
+class statusCell: UICollectionViewCell {
+
+var textLabel: UILabel!
+
+required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+}
+
+override init(frame: CGRect...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co">
+    <link rel="canonical" href="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow.html">
+
+    
+    
+    <script type="text/javascript" async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/ados"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/quant.js"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/beacon.js"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/ados.js"></script><script src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How do I use multiple UICollectionViewCells in a collectionview within a view controller.&#39;" href="http://stackoverflow.com/feeds/question/28229075">
+    <meta name="twitter:app:country" content="US">
+    <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:iphone" content="871299723">
+    <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co">
+    <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:ipad" content="871299723">
+    <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co">
+    <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+    <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co">
+    <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({votesCast:[],totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:28229075});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '28229075');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('1');
+                StackExchange.realtime.subscribeToTopBarNotifications('1');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1422595704,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"4bdcce82657938dca7d826c3033683be","isRegistered":true,"userType":3,"userId":2642744,"accountId":3123383,"gravatar":"<div class=\"gravatar-wrapper-32\"><img src=\"http://graph.facebook.com/612642503/picture?type=large\" alt=\"\" width=\"32\" height=\"32\"></div>","profileUrl":"http://stackoverflow.com/users/2642744/lojals","notificationsUnviewedCount":0,"inboxUnviewedCount":0}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"3f50ad85ca71","js/moderator.en.js":"7ae78f8d46ec","js/full-anon.en.js":"d9492856753f","js/full.en.js":"c86f6d4c9d81","js/wmd.en.js":"f2f124472f8d","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"f1429cd8ef0f","js/help.en.js":"637a173e1aa4","js/tageditor.en.js":"06bedbf5a6ea","js/tageditornew.en.js":"1749d64c0f80","js/inline-tag-editing.en.js":"f53885bdadce","js/revisions.en.js":"b9f74067e1f5","js/review.en.js":"275b32e1bcd9","js/tagsuggestions.en.js":"7a754a79cd1c","js/post-validation.en.js":"6ddde1c9a47e","js/explore-qlist.en.js":"4e6f969d97ee","js/events.en.js":"4f5c9ffdc1f6","js/keyboard-shortcuts.en.js":"04a0871e81df","js/external-editor.en.js":"a7dd834567a2","js/external-editor.en.js":"a7dd834567a2","js/snippet-javascript.en.js":"10149254b1ff","js/snippet-javascript-codemirror.en.js":"b6c37c475af7"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+    
+    
+<script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/full.en.js"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/external-editor.en.js"></script><script async="" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/wmd.en.js"></script><style type="text/css"> .wmd-snippet-button span { background-position: 0 0; } .wmd-snippet-button:hover span { background-position: 0 -40px; }</style><script type="text/javascript" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link type="text/css" rel="stylesheet" href="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/jobs.min.css"></head>
+<body class="question-page new-topbar" hola-ext-player="1">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+                    <a href="http://stackoverflow.com/users/logout" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:8 })">log out</a>
+    </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+                <a href="http://stackexchange.com/users/3123383/?tab=accounts">your communities</a>
+        </h3>
+            
+            <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" id="edit-pinned-sites">edit</a>
+            <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" id="cancel-pinned-sites" style="display: none;">cancel</a>
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <ul class="my-sites">
+                    <li>
+                        
+
+
+
+    <a href="http://stackoverflow.com/" class="site-link js-gps-track" data-id="1" data-gps-track="
+            site.switch({ target_site:1, item_type:3 }),
+        site_switcher.click({ item_type:1 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+            <span class="rep-score">143</span>
+    </a>
+
+                    </li>
+            </ul>
+                <div class="pinned-site-editor-container" style="display: none;">
+                    <input id="js-site-search-txt" type="text" class="site-filter-input" value="" placeholder="Add a Stack Exchange community">
+                    <input type="submit" id="pin-site-btn" value="Add" disabled="disabled">
+                    <ul class="js-found-sites found-sites"></ul>
+                    <ul class="pinned-site-list sortable" data-custom-list="False">
+                    </ul>
+                    <input type="submit" value="Save" id="save-pinned-sites-btn" disabled="disabled">
+                    <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" id="reset-pinned-sites">reset to default list</a>
+                </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 134 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+                <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+                    <span class="hidden-text">Inbox</span>
+                    <span class="unread-count" style="display:none"></span>
+                </a>
+                <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+                    <span class="hidden-text">Reputation and Badges</span>
+                    <span class="unread-count" style="display:none">
+                        
+                    </span>
+                </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <a href="http://stackoverflow.com/users/2642744/lojals" class="profile-me js-gps-track" data-gps-track="profile_summary.click()">
+                    <div class="gravatar-wrapper-24" title="lojals"><img src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/picture" alt="" width="24" height="24" class="avatar-me js-avatar-me"></div>
+                    <div class="links-container topbar-flair">
+
+                        <span class="reputation" title="your reputation: 143">
+                            143
+                        </span>
+<span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>                    </div>
+                </a>
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+
+
+
+
+    <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow.html" class="question-hyperlink">How do I use multiple UICollectionViewCells in a collectionview within a view controller.</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="28229075" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1025266438",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1025266438"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1NzE1LCJkaSI6ImYwNzkzMGE3OTkyNDRjNGE5YjY2ODJkZjAxODk0NWQ1IiwiZG0iOjEsImZjIjo3MjE4MDksImZsIjo0MzE3ODAsImlwIjoiMTg2LjI4LjU2LjExMiIsImt3Ijoic3dpZnQseC11c2VyLXJlZ2lzdGVyZWQiLCJudyI6MjIsInBjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy90YWdnZWQvc3dpZnQiLCJzdCI6ODI3NywidWsiOiJ1ZTEtYWE2NjM2NjBkMWQ4NGFjZGFmYzIxY2U2MTM2Zjk3NjYiLCJ6biI6NDMsInRzIjoxNDIyNTk1NzA0ODcwLCJiZiI6dHJ1ZSwidXIiOiJodHRwOi8vY2FyZWVycy5zdGFja292ZXJmbG93LmNvbS9qb2JzL3JlbW90ZT91dG1fc291cmNlPXN0YWNrb3ZlcmZsb3cuY29tJnV0bV9tZWRpdW09YWQmdXRtX2NhbXBhaWduPWNhbmRpZGF0ZXMtd2ZoJnV0bV9jb250ZW50PWxiLXdmaC1wYWphbWFzIn0&s=aqC0SAtKYAteO2lyyE6hbaDQH6Q" rel="nofollow" target="_blank" title=""><img src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/831a088cf67e42c580e407e2d91c8ce6.jpg" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="28229075">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I have two cell classes: </p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> statusCell</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionViewCell</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+</span><span class="kwd">var</span><span class="pln"> textLabel</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UILabel</span><span class="pun">!</span><span class="pln">
+
+required init</span><span class="pun">(</span><span class="pln">coder aDecoder</span><span class="pun">:</span><span class="pln"> </span><span class="typ">NSCoder</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">init</span><span class="pun">(</span><span class="pln">coder</span><span class="pun">:</span><span class="pln"> aDecoder</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">override</span><span class="pln"> init</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln"> </span><span class="typ">CGRect</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">init</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln">frame</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">let</span><span class="pln"> textFrame </span><span class="pun">=</span><span class="pln"> </span><span class="typ">CGRect</span><span class="pun">(</span><span class="pln">x</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">150</span><span class="pun">,</span><span class="pln"> height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200</span><span class="pun">)</span><span class="pln">
+    textLabel </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UILabel</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln"> textFrame</span><span class="pun">)</span><span class="pln">
+    textLabel</span><span class="pun">.</span><span class="pln">font </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIFont</span><span class="pun">.</span><span class="pln">systemFontOfSize</span><span class="pun">(</span><span class="typ">UIFont</span><span class="pun">.</span><span class="pln">smallSystemFontSize</span><span class="pun">())</span><span class="pln">
+    textLabel</span><span class="pun">.</span><span class="pln">textAlignment </span><span class="pun">=</span><span class="pln"> </span><span class="pun">.</span><span class="typ">Center</span><span class="pln">
+    contentView</span><span class="pun">.</span><span class="pln">addSubview</span><span class="pun">(</span><span class="pln">textLabel</span><span class="pun">)</span><span class="pln">
+
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">override</span><span class="pln"> func awakeFromNib</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">awakeFromNib</span><span class="pun">()</span><span class="pln">
+    </span><span class="com">// Initialization code</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>and</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> imagePostCell</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionViewCell</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+</span><span class="kwd">var</span><span class="pln"> textLabel</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UILabel</span><span class="pun">!</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> imageView</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UIImageView</span><span class="pun">!</span><span class="pln">
+
+required init</span><span class="pun">(</span><span class="pln">coder aDecoder</span><span class="pun">:</span><span class="pln"> </span><span class="typ">NSCoder</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">init</span><span class="pun">(</span><span class="pln">coder</span><span class="pun">:</span><span class="pln"> aDecoder</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">override</span><span class="pln"> init</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln"> </span><span class="typ">CGRect</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">init</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln">frame</span><span class="pun">)</span><span class="pln">
+
+    imageView </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIImageView</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln"> </span><span class="typ">CGRect</span><span class="pun">(</span><span class="pln">x</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">159</span><span class="pun">,</span><span class="pln"> height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">225</span><span class="pun">))</span><span class="pln">
+    imageView</span><span class="pun">.</span><span class="pln">contentMode </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIViewContentMode</span><span class="pun">.</span><span class="typ">ScaleAspectFit</span><span class="pln">
+    contentView</span><span class="pun">.</span><span class="pln">addSubview</span><span class="pun">(</span><span class="pln">imageView</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">let</span><span class="pln"> textFrame </span><span class="pun">=</span><span class="pln"> </span><span class="typ">CGRect</span><span class="pun">(</span><span class="pln">x</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">:</span><span class="pln"> imageView</span><span class="pun">.</span><span class="pln">frame</span><span class="pun">.</span><span class="pln">size</span><span class="pun">.</span><span class="pln">height</span><span class="pun">,</span><span class="pln"> width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">159</span><span class="pun">,</span><span class="pln"> height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">125</span><span class="pun">)</span><span class="pln">
+    textLabel </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UILabel</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln"> textFrame</span><span class="pun">)</span><span class="pln">
+    textLabel</span><span class="pun">.</span><span class="pln">font </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIFont</span><span class="pun">.</span><span class="pln">systemFontOfSize</span><span class="pun">(</span><span class="typ">UIFont</span><span class="pun">.</span><span class="pln">smallSystemFontSize</span><span class="pun">())</span><span class="pln">
+    textLabel</span><span class="pun">.</span><span class="pln">textAlignment </span><span class="pun">=</span><span class="pln"> </span><span class="pun">.</span><span class="typ">Center</span><span class="pln">
+    contentView</span><span class="pun">.</span><span class="pln">addSubview</span><span class="pun">(</span><span class="pln">textLabel</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">override</span><span class="pln"> func awakeFromNib</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">awakeFromNib</span><span class="pun">()</span><span class="pln">
+    </span><span class="com">// Initialization code</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+
+<p>Here is the view controller: </p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="kwd">let</span><span class="pln"> statusCellReuseId </span><span class="pun">=</span><span class="pln"> </span><span class="str">"statusCell"</span><span class="pln">
+</span><span class="kwd">let</span><span class="pln"> imagePostCellReuseId </span><span class="pun">=</span><span class="pln"> </span><span class="str">"imagePostCell"</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ProfileViewController</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UIViewController</span><span class="pun">,</span><span class="pln"> </span><span class="typ">UICollectionViewDelegateFlowLayout</span><span class="pun">,</span><span class="pln"> </span><span class="typ">UICollectionViewDataSource</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+</span><span class="lit">@IBOutlet</span><span class="pln"> </span><span class="kwd">var</span><span class="pln"> postsView</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionView</span><span class="pun">!</span><span class="pln">
+
+
+</span><span class="kwd">let</span><span class="pln"> sectionInsets </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIEdgeInsets</span><span class="pun">(</span><span class="pln">top</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">,</span><span class="pln"> left</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">,</span><span class="pln"> bottom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">,</span><span class="pln"> right</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">override</span><span class="pln"> func viewDidLoad</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">viewDidLoad</span><span class="pun">()</span><span class="pln">
+    </span><span class="com">// Do any additional setup after loading the view.</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">override</span><span class="pln"> func didReceiveMemoryWarning</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">didReceiveMemoryWarning</span><span class="pun">()</span><span class="pln">
+    </span><span class="com">// Dispose of any resources that can be recreated.</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">//num of posts per request / page</span><span class="pln">
+func collectionView</span><span class="pun">(</span><span class="pln">collectionView</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionView</span><span class="pun">,</span><span class="pln"> numberOfItemsInSection section</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">10</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">//creation of posts</span><span class="pln">
+func collectionView</span><span class="pun">(</span><span class="pln">collectionView</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionView</span><span class="pun">,</span><span class="pln"> cellForItemAtIndexPath indexPath</span><span class="pun">:</span><span class="pln"> </span><span class="typ">NSIndexPath</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span class="typ">UICollectionViewCell</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> cell</span><span class="pun">:</span><span class="pln"> statusCell</span><span class="pun">!</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> cell2</span><span class="pun">:</span><span class="pln"> imagePostCell</span><span class="pun">!</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">((</span><span class="pln">indexPath</span><span class="pun">.</span><span class="pln">row </span><span class="pun">+</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        cell </span><span class="pun">=</span><span class="pln"> collectionView</span><span class="pun">.</span><span class="pln">dequeueReusableCellWithReuseIdentifier</span><span class="pun">(</span><span class="pln">statusCellReuseId</span><span class="pun">,</span><span class="pln"> forIndexPath</span><span class="pun">:</span><span class="pln"> indexPath</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> statusCell
+        </span><span class="kwd">if</span><span class="pln"> cell </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">nil</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            cell </span><span class="pun">=</span><span class="pln"> statusCell</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln"> </span><span class="typ">CGRectMake</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> collectionView</span><span class="pun">.</span><span class="pln">frame</span><span class="pun">.</span><span class="pln">size</span><span class="pun">.</span><span class="pln">width</span><span class="pun">,</span><span class="pln"> collectionView</span><span class="pun">.</span><span class="pln">frame</span><span class="pun">.</span><span class="pln">size</span><span class="pun">.</span><span class="pln">height</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        cell</span><span class="pun">.</span><span class="pln">backgroundColor </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIColor</span><span class="pun">.</span><span class="pln">orangeColor</span><span class="pun">()</span><span class="pln">
+        cell</span><span class="pun">.</span><span class="pln">textLabel</span><span class="pun">.</span><span class="pln">text </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Hello mate!"</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        cell2 </span><span class="pun">=</span><span class="pln"> collectionView</span><span class="pun">.</span><span class="pln">dequeueReusableCellWithReuseIdentifier</span><span class="pun">(</span><span class="pln">imagePostCellReuseId</span><span class="pun">,</span><span class="pln"> forIndexPath</span><span class="pun">:</span><span class="pln"> indexPath</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> imagePostCell
+        </span><span class="kwd">if</span><span class="pln"> cell2 </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">nil</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            cell2 </span><span class="pun">=</span><span class="pln"> imagePostCell</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">:</span><span class="pln"> </span><span class="typ">CGRectMake</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> collectionView</span><span class="pun">.</span><span class="pln">frame</span><span class="pun">.</span><span class="pln">size</span><span class="pun">.</span><span class="pln">width</span><span class="pun">,</span><span class="pln"> collectionView</span><span class="pun">.</span><span class="pln">frame</span><span class="pun">.</span><span class="pln">size</span><span class="pun">.</span><span class="pln">height</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        cell2</span><span class="pun">.</span><span class="pln">backgroundColor </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIColor</span><span class="pun">.</span><span class="pln">blueColor</span><span class="pun">()</span><span class="pln">
+        cell2</span><span class="pun">.</span><span class="pln">textLabel</span><span class="pun">.</span><span class="pln">text </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Goodbyte!"</span><span class="pln">
+        cell2</span><span class="pun">.</span><span class="pln">imageView</span><span class="pun">.</span><span class="pln">image </span><span class="pun">=</span><span class="pln"> </span><span class="typ">UIImage</span><span class="pun">(</span><span class="pln">named</span><span class="pun">:</span><span class="pln"> </span><span class="str">"buton"</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> cell
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">//num of sections with posts</span><span class="pln">
+func numberOfSectionsInCollectionView</span><span class="pun">(</span><span class="pln">collectionView</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionView</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">//#warning Incomplete method implementation -- Return the number of sections</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">//height of cell</span><span class="pln">
+func collectionView</span><span class="pun">(</span><span class="pln">collectionView</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionView</span><span class="pun">!,</span><span class="pln">layout collectionViewLayout</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionViewLayout</span><span class="pun">!,</span><span class="pln"> sizeForItemAtIndexPath indexPath</span><span class="pun">:</span><span class="pln"> </span><span class="typ">NSIndexPath</span><span class="pun">!)</span><span class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span class="typ">CGSize</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">CGSize</span><span class="pun">(</span><span class="pln">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">159</span><span class="pun">,</span><span class="pln"> height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">350</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">//padding from cellphone</span><span class="pln">
+func collectionView</span><span class="pun">(</span><span class="pln">collectionView</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionView</span><span class="pun">!,</span><span class="pln">layout collectionViewLayout</span><span class="pun">:</span><span class="pln"> </span><span class="typ">UICollectionViewLayout</span><span class="pun">!,</span><span class="pln">insetForSectionAtIndex section</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-&gt;</span><span class="pln"> </span><span class="typ">UIEdgeInsets</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> sectionInsets
+</span><span class="pun">}</span><span class="pln">
+
+
+</span><span class="pun">}</span></code></pre>
+
+<p>I have a collection view within a viewcontroller, the collectionview has two "items" in storyboard with the ids: "statusCell" and "imagePostCell" to try to connect the cells to. The difference between the two cells is one is pure text, while the other is text with an image. Currently, I'm just trying to have the custom cells appear and display sample text / image. But, when I simulate the app, it says the cells in "cellForItemAtIndexPath" are nil. I have tried to create an if-statement to try to remedy the problem, as well as creating the cells programmatically in the viewdidload of the viewcontroller. What is wrong with my code and is there a max to the amount of custom cells that can be used by a single UICollectionView?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/swift" class="post-tag js-gps-track" title="" rel="tag">swift</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/28229075/2642744" title="short permalink to this question" class="short-link" id="link-post-28229075">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/28229075/edit" class="suggest-edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" class="flag-post-link" title="flag this post for serious problems or moderator attention" data-postid="28229075">flag</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2015-01-30 04:07:15Z" class="relativetime">1 hour ago</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/768398/jay"><div class="gravatar-wrapper-32"><img src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/FWpn9.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/768398/jay">Jay</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">27</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="11 bronze badges"><span class="badge3"></span><span class="badgecount">11</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-28229075" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="true" data-cansee="false" data-comments-unavailable="false" data-addlink-disabled="false">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+				    <tfoot>
+					    <tr>
+						    <td></td>
+						    <td class="comment-form">
+							    <form id="add-comment-28229075" class="" data-placeholdertext="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></form>
+						    </td>
+					    </tr>
+				    </tfoot>
+		    </table>
+	    </div>
+            <div id="comments-link-28229075">
+
+                <a class="js-add-link comments-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments." href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers" class="no-answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+						</h2>
+						<div style="display:none;">
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+											<h2 class="bottom-notice bottom-share-links" style="padding-top: 8px; margin-bottom: -8px;">
+								Know someone who can answer? 
+								Share a link to this <a href="http://stackoverflow.com/q/28229075/2642744">question</a> via <a href="mailto:?subject=Stack%20Overflow%20Question&body=How%20do%20I%20use%20multiple%20UICollectionViewCells%20in%20a%20collectionview%20within%20a%20view%20controller.%0Ahttp%3a%2f%2fstackoverflow.com%2fq%2f28229075%2f2642744%3fsem%3d2">email</a>, <a href="https://plus.google.com/share?url=http%3a%2f%2fstackoverflow.com%2fq%2f28229075%2f2642744%3fsgp%3d2">Google+</a>, <a href="http://twitter.com/share?url=http%3a%2f%2fstackoverflow.com%2fq%2f28229075%2f2642744%3fstw%3d2">Twitter</a>, or <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fstackoverflow.com%2fq%2f28229075%2f2642744%3fsfb%3d2">Facebook</a>.
+							</h2>
+					<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/28229075/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="28229075">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="http://stackoverflow.com/questions/tagged/swift">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: false,
+                    discardSelector: ".discard-answer"
+                
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong &lt;strong&gt; Ctrl+B" style="left: 0px;"><span style="background-position: 0px 0px;"></span></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis &lt;em&gt; Ctrl+I" style="left: 25px;"><span style="background-position: -20px 0px;"></span></li><li class="wmd-spacer wmd-spacer1" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink &lt;a&gt; Ctrl+L" style="left: 75px;"><span style="background-position: -40px 0px;"></span></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote &lt;blockquote&gt; Ctrl+Q" style="left: 100px;"><span style="background-position: -60px 0px;"></span></li><li class="wmd-button" id="wmd-code-button" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" style="left: 125px;"><span style="background-position: -80px 0px;"></span></li><li class="wmd-button" id="wmd-image-button" title="Image &lt;img&gt; Ctrl+G" style="left: 150px;"><span style="background-position: -100px 0px;"></span></li><li class="wmd-button wmd-snippet-button" style="left:175px" id="wmd-snippet-button" title="Code snippet Ctrl-M"><span style="background-image: url(http://stackoverflow.com/content/balsamiq/wmd-mockup-button.png?v=4);"></span></li><li class="wmd-spacer wmd-spacer2" id="wmd-spacer2" style="left: 220px;"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List &lt;ol&gt; Ctrl+O" style="left: 225px;"><span style="background-position: -120px 0px;"></span></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List &lt;ul&gt; Ctrl+U" style="left: 250px;"><span style="background-position: -140px 0px;"></span></li><li class="wmd-button" id="wmd-heading-button" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" style="left: 275px;"><span style="background-position: -160px 0px;"></span></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule &lt;hr&gt; Ctrl+R" style="left: 300px;"><span style="background-position: -180px 0px;"></span></li><li class="wmd-spacer wmd-spacer3" id="wmd-spacer3" style="left: 346px;"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="left: 350px;"><span style="background-position: -200px 0px;"></span></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Shift+Z" style="left: 375px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-button wmd-help-button" id="wmd-help-button" title="Markdown Editing Help" style="right: 0px;"><span style="background-position: -240px 0px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length="" style="opacity: 1; height: 694px;"></textarea>
+        <div class="grippie" style="margin-right: 0px;"></div></div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height: 24px;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft discarded</div>
+
+    <div class="community-option">
+        <input id="communitymode" name="communitymode" type="checkbox">
+        <label for="communitymode" title="Marking an answer community wiki encourages others to edit it by lowering the reputation barrier required to edit. However, you will not gain any upvote reputation from it. This cannot be undone.">community wiki</label>
+    </div>
+
+
+    <div id="wmd-preview" class="wmd-preview"><p>You can use </p>
+
+<p>//creation of posts
+func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -&gt; UICollectionViewCell {
+    var cell: statusCell!
+    var cell2: imagePostCell!
+    if((indexPath.row + 2) % 2 == 0) {
+        cell = collectionView.dequeueReusableCellWithReuseIdentifier(statusCellReuseId, forIndexPath: indexPath) as statusCell
+        cell.backgroundColor = UIColor.orangeColor()
+        cell.textLabel.text = "Hello mate!"
+    }
+    else {
+        cell2 = collectionView.dequeueReusableCellWithReuseIdentifier(imagePostCellReuseId, forIndexPath: indexPath) as imagePostCell
+        if cell2 == nil {
+            cell2 = imagePostCell(frame: CGRectMake(0, 0, collectionView.frame.size.width, collectionView.frame.size.height))
+        }
+        cell2.backgroundColor = UIColor.blueColor()
+        cell2.textLabel.text = "Goodbyte!"
+        cell2.imageView.image = UIImage(named: "buton")
+    }
+    return cell
+}</p></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="4bdcce82657938dca7d826c3033683be">
+        <input id="author" name="author" type="text">
+    <input type="hidden" name="i1l" value="eVyeYHuWCXa5uVkKdRMDaeXKTvaVb3rP4bEU8vMvnW4="></div>
+</div>
+							<div style="position: relative;">
+								
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/28229075/how-do-i-use-multiple-uicollectionviewcells-in-a-collectionview-within-a-view-co#" class="discard-answer">discard</a>
+								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/swift" class="post-tag" title="show questions tagged &#39;swift&#39;" rel="tag">swift</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2015-01-30 04:07:15Z"><b>today</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>7 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2015/01/targeted-jobs-for-stack-overflow/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackoverflow" title="Stack Overflow"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2015/01/targeted-jobs-for-stack-overflow/?cb=1" class="question-hyperlink">Targeted Jobs for Stack Overflow</a>
+                </div>
+                <br class="cbt">
+            </div>
+                <div class="bulletin-title">
+                    Hot Meta Posts
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Vote score (upvotes - downvotes)">40</span>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://meta.stackoverflow.com/questions/284715/translation-error-lesebeitr%c3%a4ge?cb=1" class="question-hyperlink">Translation error: Lesebeiträge</a>
+                </div>
+                <br class="cbt">
+            </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Vote score (upvotes - downvotes)">50</span>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://meta.stackoverflow.com/questions/284647/kill-the-player?cb=1" class="question-hyperlink">Kill the [player]</a>
+                </div>
+                <br class="cbt">
+            </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Vote score (upvotes - downvotes)">17</span>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://meta.stackoverflow.com/questions/284786/lets-nuke-publish-and-publishing?cb=1" class="question-hyperlink">Let's nuke [publish] and [publishing]</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1708607897",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1708607897"><div id="careersadsdoublehigh" style="display:none;"></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/i(1).gif"></div>  
+        <div id="hireme" class="blue looking tagged"><a href="http://careers.stackoverflow.com/jobs/?a=2Z3UI" target="_blank" class="top"> <span>Looking for a job?</span></a><ul class="jobs"><li><a data-cid="85148" data-la="qoFBsaNvl5v" href="http://careers.stackoverflow.com/jobs/78713/agile-development-manager-british-sky-broadcasting" target="_blank" title="Agile Development Manager at British Sky Broadcasting. Click to learn more.">Agile Development Manager<br><div class="company">British Sky Broadcasting</div><div class="location" title="Greenford, UK">Greenford, UK</div><span class="post-tag">agile</span></a></li><li><a data-cid="41940" data-la="etXFOd7kgzo" href="http://careers.stackoverflow.com/jobs/43186/tech-lead-javascript-ruby-on-rails-a-different-engine-llc" target="_blank" title="Tech Lead - JavaScript - Ruby on Rails at A Different Engine LLC. Click to learn more.">Tech Lead - JavaScript - Ruby on Rails<br><div class="company">A Different Engine</div><div class="location" title="San Francisco, CA">San Francisco, CA</div><span class="post-tag">javascript</span><span class="post-tag">agile-project-management</span></a></li><li><a data-cid="49038" data-la="gRy7tjRZOLh" href="http://careers.stackoverflow.com/jobs/50284/senior-php-developer-must-be-lazy-sam-media-sdn-bhd" target="_blank" title="Senior PHP Developer (must be lazy!) at Sam Media Sdn. Bhd.. Click to learn more.">Senior PHP Developer (must be lazy!)<br><div class="company">Sam Media Sdn. Bhd</div><div class="location" title="Kuala Lumpur, Malaysia / relocation">Kuala Lumpur, Malaysia / relocation</div><span class="post-tag">php</span><span class="post-tag">agile</span></a></li><li><a data-cid="84544" data-la="qc6X3bFMf7C" href="http://careers.stackoverflow.com/jobs/78109/sr-software-engineer-net-tmp-worldwide" target="_blank" title="Sr Software Engineer- .Net at TMP Worldwide. Click to learn more.">Sr Software Engineer- .Net<br><div class="company">TMP Worldwide</div><div class="location" title="New York, NY">New York, NY</div><span class="post-tag">.net</span><span class="post-tag">c#</span></a></li></ul><img class="impression" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/i" style="display:none;"><img class="impression" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/qoFBsaNvl5v-etXFOd7kgzo-gRy7tjRZOLh-qc6X3bFMf7C-2Z3UI" style="display:none;"></div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25091401?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/25091401/using-nsnotifications-to-pass-variables-between-view-controllers?rq=1" class="question-hyperlink">Using NSNotifications to pass variables between View Controllers</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25215476?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/25215476/how-do-you-pass-data-between-view-controllers-in-swift?rq=1" class="question-hyperlink">How do you pass data between view controllers in Swift?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25317899?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/25317899/hide-background-view-from-table-view-controller?rq=1" class="question-hyperlink">Hide Background View from Table View Controller</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25881197?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-4
+    </div>
+</a><a href="http://stackoverflow.com/questions/25881197/how-we-can-show-a-custom-popup-in-table-view-controller-in-swift-language?rq=1" class="question-hyperlink">How we can show a custom popup in table view controller in swift language</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25932570?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/25932570/how-to-play-video-with-av-kit-player-view-controller-in-swift?rq=1" class="question-hyperlink">How to play video with AV Kit Player View Controller in Swift</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/26944450?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/26944450/swift-how-can-i-hide-the-bottom-bar-when-pushed-but-stay-in-the-main-view-cont?rq=1" class="question-hyperlink">SWIFT - How can I hide the bottom bar when pushed but stay in the main view Controller</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/27782503?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/27782503/swift-xcode-creating-multiple-segues-from-a-single-table-view-controller?rq=1" class="question-hyperlink">(Swift/XCODE) Creating multiple segues from a single table view controller</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/27870196?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/27870196/swift-how-to-make-view-controller-scroll-to-text-field-when-keyboard-appears?rq=1" class="question-hyperlink">Swift: How to make view controller scroll to text field when keyboard appears</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/27937549?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/27937549/how-to-used-table-view-delegates-in-swift?rq=1" class="question-hyperlink">how to used table view delegates in swift</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/28033628?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/28033628/change-the-vertical-divide-colour-in-split-view-controller-swift?rq=1" class="question-hyperlink">Change The Vertical Divide Colour In Split View Controller (Swift)</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/48331/how-to-use-multiple-single-words-with-a-and-an" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    how to use multiple single words with a and an
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/55996/what-memories-does-your-clone-have-when-you-die" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What memories does your clone have when you die?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/56041/is-it-common-for-dd-characters-be-moved-to-or-reused-in-different-dms-campaign" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it common for D&amp;D characters be moved to or reused in different DMs' campaigns?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-drupal" title="Drupal Answers"></div><a href="http://drupal.stackexchange.com/questions/145887/why-does-drupal-say-i-need-to-upgrade-to-8-0-0-beta-6-when-im-already-checked-o" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:220 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Drupal say I need to upgrade to 8.0.0 beta 6 when I'm already checked out on that tag?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/72790/is-it-default-that-an-english-version-is-always-title-case-while-other-language" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it default that an English version is always Title Case, while other languages like Dutch don't use Title Case?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/870203/is-there-really-a-usb-communication-protocol" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there really a "USB communication protocol"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="http://space.stackexchange.com/questions/7949/why-does-the-spacex-reusable-launcher-use-vertical-rather-than-horizontal-landin" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does the SpaceX reusable launcher use vertical rather than horizontal landing?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/28756/how-to-thank-motorists" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to thank motorists?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gardening" title="Gardening &amp; Landscaping Stack Exchange"></div><a href="http://gardening.stackexchange.com/questions/16215/what-does-standard-mean-when-referring-to-shrubs-and-vines" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:269 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does 'standard' mean when referring to shrubs and vines?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/72793/should-a-view-more-button-move-down-when-the-pane-expands" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should a "view more" button move down when the pane expands?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/54151/how-do-i-preserve-a-tomatos-freshness-after-it-is-cut" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I preserve a tomato's freshness after it is cut?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/162213/why-is-the-klein-gordon-equation-of-second-order-in-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is the Klein Gordon equation of second order in time?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/28218413/strtotime-result-makes-no-sense-php-bug" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    strtotime result makes no sense, php bug?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-graphicdesign" title="Graphic Design Stack Exchange"></div><a href="http://graphicdesign.stackexchange.com/questions/46553/why-are-the-bleed-and-slug-lines-outside-my-pages" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:174 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are the bleed and slug lines outside my pages?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/80392/never-spell-a-word-the-same-way-twice" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Never spell a word the same way twice?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/8336/a-mathematicians-coffee-cryptarithm" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A Mathematician's Coffee Cryptarithm
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/64762/iterate-through-map-with-a-list-of-sobjects" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Iterate through Map with a List of sObjects
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/48136/does-i-have-a-daughter-mean-i-have-one-daughter" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does "I have a daughter" mean "I have one daughter"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/58657/does-a-plumbing-vent-need-to-penetrate-the-roof-can-it-penetrate-a-wall" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does a plumbing vent need to penetrate the roof? (Can it penetrate a wall?)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="http://parenting.stackexchange.com/questions/18470/how-can-i-prevent-my-parents-divorce" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I prevent my parents' divorce?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/72796/manipulate-how-to-create-custom-reset-button-automatically" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Manipulate: How to create custom reset Button automatically?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/135475/why-is-time-series-so-called" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is "Time Series" so called?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-avp" title="Video Production Stack Exchange"></div><a href="http://video.stackexchange.com/questions/14736/stitching-2-videos-into-one-like-panoramic-photos" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:170 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Stitching 2 videos into one (like panoramic photos)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/9371/how-can-i-brighten-the-night-sky-just-a-bit" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I brighten the night sky (just a bit)?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/28229075" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/28229075/ivc/bf8f');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/28229075/ivc/bf8f" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+    <script>
+        $('#wmd-input').one("keypress", function() {
+            $.ajax({
+                url: '/accounts/email-settings-form',
+                cache: false,
+                success: function(data) {
+                    $('#submit-button').parent().prepend(data);
+                }
+            });
+        });
+
+    </script>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2015 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>                   with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2015.1.30.2256
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('swift,x-user-registered');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        ga('set', 'dimension1', '3123383');         
+        ga('set', 'dimension2', '|swift|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<script src="chrome-extension://hanjiajgnonaobdlklncdjdmpbomlhoa/res/stat.js" id="__msig_js_preffix_id" data-wid="777" data-sid="777" data-sud="777" _e="0" _re="1" _c="0" _cl="0" _cpa="0" _pixel="0" async="" charset="utf-8"></script><script type="text/javascript" src="./swift - How do I use multiple UICollectionViewCells in a collectionview within a view controller. - Stack Overflow_files/p"></script></body></html>
