@@ -7,6 +7,7 @@
 //
 
 #import "RememberViewController.h"
+#import "LogViewController.h"
 
 @interface RememberViewController ()
 
@@ -27,6 +28,12 @@
     txtEmail.leftViewMode = UITextFieldViewModeAlways;
     txtEmail.layer.backgroundColor = [UIColor whiteColor].CGColor;
     btnRemember.layer.cornerRadius = 5.0f;
+    
+    alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    loader = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
+    APIManagerClass = [[APIManager alloc] init];
+    APIManagerClass.delegate = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -87,5 +94,46 @@
     return YES;
 }
 
+
+- (void) returnResponse:(NSString *)msg :(id)response{
+    [self.view.superview addSubview:alert];
+    [alert setText:msg];
+    [loader dismissAlert];
+    [alert showAlertAutoDismiss];
+    [self performSelector:@selector(redirectLogin) withObject:nil afterDelay:1.5];
+}
+
+-(void) redirectLogin{
+    LogViewController *lVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginView"];
+    [self.navigationController pushViewController:lVC animated:YES];
+}
+
+- (IBAction)remember:(id)sender {
+    btnRemember.enabled = false;
+    if ([self validate]) {
+        [self.view.superview addSubview:loader];
+        [loader showAlertAnim];
+        [APIManagerClass rememberPass:txtEmail.text];
+    }else{
+        [self.view.superview addSubview:alert];
+        [alert setText:@"Ingrese un email"];
+        [alert showAlertAutoDismiss];
+        btnRemember.enabled = true;
+    }
+}
+
+-(BOOL) validate{
+    BOOL val = true;
+    if([txtEmail.text isEqualToString:@""]||![self validateEmail:txtEmail.text]){
+        val = false;
+    }
+    return val;
+}
+
+- (BOOL) validateEmail: (NSString *) candidate {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:candidate];
+}
 
 @end

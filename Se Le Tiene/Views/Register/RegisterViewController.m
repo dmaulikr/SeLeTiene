@@ -40,10 +40,13 @@
 
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
+    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    [self.tableView reloadData];
 }
 
 
@@ -133,6 +136,8 @@
         tmpUser.phoneNumber = phone;
         tmpUser._id         = idUser;
         tmpUser.passwordHash = pass;
+        tmpUser.cityID = city[@"id"];
+        tmpUser.deptoID = depto[@"id"];
         [APIManagerClass signUpUser:tmpUser];
     }else{
         [self.view.superview addSubview:alert];
@@ -190,7 +195,6 @@
     }
 }
 
-
 #pragma APIDelegate
 
 - (void) returnResponse:(NSString *)msg :(id)response{
@@ -217,7 +221,52 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell%d",indexPath.row] forIndexPath:indexPath];
+    LblTxtTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell%d",indexPath.row] forIndexPath:indexPath];
+    
+    switch (indexPath.row) {
+        case 0:
+            if (name) {
+                cell.txtLabel.text = name;
+            }
+        break;
+        case 1:
+            if (email) {
+                cell.txtLabel.text = email;
+            }
+        break;
+        case 2:
+            if (phone) {
+                cell.txtLabel.text = phone;
+            }
+        break;
+        case 3:
+            if (idUser) {
+                cell.txtLabel.text = idUser;
+            }
+        break;
+        case 4:
+            if (depto) {
+                [cell.btnLabel setTitle:depto[@"name"] forState:UIControlStateNormal];
+            }
+        break;
+        case 5:
+            if (city) {
+                [cell.btnLabel setTitle:city[@"name"] forState:UIControlStateNormal];
+            }
+        break;
+        case 6:
+            if (pass) {
+                cell.txtLabel.text = pass;
+            }
+        break;
+        case 7:
+            if (pass2) {
+                cell.txtLabel.text = pass2;
+            }
+        break;
+        default:
+        break;
+    }
     return cell;
 }
 

@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JOAlert.h"
+#import "APIManager.h"
 
-@interface RememberViewController : UIViewController <UITextFieldDelegate>{
+
+@interface RememberViewController : UIViewController <UITextFieldDelegate,APIManagerDelegate>{
     int yPos;
     int sW;
     int sH;
+    APIManager *APIManagerClass;
+    JOAlert *alert;
+    JOAlert *loader;
 }
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UIButton *btnRemember;

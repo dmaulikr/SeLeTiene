@@ -18,8 +18,8 @@
     self = [super init];
     if (self) {
       // URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
-    //URL = @"http://seletiene.cloudapp.net/";
-       URL =@"http://200.119.110.136:81/seletienea/";
+    URL = @"http://seletiene.cloudapp.net/";
+    //   URL =@"http://200.119.110.136:81/seletienea/";
         URLAPI = [NSString stringWithFormat:@"%@api/",URL];
         conn = [[Connection alloc] init];
         [conn openDB];
@@ -85,7 +85,7 @@
 }
 
 -(void)rememberPass:(NSString*)userEmail{
-    //[self getImageTest];
+    [self performPost:[NSString stringWithFormat:@"account/recoverpasswordemail?email=%@",userEmail] :token :nil :@"Email ha sido enviado" :@"Intente más tarde"];
 }
 
 -(void)logout{
@@ -93,7 +93,7 @@
     [conn deleteSession];
     [FBSession.activeSession closeAndClearTokenInformation];
 }
-
+ 
 -(void)signUpUser:(User*)user{
     NSDictionary *userDic = @{
                               //@"key":@"value"
@@ -101,7 +101,10 @@
                               @"name":user.name,
                               @"password":user.passwordHash,
                               @"phoneNumber":user.phoneNumber,
-                              @"UserId":user._id
+                              @"UserId":user._id,
+                              // @"CityID":user.cityID//,
+                             // @"CityID":user.cityID//,
+                              //@"DepartmentID":user.deptoID
                               };
     [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
 }

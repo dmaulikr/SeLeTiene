@@ -14,6 +14,7 @@
 
 @property (strong,nonatomic) APIManager *APIManagerClass;
 @property int modeTable;
+extern NSDictionary *depto;
 extern NSDictionary *city;
 @property (strong,nonatomic) NSMutableArray *data;
 @property (nonatomic,retain)  NSMutableDictionary *sections;

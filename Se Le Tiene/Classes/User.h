@@ -22,6 +22,8 @@
 @property (nonatomic, retain) NSString *phoneNumber;
 @property (nonatomic, retain) NSString *mobileNumber;
 @property (nonatomic, retain) NSString *passwordHash;
+@property (nonatomic, retain) NSString *cityID;
+@property (nonatomic, retain) NSString *deptoID;
 
 
 

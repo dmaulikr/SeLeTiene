@@ -61,7 +61,19 @@
 -(void)setFilter{
     NSString *filter = @"";
     if ([keyWord isEqualToString:@""]&&stars==0) {
-        
+        switch (typeFil) {
+            case 0:
+                filter = @"";
+            break;
+            case 1:
+                filter = [NSString stringWithFormat:@"type=service"];
+            break;
+            case 2:
+                filter = [NSString stringWithFormat:@"type=product"];
+            break;
+            default:
+                break;
+        }
     }else{
     
         
@@ -78,15 +90,15 @@
         }
         
         
-        if(typeFil==0&&![filter isEqualToString:@""]){
+        if(typeFil==2&&![filter isEqualToString:@""]){
             filter = [NSString stringWithFormat:@"%@&type=product",filter];
         }else{
-            if(typeFil==0){
+            if(typeFil==2){
                 filter = [NSString stringWithFormat:@"type=product"];
             }if(typeFil==1&&![filter isEqualToString:@""]){
                 filter = [NSString stringWithFormat:@"%@&type=service",filter];
             }else{
-                if(typeFil==0){
+                if(typeFil==1){
                     filter = [NSString stringWithFormat:@"type=service"];
                 }
             }

@@ -925,6 +925,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="remember:" destination="vRu-Wk-MAs" eventType="touchUpInside" id="axz-ul-3bl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revise su correo electrónico, luego de llenar y enviar este formulario." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="nur-Ee-n38">
                                 <rect key="frame" x="25" y="41" width="270" height="30"/>
@@ -1102,14 +1105,15 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hzx-w6-Yv2">
-                                <rect key="frame" x="90" y="39" width="140" height="29"/>
+                                <rect key="frame" x="53" y="39" width="213" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="HJK-kR-ieJ"/>
-                                    <constraint firstAttribute="width" constant="140" id="wi7-KV-Sue"/>
+                                    <constraint firstAttribute="width" constant="213" id="wi7-KV-Sue"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Producto"/>
-                                    <segment title="Servicio"/>
+                                    <segment title="Todos"/>
+                                    <segment title="Servicios"/>
+                                    <segment title="Productos"/>
                                 </segments>
                                 <color key="tintColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
@@ -1328,7 +1332,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="932" y="222"/>
+            <point key="canvasLocation" x="969" y="222"/>
         </scene>
         <!--Edit Account View Controller-->
         <scene sceneID="4S5-d7-dpp">
@@ -2548,7 +2552,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lVX-gh-zGi"/>
         <segue reference="wP8-Zi-hcC"/>
+        <segue reference="ZMY-V2-xZ1"/>
     </inferredMetricsTieBreakers>
 </document>

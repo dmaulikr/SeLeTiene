@@ -33,7 +33,7 @@
         break;
         case 4:
             self.title = @"Ciudad";
-            [APIManagerClass getCities:[NSString stringWithFormat:@"%@",city[@"id"]].intValue];
+            [APIManagerClass getCities:[NSString stringWithFormat:@"%@",depto[@"id"]].intValue];
         break;
         default: break;
     }
@@ -123,10 +123,17 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (modeTable == 1) {
         UITableViewCell *a = [self.tableView cellForRowAtIndexPath:indexPath];
-        city = @{
+        depto = @{
              @"id":[NSString stringWithFormat:@"%d",a.tag],
              @"name":a.textLabel.text
              };
+    }
+    if (modeTable == 4) {
+        UITableViewCell *a = [self.tableView cellForRowAtIndexPath:indexPath];
+        city = @{
+                  @"id":[NSString stringWithFormat:@"%d",a.tag],
+                  @"name":a.textLabel.text
+                  };
     }
     if (modeTable == 1 || modeTable == 4) {
         [self.navigationController popViewControllerAnimated:YES];
