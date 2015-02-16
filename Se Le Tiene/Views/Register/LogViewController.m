@@ -113,7 +113,7 @@
         [APIManagerClass loginEmail:txtEmail.text :txtPassword.text];
     }else{
         [self.view addSubview:alert];
-        [alert setText:@"Revise los campos"];
+        [alert setText:@"Información incorrecta. Por favor revise los campos"];
         [alert showAlertAutoDismiss];
         btnSignIn.enabled = true;
     }

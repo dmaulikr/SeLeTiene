@@ -21,7 +21,7 @@
         lyr.opacity = 0.0;
         [self.layer addSublayer:lyr];
         
-        bgTxt = [[UIView alloc] initWithFrame:CGRectMake((frame.size.width-270)/2, ((frame.size.height-50)/2)-50, 270, 50)];
+        bgTxt = [[UIView alloc] initWithFrame:CGRectMake((frame.size.width-270)/2, ((frame.size.height-80)/2)-50, 270, 80)];
         bgTxt.backgroundColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.7f];
         bgTxt.layer.cornerRadius = 5;
         bgTxt.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -32,9 +32,10 @@
         
         [self addSubview:bgTxt];
         
-        lblMsg = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 270, 50)];
+        lblMsg = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 270, 80)];
         lblMsg.text = text;
         lblMsg.textAlignment = NSTextAlignmentCenter;
+        lblMsg.numberOfLines = 0;
         [bgTxt addSubview:lblMsg];
         
         self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];

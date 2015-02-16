@@ -44,11 +44,11 @@
         NSLog(@"Exito: %@", [responseObject objectForKey:(@"access_token")]);
         token =[responseObject objectForKey:(@"access_token")];
         [conn createSession:token];
-        [self.delegate loaded:true :@"Revise sus datos" :@""];
+        [self.delegate loaded:true :@"Información incorrecta. Por favor revise los campos" :@""];
     }
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
            NSLog(@"Error: %@", [error description]);
-           [self.delegate loaded:false :@"Revise sus datos" :@""];
+           [self.delegate loaded:false :@"Información incorrecta. Por favor revise los campos" :@""];
     }];
 
 }
@@ -74,11 +74,11 @@
                 token =[responseObject objectForKey:(@"access_token")];
                 [conn createSession:token];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"logged" object:self];
-              //  [self.delegate loaded:true :@"Revise sus datos" :@""];
+              //  [self.delegate loaded:true :@"Información incorrecta. Por favor revise los campos" :@""];
             }
                            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                NSLog(@"Error: %@", [error description]);
-                               [self.delegate loaded:false :@"Revise sus datos" :@""];
+                               [self.delegate loaded:false :@"Información incorrecta. Por favor revise los campos" :@""];
                            }];
         }
     }];
@@ -210,7 +210,7 @@
                       }
                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                           NSLog(@"Error: %@", [error description]);
-                          //[self.delegate loaded:false :@"Revise sus datos" :@""];
+                          //[self.delegate loaded:false :@"Información incorrecta. Por favor revise los campos" :@""];
                       }
          ];
     //}
@@ -251,7 +251,7 @@
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
            NSLog(@"Error: %@", [error description]);
            [self.delegate returnResponse:failMsg :nil];
-           //[self.delegate loaded:false :@"Revise sus datos" :@""];
+           //[self.delegate loaded:false :@"Información incorrecta. Por favor revise los campos" :@""];
        }];
 }
 
@@ -270,7 +270,7 @@
                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                       NSLog(@"Error: %@", [error description]);
                       [self.delegate returnResponse:failMsg :nil];
-                      //[self.delegate loaded:false :@"Revise sus datos" :@""];
+                      //[self.delegate loaded:false :@"Información incorrecta. Por favor revise los campos" :@""];
                   }];
 }
 

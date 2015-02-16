@@ -387,10 +387,26 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <constraint firstAttribute="height" constant="37" id="xjt-Ye-6Xb"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cum-CQ-SNu">
+                                <rect key="frame" x="80" y="442" width="161" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VOB-M0-ITO"/>
+                                    <constraint firstAttribute="width" constant="161" id="fY0-B0-Oef"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Terminos y condiciones">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="scC-WO-0Qa" kind="show" id="UVH-zT-BnP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EIf-5d-X5T" firstAttribute="top" secondItem="cum-CQ-SNu" secondAttribute="bottom" constant="5" id="065-xD-XBe"/>
                             <constraint firstItem="Vl6-Fp-fWd" firstAttribute="top" secondItem="qz5-Rr-Zag" secondAttribute="bottom" constant="1" id="2t7-Tq-GMn"/>
+                            <constraint firstAttribute="centerX" secondItem="cum-CQ-SNu" secondAttribute="centerX" id="8o3-Rg-oTn"/>
                             <constraint firstItem="Qvh-VY-9pi" firstAttribute="top" secondItem="uhG-qC-Uth" secondAttribute="bottom" constant="8" id="BvJ-Rc-cSw"/>
                             <constraint firstAttribute="centerX" secondItem="uhG-qC-Uth" secondAttribute="centerX" id="DUk-mi-5Jm"/>
                             <constraint firstAttribute="centerX" secondItem="FlI-52-lUg" secondAttribute="centerX" id="Ie8-nC-FcI"/>
@@ -414,7 +430,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0N-6t-0ie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="-2051"/>
+            <point key="canvasLocation" x="485" y="-2011"/>
         </scene>
         <!--Terminos y Condiciones-->
         <scene sceneID="qNq-kk-H6H">
@@ -425,11 +441,11 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                         <viewControllerLayoutGuide type="bottom" id="BaE-7v-f1L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="W2j-lI-Z7a">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRB-MA-fSy">
-                                <rect key="frame" x="23" y="83" width="555" height="4960"/>
+                                <rect key="frame" x="23" y="83" width="275" height="4960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Términos y condiciones ¡Se le Tiene!
 Uso general
@@ -1720,7 +1736,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
                                 <rect key="frame" x="25" y="71" width="270" height="121"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgContact.png" translatesAutoresizingMaskIntoConstraints="NO" id="XAA-YL-Qx1">
@@ -1751,7 +1767,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <constraint firstAttribute="height" constant="121" id="tnG-9q-ggz"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
                                 <rect key="frame" x="25" y="37" width="270" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="nq8-Em-L1c"/>
@@ -1761,7 +1777,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
                                 <rect key="frame" x="25" y="200" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.086274509803921567" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1783,7 +1799,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <constraint firstAttribute="height" constant="60" id="Kmr-AS-DEu"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
                                 <rect key="frame" x="0.0" y="253" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1799,7 +1815,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <segue destination="DyE-7r-2b2" kind="push" identifier="goFavorite" id="N0t-3A-1bw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
                                 <rect key="frame" x="0.0" y="311" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2552,6 +2568,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
         <image name="placeholder.png" width="261" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UVH-zT-BnP"/>
         <segue reference="wP8-Zi-hcC"/>
         <segue reference="ZMY-V2-xZ1"/>
     </inferredMetricsTieBreakers>
