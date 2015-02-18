@@ -398,7 +398,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="scC-WO-0Qa" kind="show" id="UVH-zT-BnP"/>
+                                    <segue destination="scC-WO-0Qa" kind="push" id="UVH-zT-BnP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -489,6 +489,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             <constraint firstItem="fRB-MA-fSy" firstAttribute="top" secondItem="E7A-L3-1ld" secondAttribute="bottom" constant="19" id="fbp-0l-0OW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QKL-Zo-GXQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wim-kd-eCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -624,7 +625,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="hsY-Jx-ehE" kind="show" identifier="department" id="HDT-H0-tBI"/>
+                                                <segue destination="hsY-Jx-ehE" kind="push" identifier="department" id="HDT-H0-tBI"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="departamento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmL-sL-Gbg">
@@ -653,7 +654,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="hsY-Jx-ehE" kind="show" identifier="city" id="lVX-gh-zGi"/>
+                                                <segue destination="hsY-Jx-ehE" kind="push" identifier="city" id="lVX-gh-zGi"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-F1-5ne">
@@ -742,7 +743,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="scC-WO-0Qa" kind="show" id="W6l-P5-oGw"/>
+                                                <segue destination="scC-WO-0Qa" kind="push" id="W6l-P5-oGw"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1736,7 +1737,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
                                 <rect key="frame" x="25" y="71" width="270" height="121"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgContact.png" translatesAutoresizingMaskIntoConstraints="NO" id="XAA-YL-Qx1">
@@ -1767,7 +1768,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <constraint firstAttribute="height" constant="121" id="tnG-9q-ggz"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
                                 <rect key="frame" x="25" y="37" width="270" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="nq8-Em-L1c"/>
@@ -1777,7 +1778,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
                                 <rect key="frame" x="25" y="200" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.086274509803921567" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1799,7 +1800,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <constraint firstAttribute="height" constant="60" id="Kmr-AS-DEu"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
                                 <rect key="frame" x="0.0" y="253" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1815,7 +1816,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <segue destination="DyE-7r-2b2" kind="push" identifier="goFavorite" id="N0t-3A-1bw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
                                 <rect key="frame" x="0.0" y="311" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2569,7 +2570,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UVH-zT-BnP"/>
+        <segue reference="lVX-gh-zGi"/>
         <segue reference="wP8-Zi-hcC"/>
-        <segue reference="ZMY-V2-xZ1"/>
     </inferredMetricsTieBreakers>
 </document>

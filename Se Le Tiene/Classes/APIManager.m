@@ -85,7 +85,7 @@
 }
 
 -(void)rememberPass:(NSString*)userEmail{
-    [self performPost:[NSString stringWithFormat:@"account/recoverpasswordemail?email=%@",userEmail] :token :nil :@"Email ha sido enviado" :@"Intente más tarde"];
+    [self performPost:[NSString stringWithFormat:@"account/recoverpasswordemail?email=%@",userEmail] :token :nil :@"Email ha sido enviado" :@"Email ha sido enviado"];
 }
 
 -(void)logout{

@@ -24,7 +24,8 @@
     if ([self.urlImage isEqual:(id)[NSNull null]]||[self.urlImage  isEqualToString:@"<null>"]||!self.urlImage) {
         return [NSURL URLWithString:@"http://i.imgur.com/A20cNUcl.png"];
     }else{
-        return [NSURL URLWithString:[NSString stringWithFormat:@"http://200.119.110.136:81/seletienea%@",self.urlImage]];
+        //@"http://seletiene.cloudapp.net/ http://200.119.110.136:81/seletienea"
+        return [NSURL URLWithString:[NSString stringWithFormat:@"http://seletiene.cloudapp.net%@",self.urlImage]];
     }
 }
 

@@ -78,6 +78,15 @@
     }
     filter = @"";
     order = @"";
+    
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ProductCollectionViewCell" bundle:nil] forCellReuseIdentifier:@"ProductCell2"];
+    
+    
+    /*collectionView.registerNib(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
+    self.addSubview(collectionView)*/
+    
+    
 }
 
 
@@ -143,9 +152,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProductsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
-    Product *prdTemp;
     
+    ProductsTableViewCell *cell = (ProductsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"ProductCell2" forIndexPath:indexPath];
+//    ProductsTableViewCell *cell = [[ProductsTableViewCell alloc]init];
+    
+    Product *prdTemp;
     switch (self.mode) {
         case 0:
             prdTemp = (Product*)[productsArray objectAtIndex:indexPath.row];
@@ -157,7 +168,6 @@
             prdTemp = (Product*)[recList objectAtIndex:indexPath.row];
             break;
     }
-    
     
     cell.imgProduct.layer.cornerRadius = 4;
     cell.imgProduct.layer.masksToBounds = YES;

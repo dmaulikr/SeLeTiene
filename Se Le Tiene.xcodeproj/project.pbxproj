@@ -78,6 +78,7 @@
 		EC74AFE419E5DBA700DB431A /* btnArr.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74AFE219E5DBA700DB431A /* btnArr.png */; };
 		EC74AFE719E6148300DB431A /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFE619E6148300DB431A /* InformationViewController.m */; };
 		EC74AFEC19E6FBDB00DB431A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */; };
+		ECA792731A950541003D0A41 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA792721A950541003D0A41 /* ProductCollectionViewCell.xib */; };
 		ECB6033B1A35643D00E5DBC4 /* dps-01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB603391A35643D00E5DBC4 /* dps-01.jpg */; };
 		ECB6033C1A35643D00E5DBC4 /* dps-01@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */; };
 		ECC1090119E481DD003335EF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1090019E481DD003335EF /* RegisterViewController.m */; };
@@ -241,6 +242,7 @@
 		EC74AFE619E6148300DB431A /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationViewController.m; path = Views/Information/InformationViewController.m; sourceTree = "<group>"; };
 		EC74AFEA19E6FBDB00DB431A /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderViewController.h; path = Views/Order/OrderViewController.h; sourceTree = "<group>"; };
 		EC74AFEB19E6FBDB00DB431A /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderViewController.m; path = Views/Order/OrderViewController.m; sourceTree = "<group>"; };
+		ECA792721A950541003D0A41 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductCollectionViewCell.xib; path = Views/Components/ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECB603391A35643D00E5DBC4 /* dps-01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01.jpg"; sourceTree = "<group>"; };
 		ECB6033A1A35643D00E5DBC4 /* dps-01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dps-01@2x.jpg"; sourceTree = "<group>"; };
 		ECC108FF19E481DD003335EF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Views/Register/RegisterViewController.h; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				ECD6D9A919DD0B3900B2F48E /* ProductCollectionViewCell.m */,
 				ECCEECEA19DF9107007A88B6 /* ProductsTableViewCell.h */,
 				ECCEECEB19DF9107007A88B6 /* ProductsTableViewCell.m */,
+				ECA792721A950541003D0A41 /* ProductCollectionViewCell.xib */,
 			);
 			name = ProductsView;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				EC701BEC19E9DA4C003912B0 /* star_off.png in Resources */,
 				EC66560F19DE56CF005B0B00 /* bgHeader.png in Resources */,
 				ECCEECF919E0B0D8007A88B6 /* btnUserMenu@2x.png in Resources */,
+				ECA792731A950541003D0A41 /* ProductCollectionViewCell.xib in Resources */,
 				ECD994F119F48DC000E70421 /* fr-02@2x.png in Resources */,
 				EC108B8519D8E2F000CBBC17 /* Main.storyboard in Resources */,
 				ECB6033C1A35643D00E5DBC4 /* dps-01@2x.jpg in Resources */,
