@@ -26,6 +26,7 @@
     }else{
         //@"http://seletiene.cloudapp.net/ http://200.119.110.136:81/seletienea"
         return [NSURL URLWithString:[NSString stringWithFormat:@"http://seletiene.cloudapp.net%@",self.urlImage]];
+        //return [NSURL URLWithString:[NSString stringWithFormat:@"http://200.119.110.136:81/seletienea/%@",self.urlImage]];
     }
 }
 
