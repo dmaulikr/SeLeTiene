@@ -1,11 +1,11 @@
 PODS:
   - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
+    - AFNetworking/NSURLConnection (= 2.4.1)
+    - AFNetworking/NSURLSession (= 2.4.1)
+    - AFNetworking/Reachability (= 2.4.1)
+    - AFNetworking/Security (= 2.4.1)
+    - AFNetworking/Serialization (= 2.4.1)
+    - AFNetworking/UIKit (= 2.4.1)
   - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -20,17 +20,20 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - GPUImage (0.1.6)
   - NSObject-ObjectMap (2.3.1)
   - pop (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - GPUImage (~> 0.1.4)
   - NSObject-ObjectMap (~> 2.0)
   - pop (~> 1.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
-  NSObject-ObjectMap: b25adb10d18c60930db2c441c2fb7ae6c3d80282
-  pop: 2f14a1ea61339767af9e66741b418c831b3844df
+  AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
+  GPUImage: 4675ce4a5370ca92fcea8623b2a08b8f0c51b940
+  NSObject-ObjectMap: 3223c0c994a8e3de44ccb74ddf3e63c86821c015
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.36.1

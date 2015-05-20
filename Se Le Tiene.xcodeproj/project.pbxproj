@@ -28,7 +28,6 @@
 		EC108C0719DA16A300CBBC17 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0519DA16A300CBBC17 /* bg.jpg */; };
 		EC108C0819DA16A300CBBC17 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC108C0619DA16A300CBBC17 /* bg@2x.jpg */; };
 		EC1F86B419DBA41D0019CA9F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F86B319DBA41D0019CA9F /* LoginViewController.m */; };
-		EC272EE51A530B110000D0D6 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC272EE41A530B110000D0D6 /* GPUImage.framework */; };
 		EC272EE71A530B310000D0D6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC272EE61A530B310000D0D6 /* FacebookSDK.framework */; };
 		EC66560519DE44C1005B0B00 /* btnSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC66560319DE44C1005B0B00 /* btnSearch@2x.png */; };
 		EC66560619DE44C1005B0B00 /* btnSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = EC66560419DE44C1005B0B00 /* btnSearch.png */; };
@@ -325,7 +324,6 @@
 				EC703F3C19ED7AEA000C24CF /* Social.framework in Frameworks */,
 				ECCEED1319E3115C007A88B6 /* Foundation.framework in Frameworks */,
 				ECCEED1119E3111E007A88B6 /* UIKit.framework in Frameworks */,
-				EC272EE51A530B110000D0D6 /* GPUImage.framework in Frameworks */,
 				EC272EE71A530B310000D0D6 /* FacebookSDK.framework in Frameworks */,
 				ECCEED0F19E31110007A88B6 /* CoreGraphics.framework in Frameworks */,
 				C8519DF00A8541CAAF71F209 /* libPods.a in Frameworks */,
@@ -1085,13 +1083,20 @@
 					Le,
 					Tiene,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Se",
+					Le,
+					Tiene,
+					"$(PROJECT_DIR)/Se",
+					Le,
+					Tiene,
 				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2d31300e-9ad3-46ed-95be-746c04534cb9";
+				PROVISIONING_PROFILE = "d350ffce-db6b-45f2-a087-4987eb13a4c7";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1113,12 +1118,19 @@
 					Le,
 					Tiene,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Se",
+					Le,
+					Tiene,
+					"$(PROJECT_DIR)/Se",
+					Le,
+					Tiene,
 				);
 				INFOPLIST_FILE = "Se Le Tiene/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "487120c6-0076-4122-8ae4-51e6da9265f6";
+				PROVISIONING_PROFILE = "82e782d4-414c-4c22-ad93-d2764b81e4b0";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
