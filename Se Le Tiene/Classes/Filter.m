@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         typeFil = 0;
-        cityId = 0;
+        cityId = 6666;
         cityName = @"";
         keyWord = @"";
         stars = 0;
@@ -60,7 +60,8 @@
 
 -(void)setFilter{
     NSString *filter = @"";
-    if ([keyWord isEqualToString:@""]&&stars==0) {
+    if ([keyWord isEqualToString:@""]&&stars==0&&cityId==6666) {
+        NSLog(@"%d",cityId);
         switch (typeFil) {
             case 0:
                 filter = @"";
@@ -86,6 +87,14 @@
         }else{
             if (stars>0) {
                 filter = [NSString stringWithFormat:@"minStars=%d",stars];
+            }
+        }
+        
+        if (cityId!=6666&&![filter isEqualToString:@""]) {
+            filter = [NSString stringWithFormat:@"%@&cityId=%d",filter,cityId];
+        }else{
+            if (cityId!=6666) {
+                filter = [NSString stringWithFormat:@"cityId=%d",cityId];
             }
         }
         

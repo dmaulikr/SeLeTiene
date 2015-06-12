@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JOAlert.h"
 #import "APIManager.h"
+#import "User.h"
 
 @interface RegisterViewController : UITableViewController <APIManagerDelegate>{
     int yPos;
@@ -24,9 +25,11 @@
     NSString *idUser;
     NSString *pass;
     NSString *pass2;
+    User *tmpUser;
 }
 extern int dev;
 extern NSDictionary* depto;
+extern NSDictionary* city;
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignUp;
 @property (strong,nonatomic) JOAlert *alert;

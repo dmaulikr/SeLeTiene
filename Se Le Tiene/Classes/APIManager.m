@@ -95,18 +95,18 @@
 }
  
 -(void)signUpUser:(User*)user{
+    NSLog(@"%@",user.cityID);
     NSDictionary *userDic = @{
                               //@"key":@"value"
                               @"email":user.email,
                               @"name":user.name,
                               @"password":user.passwordHash,
                               @"phoneNumber":user.phoneNumber,
-                              @"UserId":user._id,
-                              // @"CityID":user.cityID//,
-                             // @"CityID":user.cityID//,
-                              //@"DepartmentID":user.deptoID
+                              @"UserId":user._id//,
+                              /*@"CityID":user.cityID,
+                              @"DepartmentID":user.deptoID*/
                               };
-    [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error al crear"];
+    [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error"];
 }
 
 -(void)updateUser:(User*)user{
@@ -115,7 +115,11 @@
                               @"email":user.email,
                               @"name":user.name,
                               @"phoneNumber":user.phoneNumber,
-                              @"mobileNumber":user.mobileNumber
+                              @"mobileNumber":user.mobileNumber,
+                              @"CityID":user.cityID,
+                              @"city":user.cityName,
+                              @"DepartmentID":user.deptoID,
+                              @"department":user.deptoName
                               };
     [self performPut:@"Account" :token :userDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
 }
@@ -150,6 +154,10 @@
     [self performGet:[NSString stringWithFormat:@"departments/%d",idDepartment] :token :true];
 }
 
+-(void)getAllCities{
+    [self performGet:@"cities" :token :true];
+}
+
 
 -(void)getSelfUser{
     [self performGet:@"Account" :token :false];
@@ -163,9 +171,7 @@
 {
     total = response.expectedContentLength;
     NSLog(@"Expected %lld",response.expectedContentLength);
-    //Tamaño de la descarga: %@", response
     apiData = [[NSMutableData alloc] init];
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data

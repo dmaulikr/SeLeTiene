@@ -33,7 +33,12 @@
         break;
         case 4:
             self.title = @"Ciudad";
-            [APIManagerClass getCities:[NSString stringWithFormat:@"%@",depto[@"id"]].intValue];
+            if (depto) {
+                [APIManagerClass getCities:[NSString stringWithFormat:@"%@",depto[@"id"]].intValue];
+            }else{
+                [APIManagerClass getAllCities];
+            }
+            
         break;
         default: break;
     }
@@ -107,7 +112,10 @@
     NSLog(@"Retorno una lista %@", responseObject);
     NSDictionary *response = responseObject;
     if (modeTable==4) {
-        response = response[@"cities"];
+        if(depto){
+            response = response[@"cities"];
+        }
+        
     }
     
     for (id key in response) {

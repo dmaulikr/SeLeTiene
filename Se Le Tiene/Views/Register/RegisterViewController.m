@@ -37,11 +37,8 @@
                                                object:nil];
     alert = [[JOAlert alloc]initWithTextNFrame:@"" :CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     loader = [[JOAlert alloc]initWithAnimFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-
     APIManagerClass = [[APIManager alloc] init];
     APIManagerClass.delegate = self;
-    
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -128,16 +125,17 @@
     if ([err isEqualToString:@""]) {
         [self.view.superview addSubview:loader];
         [loader showAlertAnim];
-        User *tmpUser = [[User alloc] init];
-
+        tmpUser = [[User alloc] init];
         tmpUser.name        = name;
-        //tmpUser.name        = ((LblTxtTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:@"Cell0"]).textLabel.text;
         tmpUser.email       = email;
         tmpUser.phoneNumber = phone;
+        tmpUser.mobileNumber = @"";
         tmpUser._id         = idUser;
         tmpUser.passwordHash = pass;
         tmpUser.cityID = city[@"id"];
+        tmpUser.cityName = city[@"name"];
         tmpUser.deptoID = depto[@"id"];
+        tmpUser.deptoName = depto[@"name"];
         [APIManagerClass signUpUser:tmpUser];
     }else{
         [self.view.superview addSubview:alert];
@@ -198,12 +196,45 @@
 #pragma APIDelegate
 
 - (void) returnResponse:(NSString *)msg :(id)response{
+    /*[self.view.superview addSubview:alert];
+    [alert setText:msg];
+    [loader dismissAlert];
+    [alert showAlertAutoDismiss];
+    [self performSelector:@selector(redirectLogin) withObject:nil afterDelay:1.5];*/
     [self.view.superview addSubview:alert];
     [alert setText:msg];
     [loader dismissAlert];
     [alert showAlertAutoDismiss];
-    [self performSelector:@selector(redirectLogin) withObject:nil afterDelay:1.5];
+    if ([msg isEqualToString:@"Creado correctamente"]) {
+        [APIManagerClass loginEmail:tmpUser.email :tmpUser.passwordHash];
+    }else{
+        if ([msg isEqualToString:@"Actualizado correctamente"]) {
+            NSLog(@"lo logreee");
+            NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogged"];
+            tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self presentViewController:tmp animated:YES completion:nil];
+        }else{
+            NSLog(@"dgffdgdfgdfg");
+        }
+        //Actualizado correctamente
+    }
 }
+
+
+
+- (void) loaded:(BOOL)checker :(NSString *)msg :(NSString*)tokenR{
+    NSLog(@"Login");
+    if (!checker) {
+        [self.view.superview addSubview:alert];
+        [alert setText:msg];
+        [alert showAlert];
+        [loader dismissAlert];
+    }else{
+        NSLog(@"Ups");
+        [APIManagerClass updateUser:tmpUser];
+    }
+}
+
 
 -(void) redirectLogin{
     LogViewController *lVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginView"];

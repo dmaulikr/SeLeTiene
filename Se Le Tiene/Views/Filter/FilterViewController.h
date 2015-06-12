@@ -13,7 +13,8 @@
     int stars;
 }
 
-
+extern NSDictionary* depto;
+extern NSDictionary* city;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *serviceSelector;
 @property (weak, nonatomic) IBOutlet UIButton *star1;
 @property (weak, nonatomic) IBOutlet UIButton *star2;

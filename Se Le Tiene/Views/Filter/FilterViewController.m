@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    depto = nil;
+    city = nil;
     
     self.stars = [[NSMutableArray alloc] initWithCapacity:5];
     [self.stars addObject:star1];
@@ -56,6 +58,15 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    if (city) {
+        [pkCity setTitle:city[@"name"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    if (city) {
+        [pkCity setTitle:city[@"name"] forState:UIControlStateNormal];
+    }
 }
 
 
@@ -92,7 +103,10 @@
     [tmpFilter setTypeFil:self.serviceSelector.selectedSegmentIndex];
     [tmpFilter setStars:stars];
     [tmpFilter setKeyWord:tfWord.text];
+    NSLog(@"Aplicando filtro aca: %d", [NSString stringWithFormat:@"%@",city[@"id"]].intValue);
+    [tmpFilter setCityId:[NSString stringWithFormat:@"%@",city[@"id"]].intValue];
     [tmpFilter setFilter];
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -138,9 +152,8 @@
     GenTableViewController *tmpView = [segue destinationViewController];
     if ([segue.identifier isEqualToString:@"getCities"]) {
         NSLog(@"Getting Cities");
-        tmpView.modeTable= 1;
+        tmpView.modeTable= 4;
     }
 }
-
 
 @end
