@@ -72,6 +72,10 @@
     actUser = [[User alloc] init];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [APIManagerClass getSelfUser];
+}
+
 -(IBAction)editUser:(id)sender{
     EditAccountViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EditView"];
     eVC.edituser = actUser;
@@ -81,9 +85,6 @@
 
 - (IBAction)logout:(id)sender {
     [APIManagerClass logout];
-    
-    
-    
     NVControllerGeneric *tmp = (NVControllerGeneric*)[self.storyboard instantiateViewControllerWithIdentifier:@"NVLogin"];
     tmp.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:tmp animated:YES completion:nil];
@@ -97,8 +98,8 @@
     actUser.mobileNumber = responseObject[@"mobileNumber"];
     actUser.email = responseObject[@"email"];
     actUser.name = responseObject[@"name"];
-    lblPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.phoneNumber] isEqualToString:@"<null>"]? @"---":actUser.phoneNumber;
-    lblCellPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.mobileNumber] isEqualToString:@"<null>"]? @"---":actUser.mobileNumber;
+    lblPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.phoneNumber] isEqualToString:@"<null>"] || [[NSString stringWithFormat:@"%@",actUser.phoneNumber] isEqualToString:@"0"]? @"---":actUser.phoneNumber;
+    lblCellPhoneUser.text = [[NSString stringWithFormat:@"%@",actUser.mobileNumber] isEqualToString:@"<null>"] || [[NSString stringWithFormat:@"%@",actUser.mobileNumber] isEqualToString:@"0"]? @"---":actUser.mobileNumber;
     lblEmail.text = actUser.email;
     lblNameUser.text = actUser.name;
 }

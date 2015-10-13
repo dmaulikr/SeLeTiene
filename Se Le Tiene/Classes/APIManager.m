@@ -19,7 +19,8 @@
     if (self) {
       // URLAPI = @"http://api.seletiene.olinguito.com.co/SeLeTiene.svc/";
        // URL = @"http://seletiene.cloudapp.net/";
-       URL =@"http://200.119.110.136:81/seletienea/";
+//       URL =@"http://200.119.110.136:81/seletienea/";
+        URL =@"http://201.245.123.114:8089/seletiene/";
         URLAPI = [NSString stringWithFormat:@"%@api/",URL];
         conn = [[Connection alloc] init];
         [conn openDB];
@@ -116,10 +117,10 @@
                               @"name":user.name,
                               @"phoneNumber":user.phoneNumber,
                               @"mobileNumber":user.mobileNumber,
-                              @"CityID":user.cityID,
-                              @"city":user.cityName,
-                              @"DepartmentID":user.deptoID,
-                              @"department":user.deptoName
+//                              @"CityID":user.cityID,
+//                              @"city":user.cityName,
+//                              @"DepartmentID":user.deptoID,
+//                              @"department":user.deptoName
                               };
     [self performPut:@"Account" :token :userDic :@"Actualizado correctamente" :@"Ocurrio un error al crear"];
 }

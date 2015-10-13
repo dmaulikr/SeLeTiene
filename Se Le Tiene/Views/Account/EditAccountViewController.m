@@ -55,8 +55,8 @@
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
     
-    txtCellPhone.text = [[NSString stringWithFormat:@"%@",self.edituser.mobileNumber] isEqualToString:@"<null>"]? @"---":self.edituser.mobileNumber;
-    txtPhone.text = [[NSString stringWithFormat:@"%@",self.edituser.phoneNumber] isEqualToString:@"<null>"]? @"---":self.edituser.phoneNumber;
+    txtCellPhone.text = [[NSString stringWithFormat:@"%@",self.edituser.mobileNumber] isEqualToString:@"<null>"] || [[NSString stringWithFormat:@"%@",self.edituser.mobileNumber] isEqualToString:@"0"]? @"":self.edituser.mobileNumber;
+    txtPhone.text = [[NSString stringWithFormat:@"%@",self.edituser.phoneNumber] isEqualToString:@"<null>"] || [[NSString stringWithFormat:@"%@",self.edituser.phoneNumber] isEqualToString:@"0"]? @"":self.edituser.phoneNumber;
     txtEmail.text = self.edituser.email;
     txtName.text = self.edituser.name;
     
@@ -126,9 +126,9 @@
     [txtName resignFirstResponder];
     [txtCellPhone resignFirstResponder];
     [txtPhone resignFirstResponder];
-    self.edituser.mobileNumber = txtCellPhone.text;
-    self.edituser.phoneNumber = txtPhone.text;
-    self.edituser.email = txtEmail.text;
+    self.edituser.mobileNumber = [txtCellPhone.text isEqualToString:@""] ? @"0" : txtCellPhone.text;
+    self.edituser.phoneNumber  = [txtPhone.text isEqualToString:@""] ? @"0" : txtPhone.text;
+    self.edituser.email        = txtEmail.text;
     [APIManagerClass updateUser:self.edituser];
 }
 
