@@ -103,9 +103,9 @@
                               @"name":user.name,
                               @"password":user.passwordHash,
                               @"phoneNumber":user.phoneNumber,
-                              @"UserId":user._id//,
-                              /*@"CityID":user.cityID,
-                              @"DepartmentID":user.deptoID*/
+                              @"UserId":user._id,//,
+                              @"CityID":user.cityID,
+                              @"DepartmentID":user.deptoID
                               };
     [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error"];
 }

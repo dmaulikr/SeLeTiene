@@ -1075,6 +1075,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jorge Raul Ovalle Zuleta (UGPQWP42UQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jorge Raul Ovalle Zuleta (UGPQWP42UQ)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
@@ -1095,10 +1096,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = seletiene.olinguito.co;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d350ffce-db6b-45f2-a087-4987eb13a4c7";
+				PROVISIONING_PROFILE = "fe7b0684-ea01-483d-b7af-9b02bdd4ce9b";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1110,6 +1112,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jorge Ovalle Z (QF2P6LAFBK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jorge Ovalle Z (QF2P6LAFBK)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/JorgeOvalle/Documents/lojals/Proyectos/Colors/Objc/colors/colors,
@@ -1129,10 +1132,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = seletiene.olinguito.co;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "82e782d4-414c-4c22-ad93-d2764b81e4b0";
+				PROVISIONING_PROFILE = "5ef2e998-67d2-41eb-873e-5905f60d002e";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
