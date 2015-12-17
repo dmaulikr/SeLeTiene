@@ -104,8 +104,8 @@
                               @"password":user.passwordHash,
                               @"phoneNumber":user.phoneNumber,
                               @"UserId":user._id,//,
-                              @"CityID":user.cityID,
-                              @"DepartmentID":user.deptoID
+//                              @"CityID":user.cityID,
+//                              @"DepartmentID":user.deptoID
                               };
     [self performPost:@"Account" :token :userDic :@"Creado correctamente" :@"Ocurrio un error"];
 }
@@ -136,7 +136,7 @@
 
 
 -(void)getProducts:(NSString*)filters{
-    [self performGet:[NSString stringWithFormat:@"productservices?ignoredpsvalidation=true%@",filters] :token :true];
+    [self performGet:[NSString stringWithFormat:@"productservices?ignoredpsvalidation=false%@",filters] :token :true];
 }
 
 -(void)getProductDetail:(int)idProduct{
