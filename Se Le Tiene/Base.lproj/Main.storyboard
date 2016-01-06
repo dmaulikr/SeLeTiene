@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C2513" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eax-0q-XrH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eax-0q-XrH">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,6 +21,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fe0-Ja-TyZ">
                                 <rect key="frame" x="72" y="74" width="177" height="122"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="177" id="6EI-dR-0Wq"/>
                                     <constraint firstAttribute="width" secondItem="Fe0-Ja-TyZ" secondAttribute="height" multiplier="177:122" id="ftc-f4-9gC"/>
@@ -41,6 +42,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyH-au-xsH">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.59215686270000001" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yyH-au-xsH" secondAttribute="height" multiplier="16:3" id="fRc-o2-92H"/>
@@ -57,6 +59,7 @@ Registrate</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHk-jj-yXX">
                                 <rect key="frame" x="269" y="72" width="35" height="35"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sHk-jj-yXX" secondAttribute="height" multiplier="1:1" id="03o-Gz-Za6"/>
                                     <constraint firstAttribute="width" constant="35" id="Cov-ak-3yZ"/>
@@ -71,6 +74,7 @@ Registrate</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7k-Hf-kUT">
                                 <rect key="frame" x="28" y="224" width="265" height="57"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Ox9-b4-M1O"/>
                                     <constraint firstAttribute="width" constant="374" id="WRg-Pm-gCt"/>
@@ -107,6 +111,7 @@ Registrate</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFv-C1-lN6">
                                 <rect key="frame" x="28" y="289" width="265" height="57"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8He-DG-wsr"/>
                                     <constraint firstAttribute="width" constant="265" id="goo-uF-7Px"/>
@@ -144,6 +149,7 @@ Registrate</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-be-PSg">
                                 <rect key="frame" x="28" y="354" width="265" height="57"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="V7Y-vJ-zfy"/>
                                     <constraint firstAttribute="width" constant="265" id="acJ-GD-r2N"/>
@@ -181,6 +187,7 @@ Registrate</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZFv-C1-lN6" firstAttribute="width" secondItem="z7k-Hf-kUT" secondAttribute="height" multiplier="265:57" id="2Mq-dH-4Pn"/>
@@ -267,6 +274,7 @@ Registrate</string>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-5r-Q9x">
                                 <rect key="frame" x="40" y="326" width="240" height="128"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Yyj-Is-mtU"/>
@@ -335,6 +343,7 @@ Daniel Suárez</string>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-qC-Uth">
                                 <rect key="frame" x="45" y="106" width="231" height="117"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="0nf-Oe-R9I"/>
                                     <constraint firstAttribute="width" constant="231" id="5ty-HG-NO6"/>
@@ -358,6 +367,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-Fp-fWd">
                                 <rect key="frame" x="117" y="21" width="87" height="60"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="Ate-Ws-gTS"/>
                                     <constraint firstAttribute="height" constant="60" id="TSu-K1-lbG"/>
@@ -365,6 +375,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-au-tF2">
                                 <rect key="frame" x="114" y="83" width="92" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2MU-00-mT3"/>
                                     <constraint firstAttribute="width" constant="92" id="fx7-zQ-dwk"/>
@@ -375,6 +386,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dps-01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qvh-VY-9pi">
                                 <rect key="frame" x="36" y="231" width="248" height="55"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="FNJ-P9-foX"/>
                                     <constraint firstAttribute="width" constant="248" id="myA-7C-V5n"/>
@@ -382,6 +394,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMinTIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-52-lUg">
                                 <rect key="frame" x="103" y="294" width="114" height="37"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="AVI-OE-saJ"/>
                                     <constraint firstAttribute="height" constant="37" id="xjt-Ye-6Xb"/>
@@ -389,6 +402,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cum-CQ-SNu">
                                 <rect key="frame" x="80" y="442" width="161" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VOB-M0-ITO"/>
                                     <constraint firstAttribute="width" constant="161" id="fY0-B0-Oef"/>
@@ -402,6 +416,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EIf-5d-X5T" firstAttribute="top" secondItem="cum-CQ-SNu" secondAttribute="bottom" constant="5" id="065-xD-XBe"/>
@@ -446,6 +461,7 @@ Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRB-MA-fSy">
                                 <rect key="frame" x="23" y="83" width="555" height="4960"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Términos y condiciones ¡Se le Tiene!
 Uso general
@@ -481,6 +497,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fRB-MA-fSy" secondAttribute="trailing" constant="22" id="03R-Wk-yVH"/>
@@ -502,16 +519,19 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3qg-ii-u8x">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell0" rowHeight="89" id="x6k-gT-qpT" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6k-gT-qpT" id="uT4-qt-gM0">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Ingrese nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-G9-X7q">
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                                             <connections>
@@ -520,25 +540,30 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-Mh-zqn">
                                             <rect key="frame" x="22" y="8" width="270" height="19"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="ttlLabel" destination="GaZ-Mh-zqn" id="4mc-Zd-Ej5"/>
                                     <outlet property="txtLabel" destination="HJv-G9-X7q" id="Pfd-Ko-s2s"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell1" rowHeight="89" id="Uc6-Dd-qDB" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="111" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uc6-Dd-qDB" id="d4c-gf-4IW">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u23-Uc-rPb">
                                             <rect key="frame" x="22" y="40" width="270" height="40"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                             <connections>
@@ -547,31 +572,37 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-ok-dK1">
                                             <rect key="frame" x="22" y="17" width="270" height="15"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="ttlLabel" destination="PWe-ok-dK1" id="1kn-UD-r0d"/>
                                     <outlet property="txtLabel" destination="u23-Uc-rPb" id="z5g-ab-KCx"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell2" rowHeight="89" id="Cwa-wc-oc7" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="200" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cwa-wc-oc7" id="0aS-qK-ecd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="teléfono" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRA-cn-irA">
                                             <rect key="frame" x="22" y="12" width="270" height="15"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="223-51-78" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gc-4g-gu1">
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert"/>
                                             <connections>
@@ -579,20 +610,24 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             </connections>
                                         </textField>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="ttlLabel" destination="nRA-cn-irA" id="ZKp-sb-vc1"/>
                                     <outlet property="txtLabel" destination="8gc-4g-gu1" id="Vun-jL-cxE"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell3" rowHeight="89" id="Bdd-mD-n9f" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="289" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bdd-mD-n9f" id="f7m-qI-zcA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="número de cédula" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2Q-ga-Wcx">
                                             <rect key="frame" x="22" y="40" width="270" height="40"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert"/>
                                             <connections>
@@ -601,25 +636,30 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cédula" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTt-7H-MDZ">
                                             <rect key="frame" x="22" y="17" width="270" height="15"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="ttlLabel" destination="VTt-7H-MDZ" id="A5P-40-WZ6"/>
                                     <outlet property="txtLabel" destination="X2Q-ga-Wcx" id="YR5-Jz-irt"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell4" rowHeight="89" id="3jd-Aa-TQK" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="378" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3jd-Aa-TQK" id="DYz-ii-oex">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQF-l6-RDw">
                                             <rect key="frame" x="22" y="33" width="270" height="40"/>
+                                            <animations/>
                                             <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Seleccione departamento">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -630,25 +670,30 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="departamento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmL-sL-Gbg">
                                             <rect key="frame" x="22" y="15" width="270" height="15"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="btnLabel" destination="pQF-l6-RDw" id="Btz-F3-YG1"/>
                                     <outlet property="ttlLabel" destination="vmL-sL-Gbg" id="XTG-4c-98A"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell5" rowHeight="89" id="JAS-kw-BRH" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="467" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JAS-kw-BRH" id="MJt-Bh-9mx">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEK-qG-3Hd">
                                             <rect key="frame" x="22" y="33" width="270" height="40"/>
+                                            <animations/>
                                             <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Seleccione ciudad">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -659,31 +704,37 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-F1-5ne">
                                             <rect key="frame" x="22" y="15" width="270" height="15"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="btnLabel" destination="EEK-qG-3Hd" id="t84-bX-p4Q"/>
                                     <outlet property="ttlLabel" destination="ycy-F1-5ne" id="5a5-Xm-xPY"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell6" rowHeight="89" id="x2W-ha-cEu" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2W-ha-cEu" id="8fK-uP-o2A">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="contraseña  (Min. 6 Caracteres)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0p-eV-CSX">
                                             <rect key="frame" x="22" y="12" width="270" height="15"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XGB-tV-LEe">
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                                             <connections>
@@ -691,20 +742,24 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             </connections>
                                         </textField>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="ttlLabel" destination="J0p-eV-CSX" id="wAQ-ix-ikt"/>
                                     <outlet property="txtLabel" destination="XGB-tV-LEe" id="xk8-XD-IeL"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell7" rowHeight="89" id="kpr-IL-phg" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="645" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpr-IL-phg" id="pDV-cE-j3B">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPL-ho-WQw">
                                             <rect key="frame" x="22" y="35" width="270" height="40"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                                             <connections>
@@ -713,31 +768,37 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="confirmar contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-TG-ug6">
                                             <rect key="frame" x="22" y="12" width="270" height="15"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="ttlLabel" destination="iva-TG-ug6" id="4Di-kW-RWV"/>
                                     <outlet property="txtLabel" destination="lPL-ho-WQw" id="1PB-j8-DpL"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell8" rowHeight="89" id="kL2-x6-HCx" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="734" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kL2-x6-HCx" id="ibW-v2-q2E">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Al enviar este formulario esta aceptando los" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKx-R5-JYx">
                                             <rect key="frame" x="20" y="20" width="275" height="21"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZG-c9-wi7">
                                             <rect key="frame" x="77" y="38" width="161" height="30"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <state key="normal" title="Terminos y condiciones">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -747,16 +808,20 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="Cell9" rowHeight="73" id="vrm-Ha-xQh" customClass="LblTxtTableViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="823" width="600" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vrm-Ha-xQh" id="2HQ-mw-vkJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP5-8r-wfa">
                                             <rect key="frame" x="22" y="8" width="270" height="60"/>
+                                            <animations/>
                                             <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                             <state key="normal" title="Enviar registro">
@@ -768,7 +833,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -795,6 +862,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nj9-qf-h0f">
                                 <rect key="frame" x="40" y="113" width="240" height="40"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="G8E-YA-1aN"/>
                                     <constraint firstAttribute="width" constant="240" id="NyC-rD-9Cg"/>
@@ -808,6 +876,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Ingrese su contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p2w-J5-J6V">
                                 <rect key="frame" x="40" y="205" width="240" height="40"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9Xt-au-7JZ"/>
                                     <constraint firstAttribute="width" constant="240" id="xEb-nF-aks"/>
@@ -821,6 +890,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P73-0D-E2Z">
                                 <rect key="frame" x="40" y="84" width="240" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fDr-UK-fny"/>
                                     <constraint firstAttribute="width" constant="240" id="hUl-Yr-obh"/>
@@ -831,6 +901,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="contraseña" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1H-XE-aU5">
                                 <rect key="frame" x="40" y="176" width="240" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="OrF-vL-E0m"/>
                                     <constraint firstAttribute="width" constant="240" id="dJR-N1-i51"/>
@@ -841,6 +912,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXU-7U-pvg">
                                 <rect key="frame" x="25" y="513" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="U2O-Wi-nxX"/>
@@ -856,6 +928,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muK-O4-qHt">
                                 <rect key="frame" x="40" y="262" width="240" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="h3M-ah-yMK"/>
                                     <constraint firstAttribute="height" constant="30" id="uP2-0o-MdO"/>
@@ -870,6 +943,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="muK-O4-qHt" secondAttribute="centerX" id="46t-ve-YTt"/>
@@ -912,6 +986,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTh-Ur-sx4">
                                 <rect key="frame" x="25" y="104" width="270" height="40"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8oD-VF-t3a"/>
                                     <constraint firstAttribute="width" constant="270" id="hUL-jy-ece"/>
@@ -924,6 +999,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VX-Yz-qqr">
                                 <rect key="frame" x="25" y="79" width="270" height="17"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="3aB-UD-84z"/>
                                 </constraints>
@@ -933,6 +1009,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHT-Tz-Axe">
                                 <rect key="frame" x="25" y="513" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="Y6X-Bi-3J7"/>
@@ -948,6 +1025,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revise su correo electrónico, luego de llenar y enviar este formulario." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="nur-Ee-n38">
                                 <rect key="frame" x="25" y="41" width="270" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="3IE-F4-Fus"/>
                                 </constraints>
@@ -956,6 +1034,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2VX-Yz-qqr" firstAttribute="top" secondItem="nur-Ee-n38" secondAttribute="bottom" constant="8" id="McX-nu-UhF"/>
@@ -993,6 +1072,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhm-5P-P3a">
                                 <rect key="frame" x="139" y="119" width="94" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5Q4-kf-YXb"/>
                                     <constraint firstAttribute="width" constant="94" id="Y8h-yo-Q7d"/>
@@ -1006,6 +1086,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <searchBar contentMode="center" searchBarStyle="minimal" placeholder="Busca productos o servicios" backgroundImage="bgSearch.png" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-BW-ofb">
                                 <rect key="frame" x="0.0" y="64" width="340" height="44"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.59215686270000001" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gGW-D6-1Pz"/>
@@ -1016,8 +1097,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="-10" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFv-OE-RIm" customClass="MenuView">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFv-OE-RIm" customClass="MenuView">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mVD-4s-AkW"/>
@@ -1025,12 +1107,14 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k75-bZ-gV2">
                                 <rect key="frame" x="0.0" y="158" width="320" height="349"/>
+                                <animations/>
                                 <connections>
                                     <segue destination="3tr-Az-7mo" kind="embed" identifier="embedContainer" id="JSL-UX-Xdv"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faK-wG-TNi">
                                 <rect key="frame" x="6" y="119" width="130" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="S0S-rE-zZs"/>
                                     <constraint firstAttribute="height" constant="30" id="eHF-sW-90X"/>
@@ -1044,6 +1128,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fOX-ar-wgc">
                                 <rect key="frame" x="243" y="119" width="71" height="29"/>
+                                <animations/>
                                 <segments>
                                     <segment title="" image="btnGrid.png" width="35"/>
                                     <segment title="" image="btnList.png" width="35"/>
@@ -1054,7 +1139,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <animations/>
                         <constraints>
+                            <constraint firstItem="jFv-OE-RIm" firstAttribute="width" secondItem="11u-yc-NiL" secondAttribute="width" id="0OC-AI-JDL"/>
                             <constraint firstItem="bHd-BW-ofb" firstAttribute="top" secondItem="WkC-Cx-JaL" secondAttribute="bottom" id="2vR-0R-5jg"/>
                             <constraint firstItem="k75-bZ-gV2" firstAttribute="leading" secondItem="11u-yc-NiL" secondAttribute="leading" id="7Mo-TG-7lu"/>
                             <constraint firstItem="faK-wG-TNi" firstAttribute="top" secondItem="bHd-BW-ofb" secondAttribute="bottom" constant="11" id="87B-Sh-hK4"/>
@@ -1072,6 +1159,12 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             <constraint firstItem="k75-bZ-gV2" firstAttribute="top" secondItem="bHd-BW-ofb" secondAttribute="bottom" constant="50" id="vg2-Ey-RNK"/>
                             <constraint firstItem="faK-wG-TNi" firstAttribute="leading" secondItem="11u-yc-NiL" secondAttribute="leading" constant="6" id="vti-zg-4Zd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mfc-EF-S4V"/>
+                                <exclude reference="tmM-F8-cis"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bXo-f9-T2i"/>
                     <connections>
@@ -1098,6 +1191,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     <view key="view" contentMode="scaleToFill" id="wc4-GA-Gcu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -1123,6 +1217,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hzx-w6-Yv2">
                                 <rect key="frame" x="53" y="39" width="213" height="29"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="HJK-kR-ieJ"/>
                                     <constraint firstAttribute="width" constant="213" id="wi7-KV-Sue"/>
@@ -1136,6 +1231,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese palabras clave:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPg-ba-KSa">
                                 <rect key="frame" x="25" y="163" width="270" height="15"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="OnK-wt-Ewt"/>
                                     <constraint firstAttribute="height" constant="15" id="dT4-26-wZp"/>
@@ -1146,6 +1242,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ciudad:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSP-hE-hlu">
                                 <rect key="frame" x="25" y="80" width="270" height="15"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="E4Q-PR-lbB"/>
                                     <constraint firstAttribute="height" constant="15" id="EjW-S2-Ise"/>
@@ -1156,6 +1253,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sh-UA-AeA">
                                 <rect key="frame" x="25" y="390" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="2ob-HD-4PT"/>
@@ -1173,6 +1271,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione la categoría" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fT-yU-kZY">
                                 <rect key="frame" x="25" y="16" width="270" height="15"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="cav-GO-kZW"/>
                                     <constraint firstAttribute="height" constant="15" id="gJp-05-cb8"/>
@@ -1183,6 +1282,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Ej: envuelto, empanada, tamal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RIf-dC-3xX">
                                 <rect key="frame" x="25" y="186" width="270" height="45"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="bG0-bs-XPN"/>
                                     <constraint firstAttribute="width" constant="270" id="kDw-Ig-zL4"/>
@@ -1195,6 +1295,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iop-wb-jTY">
                                 <rect key="frame" x="0.0" y="103" width="320" height="49"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="9W3-7e-aiC"/>
@@ -1212,6 +1313,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque la calificación mínima a mostrar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHf-JK-vNL">
                                 <rect key="frame" x="25" y="239" width="270" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="C7y-6C-dvt"/>
                                     <constraint firstAttribute="height" constant="21" id="Tlr-C4-t3j"/>
@@ -1223,6 +1325,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yp-E7b">
                                 <rect key="frame" x="47" y="264" width="39" height="38"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="fTz-fd-sO1"/>
                                     <constraint firstAttribute="height" constant="38" id="ncc-VH-hJQ"/>
@@ -1236,6 +1339,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuw-4W-a5G">
                                 <rect key="frame" x="94" y="264" width="39" height="38"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="AJc-v1-MAv"/>
                                     <constraint firstAttribute="width" constant="39" id="Gxr-zh-wbH"/>
@@ -1249,6 +1353,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfh-Kn-gX8">
                                 <rect key="frame" x="141" y="264" width="39" height="38"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="K8N-bR-VUf"/>
                                     <constraint firstAttribute="height" constant="38" id="QYV-V3-Te8"/>
@@ -1262,6 +1367,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-6r-ARY">
                                 <rect key="frame" x="188" y="264" width="39" height="38"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="EdQ-EW-4OL"/>
                                     <constraint firstAttribute="width" constant="39" id="hPo-dg-apT"/>
@@ -1275,6 +1381,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzE-fw-Y7V">
                                 <rect key="frame" x="235" y="264" width="39" height="38"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="tJP-hX-vhv"/>
                                     <constraint firstAttribute="width" constant="39" id="xh7-cV-qNR"/>
@@ -1287,6 +1394,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0Ya-6r-ARY" firstAttribute="leading" secondItem="Pfh-Kn-gX8" secondAttribute="trailing" constant="8" id="4qc-iN-WFb"/>
@@ -1365,6 +1473,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCF-ts-BgE">
                                 <rect key="frame" x="-1" y="110" width="322" height="53"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="h2W-gR-za3"/>
                                 </constraints>
@@ -1376,6 +1485,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="teléfono" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4o-Lx-Vq9">
                                 <rect key="frame" x="-1" y="171" width="322" height="53"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="CXm-nu-MAv"/>
                                 </constraints>
@@ -1387,6 +1497,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="célular" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVb-CH-xwF">
                                 <rect key="frame" x="-1" y="232" width="322" height="53"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="OHI-qx-fOY"/>
                                 </constraints>
@@ -1398,6 +1509,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dno-jG-iph">
                                 <rect key="frame" x="25" y="424" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.59607843140000005" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="Xka-2q-hPP"/>
@@ -1414,6 +1526,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iO-a5-NwE" customClass="MenuView">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="yiv-w1-jzf"/>
@@ -1421,6 +1534,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J05-lL-Jtz">
                                 <rect key="frame" x="-1" y="49" width="322" height="53"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="Cq6-C0-5ZI"/>
                                 </constraints>
@@ -1431,6 +1545,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </textField>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DCF-ts-BgE" firstAttribute="top" secondItem="J05-lL-Jtz" secondAttribute="bottom" constant="8" id="4kE-zq-Du4"/>
@@ -1480,6 +1595,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBq-xq-Pua">
                                 <rect key="frame" x="90" y="28" width="140" height="29"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="3ch-aZ-L5q"/>
                                     <constraint firstAttribute="width" constant="140" id="K2L-mX-tKp"/>
@@ -1495,6 +1611,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhj-jc-C6P">
                                 <rect key="frame" x="25" y="513" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="bS3-82-Wb9"/>
@@ -1512,11 +1629,13 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTe-qd-6Qt">
                                 <rect key="frame" x="0.0" y="71" width="320" height="434"/>
+                                <animations/>
                                 <connections>
                                     <segue destination="fGS-TX-rsK" kind="embed" identifier="embedContainer" id="ekV-ci-7cy"/>
                                 </connections>
                             </containerView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6qq-iF-bk0" firstAttribute="top" secondItem="bhj-jc-C6P" secondAttribute="bottom" constant="-5" id="5vb-OO-LH4"/>
@@ -1550,6 +1669,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0GQ-Zu-ufm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="434"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                     </view>
                     <toolbarItems/>
                     <connections>
@@ -1575,26 +1695,31 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOb-hJ-GlY">
                                 <rect key="frame" x="0.0" y="20" width="320" height="53"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ejemplo@mail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1m-Bv-2CE">
                                 <rect key="frame" x="0.0" y="81" width="320" height="53"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="teléfono" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqR-KT-tIt">
                                 <rect key="frame" x="0.0" y="142" width="320" height="53"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="teléfono 2 (opcional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ydu-xy-fny">
                                 <rect key="frame" x="0.0" y="203" width="320" height="53"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Kt-T7v">
                                 <rect key="frame" x="25" y="508" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Ofrecer servicio">
@@ -1603,6 +1728,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </state>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -1625,6 +1751,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVf-ak-VJD">
                                 <rect key="frame" x="-1" y="0.0" width="322" height="53"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="6Yl-od-nTA"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="VI5-d9-bdZ"/>
@@ -1640,12 +1767,14 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripción" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llu-nh-Nem">
                                         <rect key="frame" x="12" y="14" width="295" height="21"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78x-b8-9ty">
                                         <rect key="frame" x="8" y="39" width="305" height="120"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -1655,6 +1784,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </connections>
                                     </textView>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="174" id="Cdd-mO-Rm5"/>
@@ -1671,12 +1801,14 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Capacitaciones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0h-9e-Pbz">
                                         <rect key="frame" x="12" y="11" width="299" height="21"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mz6-u3-hOk">
                                         <rect key="frame" x="8" y="33" width="305" height="139"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -1686,6 +1818,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </connections>
                                     </textView>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="2z7-Kx-2a7"/>
@@ -1699,6 +1832,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </constraints>
                             </view>
                         </subviews>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="J9a-Oz-xxI" secondAttribute="trailing" constant="-1" id="24H-vZ-k6w"/>
                             <constraint firstItem="rO9-xG-fHG" firstAttribute="leading" secondItem="Lxk-nf-OUt" secondAttribute="leading" constant="-1" id="28T-bE-22D"/>
@@ -1737,39 +1871,45 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-mI-pKy">
                                 <rect key="frame" x="25" y="71" width="270" height="121"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgContact.png" translatesAutoresizingMaskIntoConstraints="NO" id="XAA-YL-Qx1">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="121"/>
+                                        <animations/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMR-eD-eGl">
                                         <rect key="frame" x="44" y="0.0" width="226" height="40"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNF-4a-8t5">
                                         <rect key="frame" x="44" y="42" width="226" height="40"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mE5-A6-ub9">
                                         <rect key="frame" x="44" y="81" width="226" height="40"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.59607843140000005" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="pbL-8V-7fD"/>
                                     <constraint firstAttribute="height" constant="121" id="tnG-9q-ggz"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="---------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-nP-VJy">
                                 <rect key="frame" x="25" y="37" width="270" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="nq8-Em-L1c"/>
                                     <constraint firstAttribute="height" constant="21" id="o0y-9E-DVe"/>
@@ -1778,8 +1918,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-6x-Q8A">
                                 <rect key="frame" x="25" y="200" width="270" height="45"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.086274509803921567" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0Iz-wE-fDd"/>
@@ -1795,13 +1936,15 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm8-WX-0vS" customClass="MenuView">
                                 <rect key="frame" x="0.0" y="420" width="320" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Kmr-AS-DEu"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-rG-6v9">
                                 <rect key="frame" x="0.0" y="253" width="320" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Fug-3e-bHS"/>
@@ -1816,8 +1959,9 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     <segue destination="DyE-7r-2b2" kind="push" identifier="goFavorite" id="N0t-3A-1bw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Mx-82w">
                                 <rect key="frame" x="0.0" y="311" width="320" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="KQp-lI-CxU"/>
@@ -1833,6 +1977,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CgR-nP-VJy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wkW-YU-p2E" secondAttribute="bottom" priority="750" constant="17" id="BeT-vz-s1E"/>
@@ -1877,22 +2022,29 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="T5f-Oo-YdL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenCell" textLabel="4pB-do-242" style="IBUITableViewCellStyleDefault" id="FIR-Zd-t9w">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIR-Zd-t9w" id="0iF-Xb-UQs">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4pB-do-242">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1921,6 +2073,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMt-yD-vfw">
                                 <rect key="frame" x="0.0" y="64" width="320" height="143"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.59607843140000005" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="143" id="kD9-WN-SP6"/>
@@ -1930,6 +2083,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGv-4X-3qs">
                                 <rect key="frame" x="118" y="93" width="85" height="85"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="MJT-au-Vrt"/>
                                     <constraint firstAttribute="height" constant="85" id="zx9-JN-UIq"/>
@@ -1947,6 +2101,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBb-0h-m1V">
                                 <rect key="frame" x="0.0" y="217" width="320" height="263"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
@@ -1954,6 +2109,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEw-Wc-0Aq">
                                 <rect key="frame" x="-1" y="0.0" width="322" height="53"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="GAJ-jG-BBu"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="53" id="IBb-Og-eY3"/>
@@ -1966,6 +2122,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </textField>
                         </subviews>
+                        <animations/>
                         <constraints>
                             <constraint firstItem="fEw-Wc-0Aq" firstAttribute="top" secondItem="4Jx-zD-raK" secondAttribute="bottom" id="1R5-pt-iMc"/>
                             <constraint firstItem="fEw-Wc-0Aq" firstAttribute="leading" secondItem="MYO-ci-V0P" secondAttribute="leading" constant="-1" id="4Ng-rs-1Pz"/>
@@ -2007,6 +2164,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-lp-swL">
                                 <rect key="frame" x="25" y="215" width="270" height="23"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Md3-Mz-tOh"/>
                                     <constraint firstAttribute="width" constant="270" id="lVF-ok-cZz"/>
@@ -2020,6 +2178,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="middleTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="mst-PP-gmS">
                                 <rect key="frame" x="25" y="263" width="270" height="81"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81" id="33b-hJ-gc8"/>
                                     <constraint firstAttribute="height" constant="81" id="4iW-Om-vE3"/>
@@ -2035,6 +2194,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dn2-08-ST5" customClass="MenuView">
                                 <rect key="frame" x="0.0" y="420" width="320" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="3SH-VT-o3m"/>
@@ -2044,6 +2204,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKh-HG-JU1">
                                 <rect key="frame" x="25" y="352" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.59607843137254901" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="6rO-31-dhE"/>
@@ -2068,12 +2229,14 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="U7J-SL-f4u">
                                         <rect key="frame" x="0.0" y="2" width="270" height="198"/>
+                                        <animations/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="139" y="28" width="745" height="452"/>
                                         </variation>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3Z-Dk-dke" customClass="stars">
                                         <rect key="frame" x="8" y="155" width="160" height="37"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="4Jm-Ji-BlR"/>
@@ -2087,6 +2250,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHq-dQ-S6D" customClass="TSButton">
                                         <rect key="frame" x="232" y="0.0" width="30" height="47"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="cZf-NS-30U"/>
                                             <constraint firstAttribute="height" constant="47" id="uNg-zP-rNy"/>
@@ -2096,6 +2260,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </state>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="U7J-SL-f4u" secondAttribute="trailing" id="0sH-tT-j9r"/>
@@ -2111,6 +2276,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="eNg-aC-XGm">
                                 <rect key="frame" x="25" y="239" width="270" height="16"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="PE8-uz-SXX"/>
                                     <constraint firstAttribute="height" constant="16" id="Tno-99-86f"/>
@@ -2123,6 +2289,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </variation>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="jjT-iQ-kHy" secondAttribute="centerX" id="Atb-Xc-1Nh"/>
@@ -2175,6 +2342,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona uno de los siguientes ítems para ordenar los resultados de la búsqueda " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="nNn-TG-Hsq">
                                 <rect key="frame" x="25" y="72" width="270" height="97"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="NbF-J2-058"/>
                                     <constraint firstAttribute="width" constant="270" id="tQp-ib-Wv1"/>
@@ -2185,6 +2353,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyH-5A-nRt">
                                 <rect key="frame" x="0.0" y="177" width="320" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="yOk-0x-Ph1"/>
@@ -2200,6 +2369,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mY-AM-ugG">
                                 <rect key="frame" x="0.0" y="226" width="320" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SYp-QO-uIP"/>
@@ -2215,6 +2385,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuS-r7-95X">
                                 <rect key="frame" x="0.0" y="275" width="320" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="sm2-q3-IBE"/>
@@ -2230,6 +2401,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olL-Jd-UK9">
                                 <rect key="frame" x="0.0" y="324" width="320" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="e6a-3U-nG3"/>
@@ -2245,6 +2417,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwI-8A-ip8">
                                 <rect key="frame" x="25" y="508" width="270" height="60"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ck9-2W-VeH"/>
@@ -2259,6 +2432,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XyH-5A-nRt" firstAttribute="leading" secondItem="Kt8-3p-UfN" secondAttribute="leading" id="8Ps-Yc-kTx"/>
@@ -2312,6 +2486,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ew5-uY-RMo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p11-rj-ZMv">
                                     <size key="itemSize" width="141" height="105"/>
@@ -2321,7 +2496,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productCell" id="yJ4-kR-wXz" customClass="ProductCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="141" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="141" height="105"/>
@@ -2329,24 +2504,28 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Envueltos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAS-7h-mCX">
                                                     <rect key="frame" x="8" y="73" width="123" height="13"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-r8-jPU">
                                                     <rect key="frame" x="8" y="8" width="125" height="62"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="fKp-r8-jPU" secondAttribute="height" multiplier="125:62" id="Z1c-kd-KV8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Belén Quinche" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BB-rk-PH6">
                                                     <rect key="frame" x="8" y="86" width="125" height="12"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkb-Vw-co5" customClass="stars">
                                                     <rect key="frame" x="13" y="45" width="71" height="19"/>
+                                                    <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="71" id="fqu-SH-SnD"/>
@@ -2359,8 +2538,10 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="9BB-rk-PH6" firstAttribute="top" secondItem="yAS-7h-mCX" secondAttribute="bottom" id="0c3-hl-meO"/>
                                             <constraint firstAttribute="trailing" secondItem="yAS-7h-mCX" secondAttribute="trailing" constant="8" id="8eb-gQ-ocB"/>
@@ -2389,6 +2570,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ew5-uY-RMo" secondAttribute="trailing" id="CUJ-yD-iYN"/>
                             <constraint firstItem="ew5-uY-RMo" firstAttribute="top" secondItem="cxV-ld-iIo" secondAttribute="top" id="Uw2-Un-aaE"/>
@@ -2413,16 +2595,20 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="22" sectionFooterHeight="22" id="dC0-LY-zbN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="91" id="rir-hW-x8h" customClass="ProductsTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rir-hW-x8h" id="in3-5l-ReJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="jhM-0B-RJL">
                                             <rect key="frame" x="8" y="8" width="75" height="75"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="75" id="AfL-Ee-fOE"/>
                                                 <constraint firstAttribute="width" constant="75" id="dqf-U4-Jx3"/>
@@ -2430,6 +2616,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envueltos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jJ-Gi-IYa">
                                             <rect key="frame" x="91" y="12" width="120" height="19"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="B88-um-sYN"/>
                                                 <constraint firstAttribute="height" constant="19" id="F2N-xQ-DLe"/>
@@ -2448,6 +2635,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belén Quinche" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-BC-1Ts">
                                             <rect key="frame" x="91" y="28" width="287" height="21"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="287" id="9hA-8I-83S"/>
                                                 <constraint firstAttribute="height" constant="21" id="Glm-8B-Fs0"/>
@@ -2458,6 +2646,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed libero eu quam blandit tempus faucibus non..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="U29-gn-1Od">
                                             <rect key="frame" x="91" y="50" width="196" height="31"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="31" id="4uU-IO-9lR"/>
                                             </constraints>
@@ -2467,6 +2656,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1a-yr-HI6" customClass="stars">
                                             <rect key="frame" x="206" y="8" width="81" height="28"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28" id="Tdg-Dn-45r"/>
                                                 <constraint firstAttribute="width" constant="81" id="iRq-Zq-i4d"/>
@@ -2478,6 +2668,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="jhM-0B-RJL" firstAttribute="leading" secondItem="in3-5l-ReJ" secondAttribute="leading" constant="8" id="4KM-L5-Noh"/>
                                         <constraint firstItem="jhM-0B-RJL" firstAttribute="top" secondItem="in3-5l-ReJ" secondAttribute="top" constant="8" id="64X-fq-lTX"/>
@@ -2492,6 +2683,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                                         <constraint firstItem="3jJ-Gi-IYa" firstAttribute="top" secondItem="in3-5l-ReJ" secondAttribute="top" constant="12" id="ywO-Fo-g5n"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="imgProduct" destination="jhM-0B-RJL" id="hiP-fm-sYh"/>
                                     <outlet property="lblDescProduct" destination="U29-gn-1Od" id="lpz-17-F4H"/>
@@ -2523,6 +2715,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PSO-0U-OX2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2542,6 +2735,7 @@ La violación de cualquiera de los términos y condiciones de uso de esta plataf
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fsz-2m-gs8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
