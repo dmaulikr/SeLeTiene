@@ -210,6 +210,7 @@
                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
                           NSLog(@"Sirveee: %@", responseObject);
                           if (list) {
+                              NSLog([NSString stringWithFormat:@"%@",responseObject]);
                               [self.delegate returnList:responseObject :url];
                           }else{
                               [self.delegate returnObt:responseObject];

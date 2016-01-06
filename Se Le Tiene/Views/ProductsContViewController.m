@@ -138,7 +138,10 @@
     NSMutableArray *tmpArray = [[NSMutableArray alloc] init];
     for (id key in (NSDictionary*)responseObject) {
         Product *tmpProduct = [[Product alloc] init];
+        NSLog(@"🚚🚚🚚🚚🚚🚚");
+        NSLog(@"%@",key[@"Title"]);
         tmpProduct.idProduct = key[@"id"];
+    
         tmpProduct.nameProduct = key[@"title"];
         tmpProduct.scoreProduct = key[@"rating"];
         tmpProduct.descProduct = key[@"description"];
